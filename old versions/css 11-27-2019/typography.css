@@ -1,0 +1,27 @@
+/* ========================================================================
+   Component: Typography
+ ========================================================================== */
+@font-face {
+	font-family: 'Circular Bold';
+	src: url('../webfonts/CircularStd-Bold.otf');
+}
+@font-face {
+	font-family: 'Circular Black';
+	src: url('../webfonts/CircularStd-Black.otf');
+}
+@font-face {
+	font-family: 'Circular Normal';
+	src: url('../webfonts/CircularStd-Book.otf');
+}
+html, body {
+	font-family: "Circular Normal", arial;
+}
+.text-bold {
+	font-family: "Circular Bold", arial bold, arial;
+}
+.text-black {
+	font-family: "Circular Black", arial black, arial;
+}
+.text-normal {
+	font-family: 'Circular Normal', arial;
+}

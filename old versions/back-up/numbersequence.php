@@ -1,0 +1,544 @@
+<?php 
+session_start();
+include("dbconn.php");
+$user = $_SESSION["user"];
+$dataareaid = $_SESSION["defaultdataareaid"];
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Number Sequence</title>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/fontawesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/typography.css" />
+	<link rel="stylesheet" type="text/css" href="css/custom.css" />
+	<script src="js/jquery.min.js"></script>
+
+</head>
+<body>
+
+
+	<!-- begin LEFT PANEL -->
+	<div class="leftpanel">
+
+		<?php require("inc/leftpanel.php"); ?>
+
+		<!-- sub buttons -->
+		<ul class="subbuttons">
+			<li><button id="myAddBtn"><span class="fa fa-plus fa-lg"></span> Create Record</button></li>
+			<li><button onClick="Delete();"><span class="fa fa-trash-alt fa-lg"></span> Delete Record</button></li>
+			<li><button id="myUpdateBtn"><span class="fa fa-edit fa-lg"></span> Update Record</button></li>
+		</ul>
+		
+		<!-- extra buttons -->
+		<ul class="extrabuttons">
+			<li><button><span class="fas fa-arrow-up fa"></span> Move Up</button></li>
+			<li><button><span class="fas fa-arrow-down fa"></span> Move Down</button></li>
+		</ul>
+
+	</div>
+	<!-- end LEFT PANEL -->
+
+
+
+
+	<!-- begin HEADER -->
+	<?php require("inc/header.php"); ?>
+	<!-- end HEADER -->
+
+
+	<!-- begin LEFTPANEL BAR (MINI) -->
+	<div id="leftpanel-bar" class="leftpanel-bar">
+		<div class="leftpanel-max">
+			<span id="leftpanel-maximize-button" class="maximize fa fa-chevron-circle-right"></span>
+		</div>
+	</div>
+	<!-- end LEFTPANEL BAR (MINI) -->
+
+
+	<!-- begin MAINPANEL -->
+	<div id="mainpanel" class="mainpanel">
+		<div class="container-fluid">
+			<div class="row">
+
+				<!-- start TABLE AREA -->
+				<div id="tablearea1" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mainpanel-area">
+					<div class="mainpanel-content">
+						<!-- title & search -->
+						<div class="mainpanel-title">
+							<span class="fa fa-archive"></span> Overview
+						</div>
+						<div class="mainpanel-sub">
+							<!-- cmd -->
+							<div class="mainpanel-sub-cmd">
+								<a href=""><span class="fa fa-cog"></a>
+								<a href=""><span class="fa fa-cog"></a>
+								<a href=""><span class="fa fa-cog"></a>
+									|
+								<a href=""><span class="fa fa-cog"></a>
+								<a href=""><span class="fa fa-cog"></a>
+							</div>
+						</div>
+						<!-- tableheader -->
+						<div id="container1" class="full">
+							<table width="100%" border="0" id="datatbl" class="table table-striped mainpanel-table">
+								<thead>	
+									<tr class="rowtitle">
+										<td style="width:20px;"><span class="fa fa-adjust"></span></td>
+										<td style="width:14%;">Sequence ID</td>
+										<td style="width:14%;">Prefix</td>
+										<td style="width:14%;">First</td>
+										<td style="width:14%;">Last</td>
+										<td style="width:14%;">Format</td>
+										<td style="width:14%;">Next</td>
+										<td style="width:14%;">Suffix</td>
+										<td style="width: 17px;"><span class="fas fa-arrows-alt-v"></span></td>
+									</tr>
+									<tr class="rowsearch">
+									  <td><span class="fa fa-adjust"></span></td>
+									  
+
+										<td><input style="width:100%;height: 20px;" list="SearchId" class="search">
+										<?php
+											$query = "SELECT distinct id FROM numbersequence where dataareaid = '$dataareaid'";
+											$result = $conn->query($query);	
+												
+									  ?>
+									  <datalist id="SearchId">
+										
+										<?php 
+										
+											while ($row = $result->fetch_assoc()) {
+										?>
+											<option value="<?php echo $row["id"];?>"></option>
+											
+										<?php } ?>
+										</datalist>
+									  </td>
+									  <td><input style="width:100%;height: 20px;" list="SearchPrefix" class="search">
+										<?php
+											$query = "SELECT distinct prefix FROM numbersequence where dataareaid = '$dataareaid'";
+											$result = $conn->query($query);	
+												
+									  ?>
+									  <datalist id="SearchPrefix">
+										
+										<?php 
+										
+											while ($row = $result->fetch_assoc()) {
+										?>
+											<option value="<?php echo $row["prefix"];?>"></option>
+											
+										<?php } ?>
+										</datalist>
+									  </td>
+									  <td><input style="width:100%;height: 20px;" list="SearchFirst" class="search" disabled>
+										<?php
+											$query = "SELECT distinct first FROM numbersequence where dataareaid = '$dataareaid'";
+											$result = $conn->query($query);	
+												
+									  ?>
+									  <datalist id="SearchFirst">
+										
+										<?php 
+										
+											while ($row = $result->fetch_assoc()) {
+										?>
+											<option value="<?php echo $row["first"];?>"></option>
+											
+										<?php } ?>
+										</datalist>
+									  </td>
+									  <td><input style="width:100%;height: 20px;" list="SearchLast" class="search" disabled>
+										<?php
+											$query = "SELECT distinct last FROM numbersequence where dataareaid = '$dataareaid'";
+											$result = $conn->query($query);	
+												
+									  ?>
+									  <datalist id="SearchLast">
+										
+										<?php 
+										
+											while ($row = $result->fetch_assoc()) {
+										?>
+											<option value="<?php echo $row["last"];?>"></option>
+											
+										<?php } ?>
+										</datalist>
+									  </td>
+									  <td><input style="width:100%;height: 20px;" list="SearchFormat" class="search" disabled>
+										<?php
+											$query = "SELECT distinct format FROM numbersequence where dataareaid = '$dataareaid'";
+											$result = $conn->query($query);	
+												
+									  ?>
+									  <datalist id="SearchFormat">
+										
+										<?php 
+										
+											while ($row = $result->fetch_assoc()) {
+										?>
+											<option value="<?php echo $row["format"];?>"></option>
+											
+										<?php } ?>
+										</datalist>
+									  </td>
+									  <td><input style="width:100%;height: 20px;" list="SearchNext" class="search" disabled>
+										<?php
+											$query = "SELECT distinct next FROM numbersequence where dataareaid = '$dataareaid'";
+											$result = $conn->query($query);	
+												
+									  ?>
+									  <datalist id="SearchNext">
+										
+										<?php 
+										
+											while ($row = $result->fetch_assoc()) {
+										?>
+											<option value="<?php echo $row["next"];?>"></option>
+											
+										<?php } ?>
+										</datalist>
+									  </td>
+									  <td><input style="width:100%;height: 20px;" list="SearchSuffix" class="search" disabled>
+										<?php
+											$query = "SELECT distinct suffix FROM numbersequence where dataareaid = '$dataareaid'";
+											$result = $conn->query($query);	
+												
+									  ?>
+									  <datalist id="SearchSuffix">
+										
+										<?php 
+										
+											while ($row = $result->fetch_assoc()) {
+										?>
+											<option value="<?php echo $row["suffix"];?>"></option>
+											
+										<?php } ?>
+										</datalist>
+									  </td>
+									  <td><span></span></td>
+									</tr>
+								</thead>
+								<tbody id="result">
+									<?php					
+									$query = "SELECT * FROM numbersequence where dataareaid = '$dataareaid'";
+									$result = $conn->query($query);
+									while ($row = $result->fetch_assoc())
+									{ ?>
+										<tr class="<?php echo $rowclass; ?>">
+											<!--<td style="width:10px;"><input type='checkbox' name="chkbox" value="" id="myCheck"></td>-->
+											<td style="width:20px;"><span class="fa fa-adjust"></span></td>
+											<td style="width:14%;"><?php echo $row['id'];?></td>
+											<td style="width:14%;"><?php echo $row['prefix'];?></td>
+											<td style="width:14%;"><?php echo $row['first'];?></td>
+											<td style="width:14%;"><?php echo $row['last'];?></td>
+											<td style="width:14%;"><?php echo $row['format'];?></td>
+											<td style="width:14%;"><?php echo $row['next'];?></td>
+											<td style="width:14%;"><?php echo $row['suffix'];?></td>
+											<!--<td style="width:50%;"><input type='password' value='" . $row["password"]."'readonly='readonly'></td>-->
+											
+										</tr>
+									<?php }?>
+								</tbody>
+								<input type="input" id="hide">	
+							</table>
+						</div>
+					</div>
+				</div>
+				<!-- end TABLE AREA -->
+			</div>
+		</div>
+	</div>
+	<!-- end MAINPANEL -->
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+	<!-- Modal content -->
+	<div class="modal-container">
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="col-lg-6">add info</div>
+				<div class="col-lg-6"><span class="fas fa-times modal-close"></span></div>
+			</div>
+			
+			<div id="container" class="modal-content-container">
+				<div class="row">
+
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<label>Sequence ID:</label>
+						<input type="text" value="" placeholder="Sequence ID" id="add-id" class="modal-textarea">
+
+						<label>Prefix:</label>
+						<input type="text" value="" placeholder="Prefix" id="add-prefix" class="modal-textarea">
+					</div>
+
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<label>First:</label>
+						<input type="text" value="" placeholder="First" id="add-first" class="modal-textarea">
+
+						<label>Last:</label>
+						<input type="text" value="" placeholder="Last" id="add-last" class="modal-textarea">
+					</div>
+
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<label>Format:</label>
+						<input type="text" value="" placeholder="Format" id="add-format" class="modal-textarea">
+
+						<label>Next:</label>
+						<input type="text" value="" placeholder="Next" id="add-next" class="modal-textarea">
+					</div>
+
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<label>Suffix:</label>
+						<input type="text" value="" placeholder="Suffix" id="add-suffix" class="modal-textarea">
+					</div>
+
+				</div>
+
+				<div class="button-container">
+					<button id="addbt" onClick="Save();" class="btn btn-primary btn-action">Save</button>
+					<button id="upbt" onClick="Update();" class="btn btn-success btn-action">Update</button>
+					<button onClick="Clear();" class="btn btn-danger">Clear</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end modal-->
+
+<!-- begin [JAVASCRIPT] -->
+<script src="js/ajax.js"></script>
+	<script  type="text/javascript">
+
+	  	var so='';
+  		$(document).ready(function(){
+			$('#datatbl tbody tr').click(function(){
+				$('table tbody tr').css("color","black");
+				$(this).css("color","red");
+				$('table tbody tr').removeClass("info");
+				$(this).addClass("info");
+				var usernum = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(1)").text();
+				so = usernum.toString();
+				document.getElementById("hide").value = so;
+				//alert(document.getElementById("hide").value);
+				//alert(so);	
+					  
+			});
+		});
+
+		// Get the modal -------------------
+		var modal = document.getElementById('myModal');
+		// Get the button that opens the modal
+		var CreateBtn = document.getElementById("myAddBtn");
+		var UpdateBtn = document.getElementById("myUpdateBtn");
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("modal-close")[0];
+		// When the user clicks the button, open the modal 
+		CreateBtn.onclick = function() {
+		    modal.style.display = "block";
+		    document.getElementById("upbt").style.visibility = "hidden";
+		    document.getElementById("addbt").style.visibility = "visible";
+		}
+		UpdateBtn.onclick = function() {
+			if(so != '') {
+			    modal.style.display = "block";
+			    $("#add-id").prop('readonly', true);
+				document.getElementById("add-id").value = so;
+			    document.getElementById("addbt").style.visibility = "hidden";
+			    document.getElementById("upbt").style.visibility = "visible";
+			}
+			else 
+			{
+				alert("Please Select a record you want to update.");
+			}
+		}
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() {
+		    modal.style.display = "none";
+		    Clear();
+		}
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+		    if (event.target == modal || event.target == modal2) {
+		        modal.style.display = "none";
+		        Clear()
+		        
+		    }
+		}
+		//end modal ---------------------------
+
+  		//-----search-----//
+		$( ".search" ).on( "keydown", function(event) {
+		  if(event.which == 13){
+			var search = document.getElementsByClassName('search');
+			var NumId;
+			var NumPrefix;
+
+			var action = "searchdata";
+			var actionmode = "userform";
+			var data=[];
+			 for(i=0;i<search.length;i++){
+				 data[i]=search[i].value;
+				 //search[i].value = "";
+			 }
+			 
+			 NumId = data[0];
+			 NumPrefix = data[1];
+			
+			 $.ajax({
+						type: 'GET',
+						url: 'numbersequenceprocess.php',
+						data:{action:action, actmode:actionmode, NumId:NumId, NumPrefix:NumPrefix},
+						//data:'bkno='+BNo+'&bkdesc='+BDesc+'&bktit='+BTit+'&bkqty='+BQ,
+						beforeSend:function(){
+						
+							$("#result").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+			
+						},
+						success: function(data){
+							$('#result').html(data);
+				}
+			}); 
+			 
+		  }
+		});
+		//-----end search-----//
+
+		function Clear()
+		{
+			document.getElementById("add-id").value = "";
+			document.getElementById("add-prefix").value = "";
+			document.getElementById("add-first").value = "";
+			document.getElementById("add-last").value = "";
+			document.getElementById("add-format").value = "";
+			document.getElementById("add-next").value = "";
+			document.getElementById("add-suffix").value = "";
+		}
+
+		function Save()
+		{
+			
+			modal.style.display = "none";
+			/*var UId = document.getElementById("add-UserId");
+			var UPass = document.getElementById("add-pass");
+			var NM = document.getElementById("add-name");
+			var DT = document.getElementById("add-dataareaid");*/
+			var NumId = $('#add-id').val();
+			var NumPrefix = $('#add-prefix').val();
+			var NumFirst = $('#add-first').val();
+			var NumLast = $('#add-last').val();
+			var NumFormat = $('#add-format').val();
+			var NumNext = $('#add-next').val();
+			var NumSuffix = $('#add-suffix').val();
+			var action = "save";
+			var actionmode = "userform";
+			$.ajax({	
+					type: 'GET',
+					url: 'numbersequenceprocess.php',
+					//data:'action=save&actmode=userform&userno='+UId.value+'&pass='+UPass.value+'&lname='+NM.value+'&darea='+DT.value,
+					data:{action:action, actmode:actionmode, NumId:NumId, NumPrefix:NumPrefix, NumFirst:NumFirst, NumLast:NumLast, NumFormat:NumFormat, NumNext:NumNext, NumSuffix:NumSuffix},
+					beforeSend:function(){
+							
+					$("#datatbl").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+						
+					},
+					success: function(data){
+					//$('#datatbl').html(data);
+					location.reload();					
+					}
+			}); 
+						
+		}
+
+		function Update()
+		{
+			
+			modal.style.display = "none";
+			/*var UId = document.getElementById("add-UserId");
+			var UPass = document.getElementById("add-pass");
+			var NM = document.getElementById("add-name");
+			var DT = document.getElementById("add-dataareaid");*/
+			var NumId = $('#add-id').val();
+			var NumPrefix = $('#add-prefix').val();
+			var NumFirst = $('#add-first').val();
+			var NumLast = $('#add-last').val();
+			var NumFormat = $('#add-format').val();
+			var NumNext = $('#add-next').val();
+			var NumSuffix = $('#add-suffix').val();
+			var action = "update";
+			var actionmode = "userform";
+			if(so != '') {
+				if(confirm("Are you sure you want to update this record?")) {
+					$.ajax({	
+							type: 'GET',
+							url: 'numbersequenceprocess.php',
+							//data:'action=save&actmode=userform&userno='+UId.value+'&pass='+UPass.value+'&lname='+NM.value+'&darea='+DT.value,
+							data:{action:action, actmode:actionmode, NumId:NumId, NumPrefix:NumPrefix, NumFirst:NumFirst, NumLast:NumLast, NumFormat:NumFormat, NumNext:NumNext, NumSuffix:NumSuffix},
+							beforeSend:function(){
+									
+							$("#datatbl").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+								
+							},
+							success: function(data){
+							//$('#conttables').html(data);
+							location.reload();					
+							}
+					}); 
+				}
+				else 
+				{
+					return false;
+				}
+			}
+			else 
+			{
+				alert("Please Select a record you want to update.");
+			}			
+		}
+
+		function Delete()
+		{
+			
+			var action = "delete";
+			var actionmode = "userform";
+			if(so != '') {
+				if(confirm("Are you sure you want to remove this record?")) {
+					$.ajax({	
+							type: 'GET',
+							url: 'numbersequenceprocess.php',
+							//data:'action=save&actmode=userform&userno='+UId.value+'&pass='+UPass.value+'&lname='+NM.value+'&darea='+DT.value,
+							data:{action:action, actmode:actionmode, NumId:so},
+							beforeSend:function(){
+									
+							$("#datatbl").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+								
+							},
+							success: function(data){
+							//$('#conttables').html(data);
+							location.reload();					
+							}
+					}); 
+				}
+				else 
+				{
+					return false;
+				}
+			}
+			else 
+			{
+				alert("Please Select a record you want to delete.");
+			}			
+		}
+
+	</script>
+<script type="text/javascript" src="js/custom.js"></script>
+<!-- end [JAVASCRIPT] -->
+
+</body>
+</html>

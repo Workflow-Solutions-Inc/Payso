@@ -1,0 +1,352 @@
+[17-May-2020 00:55:07 Asia/Manila] PHP Notice:  Undefined index: cols in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16534
+[17-May-2020 00:55:07 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16549
+[17-May-2020 00:55:07 Asia/Manila] PHP Notice:  Undefined index: rows in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16980
+[17-May-2020 00:55:07 Asia/Manila] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16982
+[17-May-2020 00:55:07 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16562
+[17-May-2020 00:55:07 Asia/Manila] PHP Notice:  Undefined index: startcolumn in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19537
+[17-May-2020 00:55:07 Asia/Manila] PHP Notice:  Undefined index: startx in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19538
+[17-May-2020 00:55:07 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19541
+[17-May-2020 00:55:07 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[17-May-2020 00:55:07 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[17-May-2020 00:55:07 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[17-May-2020 00:55:07 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[17-May-2020 00:55:07 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19565
+[17-May-2020 00:55:07 Asia/Manila] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19594
+[17-May-2020 00:55:07 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19597
+[17-May-2020 00:55:07 Asia/Manila] PHP Notice:  Undefined index: old_cell_padding in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19807
+[18-May-2020 11:51:05 Asia/Manila] PHP Notice:  Undefined index: cols in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16534
+[18-May-2020 11:51:05 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16549
+[18-May-2020 11:51:05 Asia/Manila] PHP Notice:  Undefined index: rows in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16980
+[18-May-2020 11:51:05 Asia/Manila] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16982
+[18-May-2020 11:51:05 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16562
+[18-May-2020 11:51:05 Asia/Manila] PHP Notice:  Undefined index: startcolumn in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19537
+[18-May-2020 11:51:05 Asia/Manila] PHP Notice:  Undefined index: startx in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19538
+[18-May-2020 11:51:05 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19541
+[18-May-2020 11:51:05 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[18-May-2020 11:51:05 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[18-May-2020 11:51:05 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[18-May-2020 11:51:05 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[18-May-2020 11:51:05 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19565
+[18-May-2020 11:51:05 Asia/Manila] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19594
+[18-May-2020 11:51:05 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19597
+[18-May-2020 11:51:05 Asia/Manila] PHP Notice:  Undefined index: old_cell_padding in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19807
+[18-May-2020 11:54:07 Asia/Manila] PHP Notice:  Undefined index: cols in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16534
+[18-May-2020 11:54:07 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16549
+[18-May-2020 11:54:07 Asia/Manila] PHP Notice:  Undefined index: rows in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16980
+[18-May-2020 11:54:07 Asia/Manila] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16982
+[18-May-2020 11:54:07 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16562
+[18-May-2020 11:54:07 Asia/Manila] PHP Notice:  Undefined index: startcolumn in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19537
+[18-May-2020 11:54:07 Asia/Manila] PHP Notice:  Undefined index: startx in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19538
+[18-May-2020 11:54:07 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19541
+[18-May-2020 11:54:07 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[18-May-2020 11:54:07 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[18-May-2020 11:54:07 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[18-May-2020 11:54:07 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[18-May-2020 11:54:07 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19565
+[18-May-2020 11:54:07 Asia/Manila] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19594
+[18-May-2020 11:54:07 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19597
+[18-May-2020 11:54:07 Asia/Manila] PHP Notice:  Undefined index: old_cell_padding in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19807
+[18-May-2020 16:59:01 Asia/Manila] PHP Notice:  Undefined index: cols in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16534
+[18-May-2020 16:59:01 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16549
+[18-May-2020 16:59:01 Asia/Manila] PHP Notice:  Undefined index: rows in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16980
+[18-May-2020 16:59:01 Asia/Manila] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16982
+[18-May-2020 16:59:01 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16562
+[18-May-2020 16:59:01 Asia/Manila] PHP Notice:  Undefined index: startcolumn in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19537
+[18-May-2020 16:59:01 Asia/Manila] PHP Notice:  Undefined index: startx in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19538
+[18-May-2020 16:59:01 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19541
+[18-May-2020 16:59:01 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[18-May-2020 16:59:01 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[18-May-2020 16:59:01 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[18-May-2020 16:59:01 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[18-May-2020 16:59:01 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19565
+[18-May-2020 16:59:01 Asia/Manila] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19594
+[18-May-2020 16:59:01 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19597
+[18-May-2020 16:59:01 Asia/Manila] PHP Notice:  Undefined index: old_cell_padding in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19807
+[19-May-2020 10:53:14 Asia/Manila] PHP Notice:  Undefined index: cols in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16534
+[19-May-2020 10:53:14 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16549
+[19-May-2020 10:53:14 Asia/Manila] PHP Notice:  Undefined index: rows in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16980
+[19-May-2020 10:53:14 Asia/Manila] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16982
+[19-May-2020 10:53:14 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16562
+[19-May-2020 10:53:14 Asia/Manila] PHP Notice:  Undefined index: startcolumn in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19537
+[19-May-2020 10:53:14 Asia/Manila] PHP Notice:  Undefined index: startx in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19538
+[19-May-2020 10:53:14 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19541
+[19-May-2020 10:53:14 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[19-May-2020 10:53:14 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[19-May-2020 10:53:14 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[19-May-2020 10:53:14 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[19-May-2020 10:53:14 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19565
+[19-May-2020 10:53:14 Asia/Manila] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19594
+[19-May-2020 10:53:14 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19597
+[19-May-2020 10:53:14 Asia/Manila] PHP Notice:  Undefined index: old_cell_padding in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19807
+[22-May-2020 11:11:33 Asia/Manila] PHP Notice:  Undefined index: cols in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16534
+[22-May-2020 11:11:33 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16549
+[22-May-2020 11:11:33 Asia/Manila] PHP Notice:  Undefined index: rows in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16980
+[22-May-2020 11:11:33 Asia/Manila] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16982
+[22-May-2020 11:11:33 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16562
+[22-May-2020 11:11:33 Asia/Manila] PHP Notice:  Undefined index: startcolumn in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19537
+[22-May-2020 11:11:33 Asia/Manila] PHP Notice:  Undefined index: startx in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19538
+[22-May-2020 11:11:33 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19541
+[22-May-2020 11:11:33 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[22-May-2020 11:11:33 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[22-May-2020 11:11:33 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[22-May-2020 11:11:33 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[22-May-2020 11:11:33 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19565
+[22-May-2020 11:11:33 Asia/Manila] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19594
+[22-May-2020 11:11:33 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19597
+[22-May-2020 11:11:33 Asia/Manila] PHP Notice:  Undefined index: old_cell_padding in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19807
+[26-May-2020 11:25:52 Asia/Manila] PHP Notice:  Undefined index: cols in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16534
+[26-May-2020 11:25:52 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16549
+[26-May-2020 11:25:52 Asia/Manila] PHP Notice:  Undefined index: rows in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16980
+[26-May-2020 11:25:52 Asia/Manila] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16982
+[26-May-2020 11:25:52 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16562
+[26-May-2020 11:25:52 Asia/Manila] PHP Notice:  Undefined index: startcolumn in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19537
+[26-May-2020 11:25:52 Asia/Manila] PHP Notice:  Undefined index: startx in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19538
+[26-May-2020 11:25:52 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19541
+[26-May-2020 11:25:52 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[26-May-2020 11:25:52 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[26-May-2020 11:25:52 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[26-May-2020 11:25:52 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[26-May-2020 11:25:52 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19565
+[26-May-2020 11:25:52 Asia/Manila] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19594
+[26-May-2020 11:25:52 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19597
+[26-May-2020 11:25:52 Asia/Manila] PHP Notice:  Undefined index: old_cell_padding in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19807
+[26-May-2020 11:30:39 Asia/Manila] PHP Notice:  Undefined index: cols in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16534
+[26-May-2020 11:30:39 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16549
+[26-May-2020 11:30:39 Asia/Manila] PHP Notice:  Undefined index: rows in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16980
+[26-May-2020 11:30:39 Asia/Manila] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16982
+[26-May-2020 11:30:39 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16562
+[26-May-2020 11:30:39 Asia/Manila] PHP Notice:  Undefined index: startcolumn in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19537
+[26-May-2020 11:30:39 Asia/Manila] PHP Notice:  Undefined index: startx in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19538
+[26-May-2020 11:30:39 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19541
+[26-May-2020 11:30:39 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[26-May-2020 11:30:39 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[26-May-2020 11:30:39 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[26-May-2020 11:30:39 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[26-May-2020 11:30:39 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19565
+[26-May-2020 11:30:39 Asia/Manila] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19594
+[26-May-2020 11:30:39 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19597
+[26-May-2020 11:30:39 Asia/Manila] PHP Notice:  Undefined index: old_cell_padding in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19807
+[29-May-2020 09:18:56 Asia/Manila] PHP Notice:  Undefined index: cols in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16534
+[29-May-2020 09:18:56 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16549
+[29-May-2020 09:18:56 Asia/Manila] PHP Notice:  Undefined index: rows in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16980
+[29-May-2020 09:18:56 Asia/Manila] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16982
+[29-May-2020 09:18:56 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16562
+[29-May-2020 09:18:56 Asia/Manila] PHP Notice:  Undefined index: startcolumn in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19537
+[29-May-2020 09:18:56 Asia/Manila] PHP Notice:  Undefined index: startx in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19538
+[29-May-2020 09:18:56 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19541
+[29-May-2020 09:18:56 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[29-May-2020 09:18:56 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[29-May-2020 09:18:56 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[29-May-2020 09:18:56 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[29-May-2020 09:18:56 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19565
+[29-May-2020 09:18:56 Asia/Manila] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19594
+[29-May-2020 09:18:56 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19597
+[29-May-2020 09:18:56 Asia/Manila] PHP Notice:  Undefined index: old_cell_padding in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19807
+[29-May-2020 09:19:20 Asia/Manila] PHP Notice:  Undefined index: cols in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16534
+[29-May-2020 09:19:20 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16549
+[29-May-2020 09:19:20 Asia/Manila] PHP Notice:  Undefined index: rows in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16980
+[29-May-2020 09:19:20 Asia/Manila] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16982
+[29-May-2020 09:19:20 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16562
+[29-May-2020 09:19:20 Asia/Manila] PHP Notice:  Undefined index: startcolumn in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19537
+[29-May-2020 09:19:20 Asia/Manila] PHP Notice:  Undefined index: startx in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19538
+[29-May-2020 09:19:20 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19541
+[29-May-2020 09:19:20 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[29-May-2020 09:19:20 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[29-May-2020 09:19:20 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[29-May-2020 09:19:20 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[29-May-2020 09:19:20 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19565
+[29-May-2020 09:19:20 Asia/Manila] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19594
+[29-May-2020 09:19:20 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19597
+[29-May-2020 09:19:20 Asia/Manila] PHP Notice:  Undefined index: old_cell_padding in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19807
+[29-May-2020 09:22:25 Asia/Manila] PHP Notice:  Undefined index: cols in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16534
+[29-May-2020 09:22:25 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16549
+[29-May-2020 09:22:25 Asia/Manila] PHP Notice:  Undefined index: rows in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16980
+[29-May-2020 09:22:25 Asia/Manila] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16982
+[29-May-2020 09:22:25 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16562
+[29-May-2020 09:22:25 Asia/Manila] PHP Notice:  Undefined index: startcolumn in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19537
+[29-May-2020 09:22:25 Asia/Manila] PHP Notice:  Undefined index: startx in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19538
+[29-May-2020 09:22:25 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19541
+[29-May-2020 09:22:25 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[29-May-2020 09:22:25 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[29-May-2020 09:22:25 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[29-May-2020 09:22:25 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[29-May-2020 09:22:25 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19565
+[29-May-2020 09:22:25 Asia/Manila] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19594
+[29-May-2020 09:22:25 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19597
+[29-May-2020 09:22:25 Asia/Manila] PHP Notice:  Undefined index: old_cell_padding in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19807
+[29-May-2020 09:23:17 Asia/Manila] PHP Notice:  Undefined index: cols in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16534
+[29-May-2020 09:23:17 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16549
+[29-May-2020 09:23:17 Asia/Manila] PHP Notice:  Undefined index: rows in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16980
+[29-May-2020 09:23:17 Asia/Manila] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16982
+[29-May-2020 09:23:17 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16562
+[29-May-2020 09:23:17 Asia/Manila] PHP Notice:  Undefined index: startcolumn in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19537
+[29-May-2020 09:23:17 Asia/Manila] PHP Notice:  Undefined index: startx in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19538
+[29-May-2020 09:23:17 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19541
+[29-May-2020 09:23:17 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[29-May-2020 09:23:17 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[29-May-2020 09:23:17 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[29-May-2020 09:23:17 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[29-May-2020 09:23:17 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19565
+[29-May-2020 09:23:17 Asia/Manila] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19594
+[29-May-2020 09:23:17 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19597
+[29-May-2020 09:23:17 Asia/Manila] PHP Notice:  Undefined index: old_cell_padding in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19807
+[29-May-2020 09:25:25 Asia/Manila] PHP Notice:  Undefined index: cols in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16534
+[29-May-2020 09:25:25 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16549
+[29-May-2020 09:25:25 Asia/Manila] PHP Notice:  Undefined index: rows in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16980
+[29-May-2020 09:25:25 Asia/Manila] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16982
+[29-May-2020 09:25:25 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16562
+[29-May-2020 09:25:25 Asia/Manila] PHP Notice:  Undefined index: startcolumn in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19537
+[29-May-2020 09:25:25 Asia/Manila] PHP Notice:  Undefined index: startx in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19538
+[29-May-2020 09:25:25 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19541
+[29-May-2020 09:25:25 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[29-May-2020 09:25:25 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[29-May-2020 09:25:25 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[29-May-2020 09:25:25 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[29-May-2020 09:25:25 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19565
+[29-May-2020 09:25:25 Asia/Manila] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19594
+[29-May-2020 09:25:25 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19597
+[29-May-2020 09:25:25 Asia/Manila] PHP Notice:  Undefined index: old_cell_padding in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19807
+[29-May-2020 09:28:12 Asia/Manila] PHP Notice:  Undefined index: cols in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16534
+[29-May-2020 09:28:12 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16549
+[29-May-2020 09:28:12 Asia/Manila] PHP Notice:  Undefined index: rows in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16980
+[29-May-2020 09:28:12 Asia/Manila] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16982
+[29-May-2020 09:28:12 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16562
+[29-May-2020 09:28:12 Asia/Manila] PHP Notice:  Undefined index: startcolumn in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19537
+[29-May-2020 09:28:12 Asia/Manila] PHP Notice:  Undefined index: startx in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19538
+[29-May-2020 09:28:12 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19541
+[29-May-2020 09:28:12 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[29-May-2020 09:28:12 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[29-May-2020 09:28:12 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[29-May-2020 09:28:12 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[29-May-2020 09:28:12 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19565
+[29-May-2020 09:28:12 Asia/Manila] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19594
+[29-May-2020 09:28:12 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19597
+[29-May-2020 09:28:12 Asia/Manila] PHP Notice:  Undefined index: old_cell_padding in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19807
+[29-May-2020 15:51:05 Asia/Manila] PHP Notice:  Undefined index: cols in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16534
+[29-May-2020 15:51:05 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16549
+[29-May-2020 15:51:05 Asia/Manila] PHP Notice:  Undefined index: rows in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16980
+[29-May-2020 15:51:05 Asia/Manila] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16982
+[29-May-2020 15:51:05 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16562
+[29-May-2020 15:51:05 Asia/Manila] PHP Notice:  Undefined index: startcolumn in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19537
+[29-May-2020 15:51:05 Asia/Manila] PHP Notice:  Undefined index: startx in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19538
+[29-May-2020 15:51:05 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19541
+[29-May-2020 15:51:05 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[29-May-2020 15:51:05 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[29-May-2020 15:51:05 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[29-May-2020 15:51:05 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[29-May-2020 15:51:05 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19565
+[29-May-2020 15:51:05 Asia/Manila] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19594
+[29-May-2020 15:51:05 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19597
+[29-May-2020 15:51:05 Asia/Manila] PHP Notice:  Undefined index: old_cell_padding in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19807
+[29-May-2020 15:53:23 Asia/Manila] PHP Notice:  Undefined index: cols in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16534
+[29-May-2020 15:53:23 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16549
+[29-May-2020 15:53:23 Asia/Manila] PHP Notice:  Undefined index: rows in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16980
+[29-May-2020 15:53:23 Asia/Manila] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16982
+[29-May-2020 15:53:23 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16562
+[29-May-2020 15:53:23 Asia/Manila] PHP Notice:  Undefined index: startcolumn in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19537
+[29-May-2020 15:53:23 Asia/Manila] PHP Notice:  Undefined index: startx in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19538
+[29-May-2020 15:53:23 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19541
+[29-May-2020 15:53:23 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[29-May-2020 15:53:23 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[29-May-2020 15:53:23 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[29-May-2020 15:53:23 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[29-May-2020 15:53:23 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19565
+[29-May-2020 15:53:23 Asia/Manila] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19594
+[29-May-2020 15:53:23 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19597
+[29-May-2020 15:53:23 Asia/Manila] PHP Notice:  Undefined index: old_cell_padding in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19807
+[29-May-2020 23:05:21 Asia/Manila] PHP Notice:  Undefined index: cols in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16534
+[29-May-2020 23:05:21 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16549
+[29-May-2020 23:05:21 Asia/Manila] PHP Notice:  Undefined index: rows in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16980
+[29-May-2020 23:05:21 Asia/Manila] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16982
+[29-May-2020 23:05:21 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16562
+[29-May-2020 23:05:21 Asia/Manila] PHP Notice:  Undefined index: startcolumn in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19537
+[29-May-2020 23:05:21 Asia/Manila] PHP Notice:  Undefined index: startx in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19538
+[29-May-2020 23:05:21 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19541
+[29-May-2020 23:05:21 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[29-May-2020 23:05:21 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[29-May-2020 23:05:21 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[29-May-2020 23:05:21 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[29-May-2020 23:05:21 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19565
+[29-May-2020 23:05:21 Asia/Manila] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19594
+[29-May-2020 23:05:21 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19597
+[29-May-2020 23:05:21 Asia/Manila] PHP Notice:  Undefined index: old_cell_padding in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19807
+[29-May-2020 23:21:32 Asia/Manila] PHP Notice:  Undefined index: cols in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16534
+[29-May-2020 23:21:32 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16549
+[29-May-2020 23:21:32 Asia/Manila] PHP Notice:  Undefined index: rows in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16980
+[29-May-2020 23:21:32 Asia/Manila] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16982
+[29-May-2020 23:21:32 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16562
+[29-May-2020 23:21:32 Asia/Manila] PHP Notice:  Undefined index: startcolumn in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19537
+[29-May-2020 23:21:32 Asia/Manila] PHP Notice:  Undefined index: startx in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19538
+[29-May-2020 23:21:32 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19541
+[29-May-2020 23:21:32 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[29-May-2020 23:21:32 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[29-May-2020 23:21:32 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[29-May-2020 23:21:32 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[29-May-2020 23:21:32 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19565
+[29-May-2020 23:21:32 Asia/Manila] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19594
+[29-May-2020 23:21:32 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19597
+[29-May-2020 23:21:32 Asia/Manila] PHP Notice:  Undefined index: old_cell_padding in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19807
+[29-May-2020 23:23:18 Asia/Manila] PHP Notice:  Undefined index: cols in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16534
+[29-May-2020 23:23:18 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16549
+[29-May-2020 23:23:18 Asia/Manila] PHP Notice:  Undefined index: rows in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16980
+[29-May-2020 23:23:18 Asia/Manila] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16982
+[29-May-2020 23:23:18 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16562
+[29-May-2020 23:23:18 Asia/Manila] PHP Notice:  Undefined index: startcolumn in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19537
+[29-May-2020 23:23:18 Asia/Manila] PHP Notice:  Undefined index: startx in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19538
+[29-May-2020 23:23:18 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19541
+[29-May-2020 23:23:18 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[29-May-2020 23:23:18 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[29-May-2020 23:23:18 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[29-May-2020 23:23:18 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[29-May-2020 23:23:18 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19565
+[29-May-2020 23:23:18 Asia/Manila] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19594
+[29-May-2020 23:23:18 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19597
+[29-May-2020 23:23:18 Asia/Manila] PHP Notice:  Undefined index: old_cell_padding in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19807
+[29-May-2020 23:26:44 Asia/Manila] PHP Notice:  Undefined index: cols in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16534
+[29-May-2020 23:26:44 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16549
+[29-May-2020 23:26:44 Asia/Manila] PHP Notice:  Undefined index: rows in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16980
+[29-May-2020 23:26:44 Asia/Manila] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16982
+[29-May-2020 23:26:44 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16562
+[29-May-2020 23:26:44 Asia/Manila] PHP Notice:  Undefined index: startcolumn in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19537
+[29-May-2020 23:26:44 Asia/Manila] PHP Notice:  Undefined index: startx in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19538
+[29-May-2020 23:26:44 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19541
+[29-May-2020 23:26:44 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[29-May-2020 23:26:44 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[29-May-2020 23:26:44 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[29-May-2020 23:26:44 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[29-May-2020 23:26:44 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19565
+[29-May-2020 23:26:44 Asia/Manila] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19594
+[29-May-2020 23:26:44 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19597
+[29-May-2020 23:26:44 Asia/Manila] PHP Notice:  Undefined index: old_cell_padding in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19807
+[29-May-2020 23:44:08 Asia/Manila] PHP Notice:  Undefined index: cols in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16534
+[29-May-2020 23:44:08 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16549
+[29-May-2020 23:44:08 Asia/Manila] PHP Notice:  Undefined index: rows in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16980
+[29-May-2020 23:44:08 Asia/Manila] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16982
+[29-May-2020 23:44:08 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16562
+[29-May-2020 23:44:08 Asia/Manila] PHP Notice:  Undefined index: startcolumn in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19537
+[29-May-2020 23:44:08 Asia/Manila] PHP Notice:  Undefined index: startx in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19538
+[29-May-2020 23:44:08 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19541
+[29-May-2020 23:44:08 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[29-May-2020 23:44:08 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[29-May-2020 23:44:08 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[29-May-2020 23:44:08 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[29-May-2020 23:44:08 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19565
+[29-May-2020 23:44:08 Asia/Manila] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19594
+[29-May-2020 23:44:08 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19597
+[29-May-2020 23:44:08 Asia/Manila] PHP Notice:  Undefined index: old_cell_padding in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19807
+[30-May-2020 00:48:31 Asia/Manila] PHP Notice:  Undefined index: cols in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16534
+[30-May-2020 00:48:31 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16549
+[30-May-2020 00:48:31 Asia/Manila] PHP Notice:  Undefined index: rows in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16980
+[30-May-2020 00:48:31 Asia/Manila] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16982
+[30-May-2020 00:48:31 Asia/Manila] PHP Notice:  Undefined index: thead in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 16562
+[30-May-2020 00:48:31 Asia/Manila] PHP Notice:  Undefined index: startcolumn in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19537
+[30-May-2020 00:48:31 Asia/Manila] PHP Notice:  Undefined index: startx in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19538
+[30-May-2020 00:48:31 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19541
+[30-May-2020 00:48:31 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[30-May-2020 00:48:31 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19544
+[30-May-2020 00:48:31 Asia/Manila] PHP Notice:  Undefined index: startpage in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[30-May-2020 00:48:31 Asia/Manila] PHP Notice:  Undefined index:  in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19545
+[30-May-2020 00:48:31 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19565
+[30-May-2020 00:48:31 Asia/Manila] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19594
+[30-May-2020 00:48:31 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19597
+[30-May-2020 00:48:31 Asia/Manila] PHP Notice:  Undefined index: old_cell_padding in /home/ticketce/public_html/payso/payroll/Reports/PayrollReports/tcpdf_min/tcpdf.php on line 19807

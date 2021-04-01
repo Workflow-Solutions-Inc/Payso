@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>S : TABLE</title>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+	<link rel="stylesheet" type="text/css" href="css/typography.css" />
+	<link rel="stylesheet" type="text/css" href="css/custom.css" />
+	<script src="js/jquery.min.js"></script>
+
+</head>
+<body>
+
+
+	<!-- begin LEFTPANEL -->
+	<div id="leftpanel" class="leftpanel hidden-sm hidden-xs">
+		<div class="leftpanel-admin">
+			<div class="admin-icon"><img src="images/admin-icon.png"></div>
+			<div class="admin-text">
+				<div><b>Admin Name</b></div>
+				<div>Current Login / Date Time</div>
+			</div>
+		</div>
+		<ul class="leftpanel-nav">
+			<li><a href="#"><span class="fa fa-home fa-lg"></span> hyperlink 1</a></li>
+			<li><button><span class="fa fa-home fa-wrench fa-lg"></span> button 2</button></li>
+		</ul>
+		<ul class="leftpanel-nav leftpanel-dark">
+			<li><a href="#"><span class="fa fa-cog fa-lg"></span> hyperlink 1</a></li>
+			<li><a href="#"><span class="fa fa-home fa-lg"></span> hyperlink 2</a></li>
+			<li><a href="#"><span class="fa fa-home fa-lg"></span> hyperlink 3</a></li>
+		</ul>
+		<ul class="leftpanel-nav leftpanel-darker">
+			<li><button><span class="fa fa-home fa-lg"></span> button 1</button></li>
+			<li><button><span class="fa fa-home fa-lg"></span> button 2</button></li>
+			<li><button><span class="fa fa-home fa-lg"></span> button 3</button></li>
+		</ul>
+		<div class="leftpanel-min">
+			<span id="leftpanel-minimize-button" class="minimize fa fa-chevron-circle-left"></span>
+		</div>
+	</div>
+	<!-- end LEFTPANEL -->
+
+
+	<!-- begin LEFTPANEL BAR (MINI) -->
+	<div id="leftpanel-bar" class="leftpanel-bar">
+		<div class="leftpanel-max">
+			<span id="leftpanel-maximize-button" class="maximize fa fa-chevron-circle-right"></span>
+		</div>
+	</div>
+	<!-- end LEFTPANEL BAR (MINI) -->
+
+
+
+	<!-- begin MAINPANEL -->
+	<div id="mainpanel" class="mainpanel">
+
+		<!-- HEADER -->
+		<div class="header">
+			<div class="togglepos hidden-sm hidden-xs">
+				<button id="changeposition-6-button" class="btn"><span class="fa fa-columns fa-lg"></span></button>
+				<button id="changeposition-12-button" class="btn hide"><span class="fa fa-columns fa-lg fa-rotate-270"></span></button>
+			</div>
+
+			<div class="header-container">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 item active"><a href="#">
+							<span class="fa fa-list"></span> <span class="hidden-xs hidden-sm">Common Forms</span></a></div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 item"><a href="#">
+							<span class="fa fa-cog"></span> <span class="hidden-xs hidden-sm">Setup</span></a></div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 item"><a href="#">
+							<span class="fa fa-edit"></span> <span class="hidden-xs hidden-sm">Reports</span></a></div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 item"><a href="#">
+							<span class="fa fa-info"></span> <span class="hidden-xs hidden-sm">Inquiry</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="container-fluid">
+			<div class="row">
+				<!-- start TABLE AREA -->
+				<div id="tablearea1" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mainpanel-area">
+					<div class="mainpanel-table">
+						<!-- title & search -->
+						<div class="mainpanel-title">
+							
+							<form action="dosomething.php" target="_self">
+								<div class="mainpanel-sub-search">Search: <input type="text"> <input type="submit" value="Find"></div>
+							</form>
+
+							<div class="mainpanel-title-text"><span class="fa fa-archive"></span> Overview</div>
+						</div>
+						<div class="mainpanel-sub">
+							<!-- cmd -->
+							<div class="mainpanel-sub-cmd">
+								<a href=""><span class="fa fa-cog"></a>
+								<a href=""><span class="fa fa-cog"></a>
+								<a href=""><span class="fa fa-cog"></a>
+									|
+								<a href=""><span class="fa fa-cog"></a>
+								<a href=""><span class="fa fa-cog"></a>
+							</div>
+							<!-- nav -->
+							<div class="mainpanel-sub-nav">
+								<a href="#"><span class="fa fa-angle-double-left"></a>
+								<a href="#"><span class="fa fa-angle-left"></a>
+								<span> [ 1 of 10 ] </span>
+								<a href="#"><span class="fa fa-angle-right"></a>
+								<a href="#"><span class="fa fa-angle-double-right"></a>
+							</div>
+						</div>
+
+						<!-- table -->
+						<table width="100%" border="0">
+							<tr class="rowA">
+								<td><span class="fa fa-adjust"></span></td>
+								<td>dolor sit amet consectetur</td>
+								<td>adipisicing elit</td>
+							</tr>
+							<tr class="rowB rowactive">
+								<td><span class="fa fa-adjust"></span></td>
+								<td>dolor sit amet consectetur</td>
+								<td>adipisicing elit</td>
+							</tr>
+							<tr class="rowA">
+								<td><span class="fa fa-adjust"></span></td>
+								<td>dolor sit amet consectetur</td>
+								<td>adipisicing elit</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<!-- end TABLE AREA -->
+
+				<!-- start TABLE AREA -->
+				<div id="tablearea2" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mainpanel-area">
+					<div class="mainpanel-table">
+						<!-- title & search -->
+						<div class="mainpanel-title">
+							
+							<form action="dosomething.php" target="_self">
+								<div class="mainpanel-sub-search">Search: <input type="text"> <input type="submit" value="Find"></div>
+							</form>
+							
+							<div class="mainpanel-title-text"><span class="fa fa-archive"></span> Overview</div>
+						</div>
+						<div class="mainpanel-sub">
+							<!-- cmd -->
+							<div class="mainpanel-sub-cmd">
+								<a href=""><span class="fa fa-cog"></a>
+								<a href=""><span class="fa fa-cog"></a>
+								<a href=""><span class="fa fa-cog"></a>
+									|
+								<a href=""><span class="fa fa-cog"></a>
+								<a href=""><span class="fa fa-cog"></a>
+							</div>
+							<!-- nav -->
+							<div class="mainpanel-sub-nav">
+								<a href="#"><span class="fa fa-angle-double-left"></a>
+								<a href="#"><span class="fa fa-angle-left"></a>
+								<span> [ 1 of 10 ] </span>
+								<a href="#"><span class="fa fa-angle-right"></a>
+								<a href="#"><span class="fa fa-angle-double-right"></a>
+							</div>
+						</div>
+
+						<!-- table -->
+						<table width="100%" border="0">
+							<tr class="rowA">
+								<td class="tmp"><span class="fa fa-adjust"></span></td>
+								<td class="tmp">Lorem ipsum</td>
+								<td class="tmp">dolor sit amet consectetur</td>
+								<td class="tmp">adipisicing elit</td>
+							</tr>
+							<tr class="rowB">
+								<td class="tmp"><span class="fa fa-adjust"></span></td>
+								<td class="tmp">Lorem ipsum</td>
+								<td class="tmp">dolor sit amet consectetur</td>
+								<td class="tmp">adipisicing elit</td>
+							</tr>
+							<tr class="rowA">
+								<td class="tmp"><span class="fa fa-adjust"></span></td>
+								<td class="tmp">Lorem ipsum</td>
+								<td class="tmp">dolor sit amet consectetur</td>
+								<td class="tmp">adipisicing elit</td>
+							</tr>
+							<tr class="rowB">
+								<td class="tmp"><span class="fa fa-adjust"></span></td>
+								<td class="tmp">Lorem ipsum</td>
+								<td class="tmp">dolor sit amet consectetur</td>
+								<td class="tmp">adipisicing elit</td>
+							</tr>
+							<tr class="rowA">
+								<td class="tmp"><span class="fa fa-adjust"></span></td>
+								<td class="tmp">Lorem ipsum</td>
+								<td class="tmp">dolor sit amet consectetur</td>
+								<td class="tmp">adipisicing elit</td>
+							</tr>
+							<tr class="rowB">
+								<td class="tmp"><span class="fa fa-adjust"></span></td>
+								<td class="tmp">Lorem ipsum</td>
+								<td class="tmp">dolor sit amet consectetur</td>
+								<td class="tmp">adipisicing elit</td>
+							</tr>
+							<tr class="rowA">
+								<td class="tmp"><span class="fa fa-adjust"></span></td>
+								<td class="tmp">Lorem ipsum</td>
+								<td class="tmp">dolor sit amet consectetur</td>
+								<td class="tmp">adipisicing elit</td>
+							</tr>
+							<tr class="rowB">
+								<td class="tmp"><span class="fa fa-adjust"></span></td>
+								<td class="tmp">Lorem ipsum</td>
+								<td class="tmp">dolor sit amet consectetur</td>
+								<td class="tmp">adipisicing elit</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<!-- end TABLE AREA -->
+			</div>
+		</div>
+	</div>
+	<!-- end MAINPANEL -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- begin [JAVASCRIPT] -->
+	<script type="text/javascript" src="js/custom.js"></script>
+	<!-- end [JAVASCRIPT] -->
+
+</body>
+</html>

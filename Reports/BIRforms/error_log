@@ -1,0 +1,447 @@
+[16-May-2020 23:56:28 Asia/Manila] PHP Warning:  require_once(fpdi/src/autoload.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/2316form.php on line 54
+[16-May-2020 23:56:28 Asia/Manila] PHP Fatal error:  require_once(): Failed opening required 'fpdi/src/autoload.php' (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/2316form.php on line 54
+[16-May-2020 23:57:55 Asia/Manila] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\fpdi\src\autoload.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/2316form.php on line 54
+[16-May-2020 23:57:55 Asia/Manila] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\fpdi\src\autoload.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/2316form.php on line 54
+[16-May-2020 23:57:55 Asia/Manila] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\fpdi\src\autoload.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/2316form.php on line 54
+[16-May-2020 23:57:55 Asia/Manila] PHP Fatal error:  Uncaught Error: Class 'setasign\Fpdi\Fpdi' not found in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/2316form.php:182
+Stack trace:
+#0 {main}
+  thrown in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/2316form.php on line 182
+[16-May-2020 23:59:13 Asia/Manila] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms/fpdi/src/autoload.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/2316form.php on line 54
+[16-May-2020 23:59:13 Asia/Manila] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms/fpdi/src/autoload.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/2316form.php on line 54
+[16-May-2020 23:59:13 Asia/Manila] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms/fpdi/src/autoload.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/2316form.php on line 54
+[16-May-2020 23:59:13 Asia/Manila] PHP Fatal error:  Uncaught Error: Class 'setasign\Fpdi\Fpdi' not found in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/2316form.php:182
+Stack trace:
+#0 {main}
+  thrown in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/2316form.php on line 182
+[16-May-2020 16:03:16 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[16-May-2020 16:03:16 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[16-May-2020 16:03:16 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[16-May-2020 16:03:16 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[16-May-2020 16:03:16 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[16-May-2020 16:03:16 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[17-May-2020 00:03:17 Asia/Manila] PHP Fatal error:  Uncaught Error: Class 'PHPExcel_IOFactory' not found in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 7
+[16-May-2020 16:03:36 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[16-May-2020 16:03:36 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[16-May-2020 16:03:36 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[16-May-2020 16:03:36 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[16-May-2020 16:03:36 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[16-May-2020 16:03:36 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[17-May-2020 00:03:37 Asia/Manila] PHP Fatal error:  Uncaught Error: Class 'PHPExcel_IOFactory' not found in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 7
+[16-May-2020 16:05:16 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[16-May-2020 16:05:16 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[16-May-2020 16:05:16 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[16-May-2020 16:05:16 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[16-May-2020 16:05:16 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[16-May-2020 16:05:16 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[17-May-2020 00:05:17 Asia/Manila] PHP Fatal error:  Uncaught Error: Class 'PHPExcel_IOFactory' not found in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 8
+[16-May-2020 16:06:04 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[16-May-2020 16:06:04 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[16-May-2020 16:06:04 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[16-May-2020 16:06:04 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[16-May-2020 16:06:04 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[16-May-2020 16:06:04 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[17-May-2020 00:06:04 Asia/Manila] PHP Fatal error:  Uncaught Error: Class 'PHPExcel_IOFactory' not found in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 8
+[16-May-2020 16:06:31 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[16-May-2020 16:06:31 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[16-May-2020 16:06:31 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[16-May-2020 16:06:31 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[16-May-2020 16:06:31 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[16-May-2020 16:06:31 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[17-May-2020 00:06:31 Asia/Manila] PHP Fatal error:  Uncaught Error: Class 'PHPExcel_IOFactory' not found in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 8
+[16-May-2020 16:06:46 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[16-May-2020 16:06:46 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[16-May-2020 16:06:46 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[16-May-2020 16:06:46 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[16-May-2020 16:06:46 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[16-May-2020 16:06:46 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[17-May-2020 00:06:47 Asia/Manila] PHP Fatal error:  Uncaught Error: Class 'PHPExcel_IOFactory' not found in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 9
+[16-May-2020 16:07:13 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[16-May-2020 16:07:13 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[16-May-2020 16:07:13 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[16-May-2020 16:07:13 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[16-May-2020 16:07:13 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[16-May-2020 16:07:13 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[17-May-2020 00:07:14 Asia/Manila] PHP Fatal error:  Uncaught Error: Class 'PHPExcel_IOFactory' not found in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 9
+[16-May-2020 16:08:19 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[16-May-2020 16:08:19 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[16-May-2020 16:08:19 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[16-May-2020 16:08:19 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[16-May-2020 16:08:19 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[16-May-2020 16:08:19 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[17-May-2020 00:08:20 Asia/Manila] PHP Fatal error:  Uncaught Error: Class 'PHPExcel_IOFactory' not found in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 9
+[17-May-2020 00:20:16 Asia/Manila] PHP Notice:  ob_end_flush(): failed to delete and flush buffer. No buffer to delete or flush in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 93
+[17-May-2020 00:23:30 Asia/Manila] PHP Notice:  Undefined variable: mime in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 79
+[17-May-2020 00:26:07 Asia/Manila] PHP Fatal error:  Uncaught Error: Call to undefined function apache_setenv() in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 76
+[17-May-2020 00:27:05 Asia/Manila] PHP Warning:  readfile(/home/ticketce/public_html/payso/payroll/Reports/BIRforms1604NEW.xlsx): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 81
+[17-May-2020 00:27:56 Asia/Manila] PHP Warning:  readfile(/home/ticketce/public_html/payso/payroll/Reports/BIRforms1604NEW.xlsx): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 81
+[17-May-2020 00:34:15 Asia/Manila] PHP Warning:  filesize(): stat failed for somefile.xlsx in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 86
+[17-May-2020 00:34:15 Asia/Manila] PHP Warning:  readfile(somefile.xlsx): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 87
+[17-May-2020 00:38:16 Asia/Manila] PHP Notice:  ob_end_clean(): failed to delete buffer. No buffer to delete in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 88
+[17-May-2020 00:38:43 Asia/Manila] PHP Notice:  ob_end_clean(): failed to delete buffer. No buffer to delete in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 87
+[18-May-2020 11:57:49 Asia/Manila] PHP Notice:  Undefined offset: 9 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/Batch2316form.php on line 63
+[18-May-2020 11:57:49 Asia/Manila] PHP Notice:  Undefined offset: 10 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/Batch2316form.php on line 64
+[18-May-2020 11:57:49 Asia/Manila] PHP Notice:  Undefined offset: 11 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/Batch2316form.php on line 65
+[18-May-2020 11:57:50 Asia/Manila] PHP Notice:  Undefined offset: 11 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/Batch2316form.php on line 65
+[18-May-2020 11:57:50 Asia/Manila] PHP Notice:  Undefined offset: 11 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/Batch2316form.php on line 65
+[26-May-2020 11:40:38 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/2316form.php on line 94
+[26-May-2020 11:40:38 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/2316form.php on line 95
+[26-May-2020 11:40:38 Asia/Manila] PHP Notice:  Undefined offset: 3 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/2316form.php on line 96
+[26-May-2020 11:40:38 Asia/Manila] PHP Notice:  Undefined offset: 4 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/2316form.php on line 97
+[26-May-2020 11:40:38 Asia/Manila] PHP Notice:  Undefined offset: 5 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/2316form.php on line 98
+[26-May-2020 11:40:38 Asia/Manila] PHP Notice:  Undefined offset: 6 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/2316form.php on line 99
+[26-May-2020 11:40:38 Asia/Manila] PHP Notice:  Undefined offset: 7 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/2316form.php on line 100
+[26-May-2020 11:40:38 Asia/Manila] PHP Notice:  Undefined offset: 8 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/2316form.php on line 101
+[26-May-2020 11:40:38 Asia/Manila] PHP Notice:  Undefined offset: 9 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/2316form.php on line 102
+[26-May-2020 11:40:38 Asia/Manila] PHP Notice:  Undefined offset: 10 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/2316form.php on line 103
+[26-May-2020 11:40:38 Asia/Manila] PHP Notice:  Undefined offset: 11 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/2316form.php on line 104
+[29-May-2020 08:52:41 Asia/Manila] PHP Notice:  Undefined index: selectedyear in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-EQ.php on line 56
+[29-May-2020 08:52:41 Asia/Manila] PHP Notice:  Undefined index: selectedworker in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-EQ.php on line 57
+[29-May-2020 08:52:41 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-EQ.php on line 87
+[29-May-2020 08:52:41 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-EQ.php on line 88
+[29-May-2020 08:52:41 Asia/Manila] PHP Notice:  Undefined offset: 3 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-EQ.php on line 89
+[29-May-2020 08:52:41 Asia/Manila] PHP Notice:  Undefined offset: 4 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-EQ.php on line 90
+[29-May-2020 08:52:41 Asia/Manila] PHP Notice:  Undefined offset: 5 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-EQ.php on line 91
+[29-May-2020 08:52:41 Asia/Manila] PHP Notice:  Undefined offset: 6 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-EQ.php on line 92
+[29-May-2020 08:52:41 Asia/Manila] PHP Notice:  Undefined offset: 7 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-EQ.php on line 93
+[29-May-2020 08:52:41 Asia/Manila] PHP Notice:  Undefined offset: 8 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-EQ.php on line 94
+[29-May-2020 08:52:41 Asia/Manila] PHP Notice:  Undefined offset: 9 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-EQ.php on line 95
+[29-May-2020 08:52:41 Asia/Manila] PHP Notice:  Undefined offset: 10 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-EQ.php on line 96
+[29-May-2020 08:52:41 Asia/Manila] PHP Notice:  Undefined offset: 11 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-EQ.php on line 97
+[29-May-2020 08:52:41 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-EQ.php on line 105
+[29-May-2020 08:52:41 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-EQ.php on line 106
+[29-May-2020 08:52:41 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-EQ.php on line 112
+[29-May-2020 08:52:41 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-EQ.php on line 113
+[29-May-2020 08:52:41 Asia/Manila] PHP Notice:  Undefined offset: 3 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-EQ.php on line 114
+[29-May-2020 08:52:41 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-EQ.php on line 121
+[29-May-2020 08:52:41 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-EQ.php on line 122
+[29-May-2020 08:52:41 Asia/Manila] PHP Notice:  Undefined offset: 3 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-EQ.php on line 123
+[29-May-2020 08:52:41 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-EQ.php on line 131
+[29-May-2020 08:52:41 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-EQ.php on line 132
+[29-May-2020 08:52:41 Asia/Manila] PHP Notice:  Undefined offset: 3 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-EQ.php on line 133
+[29-May-2020 08:52:41 Asia/Manila] PHP Notice:  Undefined offset: 4 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-EQ.php on line 134
+[29-May-2020 08:52:41 Asia/Manila] PHP Notice:  Undefined offset: 5 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-EQ.php on line 135
+[29-May-2020 08:52:41 Asia/Manila] PHP Notice:  Undefined offset: 6 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-EQ.php on line 136
+[29-May-2020 08:52:41 Asia/Manila] PHP Notice:  Undefined offset: 7 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-EQ.php on line 137
+[29-May-2020 08:52:54 Asia/Manila] PHP Notice:  Undefined index: selectedyear in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 56
+[29-May-2020 08:52:54 Asia/Manila] PHP Notice:  Undefined index: selectedworker in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 57
+[29-May-2020 08:52:54 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 91
+[29-May-2020 08:52:54 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 92
+[29-May-2020 08:52:54 Asia/Manila] PHP Notice:  Undefined offset: 3 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 93
+[29-May-2020 08:52:54 Asia/Manila] PHP Notice:  Undefined offset: 4 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 94
+[29-May-2020 08:52:54 Asia/Manila] PHP Notice:  Undefined offset: 5 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 95
+[29-May-2020 08:52:54 Asia/Manila] PHP Notice:  Undefined offset: 6 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 96
+[29-May-2020 08:52:54 Asia/Manila] PHP Notice:  Undefined offset: 7 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 97
+[29-May-2020 08:52:54 Asia/Manila] PHP Notice:  Undefined offset: 8 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 98
+[29-May-2020 08:52:54 Asia/Manila] PHP Notice:  Undefined offset: 9 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 99
+[29-May-2020 08:52:54 Asia/Manila] PHP Notice:  Undefined offset: 10 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 100
+[29-May-2020 08:52:54 Asia/Manila] PHP Notice:  Undefined offset: 11 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 101
+[29-May-2020 08:52:54 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 109
+[29-May-2020 08:52:54 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 110
+[29-May-2020 08:52:54 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 116
+[29-May-2020 08:52:54 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 117
+[29-May-2020 08:52:54 Asia/Manila] PHP Notice:  Undefined offset: 3 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 118
+[29-May-2020 08:52:54 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 125
+[29-May-2020 08:52:54 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 126
+[29-May-2020 08:52:54 Asia/Manila] PHP Notice:  Undefined offset: 3 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 127
+[29-May-2020 08:52:54 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 140
+[29-May-2020 08:52:54 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 141
+[29-May-2020 08:52:54 Asia/Manila] PHP Notice:  Undefined offset: 3 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 142
+[29-May-2020 08:52:54 Asia/Manila] PHP Notice:  Undefined offset: 4 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 143
+[29-May-2020 08:52:54 Asia/Manila] PHP Notice:  Undefined offset: 5 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 144
+[29-May-2020 08:52:54 Asia/Manila] PHP Notice:  Undefined offset: 6 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 145
+[29-May-2020 08:52:54 Asia/Manila] PHP Notice:  Undefined offset: 7 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 146
+[29-May-2020 08:57:18 Asia/Manila] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-FQ.php:64
+Stack trace:
+#0 {main}
+  thrown in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601-FQ.php on line 64
+[29-May-2020 00:59:42 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 00:59:42 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 00:59:42 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 00:59:42 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 00:59:42 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 00:59:42 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 08:59:42 Asia/Manila] PHP Fatal error:  Uncaught Error: Class 'PHPExcel_IOFactory' not found in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 7
+[29-May-2020 01:04:57 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 01:04:57 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 01:04:57 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 01:04:57 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 01:04:57 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 01:04:57 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 09:04:58 Asia/Manila] PHP Fatal error:  Uncaught Error: Class 'PHPExcel_IOFactory' not found in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 7
+[29-May-2020 01:05:05 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 01:05:05 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 01:05:05 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 01:05:05 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 01:05:05 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 01:05:05 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 09:05:06 Asia/Manila] PHP Fatal error:  Uncaught Error: Class 'PHPExcel_IOFactory' not found in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 7
+[29-May-2020 01:06:02 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 01:06:02 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 01:06:02 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 01:06:02 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 01:06:02 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 01:06:02 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 09:06:03 Asia/Manila] PHP Fatal error:  Uncaught Error: Class 'PHPExcel_IOFactory' not found in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 7
+[29-May-2020 01:06:52 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 01:06:52 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 01:06:52 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 01:06:52 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 01:06:52 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 01:06:52 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 09:06:52 Asia/Manila] PHP Fatal error:  Uncaught Error: Class 'PHPExcel_IOFactory' not found in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 7
+[29-May-2020 01:06:55 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 01:06:55 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 01:06:55 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 01:06:55 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 01:06:55 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 01:06:55 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 09:06:56 Asia/Manila] PHP Fatal error:  Uncaught Error: Class 'PHPExcel_IOFactory' not found in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 7
+[29-May-2020 01:07:33 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 01:07:33 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 01:07:33 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 01:07:33 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 01:07:33 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 01:07:33 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 09:07:34 Asia/Manila] PHP Fatal error:  Uncaught Error: Class 'PHPExcel_IOFactory' not found in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 7
+[29-May-2020 01:07:35 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 01:07:35 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 01:07:35 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 01:07:35 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 01:07:35 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 01:07:35 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 09:07:35 Asia/Manila] PHP Fatal error:  Uncaught Error: Class 'PHPExcel_IOFactory' not found in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 7
+[29-May-2020 01:41:06 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 01:41:06 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 01:41:06 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 01:41:06 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 01:41:06 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 01:41:06 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 09:41:07 Asia/Manila] PHP Fatal error:  Uncaught Error: Class 'PHPExcel_IOFactory' not found in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 7
+[29-May-2020 09:42:59 Asia/Manila] PHP Notice:  Undefined index: selectedyear in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 56
+[29-May-2020 09:42:59 Asia/Manila] PHP Notice:  Undefined index: selectedworker in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 57
+[29-May-2020 09:43:00 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 94
+[29-May-2020 09:43:00 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 95
+[29-May-2020 09:43:00 Asia/Manila] PHP Notice:  Undefined offset: 3 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 96
+[29-May-2020 09:43:00 Asia/Manila] PHP Notice:  Undefined offset: 4 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 97
+[29-May-2020 09:43:00 Asia/Manila] PHP Notice:  Undefined offset: 5 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 98
+[29-May-2020 09:43:00 Asia/Manila] PHP Notice:  Undefined offset: 6 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 99
+[29-May-2020 09:43:00 Asia/Manila] PHP Notice:  Undefined offset: 7 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 100
+[29-May-2020 09:43:00 Asia/Manila] PHP Notice:  Undefined offset: 8 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 101
+[29-May-2020 09:43:00 Asia/Manila] PHP Notice:  Undefined offset: 9 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 102
+[29-May-2020 09:43:00 Asia/Manila] PHP Notice:  Undefined offset: 10 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 103
+[29-May-2020 09:43:00 Asia/Manila] PHP Notice:  Undefined offset: 11 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 104
+[29-May-2020 09:43:00 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 112
+[29-May-2020 09:43:00 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 113
+[29-May-2020 09:43:00 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 119
+[29-May-2020 09:43:00 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 120
+[29-May-2020 09:43:00 Asia/Manila] PHP Notice:  Undefined offset: 3 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 121
+[29-May-2020 09:43:00 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 128
+[29-May-2020 09:43:00 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 129
+[29-May-2020 09:43:00 Asia/Manila] PHP Notice:  Undefined offset: 3 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 130
+[29-May-2020 09:43:00 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 143
+[29-May-2020 09:43:00 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 144
+[29-May-2020 09:43:00 Asia/Manila] PHP Notice:  Undefined offset: 3 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 145
+[29-May-2020 09:43:00 Asia/Manila] PHP Notice:  Undefined offset: 4 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 146
+[29-May-2020 09:43:00 Asia/Manila] PHP Notice:  Undefined offset: 5 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 147
+[29-May-2020 09:43:00 Asia/Manila] PHP Notice:  Undefined offset: 6 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 148
+[29-May-2020 09:43:00 Asia/Manila] PHP Notice:  Undefined offset: 7 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 149
+[29-May-2020 08:00:11 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 08:00:11 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 08:00:11 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 08:00:11 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 08:00:11 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 08:00:11 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 16:00:12 Asia/Manila] PHP Fatal error:  Uncaught Error: Class 'PHPExcel_IOFactory' not found in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 7
+[29-May-2020 12:01:13 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 12:01:13 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 12:01:13 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 12:01:13 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 12:01:13 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 12:01:13 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 20:01:14 Asia/Manila] PHP Fatal error:  Uncaught Error: Class 'PHPExcel_IOFactory' not found in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 7
+[29-May-2020 12:01:55 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 12:01:55 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 12:01:55 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 12:01:55 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 12:01:55 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 12:01:55 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 20:01:55 Asia/Manila] PHP Fatal error:  Uncaught Error: Class 'PHPExcel_IOFactory' not found in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 7
+[29-May-2020 12:02:22 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 12:02:22 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 12:02:22 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 12:02:22 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 12:02:22 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 12:02:22 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 20:02:22 Asia/Manila] PHP Fatal error:  Uncaught Error: Class 'PHPExcel_IOFactory' not found in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 7
+[29-May-2020 12:05:43 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 12:05:43 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 12:05:43 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 12:05:43 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 12:05:43 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 12:05:43 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 20:05:44 Asia/Manila] PHP Fatal error:  Uncaught Error: Class 'PHPExcel_IOFactory' not found in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 7
+[29-May-2020 12:06:23 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 12:06:23 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 12:06:23 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel\IOFactory.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 3
+[29-May-2020 12:06:23 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 12:06:23 UTC] PHP Warning:  include(/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 12:06:23 UTC] PHP Warning:  include(): Failed opening '/home/ticketce/public_html/payso/payroll/Reports/BIRforms\PHPExcel\Classes\PHPExcel.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 4
+[29-May-2020 20:06:23 Asia/Manila] PHP Fatal error:  Uncaught Error: Class 'PHPExcel_IOFactory' not found in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 7
+[29-May-2020 20:08:25 Asia/Manila] PHP Warning:  readfile(../payroll/Reports/BIRforms/1604NEW.xlsx): failed to open stream: No such file or directory in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/alphalist.php on line 100
+[29-May-2020 20:27:06 Asia/Manila] PHP Notice:  Undefined index: selectedyear in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 56
+[29-May-2020 20:27:06 Asia/Manila] PHP Notice:  Undefined index: selectedworker in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 57
+[29-May-2020 20:27:06 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 94
+[29-May-2020 20:27:06 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 95
+[29-May-2020 20:27:06 Asia/Manila] PHP Notice:  Undefined offset: 3 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 96
+[29-May-2020 20:27:06 Asia/Manila] PHP Notice:  Undefined offset: 4 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 97
+[29-May-2020 20:27:06 Asia/Manila] PHP Notice:  Undefined offset: 5 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 98
+[29-May-2020 20:27:06 Asia/Manila] PHP Notice:  Undefined offset: 6 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 99
+[29-May-2020 20:27:06 Asia/Manila] PHP Notice:  Undefined offset: 7 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 100
+[29-May-2020 20:27:06 Asia/Manila] PHP Notice:  Undefined offset: 8 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 101
+[29-May-2020 20:27:06 Asia/Manila] PHP Notice:  Undefined offset: 9 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 102
+[29-May-2020 20:27:06 Asia/Manila] PHP Notice:  Undefined offset: 10 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 103
+[29-May-2020 20:27:06 Asia/Manila] PHP Notice:  Undefined offset: 11 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 104
+[29-May-2020 20:27:06 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 112
+[29-May-2020 20:27:06 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 113
+[29-May-2020 20:27:06 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 119
+[29-May-2020 20:27:06 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 120
+[29-May-2020 20:27:06 Asia/Manila] PHP Notice:  Undefined offset: 3 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 121
+[29-May-2020 20:27:06 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 128
+[29-May-2020 20:27:06 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 129
+[29-May-2020 20:27:06 Asia/Manila] PHP Notice:  Undefined offset: 3 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 130
+[29-May-2020 20:27:06 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 143
+[29-May-2020 20:27:06 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 144
+[29-May-2020 20:27:06 Asia/Manila] PHP Notice:  Undefined offset: 3 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 145
+[29-May-2020 20:27:06 Asia/Manila] PHP Notice:  Undefined offset: 4 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 146
+[29-May-2020 20:27:06 Asia/Manila] PHP Notice:  Undefined offset: 5 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 147
+[29-May-2020 20:27:06 Asia/Manila] PHP Notice:  Undefined offset: 6 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 148
+[29-May-2020 20:27:06 Asia/Manila] PHP Notice:  Undefined offset: 7 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 149
+[29-May-2020 20:28:00 Asia/Manila] PHP Notice:  Undefined index: selectedyear in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 56
+[29-May-2020 20:28:00 Asia/Manila] PHP Notice:  Undefined index: selectedworker in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 57
+[29-May-2020 20:28:00 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 94
+[29-May-2020 20:28:00 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 95
+[29-May-2020 20:28:00 Asia/Manila] PHP Notice:  Undefined offset: 3 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 96
+[29-May-2020 20:28:00 Asia/Manila] PHP Notice:  Undefined offset: 4 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 97
+[29-May-2020 20:28:00 Asia/Manila] PHP Notice:  Undefined offset: 5 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 98
+[29-May-2020 20:28:00 Asia/Manila] PHP Notice:  Undefined offset: 6 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 99
+[29-May-2020 20:28:00 Asia/Manila] PHP Notice:  Undefined offset: 7 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 100
+[29-May-2020 20:28:00 Asia/Manila] PHP Notice:  Undefined offset: 8 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 101
+[29-May-2020 20:28:00 Asia/Manila] PHP Notice:  Undefined offset: 9 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 102
+[29-May-2020 20:28:00 Asia/Manila] PHP Notice:  Undefined offset: 10 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 103
+[29-May-2020 20:28:00 Asia/Manila] PHP Notice:  Undefined offset: 11 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 104
+[29-May-2020 20:28:00 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 112
+[29-May-2020 20:28:00 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 113
+[29-May-2020 20:28:00 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 119
+[29-May-2020 20:28:00 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 120
+[29-May-2020 20:28:00 Asia/Manila] PHP Notice:  Undefined offset: 3 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 121
+[29-May-2020 20:28:00 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 128
+[29-May-2020 20:28:00 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 129
+[29-May-2020 20:28:00 Asia/Manila] PHP Notice:  Undefined offset: 3 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 130
+[29-May-2020 20:28:00 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 143
+[29-May-2020 20:28:00 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 144
+[29-May-2020 20:28:00 Asia/Manila] PHP Notice:  Undefined offset: 3 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 145
+[29-May-2020 20:28:00 Asia/Manila] PHP Notice:  Undefined offset: 4 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 146
+[29-May-2020 20:28:00 Asia/Manila] PHP Notice:  Undefined offset: 5 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 147
+[29-May-2020 20:28:00 Asia/Manila] PHP Notice:  Undefined offset: 6 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 148
+[29-May-2020 20:28:00 Asia/Manila] PHP Notice:  Undefined offset: 7 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 149
+[29-May-2020 23:43:02 Asia/Manila] PHP Notice:  Undefined index: selectedyear in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 56
+[29-May-2020 23:43:02 Asia/Manila] PHP Notice:  Undefined index: selectedworker in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 57
+[29-May-2020 23:43:02 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 94
+[29-May-2020 23:43:02 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 95
+[29-May-2020 23:43:02 Asia/Manila] PHP Notice:  Undefined offset: 3 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 96
+[29-May-2020 23:43:02 Asia/Manila] PHP Notice:  Undefined offset: 4 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 97
+[29-May-2020 23:43:02 Asia/Manila] PHP Notice:  Undefined offset: 5 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 98
+[29-May-2020 23:43:02 Asia/Manila] PHP Notice:  Undefined offset: 6 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 99
+[29-May-2020 23:43:02 Asia/Manila] PHP Notice:  Undefined offset: 7 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 100
+[29-May-2020 23:43:02 Asia/Manila] PHP Notice:  Undefined offset: 8 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 101
+[29-May-2020 23:43:02 Asia/Manila] PHP Notice:  Undefined offset: 9 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 102
+[29-May-2020 23:43:02 Asia/Manila] PHP Notice:  Undefined offset: 10 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 103
+[29-May-2020 23:43:02 Asia/Manila] PHP Notice:  Undefined offset: 11 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 104
+[29-May-2020 23:43:02 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 112
+[29-May-2020 23:43:02 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 113
+[29-May-2020 23:43:02 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 119
+[29-May-2020 23:43:02 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 120
+[29-May-2020 23:43:02 Asia/Manila] PHP Notice:  Undefined offset: 3 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 121
+[29-May-2020 23:43:02 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 128
+[29-May-2020 23:43:02 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 129
+[29-May-2020 23:43:02 Asia/Manila] PHP Notice:  Undefined offset: 3 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 130
+[29-May-2020 23:43:02 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 143
+[29-May-2020 23:43:02 Asia/Manila] PHP Notice:  Undefined offset: 2 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 144
+[29-May-2020 23:43:02 Asia/Manila] PHP Notice:  Undefined offset: 3 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 145
+[29-May-2020 23:43:02 Asia/Manila] PHP Notice:  Undefined offset: 4 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 146
+[29-May-2020 23:43:02 Asia/Manila] PHP Notice:  Undefined offset: 5 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 147
+[29-May-2020 23:43:02 Asia/Manila] PHP Notice:  Undefined offset: 6 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 148
+[29-May-2020 23:43:02 Asia/Manila] PHP Notice:  Undefined offset: 7 in /home/ticketce/public_html/payso/payroll/Reports/BIRforms/1601C.php on line 149
