@@ -105,8 +105,9 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 										<td style="width:5%;">UM</td>
 										<td style="width:7.5%;">Account Type</td>
 										<td style="width:7.5%;">Category</td>
-										<td style="width:30%;">Formula</td>
+										<td style="width:23%;">Formula</td>
 										<td style="width:5%;">Values</td>
+										<td style="width:7%;">Group</td>
 										<td style="width: 17px;" class="text-center"><span class="fas fa-arrows-alt-v"></span></td>
 									</tr>
 									<tr class="rowsearch">
@@ -273,6 +274,7 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 										</datalist>
 									  </td>
 									  <td><span></span></td>
+									  <td><span></span></td>
 									</tr>
 								</thead>
 								<tbody id="result">
@@ -292,7 +294,11 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 														end as category,
 														formula,
 														format(defaultvalue,2) defaultvalue,
-														priority
+														priority,
+														case when payrollgroup = 0 then 'Weekly'
+															when payrollgroup = 1 then 'Semi-Monthly'
+															when payrollgroup = 2 then 'Both'
+														end as payrollgroup
 														FROM accounts
 														where dataareaid = '$dataareaid'
 														order by priority asc";
@@ -321,9 +327,9 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 											<td style="width:5%;"><?php echo $row['um'];?></td>
 											<td style="width:7.5%;"><?php echo $row['accounttype'];?></td>
 											<td style="width:7.5%;"><?php echo $row['category'];?></td>
-											<td style="width:30%;"><?php echo $row['formula'];?></td>
+											<td style="width:23%;"><?php echo $row['formula'];?></td>
 											<td style="width:5%;"><?php echo $row['defaultvalue'];?></td>
-											
+											<td style="width:7%;"><?php echo $row['payrollgroup'];?></td>
 											<?php $lastrec = $row['priority'];?>
 											<!--<td style="width:50%;"><input type='password' value='" . $row["password"]."'readonly='readonly'></td>-->
 										</tr>
@@ -407,6 +413,15 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 
 							<label>Default Value:</label>
 							<input type="text" value="0.00" name ="AccVal" placeholder="Default Value" id="add-value" class="modal-textarea">
+
+							<label>Group:</label>
+							<select value="" placeholder="Payroll Group" name ="PayGrp" id="add-paygrp" class="modal-textarea" style="width:100%;height: 28px;" required="required">
+									<option value=""></option>
+									<option value="0">Weekly</option>
+									<option value="1">Semi-Monthly</option>
+									<option value="2">Both</option>
+							</select>
+
 							<input type="hidden" value="<?php echo $lastrec+1;?>" name ="AccLast" placeholder="Default Value" id="add-value" class="modal-textarea">
 							<input type="hidden" name ="AccInc" id="inchide" value="" class="modal-textarea">
 						</div>
@@ -440,6 +455,7 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 		var locAccCat;
 		var locAccFormula;
 		var locAccVal;
+		var locPayGroup;
   		$(document).ready(function(){
 			$('#datatbl tbody tr').click(function(){
 				//$('table tbody tr').css('background-color','');
@@ -457,6 +473,7 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 				locAccCat = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(7)").text();
 				locAccFormula = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(8)").text();
 				locAccVal = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(9)").text();
+				locPayGroup = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(10)").text();
 				inc = AcInc.toString();
 				so = usernum.toString();
 				document.getElementById("hide").value = so;				  
@@ -523,6 +540,7 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 			var ck = false;
 			var typeval;
 			var catval;
+			var pygrp;
 			if(so != '') {
 			    modal.style.display = "block";
 			    $("#add-code").prop('readonly', true);
@@ -560,6 +578,22 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 			    {
 			    	catval = 1;
 			    }
+			    
+				 if(locPayGroup.toString() == "Weekly")
+			    {
+			    	pygrp = 0;
+			    }
+			    else if(locPayGroup.toString() == "Semi-Monthly")
+			    {
+			    	pygrp = 1;
+			    }
+			    else
+			    {
+			    	pygrp = 2;
+			    }
+
+			    
+			   
 			    document.getElementById("inchide").value = inc;
 				document.getElementById("add-include").checked = ck;
 				document.getElementById("add-code").value = so;
@@ -568,6 +602,7 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 				document.getElementById("add-um").value = locAccUm;
 				document.getElementById("add-type").value = typeval;
 				document.getElementById("add-category").value = catval;
+				document.getElementById("add-paygrp").value = pygrp;
 			    document.getElementById("addbt").style.visibility = "hidden";
 			    document.getElementById("upbt").style.visibility = "visible";
 			}
@@ -690,29 +725,6 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 							//document.getElementById("hide").value = '';
 							//$("#"+HL+"").removeClass("info");
 							//alert(so);
-
-							$(document).ready(function(){
-							$('#datatbl tbody tr').click(function(){
-								//$('table tbody tr').css('background-color','');
-								//$(this).css('background-color','#ffe6cb');
-								$('table tbody tr').css("color","black");
-								$(this).css("color","red");
-								$('table tbody tr').removeClass("info");
-								$(this).addClass("info");
-								var usernum = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(2)").text();
-								var AcInc = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(1)").text();
-								locAccName = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(3)").text();
-								locAccLabel = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(4)").text();
-								locAccUm = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(5)").text();
-								locAccType = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(6)").text();
-								locAccCat = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(7)").text();
-								locAccFormula = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(8)").text();
-								locAccVal = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(9)").text();
-								inc = AcInc.toString();
-								so = usernum.toString();
-								document.getElementById("hide").value = so;				  
-							});
-						});
 				}
 			}); 
 			 
@@ -870,40 +882,8 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 								
 							},
 							success: function(data){
-							$('#result').html(data);
-							HL = document.getElementById("hide").value;
-							$(document).ready(function() {
-								var pos = $("#"+HL+"").attr("tabindex");
-							    $("tr[tabindex="+pos+"]").focus();
-							    $("tr[tabindex="+pos+"]").css("color","red");
-							    $("tr[tabindex="+pos+"]").addClass("info");   
-							    //var idx = $("tr:focus").attr("tabindex");
-							    //alert(idx);
-							    //document.onkeydown = checkKey;
-							});	
-								$(document).ready(function(){
-								$('#datatbl tbody tr').click(function(){
-									//$('table tbody tr').css('background-color','');
-									//$(this).css('background-color','#ffe6cb');
-									$('table tbody tr').css("color","black");
-									$(this).css("color","red");
-									$('table tbody tr').removeClass("info");
-									$(this).addClass("info");
-									var usernum = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(2)").text();
-									var AcInc = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(1)").text();
-									locAccName = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(3)").text();
-									locAccLabel = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(4)").text();
-									locAccUm = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(5)").text();
-									locAccType = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(6)").text();
-									locAccCat = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(7)").text();
-									locAccFormula = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(8)").text();
-									locAccVal = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(9)").text();
-									inc = AcInc.toString();
-									so = usernum.toString();
-									document.getElementById("hide").value = so;				  
-								});
-							});				
-						}
+							$('#result').html(data);					
+							}
 					}); 
 				/*}
 				else 
@@ -937,38 +917,6 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 							},
 							success: function(data){
 							$('#result').html(data);
-							HL = document.getElementById("hide").value;
-							$(document).ready(function() {
-								var pos = $("#"+HL+"").attr("tabindex");
-							    $("tr[tabindex="+pos+"]").focus();
-							    $("tr[tabindex="+pos+"]").css("color","red");
-							    $("tr[tabindex="+pos+"]").addClass("info");   
-							    //var idx = $("tr:focus").attr("tabindex");
-							    //alert(idx);
-							    //document.onkeydown = checkKey;
-							});	
-								$(document).ready(function(){
-								$('#datatbl tbody tr').click(function(){
-									//$('table tbody tr').css('background-color','');
-									//$(this).css('background-color','#ffe6cb');
-									$('table tbody tr').css("color","black");
-									$(this).css("color","red");
-									$('table tbody tr').removeClass("info");
-									$(this).addClass("info");
-									var usernum = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(2)").text();
-									var AcInc = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(1)").text();
-									locAccName = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(3)").text();
-									locAccLabel = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(4)").text();
-									locAccUm = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(5)").text();
-									locAccType = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(6)").text();
-									locAccCat = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(7)").text();
-									locAccFormula = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(8)").text();
-									locAccVal = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(9)").text();
-									inc = AcInc.toString();
-									so = usernum.toString();
-									document.getElementById("hide").value = so;				  
-								});
-							});
 							//$('#conttables').html(data);
 							//location.reload();					
 							}

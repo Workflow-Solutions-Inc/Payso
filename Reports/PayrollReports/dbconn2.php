@@ -56,12 +56,12 @@ $dbname="skpc_mgxpaysys_2016_dev";*/
 
 //live database
 
-$host="newsoftcloud-t3medium-asia-hk.cxhly8drtukq.ap-east-1.rds.amazonaws.com";
+$host="156.67.217.132";
 $port=3306;
 $socket="";
-$user="rootmaster";
-$password="newsoft2019";
-$dbname="std_payso_live";
+$user="wfsiadmin";
+$password="wfsi2021admin";
+$dbname="Demo_payso_test";
 
 
 $conn = new mysqli($host, $user, $password, $dbname, $port, $socket)

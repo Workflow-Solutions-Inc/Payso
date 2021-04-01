@@ -64,12 +64,12 @@ $password="newsoft2019";
 $dbname="pcc_paysys_dev3";*/
 
 /* Hostinger */
-$host="151.106.114.6";
+$host="156.67.217.132";
 $port=3306;
 $socket="";
-$user="u481683305_DEVUSER";
-$password="Dynamics1056";
-$dbname="u481683305_paysodev";
+$user="wfsiadmin";
+$password="wfsi2021admin";
+$dbname="Demo_payso_test";
 /* Hostinger */
 
 

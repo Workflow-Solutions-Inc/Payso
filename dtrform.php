@@ -722,6 +722,10 @@ $firstresult = '';
 								<input type="time" value="00:00" placeholder="start time" name ="starttime" id="add-starttime" class="modal-textarea" required="required">
 								<label>End Time:</label>
 								<input type="time" value="00:00" placeholder="end time" name ="endtime" id="add-endtime" class="modal-textarea" required="required">	
+								<label>Break Out:</label>
+								<input type="time" value="12:00" placeholder="bout" name ="breakout" id="add-breakout" class="modal-textarea" required="required">
+								<label>Break In:</label>
+								<input type="time" value="13:00" placeholder="bin" name ="breakin" id="add-breakin" class="modal-textarea" required="required">	
 							</div>
 						</div>
 
@@ -1117,6 +1121,8 @@ $firstresult = '';
 
 			    document.getElementById("add-starttime").value = stimer;
 				document.getElementById("add-endtime").value = etimer;
+				document.getElementById("add-breakout").value = bkout.toString();
+				document.getElementById("add-breakin").value = bkin.toString();
 			}
 			else 
 			{
@@ -1351,6 +1357,8 @@ $firstresult = '';
 			
 			var starttime = $('#add-starttime').val();
 			var endtime = $('#add-endtime').val();
+			var breakout = $('#add-breakout').val();
+			var breakin = $('#add-breakin').val();
 			
 			var action = "update";
 			var actionmode = "userform";
@@ -1360,7 +1368,7 @@ $firstresult = '';
 							type: 'GET',
 							url: 'dtrformprocess.php',
 							//data:'action=save&actmode=userform&userno='+UId.value+'&pass='+UPass.value+'&lname='+NM.value+'&darea='+DT.value,
-							data:{action:action, actmode:actionmode, starttime:starttime, endtime:endtime, locDate:locDate},
+							data:{action:action, actmode:actionmode, starttime:starttime, endtime:endtime, breakout:breakout, breakin:breakin, locDate:locDate},
 							beforeSend:function(){
 									
 							$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');

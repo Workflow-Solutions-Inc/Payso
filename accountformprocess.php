@@ -16,11 +16,11 @@ if(isset($_GET["save"])) {
 	$acccat=$_GET["AccCat"];
 	$accval=$_GET["AccVal"];
 	$last=$_GET["AccLast"];
-	 
+	$paygroup=$_GET["PayGrp"];
 	 if($id != ""){
-	 $sql = "INSERT INTO accounts (autoinclude,accountcode,name,label,um,accounttype,category,defaultvalue,priority,dataareaid,createdby,createddatetime)
+	 $sql = "INSERT INTO accounts (autoinclude,accountcode,name,label,um,accounttype,category,defaultvalue,priority,payrollgroup,dataareaid,createdby,createddatetime)
 			values 
-			('$accinc', '$id', '$accname', '$acclabel', '$accum', '$acctype', '$acccat', '$accval', '$last', '$dataareaid', '$userlogin', now())";
+			('$accinc', '$id', '$accname', '$acclabel', '$accum', '$acctype', '$acccat', '$accval', '$last', '$paygroup', '$dataareaid', '$userlogin', now())";
 		if(mysqli_query($conn,$sql))
 		{
 			echo "New Rec Created";
@@ -45,7 +45,7 @@ else if(isset($_GET["update"])) {
 	$acctype=$_GET["AccType"];
 	$acccat=$_GET["AccCat"];
 	$accval=$_GET["AccVal"];
-	 
+	$paygroup=$_GET["PayGrp"];
 	 if($id != ""){
 	 $sql = "UPDATE accounts SET
 				accountcode = '$id',
@@ -56,6 +56,7 @@ else if(isset($_GET["update"])) {
 				category = '$acccat',
 				defaultvalue = '$accval',
 				autoinclude = '$accinc',
+				payrollgroup = '$paygroup',
 				modifiedby = '$userlogin',
 				modifieddatetime = now()
 				WHERE accountcode = '$id' AND dataareaid = '$dataareaid'";
@@ -121,7 +122,12 @@ else if($_GET["action"]=="searchdata"){
 					else 'Header' 
 					end as category,
 					formula,
-					format(defaultvalue,2) defaultvalue
+					format(defaultvalue,2) defaultvalue,
+					priority,
+					case when payrollgroup = 0 then 'Weekly'
+						when payrollgroup = 1 then 'Semi-Monthly'
+						when payrollgroup = 2 then 'Both'
+					end as payrollgroup
 			FROM accounts where (accountcode like '%$id%') and (name like '%$accname%') 
 			and (label like '%$acclabel%') and (um like '%$accum%') and dataareaid = '$dataareaid'
 			order by priority asc";
@@ -145,8 +151,9 @@ else if($_GET["action"]=="searchdata"){
 				<td style="width:5%;">'.$row["um"].'</td>
 				<td style="width:7.5%;">'.$row["accounttype"].'</td>
 				<td style="width:7.5%;">'.$row["category"].'</td>
-				<td style="width:30%;">'.$row["formula"].'</td>
+				<td style="width:23%;">'.$row["formula"].'</td>
 				<td style="width:5%;">'.$row["defaultvalue"].'</td>
+				<td style="width:7%;">'.$row["payrollgroup"].'</td>
 			</tr>';
 			$firstresult2 = $row["accountcode"];
 		}
@@ -218,7 +225,11 @@ else if($_GET["action"]=="moveup"){
 								end as category,
 								formula,
 								format(defaultvalue,2) defaultvalue,
-								priority
+								priority,
+								case when payrollgroup = 0 then 'Weekly'
+									when payrollgroup = 1 then 'Semi-Monthly'
+									when payrollgroup = 2 then 'Both'
+								end as payrollgroup
 								FROM accounts
 								where dataareaid = '$dataareaid'
 								order by priority asc";
@@ -242,8 +253,9 @@ else if($_GET["action"]=="moveup"){
 						<td style="width:5%;">'.$row["um"].'</td>
 						<td style="width:7.5%;">'.$row["accounttype"].'</td>
 						<td style="width:7.5%;">'.$row["category"].'</td>
-						<td style="width:30%;">'.$row["formula"].'</td>
+						<td style="width:23%;">'.$row["formula"].'</td>
 						<td style="width:5%;">'.$row["defaultvalue"].'</td>
+						<td style="width:7%;">'.$row["payrollgroup"].'</td>
 					</tr>';
 				}
 				//$output .= '</tbody>';
@@ -318,7 +330,11 @@ else if($_GET["action"]=="movedown"){
 								end as category,
 								formula,
 								format(defaultvalue,2) defaultvalue,
-								priority
+								priority,
+								case when payrollgroup = 0 then 'Weekly'
+									when payrollgroup = 1 then 'Semi-Monthly'
+									when payrollgroup = 2 then 'Both'
+								end as payrollgroup
 								FROM accounts
 								where dataareaid = '$dataareaid'
 								order by priority asc";
@@ -341,8 +357,9 @@ else if($_GET["action"]=="movedown"){
 						<td style="width:5%;">'.$row["um"].'</td>
 						<td style="width:7.5%;">'.$row["accounttype"].'</td>
 						<td style="width:7.5%;">'.$row["category"].'</td>
-						<td style="width:30%;">'.$row["formula"].'</td>
+						<td style="width:23%;">'.$row["formula"].'</td>
 						<td style="width:5%;">'.$row["defaultvalue"].'</td>
+						<td style="width:7%;">'.$row["payrollgroup"].'</td>
 					</tr>';
 				}
 				//$output .= '</tbody>';
@@ -407,25 +424,41 @@ else if($_GET["action"]=="UpdateFormula"){
 }
 ?>
 
-<!-- <script  type="text/javascript">
+<script  type="text/javascript">
 		var so='';
 	  	var inc='';
 	  	var HL='';
-	  	
-	$(document).ready(function(){
-		$('#datatbl tbody tr').click(function(){
-			$('table tbody tr').css("color","black");
-			$(this).css("color","red");
-			$('table tbody tr').removeClass("info");
-			$(this).addClass("info");
-			var usernum = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(2)").text();
-			var AcInc = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(1)").text();
-			inc = AcInc.toString();
-			so = usernum.toString();
-			document.getElementById("hide").value = so;		
-					  
+		var locAccName;
+		var locAccLabel;
+		var locAccUm;
+		var locAccType;
+		var locAccCat;
+		var locAccFormula;
+		var locAccVal;
+		var locPayGroup;
+  		$(document).ready(function(){
+			$('#datatbl tbody tr').click(function(){
+				//$('table tbody tr').css('background-color','');
+				//$(this).css('background-color','#ffe6cb');
+				$('table tbody tr').css("color","black");
+				$(this).css("color","red");
+				$('table tbody tr').removeClass("info");
+				$(this).addClass("info");
+				var usernum = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(2)").text();
+				var AcInc = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(1)").text();
+				locAccName = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(3)").text();
+				locAccLabel = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(4)").text();
+				locAccUm = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(5)").text();
+				locAccType = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(6)").text();
+				locAccCat = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(7)").text();
+				locAccFormula = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(8)").text();
+				locAccVal = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(9)").text();
+				locPayGroup = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(10)").text();
+				inc = AcInc.toString();
+				so = usernum.toString();
+				document.getElementById("hide").value = so;				  
+			});
 		});
-	});
 		
   		
 		HL = document.getElementById("hide").value;
@@ -465,4 +498,4 @@ else if($_GET["action"]=="UpdateFormula"){
 
 		}
 
-</script> -->
+</script>

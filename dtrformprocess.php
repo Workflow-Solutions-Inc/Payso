@@ -874,12 +874,16 @@ else if($_GET["action"]=="update") {
 	 $timein=$_GET["starttime"];
 	 $timeout=$_GET["endtime"];
 	 $date=$_GET["locDate"];
+	 $breakout=$_GET["breakout"];
+	 $breakin=$_GET["breakin"];
 	 
 	 
 	 if($timein != ""){
 	 $sql = "UPDATE dailytimerecorddetail SET
 				timein = concat(date_format(date, '%Y-%m-%d'),' ',TIME_FORMAT('$timein', '%H:%i')),
 				timeout = concat(date_format(date, '%Y-%m-%d'),' ',TIME_FORMAT('$timeout', '%H:%i')),
+				breakout = concat(date_format(date, '%Y-%m-%d'),' ',TIME_FORMAT('$breakout', '%H:%i')),
+				breakin = concat(date_format(date, '%Y-%m-%d'),' ',TIME_FORMAT('$breakin', '%H:%i')),
 				modifiedby = '$userlogin',
 				modifieddatetime = now()
 				where dataareaid = '$dataareaid' and workerid = '$wkid' and date = '$date' and payrollperiod = '$payrollperiod'";
@@ -887,7 +891,7 @@ else if($_GET["action"]=="update") {
 		{
 			echo $sql;
 		
-			$PayPerquery = "SELECT 
+			/*$PayPerquery = "SELECT 
 						date_format(startdate, '%Y-%m-%d') startdate,
 						date_format(enddate, '%Y-%m-%d') enddate,
 						period
@@ -909,7 +913,7 @@ else if($_GET["action"]=="update") {
 				else
 				{
 					echo "error".$sqlgenerate."<br>".$conn->error;
-				}
+				}*/
 
 
 

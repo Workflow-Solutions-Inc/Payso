@@ -219,9 +219,9 @@ else if($_GET["action"]=="updatesched"){
                         a.endtime = case when '$endtime' <= CONVERT('06:00:00', TIME) and '$endtime' >= CONVERT('00:00:00', TIME) 
                         then concat(DATE_ADD(b.date, INTERVAL 1 day),' ','$endtime') else concat(b.date,' ','$endtime') end, 
                         a.daytype = case when b.DayType = 'Weekend' then 'Regular' else b.daytype end,
-                        a.breakout = concat(date,' ','$breakout'),
+                        a.breakout = concat(b.date,' ','$breakout'),
                         a.breakin = case when '$breakin' <= CONVERT('06:00:00', TIME) and '18:00:00' >= CONVERT('00:00:00', TIME)  
-		                then concat(DATE_ADD(date, INTERVAL 1 day),' ','$breakin') else concat(date,' ','$breakin') end 
+		                then concat(DATE_ADD(b.date, INTERVAL 1 day),' ','$breakin') else concat(b.date,' ','$breakin') end 
 
                         where a.workerid =  '$userid' and a.date between cast('$frdate' as date) and cast('$todate' as date)";
 
@@ -234,8 +234,8 @@ else if($_GET["action"]=="updatesched"){
 						echo "error ".$query."<br>".$conn->error;
 					}
 				}
-
-				$wkquery = "SELECT * FROM worker where workerid in ($id)";
+				echo $query;
+				/*$wkquery = "SELECT * FROM worker where workerid in ($id)";
 				$wkresult = $conn->query($wkquery);
 
 				while ($wkrow = $wkresult->fetch_assoc())
@@ -304,11 +304,11 @@ else if($_GET["action"]=="updatesched"){
 									}
 							
 						}		
-				}		  			  	
+				}*/		  			  	
 				
 					  
 	}
-	header('location: shiftschedule.php');
+	//header('location: shiftschedule.php');
 
 }
 

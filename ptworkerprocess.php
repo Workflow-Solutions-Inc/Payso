@@ -160,6 +160,16 @@ else if($_GET["action"]=="save"){
 			{
 				echo "error".$sqlinsert."<br>".$conn->error;
 			}
+		$sqlloan = "call SP_LoanTrans('','$dataareaid','$paynum','$userlogin' ,'$period','2')";
+			
+			if(mysqli_query($conn,$sqlloan))
+					{
+						echo $sqlloan."<br>".$conn->error;
+					}
+					else
+					{
+						echo "error".$sqlloan."<br>".$conn->error;
+					}
 
 	 }
 	 
