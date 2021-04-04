@@ -139,7 +139,7 @@ $dtrpayrollid = '';
 							</div>
 
 							<div class="formitem">
-								<span class="label-xl" style="width: 140px;">Late (Mins):</span>
+								<span class="label-xl" style="width: 140px;">Late (Hrs):</span>
 								<input type="textbox" name ="view-late" id="view-late" value="<?php echo $late;?>" class="textbox">
 							</div>
 

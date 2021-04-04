@@ -370,6 +370,7 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 						},
 						success: function(data){
 							$('#result').html(data);
+							CheckedVal();
 				}
 			}); 
 			 

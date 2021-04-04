@@ -450,7 +450,97 @@ else if($_GET["action"]=="shiftline"){
 			});
 
 
+	$('[name=chkbox]').change(function(){
+		
+	    if($(this).attr('checked'))
+	    {
+      		//document.getElementById("inchide").value = $(this).val();
+      		Add();
+	    }
+	    else
+	    {
+				         
+	         //document.getElementById("inchide").value=$(this).val();
+	         remVals.push("'"+$(this).val()+"'");
+	         $('#inchide2').val(remVals);
 
+	         $.each(remVals, function(i, el2){
+
+	    		removeA(allVals, el2);
+	    		removeA(uniqueNames, el2);
+		    	//$("input[value="+el+"]").prop("checked", true);
+		    	//alert(el);
+			});
+	        Add();
+
+	    }
+	 });
+
+	$("#selectAll").change(function(){  //"select all" change 
+			 
+
+			 if(false == $(this).prop("checked")){ //if this item is unchecked
+		        $('[name=chkbox]').prop('checked', false); //change "select all" checked status to false
+		         allVals = [];
+				 uniqueNames = [];
+				 remVals = [];
+				 remValsEx = [];
+		        document.getElementById('inchide').value = '';
+		        document.getElementById('inchide2').value = '';
+		        //alert('sample');
+
+		    }
+		    else
+		    {
+		    	$(".checkbox").prop('checked', $(this).prop("checked")); //change all ".checkbox" checked status
+		    	Add();
+		    }
+
+		});
+
+
+	
+	function Add() 
+	{  
+
+		
+		$('#inchide').val('');
+		 $('[name=chkbox]:checked').each(function() {
+		   allVals.push("'"+$(this).val()+"'");
+		 });
+
+		  //remove existing rec start-----------------------
+		 $('[name=chkbox]:disabled').each(function() {
+		   
+		   remValsEx.push("'"+$(this).val()+"'");
+	         //$('#inchide2').val(remValsEx);
+
+	         $.each(remValsEx, function(i, el2){
+	         		
+	    		removeA(allVals, el2);
+	    		removeA(uniqueNames, el2);
+		    	//"'"+"PCC"+"'"
+			});
+		   
+		 });
+		 //remove existing rec end-
+
+		 
+			$.each(allVals, function(i, el){
+			    if($.inArray(el, uniqueNames) === -1) uniqueNames.push(el);
+			});
+		
+		 $('#inchide').val(uniqueNames);
+		 filtersched();
+
+	} 
+	function CheckedVal()
+	{ 
+		$.each(uniqueNames, function(i, el){
+			    $("input[value="+el+"]").prop("checked", true);
+			    //alert(el);
+			});
+	}
 
 
 </script>
