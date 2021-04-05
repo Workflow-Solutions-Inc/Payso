@@ -118,7 +118,7 @@ else if($_GET["action"]=="searchdata"){
 																left join branch bra on bra.branchcode = wk.branch and bra.dataareaid = wk.dataareaid
 					
 
-					 where (wk.workerid like '%$id%') and (wk.name like '%$name%') and (pos.name like '%$postion%') #and (dep.name like '%$department%') and (bra.name like '%$branch%') #and rt.status = 1 
+					 where (wk.workerid like '%$id%') and (wk.name like '%$name%') and (pos.name like '%$postion%') and (dep.name like '%$department%') #and (bra.name like '%$branch%') #and rt.status = 1 
 					 and wk.dataareaid = '$dataareaid'
 
 

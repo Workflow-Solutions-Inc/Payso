@@ -246,14 +246,10 @@ $wknum = $_SESSION["wknum"];
 							<select class="formitem width-lg" class="textbox" name ="daytype" id="add-daytype" style="width:100%;height: 28px;"  required="required">
 								<option value="" selected="selected"></option>
 								<option value="Restday">Restday</option>
-								<?php
-									$query = "SELECT distinct DayType FROM calendartable";
-									$result = $conn->query($query);			
-									  	
-										while ($row = $result->fetch_assoc()) {
-										?>
-											<option value="<?php echo $row["DayType"];?>"><?php echo $row["DayType"];?></option>
-									<?php } ?>s
+								<option value="Regular Holiday">Regular Holiday</option>
+								<option value="Regular">Regular</option>
+								<option value="Weekend">Weekend</option>
+								<option value="Special Holiday">Special Holiday</option>
 							</select>
 
 							<label>Date:</label>

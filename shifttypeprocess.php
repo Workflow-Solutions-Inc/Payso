@@ -13,12 +13,16 @@ if(isset($_GET["save"])){
 		 $endtime=$_GET["endtime"];
 		 $breakout=$_GET["breakout"];
 		 $breakin=$_GET["breakin"];
+		 
+		 
+		 
 		
 		if($shifttype != ''){
 
 
 		 $sql = "INSERT Into shifttype (shifttype,starttime,endtime,breakout,breakin,dataareaid) values ('$shifttype',TIME_FORMAT('$starttime', '%H:%i:%s'),TIME_FORMAT('$endtime', '%H:%i:%s')
-		 						,TIME_FORMAT('$breakout', '%H:%i:%s'),TIME_FORMAT('$breakin', '%H:%i:%s'),'$dataareaid')";
+		 						,case when '$breakout' = '' then null else TIME_FORMAT('$breakout', '%H:%i:%s') end
+		 						,case when '$breakin' = '' then null else TIME_FORMAT('$breakin', '%H:%i:%s') end,'$dataareaid')";
 
 			if(mysqli_query($conn,$sql))
 			{

@@ -94,8 +94,8 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 										<td style="width:25%;">Shift Type</td>
 										<td style="width:25%;">Start Time</td>
 										<td style="width:25%;">End Time</td>
-										<td style="width:25%;">Break In</td>
 										<td style="width:25%;">Break Out</td>
+										<td style="width:25%;">Break In</td>
 										<td style="width:17px;" class="text-center"><span class="fas fa-arrows-alt-v"></span></td>
 									</tr>
 									<tr class="rowsearch">
@@ -246,10 +246,10 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 
 						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 							<label>Break Out:</label>
-							<input type="time" value="12:00" placeholder="bout" name ="breakout" id="add-breakout" class="modal-textarea" required="required">
+							<input type="time" value="12:00" placeholder="bout" name ="breakout" id="add-breakout" class="modal-textarea" >
 
 							<label>Break In:</label>
-							<input type="time" value="13:00" placeholder="bin" name ="breakin" id="add-breakin" class="modal-textarea" required="required">	
+							<input type="time" value="13:00" placeholder="bin" name ="breakin" id="add-breakin" class="modal-textarea" >	
 						</div>
 
 					</div>

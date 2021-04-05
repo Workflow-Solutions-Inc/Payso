@@ -726,7 +726,8 @@ else if($_GET["action"]=="searchdata"){
 							when pd.workertype = 1 then 'Reliever'
 							when pd.workertype = 2 then 'Probationary'
 							when pd.workertype = 3 then 'Contractual' 
-							when pd.workertype = 4 then 'Trainee' else '' end as workertype,
+							when pd.workertype = 4 then 'Trainee' 
+							when pd.workertype = 5 then 'Project-Based' else '' end as workertype,
 
 						pd.transdate,
 						pd.linenum,

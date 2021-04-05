@@ -98,7 +98,7 @@ $port=3306;
 $socket="";
 $user="wfsiadmin";
 $password="wfsi2021admin";
-$dbname="Demo_payso_test";
+$dbname="global_payso_TEST";
 
 /* Hostinger local*/
 /*$host="156.67.214.218";

@@ -370,9 +370,25 @@ else if($_GET["action"]=="searchdata"){
 		$id=$_GET["workerid"];
 		$name=$_GET["name"];
 		$position = $_GET["position"];
+		$paygroup = $_GET["paygroup"];
+		$dept = $_GET["dept"];
 		$output='';
 		//$output .= '<tbody>';
-		$query = "SELECT * from worker where dataareaid = '$dataareaid' and workerid like '%$id%' and name like '%$name%' and position like '%$position%'
+		$query = "SELECT wk.workerid,wk.Name,pos.name as 'position',case when wk.payrollgroup = 0 then 'Weekly' else 'Semi-Montlhy' end as payrollgroup,dep.name as 'department'
+
+					FROM worker wk 
+
+				left join position pos on pos.positionid = wk.position and pos.dataareaid = wk.dataareaid 
+				left join contract con on con.workerid = wk.workerid and con.dataareaid = wk.dataareaid
+				left join department dep on dep.departmentid = con.departmentid and dep.dataareaid = wk.dataareaid
+
+				where wk.dataareaid = '$dataareaid' and con.fromdate <= date(now()) and wk.workerid like '%$id%' and wk.Name like '%$name%' and pos.name like '%$position%'
+				and (dep.name like '%$dept%')
+				and (case              
+							when wk.payrollgroup = 0 then 'Weekly' 
+							
+							else 'Semi-Montlhy' end) like '%$paygroup%'
+					
 					";
 		$result = $conn->query($query);
 		$rowclass = "rowA";
@@ -389,9 +405,11 @@ else if($_GET["action"]=="searchdata"){
 				<td style="width:20px;" class="text-center"><span class="fa fa-angle-right"></span></td>
 				<td style="width:5%;"><input type="checkbox" id="chkbox" name="chkbox" class="checkbox"
 				 	value="'.$row['workerid'].'"></td>
-				<td style="width:33%;">'.$row["workerid"].'</td>
-				<td style="width:33%;">'.$row["name"].'</td>
-				<td style="width:33%;">'.$row["position"].'</td>
+				<td style="width:20%;">'.$row["workerid"].'</td>
+				<td style="width:20%;">'.$row["Name"].'</td>
+				<td style="width:20%;">'.$row["position"].'</td>
+				<td style="width:20%;">'.$row["payrollgroup"].'</td>
+				<td style="width:20%;">'.$row["department"].'</td>
 
 
 				

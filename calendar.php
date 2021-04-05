@@ -87,12 +87,12 @@ $firstbranch = '';
 								<b><label style="width: 90px;color:red;font-size:20px;">Branch:</label></b>
 								<select class="modal-textarea" name ="BranchType" id="add-branch" style="width: 200px;height: 30px; color:black;font-size:18px;">
 									<?php
-										$querys = "SELECT branchcode from branch where dataareaid = '$dataareaid'";
+										$querys = "SELECT branchcode,name from branch where dataareaid = '$dataareaid'";
 										$results = $conn->query($querys);			
 										  	
 											while ($rows = $results->fetch_assoc()) {
 											?>
-												<option value="<?php echo $rows["branchcode"];?>"><?php echo $rows["branchcode"];?></option>
+												<option value="<?php echo $rows["branchcode"];?>"><?php echo $rows["name"];?></option>
 										<?php } 
 
 										$branchresult = $conn->query($querys);
@@ -257,7 +257,7 @@ $firstbranch = '';
 							 	 	<p>
 
 										<label style="width: 90px;">Year:</label>
-										<span><input type="number" min="1900" max="2099" step="1" value="2020" placeholder="" id="add-year" name="Year" class="modal-textarea" style="width:30%;height: 28px;"></span>
+										<span><input type="number" min="1900" max="2099" step="1" value="" placeholder="" id="add-year" name="Year" class="modal-textarea" style="width:30%;height: 28px;"></span>
 									</p>
 									
 								
@@ -281,7 +281,7 @@ $firstbranch = '';
 		<div class="modal-container">
 			<div class="modal-content">
 				<div class="modal-header">
-					<div class="col-lg-6">Update Branch</div>
+					<div class="col-lg-6">Update Calendar</div>
 					<div class="col-lg-6"><span class="fas fa-times modal-close"></span></div>
 				</div>
 				
@@ -300,15 +300,11 @@ $firstbranch = '';
 							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 								<label style="width: 90px;">Day Type:</label>
 								<select class="modal-textarea" name ="DayType" id="add-type" style="width:100%;height: 28px;" required>
-									<option value="" selected="selected"></option>
-									<?php
-										$query = "SELECT distinct daytype FROM calendartable where dataareaid = '$dataareaid'";
-										$result = $conn->query($query);			
-										  	
-											while ($row = $result->fetch_assoc()) {
-											?>
-												<option value="<?php echo $row["daytype"];?>"><?php echo $row["daytype"];?></option>
-										<?php } ?>
+									<option value=""></option>
+									<option value="Regular Holiday">Regular Holiday</option>
+									<option value="Regular">Regular</option>
+									<option value="Weekend">Weekend</option>
+									<option value="Special Holiday">Special Holiday</option>
 								</select>	
 							</div>
 							
@@ -373,7 +369,8 @@ $firstbranch = '';
 						$('#result').html(data);
 					}
 				});*/
-
+				var d = new Date();
+				document.getElementById('add-year').value = d.getFullYear();
 			});
 
 			$(document).ready(function() {

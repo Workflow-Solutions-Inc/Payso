@@ -17,7 +17,9 @@ $prevdate = $_POST['prevdate'];
 	{
 		$query = "SELECT wk.name as name, pos.name as position, dm.name as department,bra.name as branch, 
 					MIN(case when mt.type = 0 then TIME_FORMAT(mt.Time,'%h:%i %p') else null end) as 'timein',
-					MAX(case when mt.type = 1 then TIME_FORMAT(mt.Time,'%h:%i %p') else null end) as 'timeout' 
+					MAX(case when mt.type = 1 then TIME_FORMAT(mt.Time,'%h:%i %p') else null end) as 'timeout',
+					MIN(case when mt.type = 3 then TIME_FORMAT(mt.Time,'%h:%i %p') else null end) as 'breakout',
+					MIN(case when mt.type = 4 then TIME_FORMAT(mt.Time,'%h:%i %p') else null end) as 'breakin'   
 
 					from monitoringtable mt 
 					LEFT JOIN worker wk ON mt.Name = wk.BioId left join branch brn on wk.branch = brn.branchcode and wk.dataareaid = brn.dataareaid
@@ -57,6 +59,8 @@ $prevdate = $_POST['prevdate'];
 				<td style="width:20%;"><?php echo $row['branch'];?></td>
 				<td style="width:20%;"><?php echo $row['timein'];?></td>
 				<td style="width:20%;"><?php echo $row['timeout'];?></td>
+				<td style="width:20%;"><?php echo $row['breakout'];?></td>
+				<td style="width:20%;"><?php echo $row['breakin'];?></td>
 				
 			</tr>
 
@@ -66,7 +70,9 @@ $prevdate = $_POST['prevdate'];
 	{
 		$query = "SELECT wk.name as name, pos.name as position, dm.name as department,bra.name as branch, 
 					MIN(case when mt.type = 0 then TIME_FORMAT(mt.Time,'%h:%i %p') else null end) as 'timein',
-					MAX(case when mt.type = 1 then TIME_FORMAT(mt.Time,'%h:%i %p') else null end) as 'timeout' 
+					MAX(case when mt.type = 1 then TIME_FORMAT(mt.Time,'%h:%i %p') else null end) as 'timeout',
+					MIN(case when mt.type = 3 then TIME_FORMAT(mt.Time,'%h:%i %p') else null end) as 'breakout',
+					MIN(case when mt.type = 4 then TIME_FORMAT(mt.Time,'%h:%i %p') else null end) as 'breakin'
 
 					from monitoringtable mt 
 					LEFT JOIN worker wk ON mt.Name = wk.BioId left join branch brn on wk.branch = brn.branchcode and wk.dataareaid = brn.dataareaid 
@@ -107,6 +113,8 @@ $prevdate = $_POST['prevdate'];
 				<td style="width:20%;"><?php echo $row['branch'];?></td>
 				<td style="width:20%;"><?php echo $row['timein'];?></td>
 				<td style="width:20%;"><?php echo $row['timeout'];?></td>
+				<td style="width:20%;"><?php echo $row['breakout'];?></td>
+				<td style="width:20%;"><?php echo $row['breakin'];?></td>
 				
 			</tr>
 
@@ -116,7 +124,9 @@ $prevdate = $_POST['prevdate'];
 	{
 		$query = "SELECT wk.name as name, pos.name as position, dm.name as department,bra.name as branch, 
 					MIN(case when mt.type = 0 then TIME_FORMAT(mt.Time,'%h:%i %p') else null end) as 'timein',
-					MAX(case when mt.type = 1 then TIME_FORMAT(mt.Time,'%h:%i %p') else null end) as 'timeout' 
+					MAX(case when mt.type = 1 then TIME_FORMAT(mt.Time,'%h:%i %p') else null end) as 'timeout',
+					MIN(case when mt.type = 3 then TIME_FORMAT(mt.Time,'%h:%i %p') else null end) as 'breakout',
+					MIN(case when mt.type = 4 then TIME_FORMAT(mt.Time,'%h:%i %p') else null end) as 'breakin' 
 
 					from monitoringtable mt 
 					LEFT JOIN worker wk ON mt.Name = wk.BioId left join branch brn on wk.branch = brn.branchcode and wk.dataareaid = brn.dataareaid 
@@ -156,6 +166,8 @@ $prevdate = $_POST['prevdate'];
 				<td style="width:20%;"><?php echo $row['branch'];?></td>
 				<td style="width:20%;"><?php echo $row['timein'];?></td>
 				<td style="width:20%;"><?php echo $row['timeout'];?></td>
+				<td style="width:20%;"><?php echo $row['breakout'];?></td>
+				<td style="width:20%;"><?php echo $row['breakin'];?></td>
 				
 			</tr>
 
@@ -164,7 +176,9 @@ $prevdate = $_POST['prevdate'];
 	else if ($attbranch != '' && $attdept != '') {
 		$query = "SELECT wk.name as name, pos.name as position, dm.name as department,bra.name as branch, 
 					MIN(case when mt.type = 0 then TIME_FORMAT(mt.Time,'%h:%i %p') else null end) as 'timein',
-					MAX(case when mt.type = 1 then TIME_FORMAT(mt.Time,'%h:%i %p') else null end) as 'timeout' 
+					MAX(case when mt.type = 1 then TIME_FORMAT(mt.Time,'%h:%i %p') else null end) as 'timeout',
+					MIN(case when mt.type = 3 then TIME_FORMAT(mt.Time,'%h:%i %p') else null end) as 'breakout',
+					MIN(case when mt.type = 4 then TIME_FORMAT(mt.Time,'%h:%i %p') else null end) as 'breakin' 
 
 					from monitoringtable mt 
 					LEFT JOIN worker wk ON mt.Name = wk.BioId left join branch brn on wk.branch = brn.branchcode and wk.dataareaid = brn.dataareaid 
@@ -205,6 +219,8 @@ $prevdate = $_POST['prevdate'];
 				<td style="width:20%;"><?php echo $row['branch'];?></td>
 				<td style="width:20%;"><?php echo $row['timein'];?></td>
 				<td style="width:20%;"><?php echo $row['timeout'];?></td>
+				<td style="width:20%;"><?php echo $row['breakout'];?></td>
+				<td style="width:20%;"><?php echo $row['breakin'];?></td>
 				
 			</tr>
 

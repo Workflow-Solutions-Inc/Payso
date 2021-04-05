@@ -605,7 +605,7 @@ $firstresult = '';
 												</div>
 
 												<div class="formitem">
-													<span class="label-xl" style="width: 140px;">Break:</span>
+													<span class="label-xl" style="width: 140px;">Over Break:</span>
 													<input type="textbox" name ="view-break" id="view-break" value="<?php echo ($break =='' ? '0.00' : $break); ?>" class="textbox">
 												</div>
 

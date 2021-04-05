@@ -93,12 +93,12 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 								<select class="modal-textarea" name ="BranchType" id="add-branch" style="width: 200px;height: 30px; color:black;font-size:18px;">
 									<option value="" selected="selected"></option>
 									<?php
-										$querys = "SELECT branchcode from branch where dataareaid = '$dataareaid'";
+										$querys = "SELECT branchcode,name from branch where dataareaid = '$dataareaid'";
 										$results = $conn->query($querys);			
 										  	
 											while ($rows = $results->fetch_assoc()) {
 											?>
-												<option value="<?php echo $rows["branchcode"];?>"><?php echo $rows["branchcode"];?></option>
+												<option value="<?php echo $rows["branchcode"];?>"><?php echo $rows["name"];?></option>
 										<?php } 
 
 										$branchresult = $conn->query($querys);
@@ -159,6 +159,8 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 										<td style="width:20%;">Branch</td>
 										<td style="width:20%;">Time In</td>
 										<td style="width:20%;">Time Out</td>
+										<td style="width:20%;">Break Out</td>
+										<td style="width:20%;">Break In</td>
 										<td style="width: 17px;" class="text-center"><span class="fas fa-arrows-alt-v"></span></td>
 									</tr>
 									<tr class="rowsearch">
@@ -236,6 +238,8 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 									  <td><span></span></td>
 									  <td><span></span></td>
 									  <td><span></span></td>
+									  <td><span></span></td>
+									  <td><span></span></td>
 									  
 									</tr>
 								</thead>
@@ -244,7 +248,9 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 									<?php
 									$query = "SELECT wk.name as name, pos.name as position, dm.name as department,bra.name as branch, 
 												MIN(case when mt.type = 0 then TIME_FORMAT(mt.Time,'%h:%i %p') else null end) as 'timein',
-												MAX(case when mt.type = 1 then TIME_FORMAT(mt.Time,'%h:%i %p') else null end) as 'timeout' 
+												MAX(case when mt.type = 1 then TIME_FORMAT(mt.Time,'%h:%i %p') else null end) as 'timeout',
+												MIN(case when mt.type = 3 then TIME_FORMAT(mt.Time,'%h:%i %p') else null end) as 'breakout',
+												MIN(case when mt.type = 4 then TIME_FORMAT(mt.Time,'%h:%i %p') else null end) as 'breakin' 
 
 												from monitoringtable mt 
 												LEFT JOIN worker wk ON mt.Name = wk.BioId left join branch brn on wk.branch = brn.branchcode and wk.dataareaid = brn.dataareaid 
@@ -283,6 +289,8 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 											<td style="width:20%;"><?php echo $row['branch'];?></td>
 											<td style="width:20%;"><?php echo $row['timein'];?></td>
 											<td style="width:20%;"><?php echo $row['timeout'];?></td>
+											<td style="width:20%;"><?php echo $row['breakout'];?></td>
+											<td style="width:20%;"><?php echo $row['breakin'];?></td>
 											
 										</tr>
 									<?php }

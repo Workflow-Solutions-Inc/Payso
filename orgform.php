@@ -167,7 +167,7 @@ if(isset($_SESSION['orgnum']))
 													<?php } ?>
 													</datalist>
 												  </td>
-												  <td><input style="width:100%;height: 20px;" list="SearchDepartment" class="search" disabled>
+												  <td><input style="width:100%;height: 20px;" list="SearchDepartment" class="search" >
 													<?php
 														$query = "SELECT distinct name FROM department where dataareaid = '$dataareaid'";
 														$result = $conn->query($query);	

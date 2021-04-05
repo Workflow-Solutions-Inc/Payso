@@ -67,7 +67,7 @@ function ComputeAll($PayPer,$PayCut,$dtID,$conPAR,$usr)
 
 					}
 
-			$sqlinsert = "call sp_computationPayroll('$VarPayId' ,'$dataareaid')";
+			/*$sqlinsert = "call sp_computationPayroll('$VarPayId' ,'$dataareaid')";
 			//mysqli_query($conn,$sqlinsert);
 			//echo $sqlinsert."<br>".$conn->error;
 			if(mysqli_query($conn,$sqlinsert))
@@ -79,10 +79,32 @@ function ComputeAll($PayPer,$PayCut,$dtID,$conPAR,$usr)
 				echo "error".$sqlinsert."<br>".$conn->error;
 			}
 
-			RecomputeHeader($VarPayId,$dataareaid,$conn,$usr);
+			RecomputeHeader($VarPayId,$dataareaid,$conn,$usr);*/
 
 		}
-		exit(0);
+		//inser loop per branch
+		$PerBranchQuery = "SELECT * from payrollheader where payrollperiod = '$LocPayrollPeriod' and dataareaid = '$dataareaid' and payrollstatus = 0";
+		$PerBranchresult = $conn->query($PerBranchQuery);
+		while ($PerBranchrow = $PerBranchresult->fetch_assoc())
+		{
+			$PerBranchPayId = $PerBranchrow["payrollid"];
+			$sqlinsert = "call sp_computationPayroll('$PerBranchPayId' ,'$dataareaid')";
+			//mysqli_query($conn,$sqlinsert);
+			//echo $sqlinsert."<br>".$conn->error;
+			if(mysqli_query($conn,$sqlinsert))
+			{
+				echo $sqlinsert."<br>".$conn->error;
+			}
+			else
+			{
+				echo "error".$sqlinsert."<br>".$conn->error;
+			}
+
+			RecomputeHeader($PerBranchPayId,$dataareaid,$conn,$usr);
+		}
+		//end
+
+		//exit(0);
 		/*echo "<BR>";
 		echo $LocCutoff;
 		echo "<BR>";

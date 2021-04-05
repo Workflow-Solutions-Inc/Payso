@@ -95,9 +95,11 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 									<tr class="rowtitle">
 										<td style="width:20px;" class="text-center"><span class="fa fa-asterisk fa-xs"></span></td>
 										<td style="width:5%;">Include</td>
-										<td style="width:33%;">Worker Id</td>
-										<td style="width:33%;">Name</td>
-										<td style="width:33%;">Position</td>
+										<td style="width:20%;">Worker Id</td>
+										<td style="width:20%;">Name</td>
+										<td style="width:20%;">Position</td>
+										<td style="width:20%;">Payroll Group</td>
+										<td style="width:20%;">Department</td>
 										<td style="width:17px;" class="text-center"><span class="fas fa-arrows-alt-v"></span></td>
 									</tr>
 									<tr class="rowsearch">
@@ -140,14 +142,14 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 
 									  <td><input list="SearchPosition" class="search">
 										<?php
-											$query = "SELECT distinct position FROM worker where dataareaid = '$dataareaid'";
+											$query = "SELECT distinct name FROM position where dataareaid = '$dataareaid'";
 											$result = $conn->query($query);		
 									  	?>
 									  <datalist id="SearchPosition">
 										<?php 
 											while ($row = $result->fetch_assoc()) {
 										?>
-											<option value="<?php echo $row["position"];?>"></option>
+											<option value="<?php echo $row["name"];?>"></option>
 										<?php } ?>
 										</datalist>
 
@@ -155,6 +157,48 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 
 									  </td>
 
+									  
+									  <td style="width:14%;"><input style="width:100%;height: 20px;" list="SearchPayment" class="search" >
+										
+										<?php
+											$query = "SELECT distinct case when wk.payrollgroup = 0 then 'Weekly' else 'Semi-Montlhy' end as payrollgroup
+														from worker wk 
+														
+														where wk.dataareaid = '$dataareaid' 
+														";
+											$result = $conn->query($query);	
+												
+										  ?>
+										<datalist id="SearchPayment">
+											
+											<?php 
+											
+												while ($row = $result->fetch_assoc()) {
+											?>
+												<option value="<?php echo $row["payrollgroup"];?>"></option>
+												
+										<?php } ?>
+										</datalist>		
+										
+									  </td>
+
+									  <td><input style="width:100%;height: 20px;" list="SearchDepartment" class="search" >
+											<?php
+												$query = "SELECT distinct name FROM department where dataareaid = '$dataareaid'";
+												$result = $conn->query($query);	
+													
+										  ?>
+										  <datalist id="SearchDepartment">
+											
+											<?php 
+											
+												while ($row = $result->fetch_assoc()) {
+											?>
+												<option value="<?php echo $row["name"];?>"></option>
+												
+											<?php } ?>
+											</datalist>
+										  </td>
 									  <td><span></span></td>
 									</tr>	
 									
@@ -163,7 +207,15 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 								<tbody id="result">
 									<?php
 									$query =
-									"SELECT * from worker where dataareaid = '$dataareaid'";
+									"SELECT distinct wk.workerid,wk.Name,pos.name as 'position',case when wk.payrollgroup = 0 then 'Weekly' else 'Semi-Montlhy' end as payrollgroup,dep.name as 'department'
+
+												FROM worker wk 
+
+												left join position pos on pos.positionid = wk.position and pos.dataareaid = wk.dataareaid 
+												left join contract con on con.workerid = wk.workerid and con.dataareaid = wk.dataareaid
+												left join department dep on dep.departmentid = con.departmentid and dep.dataareaid = wk.dataareaid
+
+											where wk.dataareaid = '$dataareaid' and con.fromdate <= date(now())";
 
 									$result = $conn->query($query);
 									$rowclass = "rowA";
@@ -179,9 +231,11 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 											<td style="width:20px;" class="text-center" ><span class="fa fa-angle-right"></span></td>
 											<td style="width:5%;"><input type='checkbox' id="chkbox" name="chkbox" class="checkbox" 
 												value="<?php echo $row['workerid'];?>"></td>
-											<td style="width:33%;"><?php echo $row['workerid'];?></td>
-											<td style="width:33%;"><?php echo $row['name'];?></td>
-											<td style="width:33%;"><?php echo $row['position'];?></td>
+											<td style="width:20%;"><?php echo $row['workerid'];?></td>
+											<td style="width:20%;"><?php echo $row['Name'];?></td>
+											<td style="width:20%;"><?php echo $row['position'];?></td>
+											<td style="width:20%;"><?php echo $row['payrollgroup'];?></td>
+											<td style="width:20%;"><?php echo $row['department'];?></td>
 
 											
 										</tr>
@@ -346,6 +400,8 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 			var workerid;
 			var name;
 			var position;
+			var paygroup;
+			var dept;
 			var action = "searchdata";
 			var actionmode = "userform";
 			var data=[];
@@ -357,11 +413,13 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 			 workerid = data[0];
 			 name = data[1];
 			 position = data[2];
+			 paygroup = data[3];
+			 dept = data[4];
 
 			 $.ajax({
 						type: 'GET',
 						url: 'shiftscheduleprocess.php',
-						data:{action:action, actmode:actionmode, workerid:workerid, name:name, position:position},
+						data:{action:action, actmode:actionmode, workerid:workerid, name:name, position:position, paygroup:paygroup, dept:dept},
 						//data:'bkno='+BNo+'&bkdesc='+BDesc+'&bktit='+BTit+'&bkqty='+BQ,
 						beforeSend:function(){
 						
