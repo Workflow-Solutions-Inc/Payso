@@ -117,6 +117,7 @@ $firstresult = '';
 		<ul class="subbuttons">
 			<li class="DTRMaintain" style="display: none;"><div class="leftpanel-title"><b>Process</b></div></li>
 			<li class="DTRMaintain" style="display: none;"><button onClick="Proceed();"><span class="fa fa-paper-plane"></span> Proceed to Payroll</button></li>
+			<li class="DTRMaintain" style="display: none;"><button onClick="PrintDtr();"><span class="fa fa-paper-plane"></span> Print DTR</button></li>
 		</ul>
 		
 		
@@ -1508,6 +1509,20 @@ $firstresult = '';
 				    window.location.href='menu.php?list='+ActiveMode;
 			    }
 			});
+		}
+
+		function PrintDtr(){
+		
+		 var soc = "<?php echo $dataareaid; ?>"; 
+		 var so = "<?php echo $payrollperiod; ?>"; 
+		 if(so==""){
+		 	alert("No Selected Payroll");
+		 }else{
+		 	
+		 	window.open('Reports/payslip/dtrreport.php?payroll='+so+'&soc='+soc+'', "_blank"); 
+		 }
+		 
+		
 		}
 
 	</script>

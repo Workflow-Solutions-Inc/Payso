@@ -373,19 +373,10 @@ $query = " CALL SP_payrollreportWebApp('".$payrollid_."','".$dataarea."')";
                             <td  width="5%"  style="text-align:right;color: red;"><b>'.number_format($tNPAY,2).'</b></td>
                           
                         </tr>
-                        </table></table>
-                        <table table width="100%">
-                            <tr>
 
-                                <br> 
-                                    <p>&nbsp;</p>
-                                </br>
-                                <br>
-                                    <p>&nbsp;</p>
-                                </br>
-                            </tr>
-
-                            <tr>
+                         
+                        </table>
+                        <tr>
                                 <td width="50%">
                                 
                                     <p>Prepared By:</p>
@@ -400,7 +391,7 @@ $query = " CALL SP_payrollreportWebApp('".$payrollid_."','".$dataarea."')";
                                 
                                 </td>
                             </tr>
-                        </table>
+                            </table>
                         ';
 
 $finaloutput =  $startoutput.$output;    

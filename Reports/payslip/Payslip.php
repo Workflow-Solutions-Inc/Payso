@@ -52,6 +52,9 @@ $dataareaid = $_GET['soc'];
 include('dbconn.php');
 
 require('fpdf/htmlpdf.php');
+
+
+
 $query = "CALL payslipRPTAll('".$payrollid."', '".$dataareaid."')";
 //$query = "CALL payslipRPT('WFSIPY0000005', 'WFSI', 'WFSIWR000002')";
      $result = $conn->query($query);
@@ -71,6 +74,8 @@ $query = "CALL payslipRPTAll('".$payrollid."', '".$dataareaid."')";
 					        $internalid = $row['internalid'];
 					        $fromdate = $row['fromdate'];
 					        $todate = $row['todate'];
+					        $dataareaname = $row['dataareaname'];
+
 
 					        $rdays = $row["RDAYS"];
 					        $late = $row["LTE"];
@@ -136,7 +141,7 @@ $query = "CALL payslipRPTAll('".$payrollid."', '".$dataareaid."')";
 					$pdf->Cell(10,10,'',0);
 					$pdf->Cell(10,10,'',0);
 					$pdf->Cell(55,10,'',0);
-					$pdf->Cell(10,10,'Demo Company',0);
+					$pdf->Cell(10,10,''.$dataareaname,0);
 					$pdf->Cell(60,10,'',0,0);
 					$pdf->Cell(60,10,'',0,0);
 
