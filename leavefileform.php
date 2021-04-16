@@ -308,10 +308,10 @@ else
 
 						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 							<label>Leave Credit:</label>
-							<input type="number" step="1" min="0" value="0" placeholder="" id="add-credit" name="credit" class="modal-textarea" required="required" onkeypress="return !(event.charCode == 46)">
+							<input type="double" step="1" min="0" value="0" placeholder="" id="add-credit" name="credit" class="modal-textarea" required="required" onkeypress="return !(event.charCode == 46)">
 
 							<label>Balance:</label>
-							<input type="number" step="1" min="0" value="0" placeholder="" id="add-balance" name="balance" class="modal-textarea" required="required" onkeypress="return !(event.charCode == 46)">
+							<input type="double" step="1" min="0" value="0" placeholder="" id="add-balance" name="balance" class="modal-textarea" required="required" onkeypress="return !(event.charCode == 46)">
 
 							<label>Paid:</label><br>
 							<span><input type="checkbox" value="0" id="add-paid" class="modal-textarea" style="width: 50px;height: 25px;margin-top: 1px;margin-left: 100px;"></span>

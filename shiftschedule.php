@@ -215,7 +215,7 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 												left join contract con on con.workerid = wk.workerid and con.dataareaid = wk.dataareaid
 												left join department dep on dep.departmentid = con.departmentid and dep.dataareaid = wk.dataareaid
 
-											where wk.dataareaid = '$dataareaid' and con.fromdate <= date(now())";
+											where wk.dataareaid = '$dataareaid' and con.fromdate <= date(now()) and wk.inactive = 0";
 
 									$result = $conn->query($query);
 									$rowclass = "rowA";

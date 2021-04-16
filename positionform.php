@@ -96,6 +96,7 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 										<td style="width:42%;">Name</td>
 										<td style="width:8%;">Grace Period</td>
 										<td style="width:8%;">Approver</td>
+										<!-- <td style="width:8%;">Filler</td> -->
 										<td style="width: 17px;" class="text-center"><span class="fas fa-arrows-alt-v"></span></td>
 									</tr>
 									<tr class="rowsearch">
@@ -136,6 +137,7 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 										<?php } ?>
 										</datalist>
 									  </td>
+									  <td><span></span></td>
 									  <td><span></span></td>
 									  <td><span></span></td>
 									  <td><span></span></td>
