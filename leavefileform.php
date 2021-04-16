@@ -206,7 +206,7 @@ else
 								</thead>
 								<tbody id="result">
 									<?php					
-									$query = "SELECT lf.leavetype,lt.description,format(lf.leavecredits,2) leavecredits,format(lf.balance,2) balance,lf.ispaid,lf.isconvertible
+									$query = "SELECT lf.leavetype,lt.description,format(lf.leavecredits,4) leavecredits,format(lf.balance,4) balance,lf.ispaid,lf.isconvertible
 														,lf.year,lf.fromdate,lf.todate,lf.recid
 
 												FROM leavefile lf
@@ -319,7 +319,7 @@ else
 							<label>Convertible:</label><br>
 							<span><input type="checkbox" value="0" id="add-convert" class="modal-textarea" style="width: 50px;height: 25px;margin-top: 1px;margin-left: 100px;"></span>
 						</div>
-						<input type="hidden" name="paid" id="paid" value="0" class="modal-textarea">
+						<input type="input" name="paid" id="paid" value="0" class="modal-textarea">
 						<input type="hidden" name="convert" id="convert" value="0" class="modal-textarea">
 						<input type="hidden" name="wkid" id="hide2" value="<?php echo $wkid; ?>">
 						<input type="hidden" name="recid" id="hiderec" value="">
@@ -699,7 +699,7 @@ else
 							type: 'GET',
 							url: 'leavefileformprocess.php',
 							//data:'action=save&actmode=userform&userno='+UId.value+'&pass='+UPass.value+'&lname='+NM.value+'&darea='+DT.value,
-							data:{action:action, actmode:actionmode, wkid:wkid, leavetype:leavetype, locrecid:locrecid},
+							data:{action:action, actmode:actionmode, wkid:wkid, leavetype:leavetype, locrecid:locrecid, locfromdate:locfromdate, loctodate:loctodate},
 							beforeSend:function(){
 									
 							$("#datatbl").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
