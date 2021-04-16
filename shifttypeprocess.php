@@ -1,5 +1,5 @@
 <?php
-
+session_id("payso");
 session_start();
 #$userlogin = $_SESSION["user"];
 

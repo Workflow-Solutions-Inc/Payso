@@ -1,4 +1,5 @@
 <?php
+session_id("payso");
 session_start();
 // Include the main TCPDF library (search for installation path).
 require_once('tcpdf_min\tcpdf.php');

@@ -1,4 +1,5 @@
 <?php 
+session_id("payso");
 session_start();
 include("dbconn.php");
 #$user = $_SESSION["user"];
@@ -84,7 +85,7 @@ $_SESSION["Navi"] = 'pr';
 								<li class="PayrollPeriodMaintain PayrollPeriodView" style="display: none;"><a href="payrollperiodform.php"><span class="far fa-calendar-alt hidden-xs hidden-sm"></span> Payroll Period</a></li>
 								<li class="LateSetup" style="display: none;"><a href="lateform.php"><span class="far fa-clock hidden-xs hidden-sm"></span> Late Setup</a></li>
 								<li class="NightDiffSetup" style="display: none;"><a href="nightform.php"><span class="far fa-clock hidden-xs hidden-sm"></span> Night Differential</a></li>
-								<li ><a href="deductionform.php"><span class="fas fa-file-invoice-dollar hidden-xs hidden-sm"></span> One Time Account</a></li>
+								<li class="OnetimeAccountMaintain" style="display: none;"><a href="deductionform.php"><span class="fas fa-file-invoice-dollar hidden-xs hidden-sm"></span> One Time Account</a></li>
 								
 							</ul>
 						</div>
@@ -131,7 +132,7 @@ $_SESSION["Navi"] = 'pr';
 								<li class="WorkersMaintain WorkersView" style="display: none;"><a href="workerform.php"><span class="fas fa-user-tie hidden-xs hidden-sm"></span> Workers</a></li>
 								<li class="DTRMaintain DailyTimeRecord" style="display: none;"><a href="dtrform.php"><span class="far fa-sticky-note hidden-xs hidden-sm"></span> Daily Time Record</a></li>
 								<li class="ShiftscheduleMaintain ShiftSchedule" style="display: none;"><a href="shiftschedule.php"><span class="far fa-calendar-alt hidden-xs hidden-sm"></span> Shift Schedule</a></li>
-								<li ><a href="attendance.php"><span class="fas fa-tv hidden-xs hidden-sm"></span> Attendance Monitoring</a></li>
+								<li class="AttendanceMonitoring" style="display: none;"><a href="attendance.php"><span class="fas fa-tv hidden-xs hidden-sm"></span> Attendance Monitoring</a></li>
 								<li class="LeavePayoutMaintain LeavePayoutView" style="display: none;"><a href="leavepayout.php"><span class="fas fa-sign-out-alt hidden-xs hidden-sm"></span> Leave Payout</a></li>
 								<li class="LeavePayoutMaintain LeavePayoutView" style="display: none;"><a href="13thmonthpayout.php"><span class="fas fa-sign-out-alt hidden-xs hidden-sm"></span> 13th Month Payout</a></li>
 								<li class="LeavePayoutMaintain LeavePayoutView" style="display: none;"><a href="finalpayout.php"><span class="fas fa-sign-out-alt hidden-xs hidden-sm"></span> Final Payout</a></li>
@@ -162,7 +163,7 @@ $_SESSION["Navi"] = 'pr';
 								<li class="ShifttypeMaintain ShiftType" style="display: none;"><a href="shiftype.php"><span class="far fa-clock hidden-xs hidden-sm"></span> Shift Type</a></li>
 								<li class="LeaveTypeMaintain LeaveTypeView" style="display: none;"><a href="leavetypeform.php"><span class="fas fa-file-export hidden-xs hidden-sm"></span> Leave Type</a></li>
 								<li class="Calendar CalendarMaintain" style="display: none;"><a href="calendar.php"><span class="far fa-calendar-alt hidden-xs hidden-sm"></span> Calendar</a></li>
-								<li ><a href="deductionform.php"><span class="fas fa-file-invoice-dollar hidden-xs hidden-sm"></span> One Time Account</a></li>
+								<li class="OnetimeAccountMaintain" style="display: none;"><a href="deductionform.php"><span class="fas fa-file-invoice-dollar hidden-xs hidden-sm"></span> One Time Account</a></li>
 
 								<!--
 								<li><a href="accountform.php"><span class="fas fa-user-circle hidden-xs hidden-sm"></span> Accounts</a></li>
@@ -191,13 +192,13 @@ $_SESSION["Navi"] = 'pr';
 								
 								<li class="13thMonthReportPrint" style="display: none;"><a href="#" id="TmonthReport" name="TmonthReport"><span class="far fa-calendar hidden-xs hidden-sm"></span>13th Month Report</a></li>
 								<!-- jok Added -->
-								<li><a href="#" id="alphalist" name="alphalist"><span class="far fa-calendar hidden-xs hidden-sm"></span>Alphalist Report</a>
-								<li><a href="#" id="bir" name="bir"><span class="far fa-calendar hidden-xs hidden-sm"></span>BIR Report</a>
+								<li class="ContributionReportPrint" style="display: none;"><a href="#" id="alphalist" name="alphalist"><span class="far fa-calendar hidden-xs hidden-sm"></span>Alphalist Report</a>
+								<li class="ContributionReportPrint" style="display: none;"><a href="#" id="bir" name="bir"><span class="far fa-calendar hidden-xs hidden-sm"></span>BIR Report</a>
 								<!-- <li class="ContributionReportPrint" style="display: none;"><a  id="memoRPT" name="memoRPT" onclick=" generateMemo()"><span class="fas fa-landmark hidden-xs hidden-sm"></span>Memo</a></li> -->
-								<li class="ContributionReportPrint" style="display: none;"><a href="memo.php"><span class="fas fa-landmark hidden-xs hidden-sm"></span>Memo</a></li>
-								<li><a href="#" id="1601c" name="1601c"><span class="fas fa-landmark hidden-xs hidden-sm"></span>1601C</a>
-								<li><a href="#" id="1601eq" name="1601eq"><span class="fas fa-landmark hidden-xs hidden-sm"></span>1601-EQ</a>
-								<li><a href="#" id="1601fq" name="1601fq"><span class="fas fa-landmark hidden-xs hidden-sm"></span>1601-FQ</a>
+								<li class="MemoMaintain" style="display: none;"><a href="memo.php"><span class="fas fa-landmark hidden-xs hidden-sm"></span>Memo</a></li>
+								<li class="ContributionReportPrint" style="display: none;"><a href="#" id="1601c" name="1601c"><span class="fas fa-landmark hidden-xs hidden-sm"></span>1601C</a>
+								<li class="ContributionReportPrint" style="display: none;"><a href="#" id="1601eq" name="1601eq"><span class="fas fa-landmark hidden-xs hidden-sm"></span>1601-EQ</a>
+								<li class="ContributionReportPrint" style="display: none;"><a href="#" id="1601fq" name="1601fq"><span class="fas fa-landmark hidden-xs hidden-sm"></span>1601-FQ</a>
 								<!-- <li class="ContributionReportPrint" style="display: none;"><a  id="memoRPT" name="memoRPT" onclick=" generate1601FQ()"><span class="fas fa-landmark hidden-xs hidden-sm"></span>1601-FQ</a></li> -->
 								
 							</ul>

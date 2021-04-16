@@ -1,5 +1,6 @@
 <?php
 ini_set('max_execution_time', 300); //300 seconds = 5 minutes
+session_id("payso");
 session_start();
 include("dbconn.php");
 $userlogin = $_SESSION["user"];

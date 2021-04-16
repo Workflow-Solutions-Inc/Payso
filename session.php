@@ -1,4 +1,5 @@
 <?php
+session_id("payso");
    session_start();
    //unset($_SESSION['counter']);
    if( isset( $_SESSION['counter'] ) ) 

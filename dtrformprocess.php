@@ -1,5 +1,5 @@
 <?php
-
+session_id("payso");
 session_start();
 $userlogin = $_SESSION["user"];
 //$payrollperiod = $_SESSION['DTRPeriod'];
@@ -122,7 +122,7 @@ function getaccountsHeader($payID,$PayPer,$PayLineNum,$PayCut,$dtID,$conPAR)
 
 	$DHquery = "SELECT prdtls.workerid,prdtls.payrollid,prdtls.linenum,dtrheader.daysworked,dtrheader.hoursworked,dtrheader.overtimehours,dtrheader.nightdifhours,
 						dtrheader.late,dtrheader.specialholiday,dtrheader.specialholidaynd,dtrheader.specialholidayot,dtrheader.sunday,dtrheader.sundaynd,dtrheader.sundayot,
-						dtrheader.holiday,dtrheader.holidaynd,dtrheader.holidayot,prdtls.contractid,dtrheader.absent,dtrheader.undertime,dtrheader.break from dailytimerecordheader dtrheader 
+						dtrheader.holiday,dtrheader.holidaynd,dtrheader.holidayot,prdtls.contractid,dtrheader.absent,dtrheader.undertime,dtrheader.break,dtrheader.leaves from dailytimerecordheader dtrheader 
 					left join  payrolldetails prdtls on 
 					dtrheader.workerid = prdtls.workerid and 
 					dtrheader.dataareaid = prdtls.dataareaid 
@@ -143,6 +143,7 @@ function getaccountsHeader($payID,$PayPer,$PayLineNum,$PayCut,$dtID,$conPAR)
                 $LTE = $DHrow["late"];
                 $UT = $DHrow["undertime"];
                 $OB = $DHrow["break"];
+                $LF = $DHrow["leaves"];
 
                 $SHOL = $DHrow["specialholiday"];
                 $SHOLND = $DHrow["specialholidaynd"];
@@ -164,10 +165,11 @@ function getaccountsHeader($payID,$PayPer,$PayLineNum,$PayCut,$dtID,$conPAR)
                 UpdateDetailAccounts($payrollid, $linenum, $ND, "ND",$conn);
                 UpdateDetailAccounts($payrollid, $linenum, $absent, "ABS",$conn);
                 UpdateDetailAccounts($payrollid, $linenum, $OB, "OB",$conn);
+                UpdateDetailAccounts($payrollid, $linenum, $LF, "LF",$conn);
                 UpdateDetailAccounts($payrollid, $linenum, $SHOL, "SPL",$conn);
                 UpdateDetailAccounts($payrollid, $linenum, $SHOLND, "SPLND",$conn);
                 UpdateDetailAccounts($payrollid, $linenum, $SHOLOT, "SPLOT",$conn);
-                UpdateDetailAccounts($payrollid, $linenum, $SUND, "SUND",$conn);
+                UpdateDetailAccounts($payrollid, $linenum, $SUND, "SUN",$conn);
                 UpdateDetailAccounts($payrollid, $linenum, $SUNOT, "SUNOT",$conn);
                 UpdateDetailAccounts($payrollid, $linenum, $SUNND, "SUNND",$conn);
                 UpdateDetailAccounts($payrollid, $linenum, $REGHOL, "HOL",$conn);

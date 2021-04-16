@@ -1,5 +1,6 @@
 
 <?php
+session_id("payso");
 session_start();
 include("dbconn.php");
 $userlogin = $_SESSION["user"];

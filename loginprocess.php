@@ -1,5 +1,5 @@
 <?php
-
+session_id("payso");
 session_start();
 include("dbconn.php");
 
@@ -75,7 +75,9 @@ else if(isset($_POST["submitlogout"])) {
 }
 */
 else if(isset($_GET["out"])) {
+	session_id("payso");
 	session_unset();
+
 	session_destroy();
 	//unset($_SESSION['user']);
 	header('location:index.php');

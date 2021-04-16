@@ -78,7 +78,7 @@
 							<li class="PayrollPeriodMaintain PayrollPeriodView" style="display: none;"><a href="payrollperiodform.php"><span class="far fa-calendar-alt hidden-xs hidden-sm"></span> Payroll Period</a></li>
 							<li class="LateSetup" style="display: none;"><a href="lateform.php"><span class="far fa-clock hidden-xs hidden-sm"></span> Late Setup</a></li>
 							<li class="NightDiffSetup" style="display: none;"><a href="nightform.php"><span class="far fa-clock hidden-xs hidden-sm"></span> Night Differencial</a></li>
-							<li ><a href="deductionform.php"><span class="fas fa-file-invoice-dollar hidden-xs hidden-sm"></span> One Time Account</a></li>
+							<li class="OnetimeAccountMaintain" style="display: none;"><a href="deductionform.php"><span class="fas fa-file-invoice-dollar hidden-xs hidden-sm"></span> One Time Account</a></li>
 						</ul>
 					</div>
 				</div>
@@ -124,7 +124,7 @@
 							<li class="WorkersMaintain WorkersView" style="display: none;"><a href="workerform.php"><span class="fas fa-user-tie hidden-xs hidden-sm"></span> Workers</a></li>
 							<li class="DTRMaintain DailyTimeRecord" style="display: none;"><a href="dtrform.php"><span class="far fa-sticky-note hidden-xs hidden-sm"></span>  Daily Time Record</a></li>
 							<li class="ShiftscheduleMaintain ShiftSchedule" style="display: none;"><a href="shiftschedule.php"><span class="far fa-calendar-alt hidden-xs hidden-sm"></span> Shift Schedule</a></li>
-							<li ><a href="attendance.php"><span class="fas fa-tv hidden-xs hidden-sm"></span> Attendance Monitoring</a></li>
+							<li class="AttendanceMonitoring" style="display: none;"><a href="attendance.php"><span class="fas fa-tv hidden-xs hidden-sm"></span> Attendance Monitoring</a></li>
 							<li class="LeavePayoutMaintain LeavePayoutView" style="display: none;"><a href="leavepayout.php"><span class="fas fa-sign-out-alt hidden-xs hidden-sm"></span> Leave Payout</a></li>
 
 						</ul>

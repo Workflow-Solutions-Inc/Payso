@@ -1,4 +1,5 @@
 <?php 
+session_id("payso");
 session_start();
 include("dbconn.php");
 $user = $_SESSION["user"];
@@ -420,7 +421,7 @@ $user = $_SESSION["user"];
 						//data:'bkno='+BNo+'&bkdesc='+BDesc+'&bktit='+BTit+'&bkqty='+BQ,
 						beforeSend:function(){
 						
-							$("#result").html('<img src="img/loading.gif" width="300" height="300">');
+							$("#result").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
 			
 						},
 						success: function(data){

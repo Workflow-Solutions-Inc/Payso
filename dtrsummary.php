@@ -1,4 +1,5 @@
 <?php
+session_id("payso");
 session_start();
 include("dbconn.php");
 $dataareaid = $_SESSION["defaultdataareaid"];
@@ -74,7 +75,7 @@ $_SESSION['DTRWorker'] = $_POST['transval'];
 								if($rowcnt > 1) { $rowcnt = 0; $rowclass = "rowB"; }
 								else { $rowclass = "rowA";}
 
-								if($row['timein'] == "00:00" && $row['timeout'] == "00:00" && $row['BreakOut'] == "00:00" && $row['BreakIn'] == "00:00")
+								if(($row['timein'] == "00:00" && $row['timeout'] == "00:00" && $row['BreakOut'] == "00:00" && $row['BreakIn'] == "00:00") && $row['daytype'] == 'Regular')
 								{
 									$rowclass = "rowInvalid";
 								}
@@ -82,11 +83,11 @@ $_SESSION['DTRWorker'] = $_POST['transval'];
 								{
 									$rowclass = "rowModified";
 								}
-								else if($row['timein'] == "00:00")
+								else if($row['timein'] == "00:00" && $row['daytype'] == 'Regular')
 								{
 									$rowclass = "rowNoIn";
 								}
-								else if($row['timeout'] == "00:00")
+								else if($row['timeout'] == "00:00" && $row['daytype'] == 'Regular')
 								{
 									$rowclass = "rowNoOut";
 								}
