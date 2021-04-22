@@ -235,7 +235,7 @@ else if($_GET["action"]=="updatesched"){
 					}
 				}
 				echo $query;
-				/*$wkquery = "SELECT * FROM worker where workerid in ($id)";
+				$wkquery = "SELECT * FROM worker where workerid in ($id)";
 				$wkresult = $conn->query($wkquery);
 
 				while ($wkrow = $wkresult->fetch_assoc())
@@ -304,7 +304,7 @@ else if($_GET["action"]=="updatesched"){
 									}
 							
 						}		
-				}*/		  			  	
+				}		  			  	
 				
 					  
 	}
