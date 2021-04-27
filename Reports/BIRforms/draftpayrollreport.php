@@ -2,7 +2,7 @@
 
 //require_once('tcpdf_min\tcpdf.php');
 include(__DIR__ . '/tcpdf_min/tcpdf.php');
-include('dbconn2.php');
+include('../../dbconn.php');
 
 
 $payrollid_ = $_GET['payroll'];

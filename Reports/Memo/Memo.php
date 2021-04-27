@@ -50,7 +50,7 @@ $pdf->Output('','payslip.pdf', false);*/
 
 use setasign\Fpdi\Fpdi;
 require_once('fpdf/htmlpdf.php');
-include('dbconn.php');
+include('../../dbconn.php');
 include(__DIR__ . '/FPDI/src/autoload.php');
 //$selectedYear = $_GET['selectedyear'];
 //$selectedWorker = $_GET['selectedworker'];

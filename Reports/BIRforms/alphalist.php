@@ -2,7 +2,7 @@
 // Include PHPExcel library and create its object
 include(__DIR__ . '/PHPExcel/Classes/PHPExcel/IOFactory.php');
 include(__DIR__ . '/PHPExcel/Classes/PHPExcel.php');
-include('dbconn2.php');
+include('../../dbconn.php');
 $myFile = __DIR__ . '/1604.xlsx';
 echo $myFile;
 $myCounter = 16;

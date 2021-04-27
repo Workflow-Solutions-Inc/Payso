@@ -2,7 +2,7 @@
 session_start();
 // Include the main TCPDF library (search for installation path).
 include(__DIR__ . '/tcpdf_min/tcpdf.php');
-include('dbconn.php');
+include('../dbconn.php');
 /*
 $soc = $_GET["dataareaid"];
 $yr = $_GET["year"];*/
@@ -20,7 +20,7 @@ class MYPDF extends TCPDF {
     public function Header() {
       // Logo
       session_start(); 
-      include('dbconn.php');
+      include('../dbconn.php');
       $dataareaid = $_SESSION["defaultdataareaid"];
       $soc = $dataareaid;
       $logo = '';

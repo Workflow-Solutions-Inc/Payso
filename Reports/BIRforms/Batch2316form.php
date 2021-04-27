@@ -5,7 +5,7 @@
 
 use setasign\Fpdi\Fpdi;
 require_once('fpdf/htmlpdf.php');
-include('dbconn.php');
+include('../../dbconn.php');
 include(__DIR__ . '/FPDI/src/autoload.php');
 $pdf = new \setasign\Fpdi\Fpdi();
 //require_once "FPDI/src/autoload.php";

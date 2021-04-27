@@ -5,7 +5,7 @@ $payrollperiod = $_GET['payroll'];
 $dataareaid = $_GET['soc'];
 $output = "";
 
-include('dbconn.php');
+include('../../dbconn.php');
 require('fpdf/htmlpdf.php');
 
 

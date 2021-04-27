@@ -49,7 +49,7 @@ $pdf->Output('','payslip.pdf', false);*/
 $payrollid = $_GET['payroll'];
 $dataareaid = $_GET['soc'];
 
-include('dbconn.php');
+include('../../dbconn.php');
 
 require('fpdf/htmlpdf.php');
 
