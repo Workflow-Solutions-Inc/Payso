@@ -819,12 +819,12 @@ $firstresult = '';
 												</div>
 
 												<div class="formitem">
-													<span class="label-xl" style="width: 140px;">Late (Mins):</span>
+													<span class="label-xl" style="width: 140px;">Late (Hrs):</span>
 													<input type="number" step="0.01"  name ="add-late" id="add-late" class="textbox">
 												</div>
 
 												<div class="formitem">
-													<span class="label-xl" style="width: 140px;">Undertime (Mins):</span>
+													<span class="label-xl" style="width: 140px;">Undertime (Hrs):</span>
 													<input type="number" step="0.01" name ="add-undertime" id="add-undertime"  class="textbox">
 												</div>
 
