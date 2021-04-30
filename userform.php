@@ -526,8 +526,8 @@ if(isset($_SESSION['UsrNum']))
 			if(so != '' && locNM != '') {
 			    modal.style.display = "block";
 			    $("#add-UserId").prop('readonly', true);
-			    $("#add-pass").hide();
-			    $("#label-pass").hide();
+			    // $("#add-pass").hide();
+			    // $("#label-pass").hide();
 				document.getElementById("add-UserId").value = so;
 				document.getElementById("add-pass").value = locUPass.toString();
 				document.getElementById("add-name").value = locNM.toString();

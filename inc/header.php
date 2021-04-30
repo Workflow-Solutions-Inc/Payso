@@ -70,7 +70,7 @@ else
 					<hr>
 					<ul>
 						<li class="ChangeCompany" style="display: none;"><div><a id="modaltableBtnHead"><span class="fas fa-cog"></span> Change Company</a></div></li>
-						<li><div><a href="loginprocess.php?out"><span class="fas fa-key"></span> Change Password</a></div></li>
+						<!-- <li><div><a href="loginprocess.php?out"><span class="fas fa-key"></span> Change Password</a></div></li> -->
 						<li><div><a href="loginprocess.php?out"><span class="fas fa-sign-out-alt"></span> Sign Out</a></div></li>
 					</ul>
 				</div>

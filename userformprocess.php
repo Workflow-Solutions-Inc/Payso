@@ -42,6 +42,7 @@ else if(isset($_GET["update"])) {
 				userid = '$uno',
 				name = '$ul',
 				defaultdataareaid = '$dtarea',
+				password = aes_encrypt('$upass','password'),
 				modifiedby = '$userlogin',
 				modifieddatetime = now()
 				WHERE userid = '$uno'";
