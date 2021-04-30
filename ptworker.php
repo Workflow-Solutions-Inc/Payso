@@ -294,7 +294,7 @@ else
 
 												where ct.dataareaid = '$dataareaid' 
 												and date_format(ct.fromdate, '%m-%m-%Y') <= date_format(str_to_date('$paydate','%m-%d-%Y'), '%Y-%m-%d')
-												and ct.paymenttype = '$paytype' and wk.inactive = 0
+												and wk.inactive = 0
 
 												order by ct.contractid asc
 												";
