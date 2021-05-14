@@ -41,7 +41,7 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 			<div class="leftpanel-title"><b>COMMANDS</b></div>
 			<!--<li><button id="myAddBtn"><span class="fa fa-plus"></span> Create Record</button></li>-->
 			<li class="WorkersMaintain" style="display: none;"><button id="modaltableBtn1"><span class="fa fa-plus"></span> Create Record</button>
-			<li class="WorkersMaintain" style="display: none;"><button onClick="Delete();"><span class="fa fa-trash-alt"></span> Delete Record</button></li>
+			<!-- <li class="WorkersMaintain" style="display: none;"><button onClick="Delete();"><span class="fa fa-trash-alt"></span> Delete Record</button></li> -->
 			<li class="WorkersMaintain" style="display: none;"><button id="myUpdateBtn"><span class="fa fa-edit"></span> Update Record</button></li>
 			<li><button onClick="Cancel();"><span class="fa fa-arrow-circle-left fa-lg"></span> Back</button></li>
 			

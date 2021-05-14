@@ -438,7 +438,7 @@ $firstresult = '';
 	<div class="modal-container">
 		<div class="modal-content">
 			<div class="modal-header">
-				<div class="col-lg-6">add info</div>
+				<div class="col-lg-6">Create Payroll Transaction</div>
 				<div class="col-lg-6"><span class="fas fa-times modal-close"></span></div>
 			</div>
 			
@@ -475,16 +475,18 @@ $firstresult = '';
 								<input type="text" value="" placeholder="Payroll ID" name ="PTid" id="add-id" class="modal-textarea" required="required">
 							</div>
 							<label>Payroll Period:</label>
+
 							<input type="text" value="" placeholder="Payroll Period" id="add-period" name ="PTPeriod"  list="PeriodList" class="modal-textarea" required="required">
+
 								<?php
-									$query = "SELECT distinct payrollperiod FROM payrollperiod where dataareaid = '$dataareaid' order by payrollperiod desc";
+									$query = "SELECT distinct payrollperiod,date_format(startdate, '%m-%d-%Y') startdate,date_format(enddate, '%m-%d-%Y') enddate FROM payrollperiod where dataareaid = '$dataareaid' order by payrollperiod desc";
 									$result = $conn->query($query);			
 							  	?>
 							<datalist id="PeriodList">
 								<?php 
 									while ($row = $result->fetch_assoc()) {
 								?>
-									<option value="<?php echo $row["payrollperiod"];?>"></option>
+									<option value="<?php echo $row["payrollperiod"];?>"><?php echo 'Cutoff ('.$row["startdate"].' - '.$row["enddate"].')';?></option>
 								<?php } ?>
 							</datalist>
 						</div>

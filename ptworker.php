@@ -121,7 +121,7 @@ else
 									</tr>
 									<tr class="rowsearch">
 									  <td><span class="fas fa-search fa-xs"></span></td>
-									  <td><center><span class="fa fa-check"></span></center></td>
+									  <td><center><input id="selectAll" type="checkbox"></span></center></td>
 									  	<td style="width:14%;"><input style="width:100%;height: 20px;" list="SearchContract" class="search">
 										<?php
 											$query = "SELECT 
@@ -275,6 +275,16 @@ else
 								</thead>
 								<tbody id="result">
 										<?php	
+										$PayPerquery = "SELECT 
+															payrollgroup
+															FROM payrollperiod where dataareaid = '$dataareaid' 
+															and payrollperiod = '$period'";
+
+															//and (module like '%$module%') and (submodule like '%$sub%') and (name like '%$name%')";
+												$PayPerresult = $conn->query($PayPerquery);
+												$PayPerrow = $PayPerresult->fetch_assoc();
+												$payrollgroup=$PayPerrow["payrollgroup"];
+												
 										$query = "SELECT ct.contractid,
 													wk.name,
 													format(ct.rate,2) as rate
@@ -294,7 +304,7 @@ else
 
 												where ct.dataareaid = '$dataareaid' 
 												and date_format(ct.fromdate, '%m-%m-%Y') <= date_format(str_to_date('$paydate','%m-%d-%Y'), '%Y-%m-%d')
-												and wk.inactive = 0
+												and ct.paymenttype = '$paytype' and wk.inactive = 0 and wk.payrollgroup = '$payrollgroup'
 
 												order by ct.contractid asc
 												";
@@ -431,6 +441,7 @@ else
 				success: function(data){
 					$('#result').html(data);
 					CheckedVal();
+					$('#selectAll').prop('checked', false);
 					
 				}
 			}); 
@@ -479,6 +490,28 @@ else
 	    }
 	    return arr;
 	}
+
+	$("#selectAll").change(function(){  //"select all" change 
+   			 
+
+   			 if(false == $(this).prop("checked")){ //if this item is unchecked
+			        $('[name=chkbox]').prop('checked', false); //change "select all" checked status to false
+			         allVals = [];
+					 uniqueNames = [];
+					 remVals = [];
+					 remValsEx = [];
+			        document.getElementById('inchide').value = '';
+			        document.getElementById('inchide2').value = '';
+			        //alert('sample');
+
+			    }
+			    else
+			    {
+			    	$(".checkbox").prop('checked', $(this).prop("checked")); //change all ".checkbox" checked status
+			    	Add();
+			    }
+
+			});
 	
 	function Add() 
 	{  

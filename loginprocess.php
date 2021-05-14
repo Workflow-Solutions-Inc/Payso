@@ -33,6 +33,7 @@ if(isset($_POST["submit"])) {
 					//echo "Login successful! <a href='index.php'>Click</a> here to enter the member page!";
 					$_SESSION['user'] = $dbusername;
 					$_SESSION['defaultdataareaid'] = $dataareaid;
+					$_SESSION['userpass'] = $dbpassword;
 					header('location: menu.php');
 				}
 				else{

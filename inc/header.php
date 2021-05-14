@@ -10,6 +10,7 @@ else
 {
 	$user = $_SESSION["user"];
 	$dataareaid = $_SESSION["defaultdataareaid"];
+	$userpasshd = $_SESSION['userpass'];
 }
 
 /*else
@@ -70,7 +71,7 @@ else
 					<hr>
 					<ul>
 						<li class="ChangeCompany" style="display: none;"><div><a id="modaltableBtnHead"><span class="fas fa-cog"></span> Change Company</a></div></li>
-						<!-- <li><div><a href="loginprocess.php?out"><span class="fas fa-key"></span> Change Password</a></div></li> -->
+						<li><div><a id="modalChangePassBtn"><span class="fas fa-key"></span> Change Password</a></div></li>
 						<li><div><a href="loginprocess.php?out"><span class="fas fa-sign-out-alt"></span> Sign Out</a></div></li>
 					</ul>
 				</div>
@@ -147,6 +148,7 @@ else
 				}*/
 			?>
 			<div style="display:none;"><textarea id="accesslevel"><?php echo substr($VarAccessLevel,1);?></textarea></div>
+			<div style="display:none;"><input type="hidden" id="hidepasshd" value="<?php echo $userpasshd;?>"></textarea></div>
 		</div>
 	</div>
 </div>
@@ -254,6 +256,46 @@ else
 	</div>
 	<!-- end modal table 1-->
 
+<!-- The Modal -->
+<div id="ChangePassModal" class="modal">
+	<!-- Modal content -->
+	<div class="modal-container">
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="col-lg-6">Change Password</div>
+				<div class="col-lg-6"><span class="fas fa-times modal-close-l"></span></div>
+			</div>
+			
+			<div id="container" class="modal-content-container">
+				<form name="myForm2" accept-charset="utf-8" action="changepass.php" method="get">
+					<div class="row">
+
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<label>Old Password:</label>
+							<input type="text" value="" placeholder="Old Password" name ="oldpass" id="add-oldpass" class="modal-textarea" required="required">
+							
+							<label>New Password:</label>
+							<input type="text" value="" placeholder="New Password" id="add-newpass" name="newpass" class="modal-textarea" minlength="2" required="required">
+
+							<label>Re-Type New Password:</label>
+							<input type="text" value="" placeholder="Re-Type New Password" id="add-renewpass" name="renewpass" class="modal-textarea" minlength="2" required="required">
+						</div>
+
+
+					</div>
+
+					<div class="button-container">
+						<!--<button id="csaddbt" name="save" value="save" class="btn btn-primary btn-action" onclick="return checkExistForm()">Save</button>-->
+						<button id="csupbt" name="changepass" value="changepass" class="btn btn-success btn-action" onclick="return validateForm1()">Change</button>
+						<button onClick="ClearPass();" type="button" value="Reset" class="btn btn-danger">Clear</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end modal-->
+
 
 
 <script  type="text/javascript">
@@ -321,6 +363,76 @@ var locMenuDataarea='';
 			
 		}
 		//end modal --------------------------- 
+
+		// modal Change pass
+		var modalChange = document.getElementById('ChangePassModal');
+		// Get the button that opens the modal
+		var openBtnCP = document.getElementById("modalChangePassBtn");
+		
+		// Get the <span> element that closes the modal
+		var spanCP = document.getElementsByClassName("modal-close-l")[0];
+		// When the user clicks the button, open the modal 
+		openBtnCP.onclick = function() {
+		    $("#ChangePassModal").stop().fadeTo(500,1);
+		    
+		}
+
+		
+		// When the user clicks on <span> (x), close the modal
+		spanCP.onclick = function() {
+		    modalChange.style.display = "none";
+		    
+		}
+		
+		//end modal --------------------------- 
+
+
+		function validateForm1() {
+		  var x = document.forms["myForm2"]["changepass"].value;
+		  var locOldPass = $('#add-oldpass').val();
+		  var locNewPass = $('#add-newpass').val();
+		  var locReNewPass = $('#add-renewpass').val();
+		  var syspass = $('#hidepasshd').val();
+		  //alert($userpassx);
+		  if (x == "changepass") {
+		  	if(confirm("Are you sure you want to change this password?")) {
+		    	if(syspass == locOldPass){
+
+		    		if(locNewPass == locReNewPass){
+		    			return true;
+		    		}
+		    		else 
+		    		{
+		    			alert("Password Dont Match!");
+		    			ClearPass();
+		    			return false;
+		    		}
+		    		
+		    	}
+		    	else
+		    	{
+		    		alert("You Must Enter the Correct Old Password");
+		    		ClearPass();
+		    		return false;
+		    	}
+		   
+		    	
+		    }
+		    else
+		    {
+		    	//modal.style.display = "none";
+		    	ClearPass();
+		    	return false;
+		    }
+		  }
+		}
+
+	function ClearPass()
+	{
+		document.getElementById("add-oldpass").value = '';
+		document.getElementById("add-newpass").value = '';
+		document.getElementById("add-renewpass").value = '';
+	}
 
 
 document.onkeydown = function(e) {

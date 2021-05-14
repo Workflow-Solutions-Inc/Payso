@@ -209,6 +209,18 @@
   cursor: pointer;
   float: right;
 }
+
+.modal-close-l {
+  transition: all 200ms ease-IN;
+  -o-transition: all 200ms ease;
+  -ms-transition: all 200ms ease;
+  -moz-transition: all 200ms ease;
+  -webkit-transition: all 200ms ease;
+  color: #FFF;
+  cursor: pointer;
+  float: right;
+}
+
 .modal-close:hover {
   color: #F90;
 }

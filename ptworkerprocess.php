@@ -85,10 +85,10 @@ else if($_GET["action"]=="save"){
 	 if($id != ""){
 	 $query = "SELECT ct.contractid,
 						ct.workerid,
-						ct.rate,
-						ct.ecola as ecola,
-						ct.transpo as transpo,
-						ct.meal as meal,
+						ct.rate
+						,format(ct.ecola,2) as ecola,
+						format(ct.transpo,2) transpo,
+						format(ct.meal,2) as meal,
 						ct.contracttype workertype,
 
 						ct.fromdate as transdate
@@ -144,10 +144,9 @@ else if($_GET["action"]=="save"){
 
 					";
 		$resultperiod = $conn->query($queryperiod);
-		while ($rowperiod = $resultperiod->fetch_assoc())
-		{
-			$payrollgroup = $rowperiod["payrollgroup"];
-		}
+		$rowperiod = $resultperiod->fetch_assoc();
+		$payrollgroup = $rowperiod["payrollgroup"];
+		
 
 		$sqlinsert = "call SP_PayrollDetailsAccountsCreation('$dataareaid','$paynum','$userlogin','$period', '$payrollgroup')";
 			//mysqli_query($conn,$sqlinsert);
