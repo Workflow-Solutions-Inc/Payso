@@ -1,6 +1,6 @@
 <?php
-session_id("payso");
-   session_start();
+session_start();
+session_regenerate_id();
    //unset($_SESSION['counter']);
    if( isset( $_SESSION['counter'] ) ) 
    {

@@ -1,6 +1,6 @@
 <?php
-
 session_start();
+session_regenerate_id();
 $userlogin = $_SESSION["user"];
 $payrollperiod = $_SESSION['DTRPeriod'];
 $wkid = $_SESSION['DTRWorker'];

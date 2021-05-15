@@ -1,5 +1,6 @@
 <?php 
 session_start();
+session_regenerate_id();
 include("dbconn.php");
 $user = $_SESSION["user"];
 $dataareaid = $_SESSION["defaultdataareaid"];

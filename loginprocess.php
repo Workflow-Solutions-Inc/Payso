@@ -1,6 +1,6 @@
 <?php
-session_id("payso");
 session_start();
+session_regenerate_id();
 include("dbconn.php");
 
 if(isset($_POST["submit"])) {
@@ -76,7 +76,7 @@ else if(isset($_POST["submitlogout"])) {
 }
 */
 else if(isset($_GET["out"])) {
-	session_id("payso");
+	
 	session_unset();
 
 	session_destroy();

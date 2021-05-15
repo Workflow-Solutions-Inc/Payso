@@ -1,6 +1,6 @@
 <?php
-session_id("payso");
 session_start();
+session_regenerate_id();
 include("dbconn.php");
 $dataareaid = $_SESSION["defaultdataareaid"];
 $id=$_POST["WorkID"];

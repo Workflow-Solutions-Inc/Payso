@@ -1,6 +1,6 @@
 <?php
-session_id("payso");
 session_start();
+session_regenerate_id();
 // Include the main TCPDF library (search for installation path).
 include(__DIR__ . '/tcpdf_min/tcpdf.php');
 include('dbconn2.php');
