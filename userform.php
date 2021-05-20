@@ -3,6 +3,13 @@ session_start();
 session_regenerate_id();
 include("dbconn.php");
 #$user = $_SESSION["user"];
+$sessioncurtab = '';
+$curtab = 'company';
+if(isset($_SESSION['curtab']))
+{ 
+	 $sessioncurtab = $_SESSION['curtab'];
+}
+
 $dataareaid = $_SESSION["defaultdataareaid"];
 
 if(isset($_SESSION['UsrNum']))
@@ -266,6 +273,7 @@ if(isset($_SESSION['UsrNum']))
 								</tbody>
 								<span class="temporary-container-input">
 									<input type="hidden" id="hide" value="<?php if(isset($_SESSION['UsrNum'])){ echo $usrid; } else { echo $firstresult; } ?>">
+									<input type="hidden" id="hidecurtab" value="<?php if(isset($_SESSION['curtab'])){ echo $sessioncurtab; } else { echo $curtab; } ?>">
 									<input type="hidden" id="hidefocus" value="<?php echo $rowcnt2;?>">
 									<div style="display:none;width:1%;"><textarea id="t2" value = "<?php echo substr($collection,1);?>"><?php echo substr($collection,1);?></textarea></div>
 								</span>
@@ -415,7 +423,7 @@ if(isset($_SESSION['UsrNum']))
 <!-- begin [JAVASCRIPT] -->
 <script src="js/ajax.js"></script>
 	 <script  type="text/javascript">
-	 	var tablocation='company';
+	 	var tablocation='';
 	 	var flaglocation=true;
 		var so='';
 		var locUPass = '';
@@ -453,7 +461,7 @@ if(isset($_SESSION['UsrNum']))
 					$.ajax({
 						type: 'POST',
 						url: 'userformline.php',
-						data:{action:action, actmode:actionmode, userId:so},
+						data:{action:action, actmode:actionmode, userId:so, tablocation:tablocation},
 						beforeSend:function(){
 						
 							$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
@@ -474,7 +482,7 @@ if(isset($_SESSION['UsrNum']))
 					$.ajax({
 						type: 'POST',
 						url: 'usergroupformline.php',
-						data:{action:action, actmode:actionmode, userId:so},
+						data:{action:action, actmode:actionmode, userId:so, tablocation:tablocation},
 						beforeSend:function(){
 						
 							$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
@@ -525,6 +533,58 @@ if(isset($_SESSION['UsrNum']))
 
 
 		$(document).ready(function() {
+			tablocation = document.getElementById("hidecurtab").value;
+
+			if(tablocation == 'company')
+				{
+					//-----------get line--------------//
+					$('#UsrCtr').css("display", "None");
+					$('#CompCtr').css("display", "Block");
+					$('#Company').addClass("active");
+					$('#Group').removeClass("active");
+					var action = "getline";
+					var actionmode = "userform";
+					$.ajax({
+						type: 'POST',
+						url: 'userformline.php',
+						data:{action:action, actmode:actionmode, userId:so, tablocation:tablocation },
+						beforeSend:function(){
+						
+							$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+						},
+						success: function(data){
+							//payline='';
+							//document.getElementById("hide2").value = "";
+							$('#dtrContent').html(data);
+						}
+					}); 
+					//-----------get line--------------//
+				}
+				else if(tablocation == 'usrgrp')
+				{
+					//-----------get line--------------//
+					$('#UsrCtr').css("display", "Block");
+					$('#CompCtr').css("display", "None");
+					$('#Group').addClass("active");
+					$('#Company').removeClass("active");
+					var action = "getline";
+					var actionmode = "userform";
+					$.ajax({
+						type: 'POST',
+						url: 'usergroupformline.php',
+						data:{action:action, actmode:actionmode, userId:so, tablocation:tablocation },
+						beforeSend:function(){
+						
+							$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+						},
+						success: function(data){
+							//payline='';
+							//document.getElementById("hide2").value = "";
+							$('#dtrContent').html(data);
+						}
+					}); 
+					//-----------get line--------------//
+				}
 			loc = document.getElementById("hide").value;
 	            //$("#myUpdateBtn").prop("disabled", false);
 	        if(loc != '')
@@ -546,7 +606,7 @@ if(isset($_SESSION['UsrNum']))
 		    //var idx = $("tr:focus").attr("tabindex");
 		    //alert(idx);
 		    //document.onkeydown = checkKey;
-		    $('#Company').addClass("active");
+		    
 		});
 
 		function Activate(val)
@@ -566,15 +626,16 @@ if(isset($_SESSION['UsrNum']))
 				$.ajax({
 					type: 'POST',
 					url: 'userformline.php',
-					data:{action:action, actmode:actionmode, userId:so},
+					data:{action:action, actmode:actionmode, userId:so, tablocation:tablocation},
 					beforeSend:function(){
 					
 						$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
 					},
 					success: function(data){
 						//payline='';
-						//document.getElementById("hide2").value = "";
+						document.getElementById("hidecurtab").value = tablocation;
 						$('#dtrContent').html(data);
+
 					}
 				}); 
 				
@@ -595,14 +656,14 @@ if(isset($_SESSION['UsrNum']))
 				$.ajax({
 					type: 'POST',
 					url: 'usergroupformline.php',
-					data:{action:action, actmode:actionmode, userId:so},
+					data:{action:action, actmode:actionmode, userId:so, tablocation:tablocation},
 					beforeSend:function(){
 					
 						$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
 					},
 					success: function(data){
 						//payline='';
-						//document.getElementById("hide2").value = "";
+						document.getElementById("hidecurtab").value = tablocation;
 						$('#dtrContent').html(data);
 					}
 				}); 
@@ -739,12 +800,12 @@ if(isset($_SESSION['UsrNum']))
 						success: function(data){
 							$('#result').html(data);
 							//-----------get line--------------//
-							var action = "getline";
+							/*var action = "getline";
 							var actionmode = "userform";
 							$.ajax({
 								type: 'POST',
 								url: 'userformline.php',
-								data:{action:action, actmode:actionmode, userId:so},
+								data:{action:action, actmode:actionmode, userId:so, tablocation:tablocation},
 								beforeSend:function(){
 								
 									$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
@@ -754,8 +815,52 @@ if(isset($_SESSION['UsrNum']))
 									//document.getElementById("hide2").value = "";
 									$('#dtrContent').html(data);
 								}
-							}); 
-							//-----------get line--------------//		
+							}); */
+							//-----------get line--------------//	
+							tablocation = document.getElementById("hidecurtab").value;
+
+							if(tablocation == 'company')
+								{
+									//-----------get line--------------//
+									var action = "getline";
+									var actionmode = "userform";
+									$.ajax({
+										type: 'POST',
+										url: 'userformline.php',
+										data:{action:action, actmode:actionmode, userId:so, tablocation:tablocation },
+										beforeSend:function(){
+										
+											$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+										},
+										success: function(data){
+											//payline='';
+											//document.getElementById("hide2").value = "";
+											$('#dtrContent').html(data);
+										}
+									}); 
+									//-----------get line--------------//
+								}
+								else if(tablocation == 'usrgrp')
+								{
+									//-----------get line--------------//
+									var action = "getline";
+									var actionmode = "userform";
+									$.ajax({
+										type: 'POST',
+										url: 'usergroupformline.php',
+										data:{action:action, actmode:actionmode, userId:so, tablocation:tablocation },
+										beforeSend:function(){
+										
+											$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+										},
+										success: function(data){
+											//payline='';
+											//document.getElementById("hide2").value = "";
+											$('#dtrContent').html(data);
+										}
+									}); 
+									//-----------get line--------------//
+								}	
 				}
 			}); 
 			 

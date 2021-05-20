@@ -177,6 +177,7 @@ else if($_GET["action"]=="Ugroup"){
 else if($_GET["action"]=="unload"){
 	 	
 	unset($_SESSION['UsrNum']);
+	unset($_SESSION['curtab']);
 	//unset($_SESSION['paynum']);
 	header('location: userform.php');
 	

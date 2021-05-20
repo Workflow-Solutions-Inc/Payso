@@ -6,6 +6,7 @@ $userlogin = $_SESSION["user"];
 $dataareaid = $_SESSION["defaultdataareaid"];
 $id=$_POST["userId"];
 $_SESSION['UsrNum'] = $id;
+$_SESSION['curtab']=$_POST["tablocation"];
 ?>
 <!-- start TABLE AREA -->
 <div id="tablearea2" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mainpanel-area">
