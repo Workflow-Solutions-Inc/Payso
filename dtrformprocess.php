@@ -62,6 +62,7 @@ function ComputeAll($PayPer,$PayCut,$dtID,$conPAR,$usr)
 						//$Mrate = 20000;
 						//$ActRate = 0;
 						getaccountsHeader($VarPayId,$LocPayrollPeriod,$id,$LocCutoff,$dataareaid,$conn);
+
 						//Recompute($id,$VarPayId,$dataareaid,$conn,$Mrate,$ActRate,$LocCutoff,$LocPayrollPeriod,$wrkId);
 
 
@@ -120,7 +121,19 @@ function getaccountsHeader($payID,$PayPer,$PayLineNum,$PayCut,$dtID,$conPAR)
 	$dataareaid = $dtID;
 	$varPayCut = $PayCut;
 
-	$DHquery = "SELECT prdtls.workerid,prdtls.payrollid,prdtls.linenum,dtrheader.daysworked,dtrheader.hoursworked,dtrheader.overtimehours,dtrheader.nightdifhours,
+	$sqlinsert = "call SP_DTRtoPDA('$dataareaid','$PayPer','$payID','$PayLineNum')";
+						//mysqli_query($conn,$sqlinsert);
+						//echo $sqlinsert."<br>".$conn->error;
+						if(mysqli_query($conn,$sqlinsert))
+						{
+							echo $sqlinsert."<br>".$conn->error;
+						}
+						else
+						{
+							echo "error".$sqlinsert."<br>".$conn->error;
+						}
+
+	/*$DHquery = "SELECT prdtls.workerid,prdtls.payrollid,prdtls.linenum,dtrheader.daysworked,dtrheader.hoursworked,dtrheader.overtimehours,dtrheader.nightdifhours,
 						dtrheader.late,dtrheader.specialholiday,dtrheader.specialholidaynd,dtrheader.specialholidayot,dtrheader.sunday,dtrheader.sundaynd,dtrheader.sundayot,
 						dtrheader.holiday,dtrheader.holidaynd,dtrheader.holidayot,prdtls.contractid,dtrheader.absent,dtrheader.undertime,dtrheader.break,dtrheader.leaves from dailytimerecordheader dtrheader 
 					left join  payrolldetails prdtls on 
@@ -188,7 +201,7 @@ function getaccountsHeader($payID,$PayPer,$PayLineNum,$PayCut,$dtID,$conPAR)
 				//$ActRate = 0;
 				//Recompute($linenum,$payID,$dataareaid,$conn,$Mrate,$ActRate,$varPayCut,$PayPer,$wkIdno);
 
-			}
+			}*/
 
 }
 function UpdateDetailAccounts($payID,$lineno,$value,$Accnt,$conPAR) 

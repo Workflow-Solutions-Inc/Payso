@@ -295,17 +295,20 @@ else
 														when ct.contracttype = 1 then 'Reliever'
 														when ct.contracttype = 2 then 'Probationary'
 														when ct.contracttype = 3 then 'Contractual' 
-														when ct.contracttype = 4 then 'Trainee' else '' end as workertype,
+														when ct.contracttype = 4 then 'Trainee'
+														when ct.contracttype = 5 then 'Project-Based' else '' end as workertype,
 
 													ct.fromdate as transdate
 													FROM contract ct
 													left join worker wk on wk.workerid = ct.workerid
 													and wk.dataareaid = ct.dataareaid
+													left join ratehistory rh  on 
+													rh.contractid = ct.contractid and rh.dataareaid = ct.dataareaid
 
 												where ct.dataareaid = '$dataareaid' 
 												and date_format(ct.fromdate, '%m-%m-%Y') <= date_format(str_to_date('$paydate','%m-%d-%Y'), '%Y-%m-%d')
 												and ct.paymenttype = '$paytype' and wk.inactive = 0 and wk.payrollgroup = '$payrollgroup'
-
+												and rh.status = 1
 												order by ct.contractid asc
 												";
 										$result = $conn->query($query);

@@ -81,24 +81,25 @@ $firstresult = $_POST['PayId'];
 											</tr>
 
 										<?php 
-										$qNet = "CALL SP_CheckNetPay ('$firstresult','$dataareaid')";
+										$collection = '';
+										// $qNet = "CALL SP_CheckNetPay ('$firstresult','$dataareaid')";
 
-											$rNet = $conn->query($qNet);
-
-											$collection = '';
+										// 	$rNet = $conn->query($qNet);
 
 											
-											while ($rowNet = $rNet->fetch_assoc())
-											{
-												$collection = $collection.','.$rowNet['name'];
-											}
+
+											
+										// 	while ($rowNet = $rNet->fetch_assoc())
+										// 	{
+										// 		$collection = $collection.','.$rowNet['name'];
+										// 	}
 
 
-											/*echo $output2 = '<tr class="rowA">
-																<td style="display:none;width:1%;"><input type="input" id="hide0net" value="'.substr($collection,1).'"></td>
-															</tr>';*/
-											$conn->close();
-											include("dbconn.php");
+										// 	/*echo $output2 = '<tr class="rowA">
+										// 						<td style="display:none;width:1%;"><input type="input" id="hide0net" value="'.substr($collection,1).'"></td>
+										// 					</tr>';*/
+										// 	$conn->close();
+										// 	include("dbconn.php");
 
 
 

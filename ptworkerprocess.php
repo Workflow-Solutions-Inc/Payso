@@ -7,11 +7,22 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 $paynum = $_SESSION['paynum'];
 $period = $_SESSION['payper'];
 $paydate = $_SESSION['paydate'];
+$paytype = $_SESSION['paytype'];
 
 if($_GET["action"]=="searchdata"){
 	if($_GET["actmode"]=="userform"){
 
 		$id=$_GET["PTContract"];
+
+		$PayPerquery = "SELECT 
+					payrollgroup
+					FROM payrollperiod where dataareaid = '$dataareaid' 
+					and payrollperiod = '$period'";
+
+					//and (module like '%$module%') and (submodule like '%$sub%') and (name like '%$name%')";
+		$PayPerresult = $conn->query($PayPerquery);
+		$PayPerrow = $PayPerresult->fetch_assoc();
+		$payrollgroup=$PayPerrow["payrollgroup"];
 		$output='';
 		//$output .= '<tbody>';
 		$query = "SELECT ct.contractid,
@@ -30,11 +41,13 @@ if($_GET["action"]=="searchdata"){
 						FROM contract ct
 						left join worker wk on wk.workerid = ct.workerid
 						and wk.dataareaid = ct.dataareaid
+						left join ratehistory rh  on 
+						rh.contractid = ct.contractid and rh.dataareaid = ct.dataareaid
 
 					where ct.dataareaid = '$dataareaid' and ct.contractid like '%$id%'
 					and date_format(ct.fromdate, '%m-%m-%Y') <= date_format(str_to_date('$paydate','%m-%d-%Y'), '%Y-%m-%d')
-					and wk.inactive = 0
-
+					and ct.paymenttype = '$paytype' and wk.inactive = 0 and wk.payrollgroup = '$payrollgroup'
+					and rh.status = 1
 					order by ct.contractid asc";
 		$result = $conn->query($query);
 		$rowclass = "rowA";
@@ -86,17 +99,21 @@ else if($_GET["action"]=="save"){
 	 $query = "SELECT ct.contractid,
 						ct.workerid,
 						ct.rate
-						,format(ct.ecola,2) as ecola,
-						format(ct.transpo,2) transpo,
-						format(ct.meal,2) as meal,
+						,ct.ecola as ecola,
+						ct.transpo transpo,
+						ct.meal as meal,
 						ct.contracttype workertype,
 
-						ct.fromdate as transdate
+						ct.fromdate as transdate,
+						wk.activeonetimeded
 						FROM contract ct
 						left join worker wk on wk.workerid = ct.workerid
 						and wk.dataareaid = ct.dataareaid
+						left join ratehistory rh  on 
+						rh.contractid = ct.contractid and rh.dataareaid = ct.dataareaid
 
 					where ct.dataareaid = '$dataareaid' and ct.contractid in ($id)
+					and rh.status = 1
 
 					order by ct.contractid asc";
 		$result = $conn->query($query);
@@ -110,6 +127,7 @@ else if($_GET["action"]=="save"){
 			$meal=$row["meal"];
 			$type=$row["workertype"];
 			$trans=$row["transdate"];
+			$activeonetimeded=$row["activeonetimeded"];
 
 			$query2 = "SELECT 
 						max(pd.linenum) as linenum
@@ -128,6 +146,17 @@ else if($_GET["action"]=="save"){
 			if(mysqli_query($conn,$sql))
 			{
 				echo $sql;
+				$sqlinsert = "call SP_PayrollDetailsAccountsCreationPerWorker('$dataareaid','$paynum','$userlogin','$period', '$payrollgroup','$workerid','$activeonetimeded')";
+				//mysqli_query($conn,$sqlinsert);
+				//echo $sqlinsert."<br>".$conn->error;
+				if(mysqli_query($conn,$sqlinsert))
+				{
+					echo $sqlinsert."<br>".$conn->error;
+				}
+				else
+				{
+					echo "error".$sqlinsert."<br>".$conn->error;
+				}
 			}
 			else
 			{
@@ -137,7 +166,7 @@ else if($_GET["action"]=="save"){
 
 
 		}
-		$payrollgroup = '';
+		/*$payrollgroup = '';
 		$queryperiod = "SELECT payrollgroup from payrollperiod
 
 					where dataareaid = '$dataareaid' and payrollperiod = '$period' 
@@ -145,20 +174,10 @@ else if($_GET["action"]=="save"){
 					";
 		$resultperiod = $conn->query($queryperiod);
 		$rowperiod = $resultperiod->fetch_assoc();
-		$payrollgroup = $rowperiod["payrollgroup"];
+		$payrollgroup = $rowperiod["payrollgroup"];*/
 		
 
-		$sqlinsert = "call SP_PayrollDetailsAccountsCreation('$dataareaid','$paynum','$userlogin','$period', '$payrollgroup')";
-			//mysqli_query($conn,$sqlinsert);
-			//echo $sqlinsert."<br>".$conn->error;
-			if(mysqli_query($conn,$sqlinsert))
-			{
-				echo $sqlinsert."<br>".$conn->error;
-			}
-			else
-			{
-				echo "error".$sqlinsert."<br>".$conn->error;
-			}
+		
 		$sqlloan = "call SP_LoanTrans('','$dataareaid','$paynum','$userlogin' ,'$period','2')";
 			
 			if(mysqli_query($conn,$sqlloan))

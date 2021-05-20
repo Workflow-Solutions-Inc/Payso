@@ -68,8 +68,17 @@ else if(isset($_GET["update"])) {
 	$fullname = $lname.' '.$fname.' '.$mname[0];
 	$address=$_GET["Address"];
 	$contact=$_GET["Contact"];
+	// date
 	$bday=$_GET["Bday"];
+	if($bday == ""){
+		$bday = '1900-01-01';
+	}
+	// date
 	$regdate=$_GET["Regdate"];
+	if($regdate == ""){
+		$regdate = '1900-01-01';
+	}
+
 	$bankacc=$_GET["BankAcc"];
 	$SSS=$_GET["SSS"];
 	$philnum=$_GET["Philnum"];
@@ -77,10 +86,20 @@ else if(isset($_GET["update"])) {
 	$tin=$_GET["Tin"];
 	$branch=$_GET["Branch"];
 	$position=$_GET["Position"];
+	// date
 	$datehired=$_GET["Hiredate"];
+	if($datehired == ""){
+		$datehired = '1900-01-01';
+	}
+	// date
 	$empstatus=$_GET["Empstatus"];
 	$inactive=$_GET["AccInc"];
+
 	$inactivedate=$_GET["Incdate"];
+	if($inactivedate == ""){
+		$inactivedate = '1900-01-01';
+	}
+
 	$internalid=$_GET["InternalID"];
 	$bioid=$_GET["BioId"];
 	$dec = $_GET["dec"];

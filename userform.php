@@ -34,7 +34,47 @@ if(isset($_SESSION['UsrNum']))
 
 </head>
 <body>-->
+<style>
 
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  color: #656565;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #fff;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+</style>
 
 	<!-- begin HEADER -->
 	<?php require("inc/header.php"); ?>
@@ -58,9 +98,15 @@ if(isset($_SESSION['UsrNum']))
 		<!-- extra buttons -->
 		<ul class="extrabuttons UsersMaintain" style="display: none;">
 			<div class="leftpanel-title"><b>SET</b></div>
-			<li><button onClick="SetDt();"><span class="fas fa-cog fa"></span> Set Dataarea</button></li>
-			<li><button onClick="DeleteCompany();"><span class="fa fa-trash-alt"></span> Remove Company</button></li>
-			<!--<li><button><span class="fas fa-arrow-down fa"></span> Move Down</button></li>-->
+			<div id ="CompCtr">
+				<li><button onClick="SetDt();"><span class="fas fa-cog fa"></span> Set Dataarea</button></li>
+				<li><button onClick="DeleteCompany();"><span class="fa fa-trash-alt"></span> Remove Company</button></li>
+			</div>
+			<div id = "UsrCtr" style="display: none">
+				<li><button onClick="SetUg();"><span class="fas fa-cog fa"></span> Set Usergroup</button></li>
+				<li><button onClick="DeleteUsrgroup();"><span class="fa fa-trash-alt"></span> Remove User Group</button></li>
+			</div>
+			
 		</ul>
 
 	</div>
@@ -226,11 +272,19 @@ if(isset($_SESSION['UsrNum']))
 							</table>
 						</div>
 					</div>
-					<br>
+					<br><br>
 				</div>
 				<!-- end TABLE AREA -->
 
+				<hr><hr>
+				<div class="tab">
+				  <button class="tablinks" id="Company" value="0" onclick="Activate(this.value);"><span class="fas fa-briefcase">&nbsp;</span> Company</button>
+				  <button class="tablinks" id="Group" value="1" onclick="Activate(this.value);"><span class="fas fa-calendar-alt">&nbsp;</span> User Group</button>
+				 
+				</div>
+
 				<!-- start TABLE AREA -->
+				<div id='dtrContent'>
 				<div id="tablearea2" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mainpanel-area">
 					<div class="mainpanel-content">
 						<!-- title & search -->
@@ -239,17 +293,7 @@ if(isset($_SESSION['UsrNum']))
 							List Of Company
 						</div>
 						<div class="mainpanel-sub">
-							<!-- cmd 
-							<div class="mainpanel-sub-cmd">
-								<a href="" class="cmd-create"><span class="far fa-plus-square"></a>
-								<a href="" class="cmd-update"><span class="fas fa-edit"></a>
-								<a href="" class="cmd-delete"><span class="far fa-trash-alt"></a>
-									<span class="mainpanel-sub-space">|</span>
-								<a href="" class="cmd-others"><span class="fas fa-caret-up"></a>
-								<a href="" class="cmd-others"><span class="fas fa-caret-down"></a>
-									<span class="mainpanel-sub-space">|</span>
-								<a href="" class="cmd-print"><span class="fas fa-print"></a>
-							</div>-->
+							
 						</div>
 
 						<!-- table -->
@@ -304,6 +348,7 @@ if(isset($_SESSION['UsrNum']))
 							</table>
 						</div>
 					</div>
+				</div>
 				</div>
 				<!-- end TABLE AREA -->
 			</div>
@@ -370,6 +415,7 @@ if(isset($_SESSION['UsrNum']))
 <!-- begin [JAVASCRIPT] -->
 <script src="js/ajax.js"></script>
 	 <script  type="text/javascript">
+	 	var tablocation='company';
 	 	var flaglocation=true;
 		var so='';
 		var locUPass = '';
@@ -399,51 +445,48 @@ if(isset($_SESSION['UsrNum']))
 				//alert(document.getElementById("hide").value);
 				//alert(so);
 
-				//-----------get line--------------//
-				var action = "getline";
-				var actionmode = "userform";
-				$.ajax({
-					type: 'POST',
-					url: 'userformline.php',
-					data:{action:action, actmode:actionmode, userId:so},
-					beforeSend:function(){
-					
-						$("#lineresult").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
-					},
-					success: function(data){
-						//payline='';
-						document.getElementById("hide2").value = "";
-						$('#lineresult').html(data);
-						$(document).ready(function(){
-						$('#dataln tbody tr').click(function(){
-							$('table tbody tr').css("color","black");
-							$(this).css("color","orange");
-							$('table tbody tr').removeClass("info");
-							$(this).addClass("info");
-							var transnumline = $("#dataln tr:eq("+ ($(this).index()+1) +") td:eq(1)").text();
-							locDTName = $("#dataln tr:eq("+ ($(this).index()+1) +") td:eq(2)").text();
-							locDataarea = transnumline.toString();
-							document.getElementById("hide2").value = locDataarea;
-							//alert(document.getElementById("hide").value);
-								
-							flaglocation = false;
-					        $("#myUpdateBtn").prop("disabled", true);
-					        //alert(flaglocation);		
-							//flaglocation = false;
-							//alert(payline);
-							loc = document.getElementById("hide").value;
-				            //$("#myUpdateBtn").prop("disabled", false);
-				             var pos = $("#"+loc+"").attr("tabindex");
-							    $("tr[tabindex="+pos+"]").focus();
-							    $("tr[tabindex="+pos+"]").css("color","red");
-							    $("tr[tabindex="+pos+"]").addClass("info");
-							//document.getElementById("myUpdateBtn").style.disabled = disabled;
-								  
-						});
-					});
-					}
-				}); 
-				//-----------get line--------------//
+				if(tablocation == 'company')
+				{
+					//-----------get line--------------//
+					var action = "getline";
+					var actionmode = "userform";
+					$.ajax({
+						type: 'POST',
+						url: 'userformline.php',
+						data:{action:action, actmode:actionmode, userId:so},
+						beforeSend:function(){
+						
+							$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+						},
+						success: function(data){
+							//payline='';
+							//document.getElementById("hide2").value = "";
+							$('#dtrContent').html(data);
+						}
+					}); 
+					//-----------get line--------------//
+				}
+				else if(tablocation == 'usrgrp')
+				{
+					//-----------get line--------------//
+					var action = "getline";
+					var actionmode = "userform";
+					$.ajax({
+						type: 'POST',
+						url: 'usergroupformline.php',
+						data:{action:action, actmode:actionmode, userId:so},
+						beforeSend:function(){
+						
+							$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+						},
+						success: function(data){
+							//payline='';
+							//document.getElementById("hide2").value = "";
+							$('#dtrContent').html(data);
+						}
+					}); 
+					//-----------get line--------------//
+				}
 				flaglocation = true;
 				//alert(flaglocation);
 		        $("#myUpdateBtn").prop("disabled", false);	
@@ -503,7 +546,74 @@ if(isset($_SESSION['UsrNum']))
 		    //var idx = $("tr:focus").attr("tabindex");
 		    //alert(idx);
 		    //document.onkeydown = checkKey;
+		    $('#Company').addClass("active");
 		});
+
+		function Activate(val)
+		{
+			
+			so = document.getElementById("hide").value;
+			if(val == "0")
+			{
+				tablocation = 'company';
+				$('#UsrCtr').css("display", "None");
+				$('#CompCtr').css("display", "Block");
+				$('#Company').addClass("active");
+				$('#Group').removeClass("active");
+
+				var action = "getline";
+				var actionmode = "userform";
+				$.ajax({
+					type: 'POST',
+					url: 'userformline.php',
+					data:{action:action, actmode:actionmode, userId:so},
+					beforeSend:function(){
+					
+						$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+					},
+					success: function(data){
+						//payline='';
+						//document.getElementById("hide2").value = "";
+						$('#dtrContent').html(data);
+					}
+				}); 
+				
+			}
+
+			else
+			{
+				so = document.getElementById("hide").value;
+				tablocation = 'usrgrp';
+				$('#UsrCtr').css("display", "Block");
+				$('#CompCtr').css("display", "None");
+				$('#Group').addClass("active");
+				$('#Company').removeClass("active");
+
+				//-----------get line--------------//
+				var action = "getline";
+				var actionmode = "userform";
+				$.ajax({
+					type: 'POST',
+					url: 'usergroupformline.php',
+					data:{action:action, actmode:actionmode, userId:so},
+					beforeSend:function(){
+					
+						$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+					},
+					success: function(data){
+						//payline='';
+						//document.getElementById("hide2").value = "";
+						$('#dtrContent').html(data);
+					}
+				}); 
+				//-----------get line--------------//
+
+			}
+			
+			
+			
+			
+		}
 
 		// Get the modal -------------------
 		var modal = document.getElementById('myModal');
@@ -623,7 +733,7 @@ if(isset($_SESSION['UsrNum']))
 						//data:'bkno='+BNo+'&bkdesc='+BDesc+'&bktit='+BTit+'&bkqty='+BQ,
 						beforeSend:function(){
 						
-							$('#result').html('<img src="img/loading.gif" width="300" height="300">');
+							$('#result').html('<center><img src="img/loading.gif" width="300" height="300"></center>');
 			
 						},
 						success: function(data){
@@ -631,29 +741,21 @@ if(isset($_SESSION['UsrNum']))
 							//-----------get line--------------//
 							var action = "getline";
 							var actionmode = "userform";
-							var firstval = $('#hide3').val();
-							document.getElementById("hide").value = firstval;
-							so = document.getElementById("hide").value;
-				            //$("#myUpdateBtn").prop("disabled", false);
-				             var pos = $("#"+so+"").attr("tabindex");
-							    $("tr[tabindex="+pos+"]").focus();
-							    $("tr[tabindex="+pos+"]").css("color","red");
-							    $("tr[tabindex="+pos+"]").addClass("info");
 							$.ajax({
 								type: 'POST',
 								url: 'userformline.php',
-								data:{action:action, actmode:actionmode, userId:firstval},
+								data:{action:action, actmode:actionmode, userId:so},
 								beforeSend:function(){
 								
-									$("#lineresult").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+									$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
 								},
 								success: function(data){
 									//payline='';
-									document.getElementById("hide2").value = "";
-									$('#lineresult').html(data);
+									//document.getElementById("hide2").value = "";
+									$('#dtrContent').html(data);
 								}
 							}); 
-							//-----------get line--------------//	
+							//-----------get line--------------//		
 				}
 			}); 
 			 
@@ -800,7 +902,7 @@ if(isset($_SESSION['UsrNum']))
 							data:{action:action, actmode:actionmode, locDataarea:locDataarea, userno:so},
 							beforeSend:function(){
 									
-							$("#lineresult").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+							$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
 								
 							},
 							success: function(data){
@@ -815,15 +917,67 @@ if(isset($_SESSION['UsrNum']))
 								data:{action:action, actmode:actionmode, userId:so},
 								beforeSend:function(){
 								
-									$("#lineresult").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+									$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
 								},
 								success: function(data){
 									//payline='';
-									document.getElementById("hide2").value = "";
-									$('#lineresult').html(data);
+									//document.getElementById("hide2").value = "";
+									$('#dtrContent').html(data);
 								}
 							}); 
 							//-----------get line--------------//					
+							}
+					}); 
+				}
+				else 
+				{
+					return false;
+				}
+			}
+			else 
+			{
+				alert("Please Select Company you want to remove.");
+			}			
+		}
+
+		function DeleteUsrgroup()
+		{
+			
+			var action = "delete";
+			var actionmode = "usrgroup";
+			if(locgroupid != '') {
+				if(confirm("Are you sure you want to remove this record?")) {
+					$.ajax({	
+							type: 'GET',
+							url: 'userformprocess.php',
+							//data:'action=save&actmode=userform&userno='+UId.value+'&pass='+UPass.value+'&lname='+NM.value+'&darea='+DT.value,
+							data:{action:action, actmode:actionmode, locgroupid:locgroupid, userno:so},
+							beforeSend:function(){
+									
+							$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+								
+							},
+							success: function(data){
+							//$('#conttables').html(data);
+							//location.reload();
+							//-----------get line--------------//
+							var action = "getline";
+							var actionmode = "userform";
+							$.ajax({
+								type: 'POST',
+								url: 'usergroupformline.php',
+								data:{action:action, actmode:actionmode, userId:so},
+								beforeSend:function(){
+								
+									$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+								},
+								success: function(data){
+									//payline='';
+									//document.getElementById("hide2").value = "";
+									$('#dtrContent').html(data);
+								}
+							}); 
+							//-----------get line--------------//				
 							}
 					}); 
 				}
@@ -847,6 +1001,18 @@ if(isset($_SESSION['UsrNum']))
 				data:{action:action, UsrId:so},
 				success: function(data) {
 				    window.location.href='daselection.php';
+			    }
+			});
+		}
+		function SetUg()
+		{
+			var action = "Ugroup";
+			$.ajax({
+				type: 'GET',
+				url: 'userformprocess.php',
+				data:{action:action, UsrId:so},
+				success: function(data) {
+				    window.location.href='usergroupselectionform.php';
 			    }
 			});
 		}

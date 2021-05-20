@@ -45,7 +45,7 @@ $firstresult = '';
 			<li class="PayrollTransactionMaintain" style="display: none;"><button id="myAddBtn"><span class="fa fa-plus"></span> Create Record</button></li>
 			<!--<li><button onClick="Delete();"><span class="fa fa-trash-alt"></span> Delete Record</button></li>
 			<li><button id="myUpdateBtn"><span class="fa fa-edit"></span> Update Record</button></li>-->
-			<li><button onClick="AmountExempt();"><span class="fa fa-arrow-circle-left fa-lg"></span> Amount Exemption</button></li>
+			<!-- <li><button onClick="AmountExempt();"><span class="fa fa-arrow-circle-left fa-lg"></span> Amount Exemption</button></li> -->
 			<li class="PayrollTransactionMaintain" style="display: none;"><button id='RecomputeBtn' onClick="Recompute();"><span class="fas fa-calculator fa"></span> Recompute</button></li>
 			<li><button onClick="Back();"><span class="fa fa-arrow-circle-left fa-lg"></span> Back</button></li>
 		</ul>

@@ -99,6 +99,25 @@ else if($_GET["action"]=="delete"){
 		header('location: userform.php');
 	
 	}
+	if($_GET["actmode"]=="usrgroup"){	
+		$ug=$_GET["locgroupid"];
+		$uno=$_GET["userno"];
+
+		if($uno != ""){
+			$sql = "DELETE from usergroupsassignment where userid = '$uno' and usergroupid = '$ug'";
+			if(mysqli_query($conn,$sql))
+			{
+				echo "Rec Deleted";
+			}
+			else
+			{
+				echo "error".$sql."<br>".$conn->error;
+			}
+
+		}
+		header('location: userform.php');
+	
+	}
 }
 else if($_GET["action"]=="searchdata"){
 	if($_GET["actmode"]=="userform"){
@@ -125,7 +144,7 @@ else if($_GET["action"]=="searchdata"){
 				<td style="width:25%;">'.$row["userid"].'</td>
 				<td style="width:25%;">'.$row["name"].'</td>
 				<td style="width:25%;">'.$row["defaultdataareaid"].'</td>
-				<td style="width:25%;">'.$row["password"].'</td>
+				<td style="width:25%;">'.str_repeat ('*', strlen ($row["password"])).'</td>
 			</tr>';
 		}
 		//$output .= '</tbody>';
@@ -147,6 +166,14 @@ else if($_GET["action"]=="dtarea"){
 	header('location: userform.php');
 	
 }
+else if($_GET["action"]=="Ugroup"){
+	 	
+	$id=$_GET["UsrId"];
+	$_SESSION['UsrNum'] = $id;
+	//unset($_SESSION['paynum']);
+	header('location: userform.php');
+	
+}
 else if($_GET["action"]=="unload"){
 	 	
 	unset($_SESSION['UsrNum']);
@@ -157,6 +184,7 @@ else if($_GET["action"]=="unload"){
 ?>
 
 <script  type="text/javascript">
+		var tablocation='company';
 		var so='';
 		var locUPass = '';
 		var locNM = '';
@@ -183,24 +211,48 @@ else if($_GET["action"]=="unload"){
 				//alert(document.getElementById("hide").value);
 				//alert(so);
 
-				//-----------get line--------------//
-				var action = "getline";
-				var actionmode = "userform";
-				$.ajax({
-					type: 'POST',
-					url: 'userformline.php',
-					data:{action:action, actmode:actionmode, userId:so},
-					beforeSend:function(){
-					
-						$("#lineresult").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
-					},
-					success: function(data){
-						//payline='';
-						document.getElementById("hide2").value = "";
-						$('#lineresult').html(data);
-					}
-				}); 
-				//-----------get line--------------//
+				if(tablocation == 'company')
+				{
+					//-----------get line--------------//
+					var action = "getline";
+					var actionmode = "userform";
+					$.ajax({
+						type: 'POST',
+						url: 'userformline.php',
+						data:{action:action, actmode:actionmode, userId:so},
+						beforeSend:function(){
+						
+							$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+						},
+						success: function(data){
+							//payline='';
+							//document.getElementById("hide2").value = "";
+							$('#dtrContent').html(data);
+						}
+					}); 
+					//-----------get line--------------//
+				}
+				else if(tablocation == 'usrgrp')
+				{
+					//-----------get line--------------//
+					var action = "getline";
+					var actionmode = "userform";
+					$.ajax({
+						type: 'POST',
+						url: 'usergroupformline.php',
+						data:{action:action, actmode:actionmode, userId:so},
+						beforeSend:function(){
+						
+							$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+						},
+						success: function(data){
+							//payline='';
+							//document.getElementById("hide2").value = "";
+							$('#dtrContent').html(data);
+						}
+					}); 
+					//-----------get line--------------//
+				}
 				flaglocation = true;
 				//alert(flaglocation);
 		        $("#myUpdateBtn").prop("disabled", false);	

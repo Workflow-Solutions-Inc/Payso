@@ -441,7 +441,7 @@ $wknum = $_SESSION["wknum"];
 			 date = data[1];
 			 weekday = data[2];
 			 shifttype = data[3];
-
+			 
 
 			 $.ajax({
 						type: 'GET',
