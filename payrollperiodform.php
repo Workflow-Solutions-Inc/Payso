@@ -426,9 +426,29 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 			    {
 			    	enums = 0;
 			    }
-			    else
+			    else if(locPayPer.toString() == "Second Half")
 			    {
 			    	enums = 1;
+			    }
+			     else if(locPayPer.toString() == "First Week")
+			    {
+			    	enums = 2;
+			    }
+			     else if(locPayPer.toString() == "Second Week")
+			    {
+			    	enums = 3;
+			    }
+			     else if(locPayPer.toString() == "Third Week")
+			    {
+			    	enums = 4;
+			    }
+			    else if(locPayPer.toString() == "Fourth Week")
+			    {
+			    	enums = 5;
+			    }
+			    else
+			    {
+			    	enums = 6;
 			    }
 			    //alert(locPayFromDate);
 				document.getElementById("add-period").value = enums;
