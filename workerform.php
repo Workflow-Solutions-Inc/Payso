@@ -255,7 +255,7 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 													FROM worker wk
 													left join position pos on pos.positionid = wk.position and pos.dataareaid = wk.dataareaid
 													left join branch bra on bra.branchcode = wk.branch and bra.dataareaid = wk.dataareaid
-													where wk.dataareaid = '$dataareaid'";
+													where wk.dataareaid = '$dataareaid' order by wk.name asc";
 									$result = $conn->query($query);
 									$rowclass = "rowA";
 									$rowcnt = 0;
