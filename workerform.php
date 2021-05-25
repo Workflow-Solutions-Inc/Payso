@@ -372,7 +372,7 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 											</div>
 											<div class="formitem">
 												<span class="label-xl">Phone No.:</span>
-												<input type="text" class="textboxsmall" name ="view-Pref" id="view-pref" value="+63" readonly>
+												<input type="text" class="textboxsmall" name ="view-Pref" id="view-pref" value="+63" readonly  style="width: 35px;">
 												<input type="text" class="textbox" name ="view-Contact" id="view-contact" class="width-lg" style="width: 155px;">
 											</div>
 											<div class="formitem">
@@ -572,7 +572,7 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 												</div>
 												<div class="formitem">
 													<span class="label-xl">Phone No.:</span>
-													<input type="text" class="textboxsmall" name ="Pref" id="add-pref" value="+63" readonly>
+													<input type="text" class="textboxsmall" name ="Pref" id="add-pref" value="+63" readonly style="width: 35px;">
 													<input type="text" class="textbox" name ="Contact" id="add-contact" class="width-lg">
 												</div>
 												<div class="formitem">
@@ -1071,6 +1071,7 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 								$('table tbody tr').removeClass("info");
 								$(this).addClass("info");
 								var usernum = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(1)").text();
+								fullname = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(2)").text();
 								position = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(3)").text();
 								locbranch = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(4)").text();
 								fname = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(7)").text();

@@ -68,7 +68,14 @@ else
 					<div class="mainpanel-content">
 						<!-- title & search -->
 						<div class="mainpanel-title">
-							<span class="fa fa-archive"></span> User Groups
+							<?php
+							$query2 = "SELECT * FROM userfile where userid = '$usrid'";
+								$result2 = $conn->query($query2);
+								$row2 = $result2->fetch_assoc();
+								$usrname = $row2["name"];
+
+							?>
+							<span class="fa fa-archive"></span> Add User Group for <?php echo $usrname;?> 
 						</div>
 						<div class="mainpanel-sub">
 							

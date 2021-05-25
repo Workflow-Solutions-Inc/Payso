@@ -5,7 +5,42 @@ $userlogin = $_SESSION["user"];
 $dataareaid = $_SESSION["defaultdataareaid"];
 include("dbconn.php");
 
-if($_GET["action"]=="searchdata"){
+
+if(isset($_GET["save"])) {
+	 
+	 $workerid=$_GET["WKId"];
+	 $finalpayid=$_GET["finalpayid"];
+	 
+	 if($workerid != ""){
+	 $sql = "INSERT INTO finalpayoutheader (finalpayoutid,workerid,rate,payouttype,status,amount,dataareaid,createdby,createddatetime)
+	 		values ('$finalpayid','$workerid',0,0,0,0,'$dataareaid','$userlogin',now())
+			";
+		if(mysqli_query($conn,$sql))
+		{
+			echo $sql;
+		}
+		else
+		{
+			echo "error".$sql."<br>".$conn->error;
+		}
+
+	 }
+	 /*
+			SELECT '$finalpayid',ct.workerid,ct.rate,0,0,0,'$dataareaid','$userlogin',now()
+
+									FROM contract ct
+									left join worker wk on wk.workerid = ct.workerid
+									and wk.dataareaid = ct.dataareaid
+									left join ratehistory rh  on 
+									rh.contractid = ct.contractid and rh.dataareaid = ct.dataareaid
+								where ct.dataareaid = '$dataareaid' and ct.workerid = '$workerid'
+									and rh.status = 1
+								order by ct.contractid asc
+	 */
+header('location: finalpayout.php');
+	
+}
+else if($_GET["action"]=="searchdata"){
 	if($_GET["actmode"]=="userform"){
 
 		$id=$_GET["PayId"];
@@ -46,10 +81,10 @@ if($_GET["action"]=="searchdata"){
 				<td style="width:14%;">'.$row["finalpayoutid"].'</td>
 				<td style="width:14%;">'.$row["workerid"].'</td>
 				<td style="width:14%;">'.$row["name"].'</td>
-				<td style="width:14%;">'.$row["rate"].'</td>
+				
 				<td style="width:14%;">'.$row["paytype"].'</td>
 				<td style="width:14%;">'.$row["statustxt"].'</td>
-				<td style="width:14%;">'.$row["statustxt"].'</td>
+				<td style="width:14%;">'.$row["amount"].'</td>
 				<td style="display:none;width:1%;">'.$row['status'].'</td>
 			</tr>';
 			$firstresult2 = $row["finalpayoutid"];
@@ -65,6 +100,7 @@ if($_GET["action"]=="searchdata"){
 						</tr>';
 	}
 }
+
 else if($_GET["action"]=="add"){
 	 $output='';
 	 $sequence='';

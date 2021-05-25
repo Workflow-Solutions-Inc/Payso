@@ -110,7 +110,7 @@ if(isset($_SESSION['UsrNum']))
 				<li><button onClick="DeleteCompany();"><span class="fa fa-trash-alt"></span> Remove Company</button></li>
 			</div>
 			<div id = "UsrCtr" style="display: none">
-				<li><button onClick="SetUg();"><span class="fas fa-cog fa"></span> Set Usergroup</button></li>
+				<li><button onClick="SetUg();"><span class="fas fa-cog fa"></span> Set User Group</button></li>
 				<li><button onClick="DeleteUsrgroup();"><span class="fa fa-trash-alt"></span> Remove User Group</button></li>
 			</div>
 			
@@ -452,53 +452,20 @@ if(isset($_SESSION['UsrNum']))
 				//document.getElementById("hidefocus").value = locIndex.toString();
 				//alert(document.getElementById("hide").value);
 				//alert(so);
-
+				tablocation = document.getElementById("hidecurtab").value;
+				//alert(tablocation);
 				if(tablocation == 'company')
 				{
-					//-----------get line--------------//
-					var action = "getline";
-					var actionmode = "userform";
-					$.ajax({
-						type: 'POST',
-						url: 'userformline.php',
-						data:{action:action, actmode:actionmode, userId:so, tablocation:tablocation},
-						beforeSend:function(){
-						
-							$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
-						},
-						success: function(data){
-							//payline='';
-							//document.getElementById("hide2").value = "";
-							$('#dtrContent').html(data);
-						}
-					}); 
-					//-----------get line--------------//
+					companyline();
 				}
 				else if(tablocation == 'usrgrp')
 				{
-					//-----------get line--------------//
-					var action = "getline";
-					var actionmode = "userform";
-					$.ajax({
-						type: 'POST',
-						url: 'usergroupformline.php',
-						data:{action:action, actmode:actionmode, userId:so, tablocation:tablocation},
-						beforeSend:function(){
-						
-							$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
-						},
-						success: function(data){
-							//payline='';
-							//document.getElementById("hide2").value = "";
-							$('#dtrContent').html(data);
-						}
-					}); 
-					//-----------get line--------------//
+					usergroupline();
 				}
 				flaglocation = true;
 				//alert(flaglocation);
 		        $("#myUpdateBtn").prop("disabled", false);	
-					  
+					
 			});
 		});
   		var locDataarea='';
@@ -532,58 +499,73 @@ if(isset($_SESSION['UsrNum']))
 		});
 
 
-		$(document).ready(function() {
-			tablocation = document.getElementById("hidecurtab").value;
+		function companyline()
+		{
+			//-----------get line--------------//
+			tablocation = 'company';
+			$('#UsrCtr').css("display", "None");
+			$('#CompCtr').css("display", "Block");
+			$('#Company').addClass("active");
+			$('#Group').removeClass("active");
+			var action = "getline";
+			var actionmode = "userform";
+			$.ajax({
+				type: 'POST',
+				url: 'userformline.php',
+				data:{action:action, actmode:actionmode, userId:so, tablocation:tablocation },
+				beforeSend:function(){
+				
+					$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+				},
+				success: function(data){
+					//payline='';
+					//document.getElementById("hide2").value = "";
+					$('#dtrContent').html(data);
+					document.getElementById("hidecurtab").value = tablocation;
+				}
+			}); 
+			//-----------get line--------------//
+		}
 
+		function usergroupline()
+		{
+			//-----------get line--------------//
+			tablocation = 'usrgrp';
+			$('#UsrCtr').css("display", "Block");
+			$('#CompCtr').css("display", "None");
+			$('#Group').addClass("active");
+			$('#Company').removeClass("active");
+			var action = "getline";
+			var actionmode = "userform";
+			$.ajax({
+				type: 'POST',
+				url: 'usergroupformline.php',
+				data:{action:action, actmode:actionmode, userId:so, tablocation:tablocation },
+				beforeSend:function(){
+				
+					$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+				},
+				success: function(data){
+					//payline='';
+					//document.getElementById("hide2").value = "";
+					$('#dtrContent').html(data);
+					document.getElementById("hidecurtab").value = tablocation;
+				}
+			}); 
+			//-----------get line--------------//
+		}
+
+
+		$(document).ready(function() {
+			
+			tablocation = document.getElementById("hidecurtab").value;
 			if(tablocation == 'company')
 				{
-					//-----------get line--------------//
-					$('#UsrCtr').css("display", "None");
-					$('#CompCtr').css("display", "Block");
-					$('#Company').addClass("active");
-					$('#Group').removeClass("active");
-					var action = "getline";
-					var actionmode = "userform";
-					$.ajax({
-						type: 'POST',
-						url: 'userformline.php',
-						data:{action:action, actmode:actionmode, userId:so, tablocation:tablocation },
-						beforeSend:function(){
-						
-							$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
-						},
-						success: function(data){
-							//payline='';
-							//document.getElementById("hide2").value = "";
-							$('#dtrContent').html(data);
-						}
-					}); 
-					//-----------get line--------------//
+					companyline();
 				}
 				else if(tablocation == 'usrgrp')
 				{
-					//-----------get line--------------//
-					$('#UsrCtr').css("display", "Block");
-					$('#CompCtr').css("display", "None");
-					$('#Group').addClass("active");
-					$('#Company').removeClass("active");
-					var action = "getline";
-					var actionmode = "userform";
-					$.ajax({
-						type: 'POST',
-						url: 'usergroupformline.php',
-						data:{action:action, actmode:actionmode, userId:so, tablocation:tablocation },
-						beforeSend:function(){
-						
-							$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
-						},
-						success: function(data){
-							//payline='';
-							//document.getElementById("hide2").value = "";
-							$('#dtrContent').html(data);
-						}
-					}); 
-					//-----------get line--------------//
+					usergroupline();
 				}
 			loc = document.getElementById("hide").value;
 	            //$("#myUpdateBtn").prop("disabled", false);
@@ -612,67 +594,19 @@ if(isset($_SESSION['UsrNum']))
 		function Activate(val)
 		{
 			
-			so = document.getElementById("hide").value;
 			if(val == "0")
 			{
-				tablocation = 'company';
-				$('#UsrCtr').css("display", "None");
-				$('#CompCtr').css("display", "Block");
-				$('#Company').addClass("active");
-				$('#Group').removeClass("active");
-
-				var action = "getline";
-				var actionmode = "userform";
-				$.ajax({
-					type: 'POST',
-					url: 'userformline.php',
-					data:{action:action, actmode:actionmode, userId:so, tablocation:tablocation},
-					beforeSend:function(){
-					
-						$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
-					},
-					success: function(data){
-						//payline='';
-						document.getElementById("hidecurtab").value = tablocation;
-						$('#dtrContent').html(data);
-
-					}
-				}); 
+				so = document.getElementById("hide").value;
+				companyline();
 				
 			}
 
 			else
 			{
 				so = document.getElementById("hide").value;
-				tablocation = 'usrgrp';
-				$('#UsrCtr').css("display", "Block");
-				$('#CompCtr').css("display", "None");
-				$('#Group').addClass("active");
-				$('#Company').removeClass("active");
-
-				//-----------get line--------------//
-				var action = "getline";
-				var actionmode = "userform";
-				$.ajax({
-					type: 'POST',
-					url: 'usergroupformline.php',
-					data:{action:action, actmode:actionmode, userId:so, tablocation:tablocation},
-					beforeSend:function(){
-					
-						$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
-					},
-					success: function(data){
-						//payline='';
-						document.getElementById("hidecurtab").value = tablocation;
-						$('#dtrContent').html(data);
-					}
-				}); 
-				//-----------get line--------------//
+				usergroupline();
 
 			}
-			
-			
-			
 			
 		}
 
@@ -799,67 +733,16 @@ if(isset($_SESSION['UsrNum']))
 						},
 						success: function(data){
 							$('#result').html(data);
-							//-----------get line--------------//
-							/*var action = "getline";
-							var actionmode = "userform";
-							$.ajax({
-								type: 'POST',
-								url: 'userformline.php',
-								data:{action:action, actmode:actionmode, userId:so, tablocation:tablocation},
-								beforeSend:function(){
-								
-									$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
-								},
-								success: function(data){
-									//payline='';
-									//document.getElementById("hide2").value = "";
-									$('#dtrContent').html(data);
-								}
-							}); */
-							//-----------get line--------------//	
+					
 							tablocation = document.getElementById("hidecurtab").value;
 
 							if(tablocation == 'company')
 								{
-									//-----------get line--------------//
-									var action = "getline";
-									var actionmode = "userform";
-									$.ajax({
-										type: 'POST',
-										url: 'userformline.php',
-										data:{action:action, actmode:actionmode, userId:so, tablocation:tablocation },
-										beforeSend:function(){
-										
-											$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
-										},
-										success: function(data){
-											//payline='';
-											//document.getElementById("hide2").value = "";
-											$('#dtrContent').html(data);
-										}
-									}); 
-									//-----------get line--------------//
+									companyline();
 								}
 								else if(tablocation == 'usrgrp')
 								{
-									//-----------get line--------------//
-									var action = "getline";
-									var actionmode = "userform";
-									$.ajax({
-										type: 'POST',
-										url: 'usergroupformline.php',
-										data:{action:action, actmode:actionmode, userId:so, tablocation:tablocation },
-										beforeSend:function(){
-										
-											$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
-										},
-										success: function(data){
-											//payline='';
-											//document.getElementById("hide2").value = "";
-											$('#dtrContent').html(data);
-										}
-									}); 
-									//-----------get line--------------//
+									usergroupline();
 								}	
 				}
 			}); 
@@ -1013,24 +896,7 @@ if(isset($_SESSION['UsrNum']))
 							success: function(data){
 							//$('#conttables').html(data);
 							//location.reload();
-							//-----------get line--------------//
-							var action = "getline";
-							var actionmode = "userform";
-							$.ajax({
-								type: 'POST',
-								url: 'userformline.php',
-								data:{action:action, actmode:actionmode, userId:so},
-								beforeSend:function(){
-								
-									$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
-								},
-								success: function(data){
-									//payline='';
-									//document.getElementById("hide2").value = "";
-									$('#dtrContent').html(data);
-								}
-							}); 
-							//-----------get line--------------//					
+							companyline();					
 							}
 					}); 
 				}
@@ -1065,24 +931,7 @@ if(isset($_SESSION['UsrNum']))
 							success: function(data){
 							//$('#conttables').html(data);
 							//location.reload();
-							//-----------get line--------------//
-							var action = "getline";
-							var actionmode = "userform";
-							$.ajax({
-								type: 'POST',
-								url: 'usergroupformline.php',
-								data:{action:action, actmode:actionmode, userId:so},
-								beforeSend:function(){
-								
-									$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
-								},
-								success: function(data){
-									//payline='';
-									//document.getElementById("hide2").value = "";
-									$('#dtrContent').html(data);
-								}
-							}); 
-							//-----------get line--------------//				
+							usergroupline();				
 							}
 					}); 
 				}

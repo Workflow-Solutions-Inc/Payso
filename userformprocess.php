@@ -211,48 +211,14 @@ else if($_GET["action"]=="unload"){
 				//document.getElementById("hidefocus").value = locIndex.toString();
 				//alert(document.getElementById("hide").value);
 				//alert(so);
-
+				tablocation = document.getElementById("hidecurtab").value;
 				if(tablocation == 'company')
 				{
-					//-----------get line--------------//
-					var action = "getline";
-					var actionmode = "userform";
-					$.ajax({
-						type: 'POST',
-						url: 'userformline.php',
-						data:{action:action, actmode:actionmode, userId:so},
-						beforeSend:function(){
-						
-							$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
-						},
-						success: function(data){
-							//payline='';
-							//document.getElementById("hide2").value = "";
-							$('#dtrContent').html(data);
-						}
-					}); 
-					//-----------get line--------------//
+					companyline();
 				}
 				else if(tablocation == 'usrgrp')
 				{
-					//-----------get line--------------//
-					var action = "getline";
-					var actionmode = "userform";
-					$.ajax({
-						type: 'POST',
-						url: 'usergroupformline.php',
-						data:{action:action, actmode:actionmode, userId:so},
-						beforeSend:function(){
-						
-							$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
-						},
-						success: function(data){
-							//payline='';
-							//document.getElementById("hide2").value = "";
-							$('#dtrContent').html(data);
-						}
-					}); 
-					//-----------get line--------------//
+					usergroupline();
 				}
 				flaglocation = true;
 				//alert(flaglocation);

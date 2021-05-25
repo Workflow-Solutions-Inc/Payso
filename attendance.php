@@ -41,20 +41,14 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 		<!-- sub buttons -->
 		<ul class="subbuttons">
 			<div class="leftpanel-title"><b>COMMANDS</b></div>
-			<!--<li class="BranchMaintain" style="display: none;"><button id="myAddBtn"><span class="fa fa-plus"></span> Create Record</button></li>
-			<li class="BranchMaintain" style="display: none;"><button onClick="Delete();"><span class="fa fa-trash-alt"></span> Delete Record</button></li>
-			<li class="BranchMaintain" style="display: none;"><button id="myUpdateBtn"><span class="fa fa-edit"></span> Update Record</button></li>-->
 			<li><button onClick="Refresh();"><span class="fas fa-redo-alt fa-lg"></span> Refresh</button></li>
 			<li><button onClick="Cancel();"><span class="fa fa-arrow-circle-left fa-lg"></span> Back</button></li>
 		</ul>
 		
 		<!-- extra buttons -->
-		<!--
-		<ul class="extrabuttons">
-			<li><button><span class="fas fa-arrow-up fa"></span> Move Up</button></li>
-			<li><button><span class="fas fa-arrow-down fa"></span> Move Down</button></li>
-		</ul>
-		-->
+		<!--<ul class="extrabuttons">
+
+		</ul>-->
 
 	</div>
 	<!-- end LEFT PANEL -->
@@ -74,19 +68,10 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 						</div>
 						
 						<div class="mainpanel-sub">
-							<!-- cmd
+							
 							<div class="mainpanel-sub-cmd">
-								<a href="" class="cmd-create"><span class="far fa-plus-square"></a>
-								<a href="" class="cmd-update"><span class="fas fa-edit"></a>
-								<a href="" class="cmd-delete"><span class="far fa-trash-alt"></a>
-									<span class="mainpanel-sub-space">|</span>
-								<a href="" class="cmd-others"><span class="fas fa-caret-up"></a>
-								<a href="" class="cmd-others"><span class="fas fa-caret-down"></a>
-									<span class="mainpanel-sub-space">|</span>
-								<a href="" class="cmd-print"><span class="fas fa-print"></a>
-							</div> -->
-							<div class="mainpanel-sub-cmd">
-								
+								<input type='hidden' id='lastname'>
+								<input type='hidden' id='lastaction'>
 							</div>
 							
 							<div class="mainpanel-sub-cmd">
@@ -109,13 +94,29 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 										?>
 								</select>
 								&nbsp;
+								&nbsp;
+								
+								<b><label style="width: 90px;color:red;font-size:20px;">Position:</label></b>
+								<select class="modal-textarea" name ="attpos" id="add-position" style="width: 200px;height: 30px; color:black;font-size:18px;">
+									<option value="" selected="selected"></option>
+									<?php
+										$querys = "SELECT positionid,name from position where dataareaid = '$dataareaid' order by name";
+										$results = $conn->query($querys);			
+										  	
+											while ($rows = $results->fetch_assoc()) {
+											?>
+												<option value="<?php echo $rows["positionid"];?>"><?php echo $rows["name"];?></option>
+										<?php } 
 
+										?>
+								</select>
+								&nbsp;
+								&nbsp;
 								<b><label style="width: 90px;color:red;font-size:20px;">Department:</label></b>
 								&nbsp;
 								&nbsp;
 								&nbsp;
-								&nbsp;
-								&nbsp;
+								
 								<select class="modal-textarea" name ="attdept" id="add-dept" style="width: 200px;height: 30px; color:black;font-size:18px;">
 									<option value="" selected="selected"></option>
 									<?php
@@ -127,16 +128,10 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 												<option value="<?php echo $rows["departmentid"];?>"><?php echo $rows["name"];?></option>
 										<?php } 
 
-										/*$branchresult = $conn->query($querys);
-										$branchrow = $branchresult->fetch_assoc();
-										$firstbranch = $branchrow["branchcode"];*/
+										
 
 										?>
 								</select>
-								&nbsp;&nbsp;&nbsp;&nbsp;
-								&nbsp;&nbsp;&nbsp;&nbsp;
-								&nbsp;&nbsp;&nbsp;&nbsp;
-								&nbsp;&nbsp;&nbsp;&nbsp;
 								&nbsp;&nbsp;&nbsp;&nbsp;
 								&nbsp;&nbsp;&nbsp;&nbsp;
 								<b><label style="width: 130px;color: blue;font-size:20px;">Previous Date:</label></b>
@@ -260,14 +255,14 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 												LEFT JOIN department dm ON con.departmentid = dm.departmentid and wk.dataareaid = dm.dataareaid 
 												left join branch bra on bra.branchcode = wk.branch and bra.dataareaid = wk.dataareaid
 												where 
-
+												
 												mt.Date = curdate() and 
 												wk.dataareaid = '$dataareaid' 
 
 												group by wk.name  
 
 
-												order by MIN(case when mt.type = 0 then TIME_FORMAT(mt.Time,'%h:%i %p') else null end) asc";
+												order by MIN(case when mt.type = 0 then TIME_FORMAT(mt.Time,'%h:%i %p') else null end),wk.name asc";
 									$result = $conn->query($query);
 									$rowclass = "rowA";
 									$rowcnt = 0;
@@ -296,31 +291,17 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 										</tr>
 									<?php }
 
-									$CURquery = "SELECT currentCount from notificationcountertable;";
+									$CURquery = "SELECT currentCount,realtimeCount from notificationcountertable;";
 
 										$CURresult = $conn->query($CURquery);
 										
 										$currentCount = 0;
-										
+										$realtimeCount = 0;
 										while ($CURrow = $CURresult->fetch_assoc())
 										{ 
 												$currentCount = $CURrow['currentCount'];
 												
-
-										}
-
-
-										$REALquery = "SELECT realtimeCount from notificationcountertable;";
-
-										$REALresult = $conn->query($REALquery);
-										
-										$realtimeCount = 0;
-										
-										while ($REALrow = $REALresult->fetch_assoc())
-										{ 
-												$realtimeCount = $REALrow['realtimeCount'];
-												
-
+												$realtimeCount = $CURrow['realtimeCount'];
 										}
 
 
@@ -381,13 +362,15 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 	  			attbranch = document.getElementById("add-branch").value;
 	  		var attdept='';
 	  			attdept = document.getElementById("add-dept").value;
+	  		var attpos='';
+	  			attpos = document.getElementById("add-position").value;
 			//-----------get line--------------//
 				var action = "getline";
-				var actionmode = "userform";
+				var actionmode = "loadcurday";
 				$.ajax({
 					type: 'POST',
 					url: 'attendanceload.php',
-					data:{action:action, actmode:actionmode, attbranch:attbranch, attdept:attdept},
+					data:{action:action, actmode:actionmode, attbranch:attbranch, attdept:attdept, attpos:attpos},
 					beforeSend:function(){
 					
 						//$("#result").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
@@ -411,15 +394,17 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 	  			attbranch = document.getElementById("add-branch").value;
 	  		var attdept='';
 	  			attdept = document.getElementById("add-dept").value;
+	  		var attpos='';
+	  			attpos = document.getElementById("add-position").value;
 			var action = "dept";
-			var actionmode = "dept";
+			var actionmode = "loadprev";
 
 			if(prevdate != '')
 			{
 				$.ajax({
 					type: 'POST',
 					url: 'attendanceloadprev.php',
-					data:{action:action, actmode:actionmode, attbranch:attbranch, attdept:attdept, prevdate:prevdate},
+					data:{action:action, actmode:actionmode, attbranch:attbranch, attdept:attdept, attpos:attpos, prevdate:prevdate},
 					beforeSend:function(){
 					
 						$("#result").html('<center><img src="img/loading.gif" width="300" height="300"></center>');

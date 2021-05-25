@@ -97,7 +97,7 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 										<td style="width:14%;">Payout Id</td>
 										<td style="width:14%;">Worker Id</td>
 										<td style="width:14%;">worker Name</td>
-										<td style="width:14%;">Rate</td>
+										
 										<td style="width:14%;">Type</td>
 										<td style="width:14%;">Status</td>
 										<td style="width:14%;">Amount</td>
@@ -148,7 +148,7 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 										<?php } ?>
 										</datalist>
 									  </td>
-									  <td><span></span></td>
+									  
 
 									  <td><input list="SearchPaytype" class="search">
 										<?php
@@ -196,7 +196,7 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 											<td style="width:14%;"><?php echo $row['finalpayoutid'];?></td>
 											<td style="width:14%;"><?php echo $row['workerid'];?></td>
 											<td style="width:14%;"><?php echo $row['name'];?></td>
-											<td style="width:14%;"><?php echo $row['rate'];?></td>
+											
 											<td style="width:14%;"><?php echo $row['paytype'];?></td>
 											<td style="width:14%;"><?php echo $row['statustxt'];?></td>
 											<td style="width:14%;"><?php echo $row['amount'];?></td>
