@@ -769,8 +769,27 @@ $firstresult='';
 							
 						},
 						success: function(data){
-						$('#lineresult').html(data);
-						//location.reload();					
+						//$('#lineresult').html(data);
+						//location.reload();	
+							alert("Computed");
+						//-----------get line--------------//
+							var action = "getline";
+							var actionmode = "userform";
+							$.ajax({
+								type: 'POST',
+								url: 'payrolltransactiondetailline.php',
+								data:{action:action, actmode:actionmode, PayId:so},
+								beforeSend:function(){
+								
+									$("#lineresult").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+								},
+								success: function(data){
+									//payline='';
+									document.getElementById("hide2").value = "";
+									$('#lineresult').html(data);
+								}
+							}); 	
+							//-----------get line--------------//
 						}
 				}); 
 			}
@@ -806,8 +825,27 @@ $firstresult='';
 							
 						},
 						success: function(data){
-						$('#lineresult').html(data);
-						//location.reload();					
+						//$('#lineresult').html(data);
+						//location.reload();
+							alert("Computed");
+						//-----------get line--------------//
+							var action = "getline";
+							var actionmode = "userform";
+							$.ajax({
+								type: 'POST',
+								url: 'payrolltransactiondetailline.php',
+								data:{action:action, actmode:actionmode, PayId:so},
+								beforeSend:function(){
+								
+									$("#lineresult").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+								},
+								success: function(data){
+									//payline='';
+									document.getElementById("hide2").value = "";
+									$('#lineresult').html(data);
+								}
+							}); 	
+							//-----------get line--------------//
 						}
 				}); 
 			}

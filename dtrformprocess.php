@@ -928,7 +928,7 @@ else if($_GET["action"]=="update") {
 		{
 			echo $sql;
 		
-			/*$PayPerquery = "SELECT 
+			$PayPerquery = "SELECT 
 						date_format(startdate, '%Y-%m-%d') startdate,
 						date_format(enddate, '%Y-%m-%d') enddate,
 						period
@@ -950,7 +950,7 @@ else if($_GET["action"]=="update") {
 				else
 				{
 					echo "error".$sqlgenerate."<br>".$conn->error;
-				}*/
+				}
 
 
 
