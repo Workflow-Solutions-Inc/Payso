@@ -163,124 +163,124 @@ $query = "CALL payslipRPTAll('".$payrollid."', '".$dataareaid."')";
 
 							<tr>
 								
-								<td width="170" height="30" bgcolor="#ffffff">Name:</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">Over Break:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$overbreak.'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">Restday:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$restday.'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">SSS:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$sss.'</td><td></td> <td></td> <td></td>
+								<td width="187" height="30" bgcolor="#ffffff">Name:</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">Over Break:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$overbreak.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">Restday:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$restday.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">SSS:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$sss.'</td><td></td> <td></td> <td></td>
 								
 							</tr>
 							<tr>
 								
-								<td width="170" height="30" bgcolor="#ffffff" ><b>'.ucwords(strtolower($name)).'</b></td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">Over Break Amt:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$overbreakH.'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">Restday Amt:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$restdayH.'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">SSSMPFEE:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$SSSMPFEE.'</td><td></td> <td></td> <td></td>
+								<td width="187" height="30" bgcolor="#ffffff" ><b>'.ucwords(strtolower($name)).'</b></td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">Over Break Amt:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$overbreakH.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">Restday Amt:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$restdayH.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">SSSMPFEE:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$SSSMPFEE.'</td><td></td> <td></td> <td></td>
 								
 							</tr>
 							<tr>
 								
-								<td width="170" height="30" bgcolor="#ffffff">Employee ID: '.$internalid.'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">Undertime:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$undertime.'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">Special Hol:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$sholiday.'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">PAG-IBIG:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$pagibig.'</td><td></td> <td></td> <td></td>
+								<td width="187" height="30" bgcolor="#ffffff">Employee ID: '.$internalid.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">Undertime:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$undertime.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">Special Hol:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$sholiday.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">PAG-IBIG:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$pagibig.'</td><td></td> <td></td> <td></td>
+								
+							</tr>
+							<tr>
+
+								<td width="187" height="30" bgcolor="#ffffff">Company: '.$dataareaname.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">Undertime Amt:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$undertimeH.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">S. Hol Amt:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$sholidayH.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">PHIC:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$philhealth.'</td><td></td> <td></td> <td></td>
+								
+							</tr>
+							<tr>
+					
+								<td width="187" height="30" bgcolor="#ffffff">Position: '.ucwords(strtolower($position)).'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">Absent:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$abs.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">S. Hol OT:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$sholidayot.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">TAX:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$tax.'</td><td></td> <td></td> <td></td>
 								
 							</tr>
 							<tr>
 								
-								<td width="170" height="30" bgcolor="#ffffff">Position:</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">Undertime Amt:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$undertimeH.'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">S. Hol Amt:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$sholidayH.'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">PHIC:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$philhealth.'</td><td></td> <td></td> <td></td>
+								<td width="187" height="30" bgcolor="#ffffff">Payroll Covered:</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">Absent Amt:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$absa.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">S. Hol OT Amt:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$sholidayotH.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">SSS Loan:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$ssloan.'</td><td></td> <td></td> <td></td>
 								
 							</tr>
 							<tr>
 								
-								<td width="170" height="30" bgcolor="#ffffff">'.ucwords(strtolower($position)).'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">Absent:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$abs.'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">S. Hol OT:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$sholidayot.'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">TAX:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$tax.'</td><td></td> <td></td> <td></td>
+								<td width="187" height="30" bgcolor="#ffffff">'.$fromdate.' - '.$todate.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">&nbsp;</td><td width="67" height="30" bgcolor="#ffffff">&nbsp;</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">Legal Hol:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$lholiday.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">PAG-IBIG Loan:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$pagibigl.'</td><td></td> <td></td> <td></td>
 								
 							</tr>
 							<tr>
 								
-								<td width="170" height="30" bgcolor="#ffffff">Payroll Covered:</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">Absent Amt:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$absa.'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">S. Hol OT Amt:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$sholidayotH.'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">SSS Loan:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$ssloan.'</td><td></td> <td></td> <td></td>
+								<td width="187" height="30" bgcolor="#ffffff">Recieved:</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">Overtime:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$overtime.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">L. Hol Amt:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$lholidayH.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">Cash Adv.:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$cadvance.'</td><td></td> <td></td> <td></td>
 								
 							</tr>
 							<tr>
 								
-								<td width="170" height="30" bgcolor="#ffffff">'.$fromdate.' - '.$todate.'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">&nbsp;</td><td width="65" height="30" bgcolor="#ffffff">&nbsp;</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">Legal Hol:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$lholiday.'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">PAG-IBIG Loan:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$pagibigl.'</td><td></td> <td></td> <td></td>
+								<td width="187" height="30" bgcolor="#ffffff">__________________________</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">Overtime Amt:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$overtimeH.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">L. Hol OT:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$lholidayot.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">&nbsp;</td><td width="67" height="30" bgcolor="#ffffff">&nbsp;</td><td></td> <td></td> <td></td>
 								
 							</tr>
 							<tr>
-								
-								<td width="170" height="30" bgcolor="#ffffff">Recieved:</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">Overtime:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$overtime.'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">L. Hol Amt:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$lholidayH.'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">Cash Adv.:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$cadvance.'</td><td></td> <td></td> <td></td>
-								
-							</tr>
-							<tr>
-								
-								<td width="170" height="30" bgcolor="#ffffff">______________________</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">Overtime Amt:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$overtimeH.'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">L. Hol OT:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$lholidayot.'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">&nbsp;</td><td width="65" height="30" bgcolor="#ffffff">&nbsp;</td><td></td> <td></td> <td></td>
-								
-							</tr>
-							<tr>
-								<td width="105" height="30" bgcolor="#ffffff">Daily Rate:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$rate.'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">Night Diff:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$nightdeferential.'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">L. Hol OT Amt:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$lholidayotH.'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">&nbsp;</td><td width="65" height="30" bgcolor="#ffffff">&nbsp;</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">Daily Rate:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$rate.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">Night Diff:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$nightdeferential.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">L. Hol OT Amt:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$lholidayotH.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">&nbsp;</td><td width="67" height="30" bgcolor="#ffffff">&nbsp;</td><td></td> <td></td> <td></td>
 								
 							</tr>
 
 							<tr>
-								<td width="105" height="30" bgcolor="#ffffff">Days:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$rdays.'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">Night Diff Amt:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$nightdeferentialH.'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">&nbsp;</td><td width="65" height="30" bgcolor="#ffffff">&nbsp;</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">&nbsp;</td><td width="65" height="30" bgcolor="#ffffff">&nbsp;</td>
+								<td width="120" height="30" bgcolor="#ffffff">Days:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$rdays.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">Night Diff Amt:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$nightdeferentialH.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">&nbsp;</td><td width="67" height="30" bgcolor="#ffffff">&nbsp;</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">&nbsp;</td><td width="67" height="30" bgcolor="#ffffff">&nbsp;</td>
 							</tr>
 
 							<tr>
-								<td width="105" height="30" bgcolor="#ffffff">Basic Pay:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$bpay.'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">Transpo:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$tallow.'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">&nbsp;</td><td width="65" height="30" bgcolor="#ffffff">&nbsp;</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">&nbsp;</td><td width="65" height="30" bgcolor="#ffffff">&nbsp;</td>
+								<td width="120" height="30" bgcolor="#ffffff">Basic Pay:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$bpay.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">Transpo:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$tallow.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">&nbsp;</td><td width="67" height="30" bgcolor="#ffffff">&nbsp;</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">&nbsp;</td><td width="67" height="30" bgcolor="#ffffff">&nbsp;</td>
 							</tr>
 
 							<tr>
-								<td width="105" height="30" bgcolor="#ffffff">&nbsp;</td><td width="65" height="30" bgcolor="#ffffff">&nbsp;</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">Meal:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$mallow.'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">&nbsp;</td><td width="65" height="30" bgcolor="#ffffff">&nbsp;</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">&nbsp;</td><td width="65" height="30" bgcolor="#ffffff">&nbsp;</td>
+								<td width="120" height="30" bgcolor="#ffffff">&nbsp;</td><td width="67" height="30" bgcolor="#ffffff">&nbsp;</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">Meal:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$mallow.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">&nbsp;</td><td width="67" height="30" bgcolor="#ffffff">&nbsp;</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">&nbsp;</td><td width="67" height="30" bgcolor="#ffffff">&nbsp;</td>
 							</tr>
 
 							<tr>
-								<td width="105" height="30" bgcolor="#ffffff">Late:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$late.'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">&nbsp;</td><td width="65" height="30" bgcolor="#ffffff">&nbsp;</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">&nbsp;</td><td width="65" height="30" bgcolor="#ffffff">&nbsp;</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">&nbsp;</td><td width="65" height="30" bgcolor="#ffffff">&nbsp;</td>
+								<td width="120" height="30" bgcolor="#ffffff">Late:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$late.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">&nbsp;</td><td width="67" height="30" bgcolor="#ffffff">&nbsp;</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">&nbsp;</td><td width="67" height="30" bgcolor="#ffffff">&nbsp;</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">&nbsp;</td><td width="67" height="30" bgcolor="#ffffff">&nbsp;</td>
 							</tr>
 
 							<tr>
-								<td width="105" height="30" bgcolor="#ffffff">Late Amt:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT">'.$lateH.'</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">&nbsp;</td><td width="65" height="30" bgcolor="#ffffff">&nbsp;</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">&nbsp;</td><td width="65" height="30" bgcolor="#ffffff">&nbsp;</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">&nbsp;</td><td width="65" height="30" bgcolor="#ffffff">&nbsp;</td>
+								<td width="120" height="30" bgcolor="#ffffff">Late Amt:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$lateH.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">&nbsp;</td><td width="67" height="30" bgcolor="#ffffff">&nbsp;</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">&nbsp;</td><td width="67" height="30" bgcolor="#ffffff">&nbsp;</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">&nbsp;</td><td width="67" height="30" bgcolor="#ffffff">&nbsp;</td>
 							</tr>
 
 							<tr>
-								<td width="105" height="30" bgcolor="#ffffff">&nbsp;</td><td width="65" height="30" bgcolor="#ffffff">&nbsp;</td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">Gross Pay:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT"><font color="black">'.$gpay.'</font></td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">Total Ded:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT"><font color="black">'.$tded.'</font></td><td></td> <td></td> <td></td>
-								<td width="105" height="30" bgcolor="#ffffff">Net Pay:</td><td width="65" height="30" bgcolor="#ffffff" align="RIGHT"><font color="black">'.$npay.'</font></td>
+								<td width="120" height="30" bgcolor="#ffffff">&nbsp;</td><td width="67" height="30" bgcolor="#ffffff">&nbsp;</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">Gross Pay:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT"><font color="black">'.$gpay.'</font></td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">Total Ded:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT"><font color="black">'.$tded.'</font></td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">Net Pay:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT"><font color="black">'.$npay.'</font></td>
 							</tr>
 							
 							
