@@ -36,7 +36,7 @@ $query = "SELECT w.name,dtrh.payrollperiod,dtrh.workerid,date as Date,weekday as
 							left join worker w on
 							w.workerid = dtrd.workerid and w.dataareaid = dtrd.dataareaid
 							where dtrd.payrollperiod = '$payrollperiod' and dtrd.dataareaid = '$dataareaid'
-                            
+                            and dtrd.weekday is not null
                             group by workerid;";
 
      $result = $conn->query($query);

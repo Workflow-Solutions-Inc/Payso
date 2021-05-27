@@ -239,7 +239,7 @@ else if($_GET["action"]=="searchdata"){
 			<tr class="'.$rowclass.'" tabindex="'.$rowcnt2.'" >
 			<td style="width:20px;" class="text-center"><span class="fa fa-angle-right"></span></td>
 				<td style="width:5%;"><input type="checkbox" id="chkbox" name="chkbox" class="checkbox"
-				 	value="'.$row['Daytype'].'"></td>
+				 	value="'.$row['date'].'"></td>
 				<td style="width:12%;">'.$row["Daytype"].'</td>			
 				<td style="width:12%;">'.$row["date"].'</td>
 				<td style="width:12%;">'.$row["weekday"].'</td>

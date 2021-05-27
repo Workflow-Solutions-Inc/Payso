@@ -449,6 +449,7 @@ else if($_GET["action"]=="approve"){
 						$row2 = $result2->fetch_assoc();
 						$cutoff = $row2["period"];
 						$payperiod = $row2["payrollperiod"];
+						$payrollenddate = $row2["enddate"];
 
 						/*if($cutoff == 0)
 						{
@@ -525,6 +526,17 @@ else if($_GET["action"]=="approve"){
 							else
 							{
 								echo "error".$sqlloan."<br>".$conn->error;
+							}
+					//posting of portal filing
+					$portal = "call portalPosting('$payrollenddate','$dataareaid')";
+			
+					if(mysqli_query($conn,$portal))
+							{
+								echo $portal."<br>".$conn->error;
+							}
+							else
+							{
+								echo "error".$portal."<br>".$conn->error;
 							}
 
 

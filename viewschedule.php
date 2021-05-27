@@ -434,14 +434,14 @@ $wknum = $_SESSION["wknum"];
 			var data=[];
 			 for(i=0;i<search.length;i++){
 				 data[i]=search[i].value;
-				 //search[i].value = "";
+				 search[i].value = "";
 			 }
 			 
 			 daytype = data[0];
 			 date = data[1];
 			 weekday = data[2];
 			 shifttype = data[3];
-			 
+			 //alert(shifttype);
 
 			 $.ajax({
 						type: 'GET',
@@ -455,6 +455,99 @@ $wknum = $_SESSION["wknum"];
 						},
 						success: function(data){
 							$('#result').html(data);
+							CheckedVal();
+							$('[name=chkbox]').change(function(){
+						    if($(this).attr('checked'))
+						    {
+					      		//document.getElementById("inchide").value = $(this).val();
+					      		Add();
+						    }
+						    else
+						    {
+									         
+						         //document.getElementById("inchide").value=$(this).val();
+						         remVals.push("'"+$(this).val()+"'");
+						         $('#inchide2').val(remVals);
+
+						         $.each(remVals, function(i, el2){
+
+						    		removeA(allVals, el2);
+						    		removeA(uniqueNames, el2);
+							    	//$("input[value="+el+"]").prop("checked", true);
+							    	//alert(el);
+								});
+						        Add();
+
+						    }
+						 });
+
+						$("#selectAll").change(function(){  //"select all" change 
+				   			 
+
+				   			 if(false == $(this).prop("checked")){ //if this item is unchecked
+							        $('[name=chkbox]').prop('checked', false); //change "select all" checked status to false
+							         allVals = [];
+									 uniqueNames = [];
+									 remVals = [];
+									 remValsEx = [];
+							        document.getElementById('inchide').value = '';
+							        document.getElementById('inchide2').value = '';
+							        //alert('sample');
+
+							    }
+							    else
+							    {
+							    	$(".checkbox").prop('checked', $(this).prop("checked")); //change all ".checkbox" checked status
+							    	Add();
+							    }
+
+							});
+
+						function removeA(arr) 
+						{
+						    var what, a = arguments, L = a.length, ax;
+						    while (L > 1 && arr.length) {
+						        what = a[--L];
+						        while ((ax= arr.indexOf(what)) !== -1) {
+						            arr.splice(ax, 1);
+						        }
+						    }
+						    return arr;
+						}
+						
+						function Add() 
+						{  
+
+							
+							$('#inchide').val('');
+							 $('[name=chkbox]:checked').each(function() {
+							   allVals.push("'"+$(this).val()+"'");
+							 });
+
+							  //remove existing rec start-----------------------
+							 $('[name=chkbox]:disabled').each(function() {
+							   
+							   remValsEx.push("'"+$(this).val()+"'");
+						         //$('#inchide2').val(remValsEx);
+
+						         $.each(remValsEx, function(i, el2){
+						         		
+						    		removeA(allVals, el2);
+						    		removeA(uniqueNames, el2);
+							    	//"'"+"PCC"+"'"
+								});
+							   
+							 });
+							 //remove existing rec end-------------------------
+
+							 
+								$.each(allVals, function(i, el){
+								    if($.inArray(el, uniqueNames) === -1) uniqueNames.push(el);
+								});
+							
+							 $('#inchide').val(uniqueNames);
+
+						} 
 							$(document).ready(function(){
 							$('#datatbl tbody tr').click(function(){
 								$('table tbody tr').css("color","black");
@@ -648,7 +741,7 @@ $wknum = $_SESSION["wknum"];
 			var SelectedVal = $('#inchide').val();
 			var wkid = document.getElementById("wkhide").value;
 			//var date = $('#inchide').val();
-			if(so != '') {
+			if(SelectedVal != '') {
 				if(confirm("Are you sure you want to remove this record?")) {
 					//alert(so);
 					$.ajax({	

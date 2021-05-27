@@ -48,7 +48,7 @@ $dtrpayrollid = '';
 										format(sunday,2) sunday,
 										format(sundayot,2) sundayot,
 										format(sundaynd,2) sundaynd,
-										format(holiday,2) holiday,
+										format(ifnull(holiday,0),2) holiday,
 										format(holidayot,2) holidayot,
 										format(holidaynd,2) holidaynd,
 										payrollid
