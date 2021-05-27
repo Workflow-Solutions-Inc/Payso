@@ -400,7 +400,7 @@ $firstresult='';
 													when accounttype = 2 then 'Condition'
 													else 'Total'
 													end as accounttype,
-													format(value,2) value
+													format(value,6) value
 													FROM payrolldetailsaccounts
 													where payrollid = '$paynum'
 													and reflinenum = '$firstresult'
