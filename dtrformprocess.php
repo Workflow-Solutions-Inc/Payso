@@ -941,7 +941,7 @@ else if($_GET["action"]=="update") {
 			$startdate=$PayPerrow["startdate"];
 			$enddate=$PayPerrow["enddate"];
 
-			$sqlgenerate = "call generateDTRperworker('$dataareaid','$startdate','$enddate','$payrollperiod','$wkid')";
+			$sqlgenerate = "call SP_generateDTRperworker('$dataareaid','$startdate','$enddate','$payrollperiod','$wkid')";
 				if(mysqli_query($conn,$sqlgenerate))
 				{
 					//echo $sqlgenerate."<br>";
@@ -1018,6 +1018,80 @@ else if($_GET["action"]=="import"){
 
 	header('location: dtrform.php');
 	
+}
+else if($_GET["action"]=="importperworker"){
+	
+	$PayPerquery = "SELECT 
+						date_format(startdate, '%Y-%m-%d') startdate,
+						date_format(enddate, '%Y-%m-%d') enddate,
+						period
+						FROM payrollperiod where dataareaid = '$dataareaid' 
+						and payrollperiod = '$payrollperiod'";
+
+						//and (module like '%$module%') and (submodule like '%$sub%') and (name like '%$name%')";
+			$PayPerresult = $conn->query($PayPerquery);
+			$PayPerrow = $PayPerresult->fetch_assoc();
+			$fromdate=$PayPerrow["startdate"];
+			$todate=$PayPerrow["enddate"];
+
+
+	$id=$payrollperiod;
+
+	// $fromdate = $_GET["locPayFromDate"];
+	// $todate = $_GET["locPayEndDate"];
+	//$actmode = $_GET["actionmode"];
+	$wkid = $_GET["WkId"];
+	if($_GET["actionmode"]=="importperworker")
+	{
+		echo $id;
+	 	echo "<br>";
+	 	echo $fromdate;
+	 	echo "<br>";
+	 	echo $todate;
+	 	echo "<br>";
+
+	 	$sqlconsol = "call consolidateglobalDTRPerworker('$fromdate','$todate','$dataareaid','$wkid')";
+			if(mysqli_query($conn,$sqlconsol))
+			{
+				echo $sqlconsol."<br>".$conn->error;
+			}
+			else
+			{
+				echo "error".$sqlconsol."<br>".$conn->error;
+			}
+
+		$sqlprocess = "call SP_processdailytimerecordperworker('$dataareaid','$fromdate','$todate','$id','$wkid')";
+			if(mysqli_query($conn,$sqlprocess))
+			{
+				echo $sqlprocess."<br>".$conn->error;
+			}
+			else
+			{
+				echo "error".$sqlprocess."<br>".$conn->error;
+			}
+
+		$sqloverwrite = "call overwriteallPerworker('$fromdate','$todate','$dataareaid','$id','$wkid')";
+			if(mysqli_query($conn,$sqloverwrite))
+			{
+				echo $sqloverwrite."<br>".$conn->error;
+			}
+			else
+			{
+				echo "error".$sqloverwrite."<br>".$conn->error;
+			}
+
+		$sqlgenerate = "call SP_generateDTRperworker('$dataareaid','$fromdate','$todate','$id','$wkid')";
+			if(mysqli_query($conn,$sqlgenerate))
+			{
+				echo $sqlgenerate."<br>".$conn->error;
+			}
+			else
+			{
+				echo "error".$sqlgenerate."<br>".$conn->error;
+			}
+	}
+	
+	//header('location: dtrform.php');
 }
 else if($_GET["action"]=="proceedX"){
 	 	

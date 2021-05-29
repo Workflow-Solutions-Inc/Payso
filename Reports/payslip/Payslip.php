@@ -182,7 +182,7 @@ $query = "CALL payslipRPTAll('".$payrollid."', '".$dataareaid."')";
 								<td width="187" height="30" bgcolor="#ffffff">Employee ID: '.$internalid.'</td><td></td> <td></td> <td></td>
 								<td width="120" height="30" bgcolor="#ffffff">Undertime:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$undertime.'</td><td></td> <td></td> <td></td>
 								<td width="120" height="30" bgcolor="#ffffff">Special Hol:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$sholiday.'</td><td></td> <td></td> <td></td>
-								<td width="120" height="30" bgcolor="#ffffff">PAG-IBIG:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$pagibig.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">PHIC:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$philhealth.'</td><td></td> <td></td> <td></td>
 								
 							</tr>
 							<tr>
@@ -190,7 +190,7 @@ $query = "CALL payslipRPTAll('".$payrollid."', '".$dataareaid."')";
 								<td width="187" height="30" bgcolor="#ffffff">Company: '.$dataareaname.'</td><td></td> <td></td> <td></td>
 								<td width="120" height="30" bgcolor="#ffffff">Undertime Amt:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$undertimeH.'</td><td></td> <td></td> <td></td>
 								<td width="120" height="30" bgcolor="#ffffff">S. Hol Amt:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$sholidayH.'</td><td></td> <td></td> <td></td>
-								<td width="120" height="30" bgcolor="#ffffff">PHIC:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$philhealth.'</td><td></td> <td></td> <td></td>
+								<td width="120" height="30" bgcolor="#ffffff">PAG-IBIG:</td><td width="67" height="30" bgcolor="#ffffff" align="RIGHT">'.$pagibig.'</td><td></td> <td></td> <td></td>
 								
 							</tr>
 							<tr>

@@ -104,11 +104,14 @@ $firstresult = '';
 			<div class="leftpanel-title"><b>COMMANDS</b></div>
 			<li><button onClick="LoadDtr();"><span class="fa fa-plus"></span> Load DTR</button></li>
 			<li class="DTRMaintain" style="display: none;"><button onClick="ImportDtr();"><span class="fa fa-plus"></span> Import DTR</button></li>
+			<li class="DTRMaintain" style="display: none;"><button onClick="ImportDtrPerWorker();"><span class="fa fa-plus"></span> Import DTR Per Worker</button></li>
 			
 			<div id="WSbtn">
+				<!-- <li class="DTRMaintain" style="display: none;"><button onClick="ImportDtrPerWorker();"><span class="fa fa-plus"></span> Import DTR Per Worker</button></li> -->
 				<li class="DTRMaintain" style="display: none;"><button id="modaltableBtn1"><span class="fa fa-edit"></span> Update Work Summary</button></li>
 			</div>
 			<div id="SSbtn" style="display: none">
+				<!-- <li class="DTRMaintain" style="display: none;"><button onClick="ImportDtrPerWorkerSS();"><span class="fa fa-plus"></span> Import DTR Per Worker</button></li> -->
 				<li class="DTRMaintain" style="display: none;"><button id="myUpdateBtn"><span class="fa fa-edit"></span> Update Schedule</button></li>
 			</div>
 			
@@ -441,24 +444,24 @@ $firstresult = '';
 				$holot = 0;
 				$holnd = 0;
 				$dtrpayrollid = '';
-					$query = "SELECT format(daysworked,2) daysworked,
-										format(hoursworked,2) hoursworked,
-										format(overtimehours,2) overtimehours,
-										format(nightdifhours,2) nightdifhours,
-										format(leaves,2) leaves,
-										format(absent,2) absent,
-										format(late,2) late,
-										format(break,2) break,
-										format(undertime,2) undertime,
-										format(specialholiday,2) specialholiday,
-										format(specialholidayot,2) specialholidayot,
-										format(specialholidaynd,2) specialholidaynd,
-										format(sunday,2) sunday,
-										format(sundayot,2) sundayot,
-										format(sundaynd,2) sundaynd,
-										format(holiday,2) holiday,
-										format(holidayot,2) holidayot,
-										format(holidaynd,2) holidaynd,
+					$query = "SELECT format(ifnull(daysworked,0),2) daysworked,
+										format(ifnull(hoursworked,0),2) hoursworked,
+										format(ifnull(overtimehours,0),2) overtimehours,
+										format(ifnull(nightdifhours,0),2) nightdifhours,
+										format(ifnull(leaves,0),2) leaves,
+										format(ifnull(absent,0),2) absent,
+										format(ifnull(late,0),2) late,
+										format(ifnull(break,0),2) break,
+										format(ifnull(undertime,0),2) undertime,
+										format(ifnull(specialholiday,0),2) specialholiday,
+										format(ifnull(specialholidayot,0),2) specialholidayot,
+										format(ifnull(specialholidaynd,0),2) specialholidaynd,
+										format(ifnull(sunday,0),2) sunday,
+										format(ifnull(sundayot,0),2) sundayot,
+										format(ifnull(sundaynd,0),2) sundaynd,
+										format(ifnull(holiday,0),2) holiday,
+										format(ifnull(holidayot,0),2) holidayot,
+										format(ifnull(holidaynd,0),2) holidaynd,
 										payrollid
 
 									FROM dailytimerecordheader 
@@ -710,7 +713,7 @@ $firstresult = '';
 	<div class="modal-container">
 		<div class="modal-content">
 			<div class="modal-header">
-				<div class="col-lg-6">User</div>
+				<div class="col-lg-6">Schedule Summary</div>
 				<div class="col-lg-6"><span class="fas fa-times modal-close"></span></div>
 			</div>
 			
@@ -1483,6 +1486,154 @@ $firstresult = '';
 				    //$('#result').html(data);
 			    }
 			});
+		}
+
+		function ImportDtrPerWorker()
+		{
+			//window.location.href='dtrperiodform.php';
+			var action = "importperworker";
+			var actionmode = "importperworker";
+			//var wk = "<?php echo $dataareaid; ?>"; 
+			var PayId = "<?php echo $payrollperiod; ?>"; 
+			
+
+			if(so != '')
+			{
+				$.ajax({
+					type: 'GET',
+					url: 'dtrformprocess.php',
+					data:{action:action, actionmode:actionmode, WkId:so, PayId:PayId},
+					beforeSend:function(){
+									
+							$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+								
+							},
+					success: function(data) {
+						//location.reload();
+					    //window.location.href='dtrperiodform.php';
+					    //$('#dtrContent').html(data);
+					   // alert(flaglocation);
+						  if(flaglocation == 'workSummary')
+						  {
+						  		flaglocation = 'workSummary';
+									$('#SSbtn').css("display", "None");
+									$('#WSbtn').css("display", "Block");
+									$('#OverView').addClass("active");
+									$('#Summary').removeClass("active");
+
+									//-----------get line--------------//
+									var action = "getline";
+									var actionmode = "userform";
+									$.ajax({
+										type: 'POST',
+										url: 'dtrwork.php',
+										data:{action:action, actmode:actionmode, transval:so},
+										beforeSend:function(){
+										
+											$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+										},
+										success: function(data){
+											//payline='';
+											//document.getElementById("hide2").value = "";
+											$('#dtrContent').html(data);
+										}
+									}); 
+									//-----------get line--------------//
+						  }
+						  else
+						  {
+						  		flaglocation = 'schedSummary';
+									$('#SSbtn').css("display", "Block");
+									$('#WSbtn').css("display", "None");
+									$('#Summary').addClass("active");
+									$('#OverView').removeClass("active");
+
+									//-----------get line--------------//
+									var action = "getline";
+									var actionmode = "userform";
+									$.ajax({
+										type: 'POST',
+										url: 'dtrsummary.php',
+										data:{action:action, actmode:actionmode, transval:so},
+										beforeSend:function(){
+										
+											$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+										},
+										success: function(data){
+											//payline='';
+											//document.getElementById("hide2").value = "";
+											$('#dtrContent').html(data);
+										}
+									}); 
+									//-----------get line--------------//
+						  }
+					  
+				    }
+				});
+			}
+			else
+			{
+				alert('Please select worker.');
+			}
+
+		}
+
+		function ImportDtrPerWorkerSS()
+		{
+			//window.location.href='dtrperiodform.php';
+			var action = "importperworker";
+			var actionmode = "importperworker";
+			//var wk = "<?php echo $dataareaid; ?>"; 
+			var PayId = "<?php echo $payrollperiod; ?>"; 
+			
+
+			if(so != '')
+			{
+				$.ajax({
+					type: 'GET',
+					url: 'dtrformprocess.php',
+					data:{action:action, actionmode:actionmode, WkId:so, PayId:PayId},
+					beforeSend:function(){
+									
+							$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+								
+							},
+					success: function(data) {
+						//location.reload();
+					    //window.location.href='dtrperiodform.php';
+					    //$('#dtrContent').html(data);
+					  flaglocation = 'schedSummary';
+						$('#SSbtn').css("display", "Block");
+						$('#WSbtn').css("display", "None");
+						$('#Summary').addClass("active");
+						$('#OverView').removeClass("active");
+
+						//-----------get line--------------//
+						var action = "getline";
+						var actionmode = "userform";
+						$.ajax({
+							type: 'POST',
+							url: 'dtrsummary.php',
+							data:{action:action, actmode:actionmode, transval:so},
+							beforeSend:function(){
+							
+								$("#dtrContent").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+							},
+							success: function(data){
+								//payline='';
+								//document.getElementById("hide2").value = "";
+								$('#dtrContent').html(data);
+							}
+						}); 
+						//-----------get line--------------//
+				    }
+				});
+			}
+			else
+			{
+				alert('Please select worker.');
+			}
+
 		}
 
 		function LoadDtr()
