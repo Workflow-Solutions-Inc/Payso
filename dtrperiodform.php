@@ -114,12 +114,12 @@ else
 								<thead>	
 									<tr class="rowB rowtitle">
 										<td style="width:20px;" class="text-center"><span class="fa fa-asterisk fa-xs"></span></td>
-										<td style="width:16%;">Period</td>
-										<td style="width:16%;">Payroll Period</td>
-										<td style="width:16%;">From Date</td>
-										<td style="width:16%;">To Date</td>
-										<td style="width:16%;">Payroll Date</td>
-										<td style="width:16%;">Payroll Group</td>
+										<td style="width:17%;">Period</td>
+										<td style="width:17%;">Payroll Period</td>
+										<td style="width:17%;">From Date</td>
+										<td style="width:17%;">To Date</td>
+										<td style="width:17%;">Payroll Date</td>
+										<td style="width:17%;">Payroll Group</td>
 										<td style="width: 17px;" class="text-center"><span class="fas fa-arrows-alt-v"></span></td>
 									</tr>
 									<tr class="rowsearch">
@@ -267,12 +267,12 @@ else
 										<tr id="<?php echo $row['payrollperiod'];?>" class="<?php echo $rowclass; ?>" tabindex="<?php echo $rowcnt2; ?>">
 											<!--<td style="width:10px;"><input type='checkbox' name="chkbox" value="" id="myCheck"></td>-->
 											<td style="width:20px;" class="text-center"><span class="fa fa-angle-right"></span></td>
-											<td style="width:16%;"><?php echo $row['period'];?></td>
-											<td style="width:16%;"><?php echo $row['payrollperiod'];?></td>
-											<td style="width:16%;"><?php echo $row['startdate'];?></td>
-											<td style="width:16%;"><?php echo $row['enddate'];?></td>
-											<td style="width:16%;"><?php echo $row['payrolldate'];?></td>
-											<td style="width:16%;"><?php echo $row['payrollgroup'];?></td>
+											<td style="width:17%;"><?php echo $row['period'];?></td>
+											<td style="width:17%;"><?php echo $row['payrollperiod'];?></td>
+											<td style="width:17%;"><?php echo $row['startdate'];?></td>
+											<td style="width:17%;"><?php echo $row['enddate'];?></td>
+											<td style="width:17%;"><?php echo $row['payrolldate'];?></td>
+											<td style="width:17%;"><?php echo $row['payrollgroup'];?></td>
 											<td style="display:none;width:1%;"><?php echo $row['payrollgroupid'];?></td>
 											<!--<td style="width:50%;"><input type='password' value='" . $row["password"]."'readonly='readonly'></td>-->
 											
