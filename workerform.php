@@ -147,10 +147,10 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 								<thead>	
 									<tr class="rowB rowtitle">
 										<td style="width:20px;" class="text-center"><span class="fa fa-asterisk fa-xs"></span></td>
-										<td style="width:19%;">Worker ID</td>
-										<td style="width:19%;">Name</td>
-										<td style="width:19%;">Position</td>
-										<td style="width:19%;">Branch</td>
+										<td style="width:25%;">Worker ID</td>
+										<td style="width:25%;">Name</td>
+										<td style="width:25%;">Position</td>
+										<td style="width:25%;">Branch</td>
 										
 										<td style="width: 17px;"><span class="fas fa-arrows-alt-v"></span></td>
 									</tr>
@@ -268,10 +268,10 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 										<tr class="<?php echo $rowclass; ?>">
 											<!--<td style="width:10px;"><input type='checkbox' name="chkbox" value="" id="myCheck"></td>-->
 											<td style="width:20px;" class="text-center"><span class="fa fa-angle-right"></span></td>
-											<td style="width:19%;"><?php echo $row['workerid'];?></td>
-											<td style="width:19%;"><?php echo $row['Name'];?></td>
-											<td style="width:19%;"><?php echo $row['position'];?></td>
-											<td style="width:19%;"><?php echo $row['branchname'];?></td>
+											<td style="width:25%;"><?php echo $row['workerid'];?></td>
+											<td style="width:25%;"><?php echo $row['Name'];?></td>
+											<td style="width:25%;"><?php echo $row['position'];?></td>
+											<td style="width:25%;"><?php echo $row['branchname'];?></td>
 											
 											<td style="display:none;width:1%;"><?php echo $row['birthdayleave'];?></td>
 											<td style="display:none;width:1%;"><input type="checkbox" name="chkbox" class="checkbox"  value="true" <?php echo ($row['birdeclared']==1 ? 'checked' : '');?> onclick="return false;"><div style="visibility:hidden;height: 1px;"><?php echo $row['birdeclared'];?></div></td>
@@ -914,13 +914,13 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 		    Clear();
 		}
 		// When the user clicks anywhere outside of the modal, close it
-		window.onclick = function(event) {
+		/*window.onclick = function(event) {
 		    if (event.target == modal || event.target == modal2) {
 		        modal.style.display = "none";
 		        Clear()
 		        
 		    }
-		}
+		}*/
 
 		// modal table 1
 		var modal1 = document.getElementById('myModal1');
