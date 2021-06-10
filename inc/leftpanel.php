@@ -78,7 +78,7 @@
 							<li class="PayrollPeriodMaintain PayrollPeriodView" style="display: none;"><a href="payrollperiodform.php"><span class="far fa-calendar-alt hidden-xs hidden-sm"></span> Payroll Period</a></li>
 							<li class="LateSetup" style="display: none;"><a href="lateform.php"><span class="far fa-clock hidden-xs hidden-sm"></span> Late Setup</a></li>
 							<li class="NightDiffSetup" style="display: none;"><a href="nightform.php"><span class="far fa-clock hidden-xs hidden-sm"></span> Night Differencial</a></li>
-							<li class="OnetimeAccountMaintain" style="display: none;"><a href="deductionform.php"><span class="fas fa-file-invoice-dollar hidden-xs hidden-sm"></span> One Time Account</a></li>
+							<li class="DeductionSetupMaintain DeductionSetupView" style="display: none;"><a href="deductionform.php"><span class="fas fa-file-invoice-dollar hidden-xs hidden-sm"></span> One Time Account</a></li>
 						</ul>
 					</div>
 				</div>

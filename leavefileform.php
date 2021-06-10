@@ -319,7 +319,7 @@ else
 							<label>Convertible:</label><br>
 							<span><input type="checkbox" value="0" id="add-convert" class="modal-textarea" style="width: 50px;height: 25px;margin-top: 1px;margin-left: 100px;"></span>
 						</div>
-						<input type="input" name="paid" id="paid" value="0" class="modal-textarea">
+						<input type="hidden" name="paid" id="paid" value="0" class="modal-textarea">
 						<input type="hidden" name="convert" id="convert" value="0" class="modal-textarea">
 						<input type="hidden" name="wkid" id="hide2" value="<?php echo $wkid; ?>">
 						<input type="hidden" name="recid" id="hiderec" value="">

@@ -46,7 +46,7 @@ class MYPDF extends TCPDF {
         $this->SetFont('helvetica', 'B', 13);
         $this->SetTextColor(0,0,0);
         // Title
-        $this->Cell(50, 15, $_GET["comp"], 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(20, 15, $_GET["comp"], 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
 
         $this->SetFont('helvetica', 'B', 12);
@@ -108,7 +108,7 @@ class MYPDF extends TCPDF {
         $this->Cell(2, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
 
-        $this->Cell(2, 1, 'Name', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(27, 1, 'Name', 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
 
         // $this->Cell(10, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
@@ -143,22 +143,22 @@ class MYPDF extends TCPDF {
 
         // $this->Cell(6, 5, 'EE/ER P/H', 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
-        $this->Cell(28, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(20, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
         $this->Cell(5, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
-        $this->Cell(5, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(8, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
-        $this->Cell(10, 5, 'EE P/H', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(8, 5, 'EE P/H', 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
         $this->Cell(6, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
         $this->Cell(5, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
-        $this->Cell(5, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(4, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
-        $this->Cell(6, 5, 'ER P/H', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(8, 5, 'ER P/H', 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
 
         $this->Cell(4, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
         $this->Cell(5, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
-        $this->Cell(5, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(4, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
         $this->Cell(6, 5, 'EE/ER P/H', 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
@@ -242,7 +242,7 @@ $query = "CALL phcontributionreportweb('$dataareaid',$monthcal, $yr, 2);";
                         <tr>
                             
                             <td  width="5%"  style="text-align:left">'.$row["num"].'</td>
-                            <td  width="12%"  style="text-align:left">'.$row["workerid"].'</td>
+                            <td  width="20%"  style="text-align:left">'.$row["workerid"].'</td>
                             <td  width="20%"  style="text-align:left">'.$row["name"].'</td>
                             <td  width="12%"  style="text-align:right">'.$row["PHEEC"].'</td>
                             <td  width="12%"  style="text-align:right">'.$row["PHER"].'</td>
@@ -253,7 +253,7 @@ $query = "CALL phcontributionreportweb('$dataareaid',$monthcal, $yr, 2);";
                         ';
         }
         mysqli_close($con);
-        include("dbconn.php");
+        include("../dbconn.php");
         $qryTotal = "select 
             
             format(sum(pheec),2) as 'Tpheec',

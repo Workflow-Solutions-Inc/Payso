@@ -288,10 +288,11 @@ $firstresult = '';
 						                                ifnull(dtrdtl.Invalid,0) > 0 then 1 
 														else 0 
 														end as 'invalidrec' ,
-														case when 
+														/*case when 
 														ifnull(dtrdtl2.Absent,0) > 0 then 1 
 														else 0 
-														end as 'absent'
+														end as 'absent'*/
+														case when dtrdtl3.absent> 0 then 1 else 0 end as absent
 													                    
 													FROM worker wk left join position pos on pos.positionid = wk.position and pos.dataareaid = wk.dataareaid 
 													left join contract con on wk.workerid = con.workerid and wk.dataareaid = con.dataareaid
@@ -299,12 +300,14 @@ $firstresult = '';
 
 													left join(SELECT count(*) as 'Invalid', workerid, dataareaid FROM dailytimerecorddetail
 													where payrollperiod = '$payrollperiod' 
-													and (timein is null and timeout is not null) or (timeout is null and timein is not null)
+													and ((timein is null and timeout is not null) or (timeout is null and timein is not null))
+													and daytype not in ('Restday','Special Holiday','Regular Holiday')
 													group by workerid, dataareaid) dtrdtl on dtrdtl.workerid = wk.workerid and dtrdtl.dataareaid = wk.dataareaid
 
 													left join(SELECT count(*) as 'Absent', workerid, dataareaid FROM dailytimerecorddetail
 													where payrollperiod = '$payrollperiod'
 													and timein is null and  timeout is null
+													and daytype not in ('Restday','Special Holiday','Regular Holiday')
 													group by workerid, dataareaid) 
 													dtrdtl2 on dtrdtl2.workerid = wk.workerid and dtrdtl2.dataareaid = wk.dataareaid
 

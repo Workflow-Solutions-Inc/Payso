@@ -51,10 +51,10 @@ if($_GET["action"]=="searchdata"){
 			$output .= '
 			<tr id="'.$row["accountcode"].'" class="'.$rowclass.'" tabindex="'.$rowcnt2.'">
 				<td style="width:20px;" class="text-center"><span class="fa fa-angle-right"></span></td>
-				<td style="width:23%;">'.$row["accountcode"].'</td>
-				<td style="width:28%;">'.$row["name"].'</td>
-				<td style="width:20%;">'.$row["um"].'</td>
-				<td style="width:24%;">'.$row["accounttype"].'</td>
+				<td style="width:25%;">'.$row["accountcode"].'</td>
+				<td style="width:25%;">'.$row["name"].'</td>
+				<td style="width:25%;">'.$row["um"].'</td>
+				<td style="width:25%;">'.$row["accounttype"].'</td>
 				'.$lastrec = $row["priority"].'
 			</tr>';
 		}

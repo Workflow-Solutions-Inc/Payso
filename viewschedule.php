@@ -434,7 +434,7 @@ $wknum = $_SESSION["wknum"];
 			var data=[];
 			 for(i=0;i<search.length;i++){
 				 data[i]=search[i].value;
-				 search[i].value = "";
+				 //search[i].value = "";
 			 }
 			 
 			 daytype = data[0];

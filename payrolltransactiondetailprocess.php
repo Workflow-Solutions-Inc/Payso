@@ -741,7 +741,7 @@ else if($_GET["action"]=="searchdata"){
 				and pd.payrollid = '$paynum'
 				and wk.name like '%$worker%'
 
-				order by wk.workerid asc";
+				order by pd.linenum asc";
 		$result = $conn->query($query);
 		$rowclass = "rowA";
 		$rowcnt = 0;
@@ -755,12 +755,12 @@ else if($_GET["action"]=="searchdata"){
 			$output .= '
 			<tr id="'.$row["linenum"].'" class="'.$rowclass.'" tabindex="'.$rowcnt2.'">
 				<td style="width:20px;" class="text-center"><span class="fa fa-angle-right"></span></td>
-				<td style="width:18%;">'.$row["name"].'</td>
+				<td style="width:25%;">'.$row["name"].'</td>
 				<td style="width:10%;">'.$row["rate"].'</td>
-				<td style="width:14%;">'.$row["ecola"].'</td>
-				<td style="width:14%;">'.$row["transpo"].'</td>
-				<td style="width:14%;">'.$row["meal"].'</td>
-				<td style="width:14%;">'.$row["workertype"].'</td>
+				<td style="width:15%;">'.$row["ecola"].'</td>
+				<td style="width:15%;">'.$row["transpo"].'</td>
+				<td style="width:15%;">'.$row["meal"].'</td>
+				<td style="width:15%;">'.$row["workertype"].'</td>
 				<td style="width:5%;"><input type="checkbox" name="chkbox" class="checkbox" value="true"'.($row["islastpay"]==1 ? "checked" : "").' onclick="return false;"><div style="visibility:hidden;height: 1px;">'.$row["islastpay"].'</div></td>
 				<td style="display:none;width:14%;">'.$row["linenum"].'</td>
 			</tr>';
@@ -777,11 +777,19 @@ else if($_GET["action"]=="searchdata"){
 	}
 }
 else if($_GET["action"]=="payhead"){
-	 	
+	unset($_SESSION['linefocus']);	
 	$id=$_GET["PayId"];
 	$_SESSION['paynum'] = $id;
-	//unset($_SESSION['paynum']);
+	
 	header('location: payrolltransaction.php');
+	
+}
+else if($_GET["action"]=="setsession"){
+	
+	$id=$_GET["sess"];
+	$_SESSION['linefocus'] = $id;
+	
+	header('location: payrolltransactiondetail.php');
 	
 }
 else if($_GET["action"]=="addworker"){
@@ -797,6 +805,7 @@ else if($_GET["action"]=="addaccount"){
 	 	
 	$id=$_GET["PayId"];
 	$_SESSION['linenum'] = $id;
+	$_SESSION['linefocus'] = $id;
 	//unset($_SESSION['paynum']);
 	header('location: ptaccounts.php');
 	
@@ -955,7 +964,7 @@ else if($_GET["action"]=="Untag"){
 
 ?>
 
-<!-- <script  type="text/javascript">
+ <script  type="text/javascript">
 		var flaglocation=true;
 	  	var so='';
 	  	var payline='';
@@ -989,6 +998,19 @@ else if($_GET["action"]=="Untag"){
 					success: function(data){
 						//payline='';
 						document.getElementById("hide2").value = "";
+						document.getElementById("hidefocus").value = so;
+						var action = "setsession";
+						$.ajax({
+							type: 'GET',
+							url: 'payrolltransactiondetailprocess.php',
+							data:{action:action, sess:so},
+							beforeSend:function(){
+								//$("#lineresult").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+							},
+							success: function(data){
+								//$('#lineresult').html(data);
+							}
+						});
 						$('#lineresult').html(data);
 					}
 				}); 	
@@ -1017,4 +1039,4 @@ else if($_GET["action"]=="Untag"){
 						  
 				});
 			});*/
-</script> -->
+</script> 

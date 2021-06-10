@@ -58,10 +58,12 @@ else
 		<div class="header-signout hidden-xs hidden-sm">
 			<a href="loginprocess.php?out"><span class="fas fa-sign-out-alt"></span></a>
 		</div>
+
+		
 		
 		<div class="header-admin">
 			<div class="dropdown">
-				<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
 					<span class="far fa-user fa-lg"></span>
 					<span class="fas fa-angle-down"></span>
 				</button>
@@ -74,6 +76,36 @@ else
 						<li><div><a id="modalChangePassBtn"><span class="fas fa-key"></span> Change Password</a></div></li>
 						<li><div><a href="loginprocess.php?out"><span class="fas fa-sign-out-alt"></span> Sign Out</a></div></li>
 					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="header-about hidden-xs hidden-sm">
+			<!-- <a href="#"><span class="fas fa-question-circle"></span></a> -->
+			<div class="dropdown">
+				<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="About us">
+					<span class="far fa-question-circle"></span>
+					<span class="fas fa-angle-down"></span>
+				</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					
+					<h3>About Us</h3>
+					<p>
+							&nbsp;	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							Irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
+
+							Velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa.
+
+							Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+					</p>
+					<hr>
+					Visit Us On:
+					<ul>
+						
+						<li hidden><div><a id="modalAboutUsBtn"><span class="fas fa-info"></span> About Us</a></div></li>
+						<li><div><a href="https://payso.com.ph/" target="_blank"><span class="fas fa-globe"></span> https://payso.com.ph/ </a></div></li>
+					</ul>
+					Payso Version 3.15
 				</div>
 			</div>
 		</div>
@@ -296,6 +328,27 @@ else
 </div>
 <!-- end modal-->
 
+<!-- The Modal -->
+<div id="AboutModal" class="modal">
+	<!-- Modal content -->
+	<div class="modal-container">
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="col-lg-6">About Us</div>
+				<div class="col-lg-6"><span class="fas fa-times modal-close-m"></span></div>
+			</div>
+			
+			<div id="container" class="modal-content-container">
+
+				<h1> Payso </h1>
+				<b>World's most popular and advanced on set, online payroll solution.</b>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end modal-->
+
 
 
 <script  type="text/javascript">
@@ -381,6 +434,28 @@ var locMenuDataarea='';
 		// When the user clicks on <span> (x), close the modal
 		spanCP.onclick = function() {
 		    modalChange.style.display = "none";
+		    
+		}
+		
+		//end modal --------------------------- 
+
+		// modal about us
+		var modalAbout = document.getElementById('AboutModal');
+		// Get the button that opens the modal
+		var openBtnAU = document.getElementById("modalAboutUsBtn");
+		
+		// Get the <span> element that closes the modal
+		var spanAU = document.getElementsByClassName("modal-close-m")[0];
+		// When the user clicks the button, open the modal 
+		openBtnAU.onclick = function() {
+		    $("#AboutModal").stop().fadeTo(500,1);
+		    
+		}
+
+		
+		// When the user clicks on <span> (x), close the modal
+		spanAU.onclick = function() {
+		    modalAbout.style.display = "none";
 		    
 		}
 		

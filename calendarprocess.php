@@ -216,9 +216,9 @@ else if($_GET["action"]=="filtered"){
 			$output .= '
 			<tr id="'.$row["Date"].'" class="'.$rowclass.'" tabindex="'.$rowcnt2.'" >
 				<td style="width:20px;" class="text-center"><span class="fa fa-angle-right"></span></td>
-				<td style="width:32%;">'.$row["Date"].'</td>
-				<td style="width:32%;">'.$row["DayType"].'</td>
-				<td style="width:32%;">'.$row["Weekday"].'</td>
+				<td style="width:35%;">'.$row["Date"].'</td>
+				<td style="width:35%;">'.$row["DayType"].'</td>
+				<td style="width:35%;">'.$row["Weekday"].'</td>
 				<td style="display:none;width:1%;">'.$row['branchcode'].'</td>
 				
 			</tr>';

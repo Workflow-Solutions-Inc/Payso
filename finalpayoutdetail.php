@@ -204,7 +204,7 @@ $finaltype = $_SESSION['finalpayouttype'];
 									<input type="hidden" id="hidedetails" value="<?php echo $detailfocus; ?>">
 									<input type="hidden" id="hidewk" value="<?php echo $firstresult; ?>">
 									<input type="hidden" id="hidestatus" value="<?php echo $status; ?>">
-									<input type="input" id="hidetype" value="<?php echo $finaltype; ?>">
+									<input type="hidden" id="hidetype" value="<?php echo $finaltype; ?>">
 									<div style="display:none;width:1%;"><textarea id="t2" value = "<?php echo substr($collection,1);?>"><?php echo substr($collection,1);?></textarea></div>
 									
 								</span>

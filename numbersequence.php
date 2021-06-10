@@ -85,13 +85,13 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 								<thead>	
 									<tr class="rowtitle">
 										<td style="width:20px;" class="text-center"><span class="fa fa-asterisk fa-xs"></span></td>
-										<td style="width:14%;">Sequence ID</td>
-										<td style="width:14%;">Prefix</td>
-										<td style="width:14%;">First</td>
-										<td style="width:14%;">Last</td>
-										<td style="width:14%;">Format</td>
-										<td style="width:14%;">Next</td>
-										<td style="width:14%;">Suffix</td>
+										<td style="width:15%;">Sequence ID</td>
+										<td style="width:15%;">Prefix</td>
+										<td style="width:15%;">First</td>
+										<td style="width:15%;">Last</td>
+										<td style="width:15%;">Format</td>
+										<td style="width:15%;">Next</td>
+										<td style="width:15%;">Suffix</td>
 										<td style="width: 17px;" class="text-center"><span class="fas fa-arrows-alt-v"></span></td>
 									</tr>
 									<tr class="rowsearch">
@@ -229,13 +229,13 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 										<tr class="<?php echo $rowclass; ?>">
 											<!--<td style="width:10px;"><input type='checkbox' name="chkbox" value="" id="myCheck"></td>-->
 											<td style="width:20px;" class="text-center"><span class="fa fa-angle-right"></span></td>
-											<td style="width:14%;"><?php echo $row['id'];?></td>
-											<td style="width:14%;"><?php echo $row['prefix'];?></td>
-											<td style="width:14%;"><?php echo $row['first'];?></td>
-											<td style="width:14%;"><?php echo $row['last'];?></td>
-											<td style="width:14%;"><?php echo $row['format'];?></td>
-											<td style="width:14%;"><?php echo $row['next'];?></td>
-											<td style="width:14%;"><?php echo $row['suffix'];?></td>
+											<td style="width:15%;"><?php echo $row['id'];?></td>
+											<td style="width:15%;"><?php echo $row['prefix'];?></td>
+											<td style="width:15%;"><?php echo $row['first'];?></td>
+											<td style="width:15%;"><?php echo $row['last'];?></td>
+											<td style="width:15%;"><?php echo $row['format'];?></td>
+											<td style="width:15%;"><?php echo $row['next'];?></td>
+											<td style="width:15%;"><?php echo $row['suffix'];?></td>
 											<!--<td style="width:50%;"><input type='password' value='" . $row["password"]."'readonly='readonly'></td>-->
 											
 										</tr>

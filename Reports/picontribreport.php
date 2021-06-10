@@ -23,6 +23,7 @@ class MYPDF extends TCPDF {
       $soc = $dataareaid;
       $logo = '';
       $dataareaid = '';
+      $yr = $_GET["yr"];
       $query = "SELECT * FROM dataarea WHERE dataareaid = '$soc'";
         $result = $conn->query($query);
 
@@ -45,7 +46,7 @@ class MYPDF extends TCPDF {
         $this->SetFont('helvetica', 'B', 13);
         $this->SetTextColor(0,0,0);
         // Title
-        $this->Cell(50, 15, $_GET["comp"], 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(20, 15, $_GET["comp"], 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
 
         $this->SetFont('helvetica', 'B', 12);
@@ -112,17 +113,17 @@ class MYPDF extends TCPDF {
         $this->Cell(2, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
 
-        $this->Cell(2, 1, 'Name', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(28, 1, 'Name', 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
-        $this->Cell(28, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(20, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
         $this->Cell(5, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
-        $this->Cell(5, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(7, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
         $this->Cell(10, 5, 'EE P/H', 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
         $this->Cell(6, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
         $this->Cell(5, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
-        $this->Cell(5, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(3, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
         $this->Cell(6, 5, 'ER P/H', 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
@@ -213,7 +214,7 @@ $query = "CALL pibigcontributionreportweb('$dataareaid',$monthcal, $yr, $wkType)
                         <tr>
                             
                             <td  width="5%"  style="text-align:left">'.$row["num"].'</td>
-                            <td  width="12%"  style="text-align:left">'.$row["workerid"].'</td>
+                            <td  width="20%"  style="text-align:left">'.$row["workerid"].'</td>
                             <td  width="20%"  style="text-align:left">'.$row["name"].'</td>
                             <td  width="12%"  style="text-align:right">'.$row["PIBIGEE"].'</td>
                             <td  width="12%"  style="text-align:right">'.$row["PIBIGER"].'</td>
@@ -244,7 +245,7 @@ $query = "CALL pibigcontributionreportweb('$dataareaid',$monthcal, $yr, $wkType)
                         <th style="text-align:right" >'.$rowtotal["Tel"].'</th>
                 </tr></table>';*/
 mysqli_close($con);
-include("dbconn.php");
+include("../dbconn.php");
  $qryTotal = "SELECT 
                         format(sum(PIEEC),2) as EC,
                         format(sum(PIEEM),2) as EM,

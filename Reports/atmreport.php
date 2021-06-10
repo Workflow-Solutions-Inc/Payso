@@ -174,7 +174,7 @@ $usrname =  $_GET["usrname"];
                                         <td  width="14%"  style="text-align:left">'.$row["workerid"].'</td>
                                         <td  width="28%"  style="text-align:left">'.$row["name"].'</td>
                                         <td  width="19%"  style="text-align:right">'.$row["bankaccountnum"].'</td>
-                                        <td  width="12%"  style="text-align:right">'.$row["Amount"].'</td>
+                                        <td  width="12%"  style="text-align:right">'.number_format($row['Amount'],2).'</td>
                                     </tr>
 
                                     </table>

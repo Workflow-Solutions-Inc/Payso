@@ -4,7 +4,7 @@ session_regenerate_id();
 include("dbconn.php");
 $user = $_SESSION["user"];
 $dataareaid = $_SESSION["defaultdataareaid"];
-$refnum = $_SESSION['linenum'];
+//$refnum = $_SESSION['linenum'];
 
 $firstresult='';
 if(isset($_SESSION['recnum']))
@@ -105,10 +105,10 @@ else
 								<thead>	
 									<tr class="rowB rowtitle">
 										<td style="width:20px;" class="text-center"><span class="fa fa-asterisk fa-xs"></span></td>
-										<td style="width:23%;">Account Code</td>
-										<td style="width:28%;">Name</td>
-										<td style="width:20%;">UM</td>
-										<td style="width:24%;">Account Type</td>
+										<td style="width:25%;">Account Code</td>
+										<td style="width:25%;">Name</td>
+										<td style="width:25%;">UM</td>
+										<td style="width:25%;">Account Type</td>
 										<td style="width: 17px;" class="text-center"><span class="fas fa-arrows-alt-v"></span></td>
 									</tr>
 									<tr class="rowsearch">
@@ -229,10 +229,10 @@ else
 											<!--<td style="width:10px;"><input type='checkbox' name="chkbox" value="" id="myCheck"></td>-->
 											<td style="width:20px;" class="text-center"><span class="fa fa-angle-right"></span></td>
 											
-											<td style="width:23%;"><?php echo $row['accountcode'];?></td>
-											<td style="width:28%;"><?php echo $row['name'];?></td>
-											<td style="width:20%;"><?php echo $row['um'];?></td>
-											<td style="width:24%;"><?php echo $row['accounttype'];?></td>
+											<td style="width:25%;"><?php echo $row['accountcode'];?></td>
+											<td style="width:25%;"><?php echo $row['name'];?></td>
+											<td style="width:25%;"><?php echo $row['um'];?></td>
+											<td style="width:25%;"><?php echo $row['accounttype'];?></td>
 											
 											<!--<td style="width:50%;"><input type='password' value='" . $row["password"]."'readonly='readonly'></td>-->
 										</tr>

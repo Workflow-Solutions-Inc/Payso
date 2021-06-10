@@ -4,6 +4,7 @@ session_regenerate_id();
 include("dbconn.php");
 #$user = $_SESSION["user"];
 $_SESSION["Navi"] = 'pr';
+$dataareaid = $_SESSION["defaultdataareaid"];
 ?>
 
 <!DOCTYPE html>
@@ -85,7 +86,7 @@ $_SESSION["Navi"] = 'pr';
 								<li class="PayrollPeriodMaintain PayrollPeriodView" style="display: none;"><a href="payrollperiodform.php"><span class="far fa-calendar-alt hidden-xs hidden-sm"></span> Payroll Period</a></li>
 								<li class="LateSetup" style="display: none;"><a href="lateform.php"><span class="far fa-clock hidden-xs hidden-sm"></span> Late Setup</a></li>
 								<li class="NightDiffSetup" style="display: none;"><a href="nightform.php"><span class="far fa-clock hidden-xs hidden-sm"></span> Night Differential</a></li>
-								<li class="OnetimeAccountMaintain" style="display: none;"><a href="deductionform.php"><span class="fas fa-file-invoice-dollar hidden-xs hidden-sm"></span> One Time Account</a></li>
+								<li class="DeductionSetupMaintain" style="display: none;"><a href="deductionform.php"><span class="fas fa-file-invoice-dollar hidden-xs hidden-sm"></span> One Time Account</a></li>
 								
 							</ul>
 						</div>
@@ -163,7 +164,7 @@ $_SESSION["Navi"] = 'pr';
 								<li class="ShifttypeMaintain ShiftType" style="display: none;"><a href="shiftype.php"><span class="far fa-clock hidden-xs hidden-sm"></span> Shift Type</a></li>
 								<li class="LeaveTypeMaintain LeaveTypeView" style="display: none;"><a href="leavetypeform.php"><span class="fas fa-file-export hidden-xs hidden-sm"></span> Leave Type</a></li>
 								<li class="Calendar CalendarMaintain" style="display: none;"><a href="calendar.php"><span class="far fa-calendar-alt hidden-xs hidden-sm"></span> Calendar</a></li>
-								<li class="OnetimeAccountMaintain" style="display: none;"><a href="deductionform.php"><span class="fas fa-file-invoice-dollar hidden-xs hidden-sm"></span> One Time Account</a></li>
+								<!-- <li class="DeductionSetupMaintain" style="display: none;"><a href="deductionform.php"><span class="fas fa-file-invoice-dollar hidden-xs hidden-sm"></span> One Time Account</a></li> -->
 
 								<!--
 								<li><a href="accountform.php"><span class="fas fa-user-circle hidden-xs hidden-sm"></span> Accounts</a></li>
@@ -434,6 +435,7 @@ $_SESSION["Navi"] = 'pr';
 
 						<div class="button-container">
 							<button id="gencontribRPT" name="gencontribRPT" value="gencontribRPT" class="btn btn-primary" onclick="generateStatutory()">Generate PDF</button>
+							<button id="gencontribDB" name="gencontribDB" value="gencontribDB" class="btn btn-danger" onclick="generateStatutorydb()">Generate Disbursement</button>
 
 						
 							
@@ -600,7 +602,7 @@ $_SESSION["Navi"] = 'pr';
 
 						<div class="button-container">
 							<button id="atmreportrun" name="atmreportrun" value="atmreportrun" class="btn btn-primary"  onclick="generateAtm()">Generate PDF</button>
-							<button id="atmreportrunexcel" name="atmreportrunexcel" value="atmreportrunexcel" class="btn btn-primary btn-danger">Download Excel</button>
+							<button id="atmreportrunexcel" name="atmreportrunexcel" value="atmreportrunexcel" class="btn btn-primary btn-danger" onclick="generateAtmDigibanker()">Download Excel</button>
 							
 						</div>
 				</div>
@@ -1149,9 +1151,10 @@ $_SESSION["Navi"] = 'pr';
 		{
 			var selectedYear = document.getElementById("yrselection2316").value;
 			var selectedWorker = document.getElementById("myWorker").value;
+			var soc = "<?php echo $dataareaid; ?>";
 			if(selectedYear && selectedWorker)
 			{
-				window.open('Reports/BIRforms/2316form.php?selectedyear='+selectedYear+'&selectedworker='+selectedWorker, "_blank");
+				window.open('Reports/BIRforms/2316form.php?selectedyear='+selectedYear+'&selectedworker='+selectedWorker+'&com='+soc, "_blank");
 			}
 			else
 			{
@@ -1178,9 +1181,19 @@ $_SESSION["Navi"] = 'pr';
 			  window.open("reportprocess.php?atmreportrun&payrolldate="+document.getElementById("payrolldte").value, "_blank"); 
 		}
 
+		function generateAtmDigibanker()
+		{
+			  window.open("reportprocess.php?atmreportrunexcel&payrolldate="+document.getElementById("payrolldte").value, "_blank"); 
+		}
+
 		function generateStatutory()
 		{
 			  window.open("reportprocess.php?gencontribRPT&rptType="+document.getElementById("rptType").value+"&inputyear="+document.getElementById("inputyear").value+"&monthcal="+document.getElementById("monthcal").value, "_blank"); 
+		}
+		
+		function generateStatutorydb()
+		{
+			window.open("reportprocess.php?gencontribDB&rptType="+document.getElementById("rptType").value+"&inputyear="+document.getElementById("inputyear").value+"&monthcal="+document.getElementById("monthcal").value, "_blank"); 
 		}
 
 		function generate13month()
@@ -1209,10 +1222,11 @@ $_SESSION["Navi"] = 'pr';
     		var selectedYear = document.getElementById("yrselectionBirC").value;
 			var selectedWorker = document.getElementById("myWorkerBirC").value;
 			var selectedMonth = document.getElementById("monthBirC").value;
+			var soc = "<?php echo $dataareaid; ?>";
 			//alert(selectedMonth);
 			if(selectedYear && selectedWorker)
 			{
-				window.open('Reports/BIRforms/1601C.php?selectedyear='+selectedYear+'&selectedworker='+selectedWorker+'&selectedMonth='+selectedMonth, "_blank");
+				window.open('Reports/BIRforms/1601C.php?selectedyear='+selectedYear+'&selectedworker='+selectedWorker+'&selectedMonth='+selectedMonth+'&com='+soc, "_blank");
 			}
 			else
 			{
@@ -1225,9 +1239,10 @@ $_SESSION["Navi"] = 'pr';
     		 //window.open('Reports/BIRforms/1601-EQ.php', "_blank");
     		var selectedYear = document.getElementById("yrselectionBirEQ").value;
 			var selectedWorker = document.getElementById("myWorkerBirEQ").value;
+			var soc = "<?php echo $dataareaid; ?>";
 			if(selectedYear && selectedWorker)
 			{
-				window.open('Reports/BIRforms/1601-EQ.php?selectedyear='+selectedYear+'&selectedworker='+selectedWorker, "_blank");
+				window.open('Reports/BIRforms/1601-EQ.php?selectedyear='+selectedYear+'&selectedworker='+selectedWorker+'&com='+soc, "_blank");
 			}
 			else
 			{
@@ -1240,9 +1255,10 @@ $_SESSION["Navi"] = 'pr';
     		//window.open('Reports/BIRforms/1601-FQ.php', "_blank");
     		var selectedYear = document.getElementById("yrselectionBirFQ").value;
 			var selectedWorker = document.getElementById("myWorkerBirFQ").value;
+			var soc = "<?php echo $dataareaid; ?>";
 			if(selectedYear && selectedWorker)
 			{
-				window.open('Reports/BIRforms/1601-FQ.php?selectedyear='+selectedYear+'&selectedworker='+selectedWorker, "_blank");
+				window.open('Reports/BIRforms/1601-FQ.php?selectedyear='+selectedYear+'&selectedworker='+selectedWorker+'&com='+soc, "_blank");
 			}
 			else
 			{

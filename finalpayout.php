@@ -94,13 +94,13 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 								<thead>
 									<tr class="rowtitle">
 										<td style="width:20px;" class="text-center"><span class="fa fa-asterisk fa-xs"></span></td>
-										<td style="width:14%;">Payout Id</td>
-										<td style="width:14%;">Worker Id</td>
-										<td style="width:14%;">worker Name</td>
+										<td style="width:20%;">Payout Id</td>
+										<td style="width:20%;">Worker Id</td>
+										<td style="width:20%;">worker Name</td>
 										
-										<td style="width:14%;">Type</td>
-										<td style="width:14%;">Status</td>
-										<td style="width:14%;">Amount</td>
+										<td style="width:20%;">Type</td>
+										<td style="width:20%;">Status</td>
+										<td style="width:20%;">Amount</td>
 										<td style="width: 17px;" class="text-center"><span class="fas fa-arrows-alt-v"></span></td>
 									</tr>
 									<tr class="rowsearch">
@@ -193,13 +193,13 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 										<tr class="<?php echo $rowclass; ?>">
 											<!--<td style="width:10px;"><input type='checkbox' name="chkbox" value="" id="myCheck"></td>-->
 											<td style="width:20px;" class="text-center" ><span class="fa fa-angle-right"></span></td>
-											<td style="width:14%;"><?php echo $row['finalpayoutid'];?></td>
-											<td style="width:14%;"><?php echo $row['workerid'];?></td>
-											<td style="width:14%;"><?php echo $row['name'];?></td>
+											<td style="width:20%;"><?php echo $row['finalpayoutid'];?></td>
+											<td style="width:20%;"><?php echo $row['workerid'];?></td>
+											<td style="width:20%;"><?php echo $row['name'];?></td>
 											
-											<td style="width:14%;"><?php echo $row['paytype'];?></td>
-											<td style="width:14%;"><?php echo $row['statustxt'];?></td>
-											<td style="width:14%;"><?php echo $row['amount'];?></td>
+											<td style="width:20%;"><?php echo $row['paytype'];?></td>
+											<td style="width:20%;"><?php echo $row['statustxt'];?></td>
+											<td style="width:20%;"><?php echo $row['amount'];?></td>
 											<td style="display:none;width:1%;"><?php echo $row['status'];?></td>
 										</tr>
 									<?php 
@@ -464,7 +464,7 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 						//data:'bkno='+BNo+'&bkdesc='+BDesc+'&bktit='+BTit+'&bkqty='+BQ,
 						beforeSend:function(){
 						
-							$("#result").html('<img src="img/loading.gif" width="300" height="300">');
+							$("#result").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
 			
 						},
 						success: function(data){

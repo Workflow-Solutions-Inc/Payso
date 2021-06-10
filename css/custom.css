@@ -143,6 +143,16 @@ button { transition: all 100ms ease-IN; -o-transition: all 100ms ease; -ms-trans
 .header .header-content .header-signout { color: #FFF; float: right; background: #656565; }
 .header .header-content .header-signout a { padding: 0px 25px; display: block; color: #FFF; background: #656565; }
 .header .header-content .header-signout a:hover { background: #dd4b39; }
+/* .header .header-content .header-about { color: #FFF; float: right; background: #92c042; }
+.header .header-content .header-about a { padding: 0px 25px; display: block; color: #FFF; background: #92c042; }
+.header .header-content .header-about a:hover { background: #dd4b39; } */
+
+.header .header-content .header-about { border-left: solid 1px #e3e4e4; float: right; }
+.header .header-content .header-about .dropdown button { transition: all 100ms ease-IN; -o-transition: all 100ms ease; -ms-transition: all 100ms ease; -moz-transition: all 100ms ease; -webkit-transition: all 100ms ease; border-radius: 0px; -o-border-radius: 0px; -ms-border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px; padding: 0px 25px; margin: 0px; margin-top: -3px; line-height: 50px; color: #FFF; background: #92c042; border: none; }
+.header .header-content .header-about .dropdown .dropdown-menu { border-radius: 10px; -o-border-radius: 10px; -ms-border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; padding: 20px; min-width: 280px; line-height: 24px; margin-top: -1px; margin-left: -350px; background: #92c042; color: #333; }
+.header .header-content .header-about .dropdown .dropdown-menu {height: 600px;  width: 500px; }
+.header .header-content .header-about .dropdown .dropdown-menu a { color: #333; display: block; }
+.header .header-content .header-about .dropdown .dropdown-menu a:hover { color: #FFF; }
 
 .dashboard { margin-top: 40px; font-size: 0.8em; }
 .dashboard table { width: 100%; table-layout: fixed; overflow-wrap: break-word; }
@@ -199,6 +209,12 @@ button { transition: all 100ms ease-IN; -o-transition: all 100ms ease; -ms-trans
 .dashboard .dashboard-content button.dashboard-button-ok:hover { background: #a6d456; }
 .dashboard .dashboard-content button.dashboard-button-cancel { width: 25px; background: #F00; color: #FFF; }
 .dashboard .dashboard-content button.dashboard-button-cancel:hover { background: #cd0000; }
+.dashboard .dashboard-content .mainpanel-table .rowA { background: #F9F9F9; font-size: 0.9em; }
+.dashboard .dashboard-content .mainpanel-table .rowB { background: #FFF; font-size: 0.9em; }
+.dashboard .dashboard-content .mainpanel-table tr:hover { transition: all 200ms ease-IN; -o-transition: all 200ms ease; -ms-transition: all 200ms ease; -moz-transition: all 200ms ease; -webkit-transition: all 200ms ease; background: #ffe9af; }
+.dashboard .dashboard-content .mainpanel-table td { border: solid 1px #CCC; padding: 3px; margin: 0px; }
+.dashboard .dashboard-content .mainpanel-table .rowtitle { font-size: 1em; background: #ffb400 !important; color: #333; }
+.dashboard .dashboard-content .mainpanel-table .rowtitle td { padding: 5px 5px 2px 5px; font-weight: bold; text-transform: uppercase; }
 
 .spacer { height: 38px; display: block; }
 

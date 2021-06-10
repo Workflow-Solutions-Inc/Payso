@@ -4,7 +4,7 @@ session_regenerate_id();
 include("dbconn.php");
 $user = $_SESSION["user"];
 $dataareaid = $_SESSION["defaultdataareaid"];
-
+$formula='';
 
 if(isset($_SESSION['CalcMode']))
 {
@@ -14,24 +14,72 @@ if(isset($_SESSION['CalcMode']))
 		$CalcAccId = $_SESSION["AccID"];
 		$CalcAccLine = 'Accounts';
 		$calctitle = 'Accounts Formula';
+		
+			$formulaquery = "SELECT 
+						formula
+						FROM accounts where dataareaid = '$dataareaid' 
+						and accountcode = '$CalcAccId'";
+
+						//and (module like '%$module%') and (submodule like '%$sub%') and (name like '%$name%')";
+			$formularesult = $conn->query($formulaquery);
+			$formularow = $formularesult->fetch_assoc();
+			$formula=$formularow["formula"];
+			
+			
 	}
 	else if($_SESSION['CalcMode'] == 'CalcReference')
 	{
 		$CalcAccId = $_SESSION["AccID"];
 		$CalcAccLine = $_SESSION['AccLine'];
 		$calctitle = 'Reference Formula';
+		
+			$formulaquery = "SELECT 
+						referenceformula
+						FROM accountconditiondetail where dataareaid = '$dataareaid' 
+						and accountconditioncode = '$CalcAccId' and linenum = '$CalcAccLine'";
+
+						//and (module like '%$module%') and (submodule like '%$sub%') and (name like '%$name%')";
+			$formularesult = $conn->query($formulaquery);
+			$formularow = $formularesult->fetch_assoc();
+			$formula=$formularow["referenceformula"];
+			
+			
 	}
 	else if($_SESSION['CalcMode'] == 'CalcCondition')
 	{
 		$CalcAccId = $_SESSION["AccID"];
 		$CalcAccLine = $_SESSION['AccLine'];
 		$calctitle = 'Condition Formula';
+		
+			$formulaquery = "SELECT 
+						conditionformula
+						FROM accountconditiondetail where dataareaid = '$dataareaid' 
+						and accountconditioncode = '$CalcAccId' and linenum = '$CalcAccLine'";
+
+						//and (module like '%$module%') and (submodule like '%$sub%') and (name like '%$name%')";
+			$formularesult = $conn->query($formulaquery);
+			$formularow = $formularesult->fetch_assoc();
+			$formula=$formularow["conditionformula"];
+			
+			
 	}
 	else if($_SESSION['CalcMode'] == 'CalcResult')
 	{
 		$CalcAccId = $_SESSION["AccID"];
 		$CalcAccLine = 'ConditionHeader';
 		$calctitle = 'Result Formula';
+		
+			$formulaquery = "SELECT 
+						resultformula
+						FROM accountconditionheader where dataareaid = '$dataareaid' 
+						and accountconditioncode = '$CalcAccId'";
+
+						//and (module like '%$module%') and (submodule like '%$sub%') and (name like '%$name%')";
+			$formularesult = $conn->query($formulaquery);
+			$formularow = $formularesult->fetch_assoc();
+			$formula=$formularow["resultformula"];
+			
+			
 	}
 	
 }
@@ -127,7 +175,8 @@ else
 								<input type="hidden" id="AccHideId" value="<?php echo $CalcAccId; ?>">
 								<input type="hidden" id="AccHideLine" value="<?php echo $CalcAccLine; ?>">
 								<input type="hidden" id="CalcMode" value="<?php echo $_SESSION['CalcMode']; ?>">
-								<textarea class="calculator-screen z-depth-1" value="2.0"  id="calc-result" readonly></textarea>
+								
+								<textarea class="calculator-screen z-depth-1" value="2.0"  id="calc-result" readonly><?php echo $formula; ?></textarea>
 								
 								<div class="calculator-keys">
 									<button type="button" class="operator btn btn-info calc-confirmation2 calc-confirmation" value="" title="Clear" onclick='Clear();'>C</button>

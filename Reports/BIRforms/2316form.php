@@ -54,7 +54,8 @@ include('../../dbconn.php');
 include(__DIR__ . '/FPDI/src/autoload.php');
 $selectedYear = $_GET['selectedyear'];
 $selectedWorker = $_GET['selectedworker'];
-$query = "call SP_generate2316Form('DC','".$selectedWorker."','".$selectedYear."','".$selectedYear."-01-01','".$selectedYear."-01-31');";
+$com = $_GET['com'];
+$query = "call SP_generate2316Form('".$com."','".$selectedWorker."','".$selectedYear."','".$selectedYear."-01-01','".$selectedYear."-12-31');";
 $tinelineno0 =  '';
 $tinelineno1 =  '';
 $tinelineno2 =  '';
@@ -68,11 +69,25 @@ $tinelineno9 =  '';
 $tinelineno10 =  '';
 $tinelineno11 =  '';
 
+$companytinelineno0 =  '';
+$companytinelineno1 =  '';
+$companytinelineno2 =  '';
+$companytinelineno3 =  '';
+$companytinelineno4 =  '';
+$companytinelineno5 =  '';
+$companytinelineno6 =  '';
+$companytinelineno7 =  '';
+$companytinelineno8 =  '';
+$companytinelineno9 =  '';
+$companytinelineno10 =  '';
+$companytinelineno11 =  '';
+
 //$query = "CALL payslipRPT('WFSIPY0000005', 'WFSI', 'WFSIWR000002')";
         $result = $conn->query($query);
         $row = $result->fetch_assoc();
 
         $name = $row["name"];
+        $address = $row["address"];
         
         $curYear = $selectedYear;
         $myYear = implode(" ", str_split($curYear, 1));
@@ -83,7 +98,16 @@ $tinelineno11 =  '';
         $yr_3 = $arr_Year[2];
         $yr_4 = $arr_Year[3];
 
-        $tinnum = str_replace("-","",$row["tinnum"]);
+        //$tinnum = str_replace("-","",$row["tinnum"]);
+        if($row["tinnum"] == '')
+        {
+           
+            $tinnum = str_replace("-","",'000-000-000-000');
+        }
+        else
+        {
+            $tinnum = str_replace("-","",$row["tinnum"]);
+        }
         $tinnumCompressedwithSpaces = implode(" ", str_split($tinnum, 1));
         $arr_Tinnum = explode(" ", $tinnumCompressedwithSpaces);
 
@@ -145,8 +169,37 @@ $tinelineno11 =  '';
         $bdateD2  = $arr_Bdate[7];
 
         $company = $row['employername'];
+        $companyaddress = $row['employeraddress'];
         $contactnum = $row['contactnum'];
-
+        if($row["employertin"] == '')
+        {
+           
+            $companytinnum = str_replace("-","",'000-000-000-000');
+        }
+        else
+        {
+            $companytinnum = str_replace("-","",$row["employertin"]);
+        }
+        
+        $companytinnumCompressedwithSpaces = implode(" ", str_split($companytinnum, 1));
+        $companyarr_Tinnum = explode(" ", $companytinnumCompressedwithSpaces);
+        //echo $companytinnumCompressedwithSpaces;
+        if(!empty( $companyarr_Tinnum))
+        {
+            $companytinelineno0 =  $companyarr_Tinnum[0];
+            $companytinelineno1 =  $companyarr_Tinnum[1];
+            $companytinelineno2 =  $companyarr_Tinnum[2];
+            $companytinelineno3 =  $companyarr_Tinnum[3];
+            $companytinelineno4 =  $companyarr_Tinnum[4];
+            $companytinelineno5 =  $companyarr_Tinnum[5];
+            $companytinelineno6 =  $companyarr_Tinnum[6];
+            $companytinelineno7 =  $companyarr_Tinnum[7];
+            $companytinelineno8 =  $companyarr_Tinnum[8];
+            $companytinelineno9 =  $companyarr_Tinnum[9];
+            $companytinelineno10 =  $companyarr_Tinnum[10];
+            $companytinelineno11 =  $companyarr_Tinnum[11];
+        }
+        //echo $companytinelineno1;
         $minperday = $row['minperday'];
         $minpermonth = $row['minpermonth'];
         $mwe = $row['mwe'];
@@ -327,7 +380,7 @@ $tinelineno11 =  '';
   $pdf->SetFont('Arial','B',10);
   $pdf->SetTextColor(0, 0, 0);
   $pdf->SetXY(18,67);
-  $pdf->Write(0, "Caloocan City");
+  $pdf->Write(0, $address);
 
   #Registered Address ZIP
   #Code 1
@@ -357,7 +410,7 @@ $tinelineno11 =  '';
   $pdf->SetFont('Arial','B',10);
   $pdf->SetTextColor(0, 0, 0);
   $pdf->SetXY(18,76.5);
-  $pdf->Write(0, "Caloocan City");
+  $pdf->Write(0, $address);
 
   #Local Home Address ZIP
   #Code 1
@@ -458,57 +511,57 @@ $tinelineno11 =  '';
   $pdf->SetFont('Arial','B',10);
   $pdf->SetTextColor(0, 0, 0);
   $pdf->SetXY(46.6, 161);
-  $pdf->Write(0, "1");
+  $pdf->Write(0, $companytinelineno0);
 
   #column 2
   $pdf->SetFont('Arial','B',10);
   $pdf->SetTextColor(0, 0, 0);
   $pdf->SetXY(50.7, 161);
-  $pdf->Write(0, "2");
+  $pdf->Write(0, $companytinelineno1);
 
   #column 3
   $pdf->SetFont('Arial','B',10);
   $pdf->SetTextColor(0, 0, 0);
   $pdf->SetXY(54.7, 161);
-  $pdf->Write(0, "0");
+  $pdf->Write(0, $companytinelineno2);
 
   #column 4
   $pdf->SetFont('Arial','B',10);
   $pdf->SetTextColor(0, 0, 0);
   $pdf->SetXY(62.9, 161);
-  $pdf->Write(0, "0");
+  $pdf->Write(0, $companytinelineno3);
 
   #column 5
   $pdf->SetFont('Arial','B',10);
   $pdf->SetTextColor(0, 0, 0);
   $pdf->SetXY(66.9,161);
-  $pdf->Write(0, "0");
+  $pdf->Write(0, $companytinelineno4);
 
   #column 6
   $pdf->SetFont('Arial','B',10);
   $pdf->SetTextColor(0, 0, 0);
   $pdf->SetXY(70.9, 161);
-  $pdf->Write(0, "0");
+  $pdf->Write(0, $companytinelineno5);
 
 
   #column 7
   $pdf->SetFont('Arial','B',10);
   $pdf->SetTextColor(0, 0, 0);
   $pdf->SetXY(79.8, 161);
-  $pdf->Write(0, "0");
+  $pdf->Write(0, $companytinelineno6);
 
     #column 8
   $pdf->SetFont('Arial','B',10);
   $pdf->SetTextColor(0, 0, 0);
   $pdf->SetXY(83.8, 161);
-  $pdf->Write(0, "0");
+  $pdf->Write(0, $companytinelineno7);
 
 
     #column 9
   $pdf->SetFont('Arial','B',10);
   $pdf->SetTextColor(0, 0, 0);
   $pdf->SetXY(87.4, 161);
-  $pdf->Write(0, "0");
+  $pdf->Write(0, $companytinelineno8);
 
 
 
@@ -517,20 +570,20 @@ $tinelineno11 =  '';
   $pdf->SetFont('Arial','B',10);
   $pdf->SetTextColor(0, 0, 0);
   $pdf->SetXY(95.8, 161);
-  $pdf->Write(0, "0");
+  $pdf->Write(0, $companytinelineno9);
 
 
   #column 11
   $pdf->SetFont('Arial','B',10);
   $pdf->SetTextColor(0, 0, 0);
   $pdf->SetXY(99.8, 161);
-  $pdf->Write(0, "0");
+  $pdf->Write(0, $companytinelineno10);
 
     #column 12
   $pdf->SetFont('Arial','B',10);
   $pdf->SetTextColor(0, 0, 0);
   $pdf->SetXY(103.8, 161);
-  $pdf->Write(0, "0");
+  $pdf->Write(0, $companytinelineno11);
 
 
   #column 13
@@ -551,7 +604,7 @@ $tinelineno11 =  '';
   $pdf->SetFont('Arial','B',10);
   $pdf->SetTextColor(0, 0, 0);
   $pdf->SetXY(17, 180);
-  $pdf->Write(0, "Unit 502 F&L Building Quezon City");
+  $pdf->Write(0, $companyaddress);
 
 
   #Code 1
@@ -594,12 +647,12 @@ $tinelineno11 =  '';
   $pdf->SetFont('Arial','B',10);
   $pdf->SetTextColor(0, 0, 0);
   $pdf->SetXY(151.2, 36);
-  $pdf->Write(0, "3");
+  $pdf->Write(0, "1");
 
   $pdf->SetFont('Arial','B',10);
   $pdf->SetTextColor(0, 0, 0);
   $pdf->SetXY(155.2, 36);
-  $pdf->Write(0, "3");
+  $pdf->Write(0, "0");
 
   $pdf->SetFont('Arial','B',10);
   $pdf->SetTextColor(0, 0, 0);
@@ -611,18 +664,18 @@ $tinelineno11 =  '';
   $pdf->SetFont('Arial','B',10);
   $pdf->SetTextColor(0, 0, 0);
   $pdf->SetXY(188.5, 36);
-  $pdf->Write(0, "0");
+  $pdf->Write(0, "1");
 
 
   $pdf->SetFont('Arial','B',10);
   $pdf->SetTextColor(0, 0, 0);
   $pdf->SetXY(192.2, 36);
-  $pdf->Write(0, "3");
+  $pdf->Write(0, "2");
 
   $pdf->SetFont('Arial','B',10);
   $pdf->SetTextColor(0, 0, 0);
   $pdf->SetXY(196.2, 36);
-  $pdf->Write(0, "0");
+  $pdf->Write(0, "3");
 
   $pdf->SetFont('Arial','B',10);
   $pdf->SetTextColor(0, 0, 0);

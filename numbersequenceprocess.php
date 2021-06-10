@@ -111,14 +111,14 @@ else if($_GET["action"]=="searchdata"){
 				else { $rowclass = "rowA";}
 			$output .= '
 			<tr class="'.$rowclass.'">
-				<td style="width:20px;"><span class="fa fa-adjust"></span></td>
-				<td style="width:14%;">'.$row["id"].'</td>
-				<td style="width:14%;">'.$row["prefix"].'</td>
-				<td style="width:14%;">'.$row["first"].'</td>
-				<td style="width:14%;">'.$row["last"].'</td>
-				<td style="width:14%;">'.$row["format"].'</td>
-				<td style="width:14%;">'.$row["next"].'</td>
-				<td style="width:14%;">'.$row["suffix"].'</td>
+				<td style="width:20px;" class="text-center"><span class="fa fa-angle-right"></span></td>
+				<td style="width:15%;">'.$row["id"].'</td>
+				<td style="width:15%;">'.$row["prefix"].'</td>
+				<td style="width:15%;">'.$row["first"].'</td>
+				<td style="width:15%;">'.$row["last"].'</td>
+				<td style="width:15%;">'.$row["format"].'</td>
+				<td style="width:15%;">'.$row["next"].'</td>
+				<td style="width:15%;">'.$row["suffix"].'</td>
 			</tr>';
 		}
 		//$output .= '</tbody>';

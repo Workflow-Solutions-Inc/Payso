@@ -61,7 +61,7 @@ $selectedWorker = $_GET['selectedworker'];
 
 $selectedMonth = $_GET['selectedMonth'];
 
-$dataareaid = 'DC';
+$dataareaid = $_GET['com'];
 
 
 //$query = "call SP_generate2316Form('DC','".$selectedWorker."','".$selectedYear."','".$selectedYear."-07-01','".$selectedYear."-07-31');";
@@ -93,7 +93,7 @@ $query = "call SP_generate2316Form('".$dataareaid."','".$selectedWorker."','".$s
         $yr_3 = $arr_Year[2];
         $yr_4 = $arr_Year[3];
 
-        $tinnum = str_replace("-","",$row["tinnum"]);
+        /*$tinnum = str_replace("-","",$row["tinnum"]);
         $tinnumCompressedwithSpaces = implode(" ", str_split($tinnum, 1));
         $arr_Tinnum = explode(" ", $tinnumCompressedwithSpaces);
 
@@ -108,8 +108,34 @@ $query = "call SP_generate2316Form('".$dataareaid."','".$selectedWorker."','".$s
 		$tinelineno8 =  $arr_Tinnum[8];
 		$tinelineno9 =  $arr_Tinnum[9];
 		$tinelineno10 =  $arr_Tinnum[10];
-		$tinelineno11 =  $arr_Tinnum[11];
+		$tinelineno11 =  $arr_Tinnum[11];*/
 		//$tinelineno12 =  $arr_Tinnum[12];
+       if($row["tinnum"] == '')
+        {
+           
+            $tinnum = str_replace("-","",'000-000-000-000');
+        }
+        else
+        {
+            $tinnum = str_replace("-","",$row["tinnum"]);
+        }
+        $tinnumCompressedwithSpaces = implode(" ", str_split($tinnum, 1));
+        $arr_Tinnum = explode(" ", $tinnumCompressedwithSpaces);
+        if(!empty($arr_Tinnum))
+        {
+           $tinelineno0 =  $arr_Tinnum[0];
+            $tinelineno1 =  $arr_Tinnum[1];
+            $tinelineno2 =  $arr_Tinnum[2];
+            $tinelineno3 =  $arr_Tinnum[3];
+            $tinelineno4 =  $arr_Tinnum[4];
+            $tinelineno5 =  $arr_Tinnum[5];
+            $tinelineno6 =  $arr_Tinnum[6];
+            $tinelineno7 =  $arr_Tinnum[7];
+            $tinelineno8 =  $arr_Tinnum[8];
+            $tinelineno9 =  $arr_Tinnum[9];
+            $tinelineno10 =  $arr_Tinnum[10];
+            $tinelineno11 =  $arr_Tinnum[11];
+        }
 
 
         $myRdo = implode(" ", str_split($row['rdo_code'], 1));

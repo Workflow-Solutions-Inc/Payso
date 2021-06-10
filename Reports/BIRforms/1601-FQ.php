@@ -55,9 +55,9 @@ include(__DIR__ . '/FPDI/src/autoload.php');
 
 $selectedYear = $_GET['selectedyear'];
 $selectedWorker = $_GET['selectedworker'];
+$com = $_GET['com'];
 
-
-$query = "call SP_generate2316Form('DC','".$selectedWorker."','".$selectedYear."','".$selectedYear."-01-01','".$selectedYear."-01-31');";
+$query = "call SP_generate2316Form('".$com."','".$selectedWorker."','".$selectedYear."','".$selectedYear."-01-01','".$selectedYear."-01-31');";
 
 // $query = "call SP_generate2316Form('DC','DCWR000003','2020','2020-01-01','2020-01-31')";
 //$query = "CALL payslipRPT('WFSIPY0000005', 'WFSI', 'WFSIWR000002')";
@@ -82,23 +82,50 @@ $query = "call SP_generate2316Form('DC','".$selectedWorker."','".$selectedYear."
         $yr_3 = $arr_Year[2];
         $yr_4 = $arr_Year[3];
 
-        $tinnum = str_replace("-","",$row["tinnum"]);
+         if($row["tinnum"] == '')
+        {
+           
+            $tinnum = str_replace("-","",'000-000-000-000');
+        }
+        else
+        {
+            $tinnum = str_replace("-","",$row["tinnum"]);
+        }
         $tinnumCompressedwithSpaces = implode(" ", str_split($tinnum, 1));
         $arr_Tinnum = explode(" ", $tinnumCompressedwithSpaces);
+        if(!empty($arr_Tinnum))
+        {
+           $tinelineno0 =  $arr_Tinnum[0];
+            $tinelineno1 =  $arr_Tinnum[1];
+            $tinelineno2 =  $arr_Tinnum[2];
+            $tinelineno3 =  $arr_Tinnum[3];
+            $tinelineno4 =  $arr_Tinnum[4];
+            $tinelineno5 =  $arr_Tinnum[5];
+            $tinelineno6 =  $arr_Tinnum[6];
+            $tinelineno7 =  $arr_Tinnum[7];
+            $tinelineno8 =  $arr_Tinnum[8];
+            $tinelineno9 =  $arr_Tinnum[9];
+            $tinelineno10 =  $arr_Tinnum[10];
+            $tinelineno11 =  $arr_Tinnum[11];
+        }
 
-        $tinelineno0 =  $arr_Tinnum[0];
-        $tinelineno1 =  $arr_Tinnum[1];
-		$tinelineno2 =  $arr_Tinnum[2];
-		$tinelineno3 =  $arr_Tinnum[3];
-		$tinelineno4 =  $arr_Tinnum[4];
-		$tinelineno5 =  $arr_Tinnum[5];
-		$tinelineno6 =  $arr_Tinnum[6];
-		$tinelineno7 =  $arr_Tinnum[7];
-		$tinelineno8 =  $arr_Tinnum[8];
-		$tinelineno9 =  $arr_Tinnum[9];
-		$tinelineno10 =  $arr_Tinnum[10];
-		$tinelineno11 =  $arr_Tinnum[11];
-		//$tinelineno12 =  $arr_Tinnum[12];
+  //       $tinnum = str_replace("-","",$row["tinnum"]);
+  //       $tinnumCompressedwithSpaces = implode(" ", str_split($tinnum, 1));
+  //       $arr_Tinnum = explode(" ", $tinnumCompressedwithSpaces);
+
+  //       $tinelineno0 =  $arr_Tinnum[0];
+  //       $tinelineno1 =  $arr_Tinnum[1];
+		// $tinelineno2 =  $arr_Tinnum[2];
+		// $tinelineno3 =  $arr_Tinnum[3];
+		// $tinelineno4 =  $arr_Tinnum[4];
+		// $tinelineno5 =  $arr_Tinnum[5];
+		// $tinelineno6 =  $arr_Tinnum[6];
+		// $tinelineno7 =  $arr_Tinnum[7];
+		// $tinelineno8 =  $arr_Tinnum[8];
+		// $tinelineno9 =  $arr_Tinnum[9];
+		// $tinelineno10 =  $arr_Tinnum[10];
+		// $tinelineno11 =  $arr_Tinnum[11];
+		// //$tinelineno12 =  $arr_Tinnum[12];
 
 
         $myRdo = implode(" ", str_split($row['rdo_code'], 1));

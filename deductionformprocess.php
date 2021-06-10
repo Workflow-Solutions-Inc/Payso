@@ -9,11 +9,12 @@ if(isset($_GET["save"])) {
 	 
 	 
 	 $period=$_GET["DecPer"];
+	 $account=$_GET["account"];
 	 
 	 if($period != ""){
-	 $sql = "INSERT INTO excempteddeductions (coeffectivity,dataareaid,createdby,createddatetime)
+	 $sql = "INSERT INTO excempteddeductions (accountid,coeffectivity,dataareaid,createdby,createddatetime)
 			values 
-			('$period', '$dataareaid', '$userlogin', now())";
+			('$account', '$period', '$dataareaid', '$userlogin', now())";
 		if(mysqli_query($conn,$sql))
 		{
 			echo "New Rec Created";
@@ -32,9 +33,11 @@ else if(isset($_GET["update"])) {
 
 	 $id=$_GET["rec"];
 	 $period=$_GET["DecPer"];
+	 $account=$_GET["account"];
 	 
 	 if($id != ""){
 	 $sql = "UPDATE excempteddeductions SET
+				accountid = '$account',
 				coeffectivity = '$period',
 				modifiedby = '$userlogin',
 				modifieddatetime = now()

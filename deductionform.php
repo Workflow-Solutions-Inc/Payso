@@ -41,10 +41,10 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 		<!-- sub buttons -->
 		<ul class="subbuttons">
 			<div class="leftpanel-title"><b>COMMANDS</b></div>
-			<li><button id="myAddBtn"><span class="fa fa-plus"></span> Create Record</button></li>
-			<li><button onClick="Delete();"><span class="fa fa-trash-alt"></span> Delete Record</button></li>
-			<li><button id="myUpdateBtn"><span class="fa fa-edit"></span> Update Record</button></li>
-			<li><button onClick="AddAccount();"><span class="fa fa-clipboard-check"></span> Select Acount</button></li>
+			<li class="DeductionSetupMaintain" style="display: none;"><button id="myAddBtn"><span class="fa fa-plus"></span> Create Record</button></li>
+			<li class="DeductionSetupMaintain" style="display: none;"><button onClick="Delete();"><span class="fa fa-trash-alt"></span> Delete Record</button></li>
+			<li class="DeductionSetupMaintain" style="display: none;"><button id="myUpdateBtn"><span class="fa fa-edit"></span> Update Record</button></li>
+			<!-- <li class="DeductionSetupMaintain" style="display: none;"><button onClick="AddAccount();"><span class="fa fa-clipboard-check"></span> Select Acount</button></li> -->
 			<li><button onClick="Cancel();"><span class="fa fa-arrow-circle-left fa-lg"></span> Back</button></li>
 		</ul>
 		
@@ -140,7 +140,17 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 								
 								<tbody id="result">
 									<?php
-									$query = "SELECT accountid,case when coeffectivity = 0 then 'First Half' else 'Second Half' end as coeffectivity,recid,coeffectivity as coeffectivityid FROM excempteddeductions where dataareaid = '$dataareaid'";
+									$query = "SELECT accountid,
+									case when coeffectivity = 0 then 'First Half' 
+													when coeffectivity = 1 then 'Second Half'
+													when coeffectivity = 2 then 'First Week'
+													when coeffectivity = 3 then 'Second Week'
+													when coeffectivity = 4 then 'Third Week'
+													when coeffectivity = 5 then 'Fourth Week'
+
+													else 'Last Week' end as coeffectivity,
+
+									recid,coeffectivity as coeffectivityid FROM excempteddeductions where dataareaid = '$dataareaid'";
 									$result = $conn->query($query);
 									$rowclass = "rowA";
 									$rowcnt = 0;
@@ -200,6 +210,25 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 									<option value=""></option>
 									<option value="0">First Half</option>
 									<option value="1">Second Half</option>
+
+									<option value="2">First Week</option>
+									<option value="3">Second Week</option>
+									<option value="4">Third Week</option>
+									<option value="5">Fourth Week</option>
+									<option value="6">Last Week</option>
+							</select>
+
+							<label>Accounts:</label>
+							<select class="formitem width-lg" class="textbox" name ="account" id="add-account" style="width:100%;height: 28px;" required="required">
+								<option value="" selected="selected"></option>
+								<?php
+									$query = "SELECT distinct accountcode,name FROM accounts where dataareaid = '$dataareaid' and accounttype !=3 order by priority";
+									$result = $conn->query($query);			
+									  	
+										while ($row = $result->fetch_assoc()) {
+										?>
+											<option value="<?php echo $row["accountcode"];?>"><?php echo $row["name"];?></option>
+									<?php } ?>
 							</select>
 						</div>
 
@@ -285,6 +314,7 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 			    $("#myModal").stop().fadeTo(500,1);
 			   
 				document.getElementById("add-period").value = locperiod.toString();
+				document.getElementById("add-account").value = so;
 
 			    document.getElementById("addbt").style.visibility = "hidden";
 			    document.getElementById("upbt").style.visibility = "visible";
@@ -507,15 +537,21 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 		}
 		function AddAccount()
 		{
-			var action = "addaccount";
-			$.ajax({
-				type: 'GET',
-				url: 'deductionformprocess.php',
-				data:{action:action, locrec:locrec},
-				success: function(data) {
-				    window.location.href='dtaccounts.php';
-			    }
-			});
+			if(locrec != '') {
+				var action = "addaccount";
+				$.ajax({
+					type: 'GET',
+					url: 'deductionformprocess.php',
+					data:{action:action, locrec:locrec},
+					success: function(data) {
+					    window.location.href='dtaccounts.php';
+				    }
+				});
+			}
+			else 
+			{
+				alert("Please Select a record.");
+			}
 		}
 		function Cancel()
 		{

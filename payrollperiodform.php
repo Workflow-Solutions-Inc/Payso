@@ -91,12 +91,12 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 								<thead>
 									<tr class="rowtitle">
 										<td style="width:20px;" class="text-center"><span class="fa fa-asterisk fa-xs"></span></td>
-										<td style="width:16%;">Period</td>
-										<td style="width:16%;">Payroll Period</td>
-										<td style="width:16%;">From Date</td>
-										<td style="width:16%;">To Date</td>
-										<td style="width:16%;">Payout Date</td>
-										<td style="width:16%;">Payroll Group</td>
+										<td style="width:20%;">Period</td>
+										<td style="width:20%;">Payroll Period</td>
+										<td style="width:20%;">From Date</td>
+										<td style="width:20%;">To Date</td>
+										<td style="width:20%;">Payout Date</td>
+										<td style="width:20%;">Payroll Group</td>
 										<td style="width: 17px;" class="text-center"><span class="fas fa-arrows-alt-v"></span></td>
 									</tr>
 									<tr class="rowsearch">
@@ -223,12 +223,12 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 										<tr id="<?php echo $row['payrollperiod'];?>" class="<?php echo $rowclass; ?>" tabindex="<?php echo $rowcnt2; ?>">
 											<!--<td style="width:10px;"><input type='checkbox' name="chkbox" value="" id="myCheck"></td>-->
 											<td style="width:20px;" class="text-center"><span class="fa fa-angle-right"></span></td>
-											<td style="width:16%;"><?php echo $row['period'];?></td>
-											<td style="width:16%;"><?php echo $row['payrollperiod'];?></td>
-											<td style="width:16%;"><?php echo $row['startdate'];?></td>
-											<td style="width:16%;"><?php echo $row['enddate'];?></td>
-											<td style="width:16%;"><?php echo $row['payrolldate'];?></td>
-											<td style="width:16%;"><?php echo $row['payrollgroup'];?></td>
+											<td style="width:20%;"><?php echo $row['period'];?></td>
+											<td style="width:20%;"><?php echo $row['payrollperiod'];?></td>
+											<td style="width:20%;"><?php echo $row['startdate'];?></td>
+											<td style="width:20%;"><?php echo $row['enddate'];?></td>
+											<td style="width:20%;"><?php echo $row['payrolldate'];?></td>
+											<td style="width:20%;"><?php echo $row['payrollgroup'];?></td>
 											<td style="display:none;width:1%;"><?php echo $row['payrollgroupid'];?></td>
 											<td style="display:none;width:1%;"><?php echo $row['startdate2'];?></td>
 											<td style="display:none;width:1%;"><?php echo $row['enddate2'];?></td>

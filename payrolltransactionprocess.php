@@ -247,13 +247,13 @@ else if($_GET["action"]=="searchdata"){
 			$output .= '
 			<tr id="'.$rowcnt2.'" class="'.$rowclass.'" tabindex="'.$rowcnt2.'">
 				<td style="width:20px;" class="text-center"><span class="fa fa-angle-right"></span></td>
-				<td style="width:18%;">'.$row["branch"].'</td>
+				<td style="width:20%;">'.$row["branch"].'</td>
 				<td style="width:10%;">'.$row["Payment"].'</td>
-				<td style="width:14%;">'.$row["payrollid"].'</td>
-				<td style="width:14%;">'.$row["payrollperiod"].'</td>
-				<td style="width:14%;">'.$row["fromdate"].'</td>
-				<td style="width:14%;">'.$row["todate"].'</td>
-				<td style="width:14%;">'.$row["status"].'</td>
+				<td style="width:15%;">'.$row["payrollid"].'</td>
+				<td style="width:15%;">'.$row["payrollperiod"].'</td>
+				<td style="width:15%;">'.$row["fromdate"].'</td>
+				<td style="width:15%;">'.$row["todate"].'</td>
+				<td style="width:15%;">'.$row["status"].'</td>
 				<td style="display:none;width:1%;">'.$row["payrollstatus"].'</td>
 			</tr>';
 		}
@@ -449,6 +449,7 @@ else if($_GET["action"]=="approve"){
 						$row2 = $result2->fetch_assoc();
 						$cutoff = $row2["period"];
 						$payperiod = $row2["payrollperiod"];
+						$payrollstartdate = $row2["startdate"];
 						$payrollenddate = $row2["enddate"];
 
 						/*if($cutoff == 0)
@@ -514,8 +515,33 @@ else if($_GET["action"]=="approve"){
 						}
 
 						
+						$loanQuery = "SELECT lo.workerid,lo.accountid from loanfile lo
+											left join loanschedule ls on
+									        lo.workerid = ls.workerid and
+									        lo.accountid = ls.accountid and
+									        lo.loantype = ls.loantype and
+									        lo.voucher = ls.voucher and
+									        lo.subtype = ls.subtype and
+									        lo.dataareaid = ls.dataareaid
 
-					//$sqlloan = "call SP_LoanTrans('$wkid','$dataareaid','$id','$userlogin' ,'$period','action')";
+											where lo.dataareaid = '$dataareaid'
+											and ls.inclusiondate between '$payrollstartdate' and '$payrollenddate'
+											and lo.balance > 0 and lo.accountid in (select accountcode from payrolldetailsaccounts where payrollid = '$id' and dataareaid = '$dataareaid')
+									        
+									        group by lo.accountid";
+						$resultloan = $conn->query($loanQuery);
+						$rowloan = $resultloan->fetch_assoc();
+						$wkloan = $rowloan["workerid"];
+					$sqlloan = "call SP_LoanTrans('$wkloan','$dataareaid','$id','$userlogin' ,'$period','1')";
+					if(mysqli_query($conn,$sqlloan))
+							{
+								echo $sqlloan."<br>".$conn->error;
+							}
+							else
+							{
+								echo "error".$sqlloan."<br>".$conn->error;
+							}
+
 
 					$sqlloan = "call SP_LoanTrans('','$dataareaid','$id','$userlogin' ,'$period','3')";
 			

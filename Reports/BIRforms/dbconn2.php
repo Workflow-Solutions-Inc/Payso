@@ -61,7 +61,7 @@ $port=3306;
 $socket="";
 $user="wfsiadmin";
 $password="wfsi2021admin";
-$dbname="Demo_payso_test";
+$dbname="payso_dev";
 
 
 $conn = new mysqli($host, $user, $password, $dbname, $port, $socket)

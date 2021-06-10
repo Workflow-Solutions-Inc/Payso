@@ -11,7 +11,12 @@ $period = $_SESSION['payper'];
 $cutoff = $_SESSION['paycut'];
 $paystatus = $_SESSION['paystatus'];
 $firstresult='';
+$linefocus = '';
 
+if(isset($_SESSION['linefocus']))
+{ 
+	$linefocus = $_SESSION['linefocus'];
+}
 //unset($_SESSION['paynum']);
 ?>
 
@@ -124,12 +129,12 @@ $firstresult='';
 								<thead>
 									<tr class="rowtitle">
 										<td style="width:20px;" class="text-center"><span class="fa fa-asterisk fa-xs"></span></td>
-										<td style="width:18%;">Worker</td>
+										<td style="width:25%;">Worker</td>
 										<td style="width:10%;">Rate</td>
-										<td style="width:14%;">Ecola</td>
-										<td style="width:14%;">Transportation</td>
-										<td style="width:14%;">Meal</td>
-										<td style="width:14%;">Type</td>
+										<td style="width:15%;">Ecola</td>
+										<td style="width:15%;">Transportation</td>
+										<td style="width:15%;">Meal</td>
+										<td style="width:15%;">Type</td>
 										<td style="width:5%;">Last Pay</td>
 										<td style="width: 17px;"><span class="fas fa-arrows-alt-v"></span></td>
 									</tr>
@@ -316,12 +321,12 @@ $firstresult='';
 											<tr id="<?php echo $row['linenum'];?>" class="<?php echo $rowclass; ?>" tabindex="<?php echo $rowcnt2; ?>">
 												<!--<td style="width:10px;"><input type='checkbox' name="chkbox" value="" id="myCheck"></td>-->
 												<td style="width:20px;" class="text-center"><span class="fa fa-angle-right"></span></td>
-												<td style="width:18%;"><?php echo $row['name'];?></td>
+												<td style="width:25%;"><?php echo $row['name'];?></td>
 												<td style="width:10%;"><?php echo $row['rate'];?></td>
-												<td style="width:14%;"><?php echo $row['ecola'];?></td>
-												<td style="width:14%;"><?php echo $row['transpo'];?></td>
-												<td style="width:14%;"><?php echo $row['meal'];?></td>
-												<td style="width:14%;"><?php echo $row['workertype'];?></td>
+												<td style="width:15%;"><?php echo $row['ecola'];?></td>
+												<td style="width:15%;"><?php echo $row['transpo'];?></td>
+												<td style="width:15%;"><?php echo $row['meal'];?></td>
+												<td style="width:15%;"><?php echo $row['workertype'];?></td>
 												<td style="width:5%;"><input type="checkbox" name="chkbox" class="checkbox" value="true" <?php echo ($row['islastpay'] ==1 ? 'checked' : '');?> onclick="return false;"><div style="visibility:hidden;height: 1px;"><?php echo $row['islastpay'];?></div></td>
 
 												<td style="display:none;width:1%;"><?php echo $row['linenum'];?></td>
@@ -341,7 +346,7 @@ $firstresult='';
 											
 								</tbody>
 								<input type="hidden" id="hide" value="<?php echo $firstresult;?>">
-								<input type="hidden" id="hidefocus" value="<?php echo $rowcnt2;?>">
+								<input type="hidden" id="hidefocus" value="<?php if($linefocus != ''){ echo $linefocus; } else { echo $rowcnt2; };?>">
 								<input type="hidden" id="hidecontract" value="<?php echo $contract;?>">
 								<input type="hidden" id="hidecutoff" value="<?php echo $cutoff;?>">
 								<input type="hidden" id="hidestatus" value="<?php echo $paystatus;?>">
@@ -392,6 +397,14 @@ $firstresult='';
 
 								<tbody id="lineresult">
 										<?php	
+										if($linefocus != '')
+										{
+											$linenumresult = $linefocus;
+										}
+										else
+										{
+											$linenumresult = $firstresult;
+										}
 										$query = "SELECT accountcode,
 													accountname,
 													um,
@@ -400,10 +413,10 @@ $firstresult='';
 													when accounttype = 2 then 'Condition'
 													else 'Total'
 													end as accounttype,
-													format(value,6) value
+													format(value,2) value
 													FROM payrolldetailsaccounts
 													where payrollid = '$paynum'
-													and reflinenum = '$firstresult'
+													and reflinenum = '$linenumresult'
 													and dataareaid = '$dataareaid'
 													order by priority";
 										$result = $conn->query($query);
@@ -430,6 +443,7 @@ $firstresult='';
 										<?php }?>
 								</tbody>
 								<input type="hidden" id="hide2">	
+								<input type="hidden" id="linenumresult" value="<?php echo $linenumresult;?>">
 							</table>
 						</div>
 					</div>
@@ -498,8 +512,9 @@ $firstresult='';
 				so = usernum.toString();
 				document.getElementById("hide").value = so;
 				document.getElementById("hidecontract").value = locContract;
+
 				//alert(document.getElementById("hide").value);
-				//alert(locPay);
+				//alert(so);
 				//-----------get line--------------//
 				var action = "getline";
 				var actionmode = "userform";
@@ -512,8 +527,22 @@ $firstresult='';
 						$("#lineresult").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
 					},
 					success: function(data){
-						//payline='';
 						document.getElementById("hide2").value = "";
+						document.getElementById("hidefocus").value = so;
+						document.getElementById("linenumresult").value = so;
+						var action = "setsession";
+						$.ajax({
+							type: 'GET',
+							url: 'payrolltransactiondetailprocess.php',
+							data:{action:action, sess:so},
+							beforeSend:function(){
+								//$("#lineresult").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+							},
+							success: function(data){
+								//$('#lineresult').html(data);
+								//document.getElementById("linenumresult").value = so;
+							}
+						});
 						$('#lineresult').html(data);
 					}
 				}); 	
@@ -543,9 +572,10 @@ $firstresult='';
 						
 					flaglocation = false;
 					//alert(payline);
-					loc = document.getElementById("hide").value;
+					loc = document.getElementById("hidefocus").value;
 		            $("#myUpdateBtn").prop("disabled", false);
-		             var pos = $("#"+loc+"").attr("tabindex");
+		            var pos = $("#"+loc+"").attr("tabindex");
+		            // var pos = document.getElementById("hidefocus").value;
 					    //$("tr[tabindex="+pos+"]").focus();
 					    $("tr[tabindex="+pos+"]").css("color","red");
 					    $("tr[tabindex="+pos+"]").addClass("info");
@@ -571,7 +601,10 @@ $firstresult='';
 	  	}
 
 		$(document).ready(function() {
-			var pos = document.getElementById("hidefocus").value;
+			var hidefocus = document.getElementById("hidefocus").value;
+			var pos = $("#"+hidefocus+"").attr("tabindex");
+			//var pos = document.getElementById("hidefocus").value;
+			//alert(pos);
 		    $("tr[tabindex="+pos+"]").focus();
 		    $("tr[tabindex="+pos+"]").focus();
 		    $("tr[tabindex="+pos+"]").css("color","red");
@@ -669,6 +702,14 @@ $firstresult='';
 					
 					var firstval = $('#hide3').val();
 					document.getElementById("hide").value = firstval;
+					document.getElementById("hidefocus").value = firstval;
+
+					loc = firstval;
+		            //alert(loc);
+		             var pos = $("#"+loc+"").attr("tabindex");
+					    //$("tr[tabindex="+pos+"]").focus();
+					    $("tr[tabindex="+pos+"]").css("color","red");
+					    $("tr[tabindex="+pos+"]").addClass("info");
 					//alert(document.getElementById("hide3").value);
 					//-----------get line--------------//
 						var action = "getline";
@@ -688,56 +729,7 @@ $firstresult='';
 							}
 						}); 
 					//-----------get line--------------//
-					loc = firstval;
-		            
-		             var pos = $("#"+loc+"").attr("tabindex");
-					    //$("tr[tabindex="+pos+"]").focus();
-					    $("tr[tabindex="+pos+"]").css("color","red");
-					    $("tr[tabindex="+pos+"]").addClass("info");
-
-					$(document).ready(function(){
-						$('#datatbl tbody tr').click(function(){
-							$('table tbody tr').css("color","black");
-							$(this).css("color","red");
-							$('table tbody tr').removeClass("info");
-							$(this).addClass("info");
-							var usernum = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(8)").text();
-							locContract = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(9)").text();
-							locPay = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(7)").text();
-							so = usernum.toString();
-							document.getElementById("hide").value = so;
-							document.getElementById("hidecontract").value = locContract;
-							//alert(document.getElementById("hide").value);
-							//alert(locPay);
-							//-----------get line--------------//
-							var action = "getline";
-							var actionmode = "userform";
-							$.ajax({
-								type: 'POST',
-								url: 'payrolltransactiondetailline.php',
-								data:{action:action, actmode:actionmode, PayId:so},
-								beforeSend:function(){
-								
-									$("#lineresult").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
-								},
-								success: function(data){
-									//payline='';
-									document.getElementById("hide2").value = "";
-									$('#lineresult').html(data);
-								}
-							}); 	
-							//-----------get line--------------//
-							flaglocation = true;
-							//alert(flaglocation);
-					        $("#myUpdateBtn").prop("disabled", true);
-					            
-							//document.getElementById("myUpdateBtn").style.visibility = "visible";
-								  
-						});
-						//$("#myUpdateBtn").prop('disabled', false);
-					});	
-
-
+					
 				}
 			}); 
 			 
@@ -771,7 +763,9 @@ $firstresult='';
 						success: function(data){
 						//$('#lineresult').html(data);
 						//location.reload();	
-							alert("Computed");
+						//$('#lineresult').html(data);
+						//location.reload();	
+						//alert("Computed");
 						//-----------get line--------------//
 							var action = "getline";
 							var actionmode = "userform";
@@ -789,7 +783,7 @@ $firstresult='';
 									$('#lineresult').html(data);
 								}
 							}); 	
-							//-----------get line--------------//
+							//-----------get line--------------//				
 						}
 				}); 
 			}
@@ -826,8 +820,7 @@ $firstresult='';
 						},
 						success: function(data){
 						//$('#lineresult').html(data);
-						//location.reload();
-							alert("Computed");
+						//location.reload();	
 						//-----------get line--------------//
 							var action = "getline";
 							var actionmode = "userform";
@@ -845,7 +838,7 @@ $firstresult='';
 									$('#lineresult').html(data);
 								}
 							}); 	
-							//-----------get line--------------//
+							//-----------get line--------------//				
 						}
 				}); 
 			}
@@ -922,6 +915,7 @@ $firstresult='';
 
 	function AddAccount()
 	{
+		alert(so);
 		if(so != '') {
 			var action = "addaccount";
 			$.ajax({
@@ -958,7 +952,25 @@ $firstresult='';
 			},
 			success: function(data){
 			//$('#lineresult').html(data);
-			location.reload();					
+			//location.reload();
+							//-----------get line--------------//
+							var action = "getline";
+							var actionmode = "userform";
+							$.ajax({
+								type: 'POST',
+								url: 'payrolltransactiondetailline.php',
+								data:{action:action, actmode:actionmode, PayId:so},
+								beforeSend:function(){
+								
+									$("#lineresult").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+								},
+								success: function(data){
+									//payline='';
+									document.getElementById("hide2").value = "";
+									$('#lineresult').html(data);
+								}
+							}); 	
+							//-----------get line--------------//					
 			}
 	});
 		    

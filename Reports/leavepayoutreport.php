@@ -50,7 +50,7 @@ class MYPDF extends TCPDF {
         $this->SetFont('helvetica', 'B', 10); 
         $this->SetTextColor(0,0,0);
         // Title
-        $this->Cell(28, 15, $dataareaid, 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(15, 15, $dataareaid, 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
 
         $this->SetFont('helvetica', 'B', 12);
@@ -108,7 +108,7 @@ $pdf = new MYPDF('P', PDF_UNIT, 'letter', true, 'UTF-8', false);
 
 // set document information
 
-$pdf->SetTitle('Overall Leave Payout Report)');
+$pdf->SetTitle('Leave Payout Report');
 
 
 // set default header data

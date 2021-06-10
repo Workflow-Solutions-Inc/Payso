@@ -62,11 +62,11 @@ if($_POST["action"]=="getline"){
 			$output .= '
 			<tr class="'.$rowclass.'">
 				<td style="width:20px;" class="text-center"><span class="fa fa-angle-right"></span></td>
-				<td style="width:19%;">'.$row["workerid"].'</td>
-				<td style="width:19%;">'.$row["Name"].'</td>
-				<td style="width:19%;">'.$row["position"].'</td>
-				<td style="width:19%;">'.$row["department"].'</td>
-				<td style="width:19%;">'.$row["branch"].'</td>
+				<td style="width:25%;">'.$row["workerid"].'</td>
+				<td style="width:25%;">'.$row["Name"].'</td>
+				<td style="width:25%;">'.$row["position"].'</td>
+				<td style="width:25%;">'.$row["department"].'</td>
+				<td style="width:25%;">'.$row["branch"].'</td>
 				<td style="display:none;width:1%;"><input type="checkbox" name="chkbox" class="checkbox" value="true"'.($row["birdeclared"]==1 ? "checked" : "").' onclick="return false;"><div style="visibility:hidden;height: 1px;">'.$row["birdeclared"].'</div></td>
 				<td style="display:none;width:1%;">'.$row['firstname'].'</td>
 				<td style="display:none;width:1%;">'.$row['middlename'].'</td>

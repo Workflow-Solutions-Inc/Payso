@@ -136,13 +136,13 @@ $firstresult = '';
 								<thead>
 									<tr class="rowtitle">
 										<td style="width:20px;" class="text-center"><span class="fa fa-asterisk fa-xs"></span></td>
-										<td style="width:18%;">Branch</td>
+										<td style="width:20%;">Branch</td>
 										<td style="width:10%;">Payment Type</td>
-										<td style="width:14%;">Payroll ID</td>
-										<td style="width:14%;">Payroll Period</td>
-										<td style="width:14%;">From Date</td>
-										<td style="width:14%;">To Date</td>
-										<td style="width:14%;">Status</td>
+										<td style="width:15%;">Payroll ID</td>
+										<td style="width:15%;">Payroll Period</td>
+										<td style="width:15%;">From Date</td>
+										<td style="width:15%;">To Date</td>
+										<td style="width:15%;">Status</td>
 										<td style="width: 17px;" class="text-center"><span class="fas fa-arrows-alt-v"></span></td>
 									</tr>
 									<tr class="rowsearch">
@@ -305,13 +305,13 @@ $firstresult = '';
 											<tr id="<?php echo $rowcnt2?>" class="<?php echo $rowclass; ?>" tabindex="<?php echo $rowcnt2; ?>">
 												<!--<td style="width:10px;"><input type='checkbox' name="chkbox" value="" id="myCheck"></td>-->
 												<td style="width:20px;" class="text-center"><span class="fa fa-angle-right"></span></td>
-												<td style="width:18%;"><?php echo $row['branch'];?></td>
+												<td style="width:20%;"><?php echo $row['branch'];?></td>
 												<td style="width:10%;"><?php echo $row['Payment'];?></td>
-												<td style="width:14%;"><?php echo $row['payrollid'];?></td>
-												<td style="width:14%;"><?php echo $row['payrollperiod'];?></td>
-												<td style="width:14%;"><?php echo $row['fromdate'];?></td>
-												<td style="width:14%;"><?php echo $row['todate'];?></td>
-												<td style="width:14%;"><?php echo $row['status'];?></td>
+												<td style="width:15%;"><?php echo $row['payrollid'];?></td>
+												<td style="width:15%;"><?php echo $row['payrollperiod'];?></td>
+												<td style="width:15%;"><?php echo $row['fromdate'];?></td>
+												<td style="width:15%;"><?php echo $row['todate'];?></td>
+												<td style="width:15%;"><?php echo $row['status'];?></td>
 												<td style="display:none;width:1%;"><?php echo $row['paymenttype'];?></td>
 												<td style="display:none;width:1%;"><?php echo $row['payrollstatus'];?></td>
 												<!--<td style="width:50%;"><input type='password' value='" . $row["password"]."'readonly='readonly'></td>-->
@@ -1338,30 +1338,46 @@ $firstresult = '';
 
 	function printPayroll()
 	{
-		if (so)
+		if(locStatus == 3)
 		{
-			var soc = "<?php echo $dataareaid; ?>";
-		/*	window.location.href='Reports/PayrollReports/payrollreport.php?payroll='+so+'&soc='+soc+'';*/
-		 window.open('Reports/PayrollReports/payrollreport.php?payroll='+so+'&soc='+soc+'', "_blank"); 
+			if (so)
+			{
+				var soc = "<?php echo $dataareaid; ?>";
+			/*	window.location.href='Reports/PayrollReports/payrollreport.php?payroll='+so+'&soc='+soc+'';*/
+			 window.open('Reports/PayrollReports/payrollreport.php?payroll='+so+'&soc='+soc+'', "_blank"); 
+			}
+			else
+			{
+				alert('Please select a specific payroll to print.');
+			}
 		}
 		else
 		{
-			alert('Please select a specific payroll to print.');
+			alert('Payroll Must be Approved Status.');
 		}
 	}
 
 	function printPayslip()
 	{
-		if (so)
+		
+		if(locStatus == 3)
 		{
-			var soc = "<?php echo $dataareaid; ?>";
-		/*	window.location.href='Reports/payslip/Payslip.php?payroll='+so+'&soc='+soc+'';*/
-		 window.open('Reports/payslip/Payslip.php?payroll='+so+'&soc='+soc+'', "_blank"); 
+			if (so)
+			{
+				var soc = "<?php echo $dataareaid; ?>";
+			/*	window.location.href='Reports/payslip/Payslip.php?payroll='+so+'&soc='+soc+'';*/
+			 window.open('Reports/payslip/Payslip.php?payroll='+so+'&soc='+soc+'', "_blank"); 
+			}
+			else
+			{
+				alert('Please select a specific payroll to print.');
+			}
 		}
 		else
 		{
-			alert('Please select a specific payroll to print.');
+			alert('Payroll Must be Approved Status.');
 		}
+
 	}
 </script>
 

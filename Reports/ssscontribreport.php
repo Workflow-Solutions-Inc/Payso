@@ -23,7 +23,7 @@ class MYPDF extends TCPDF {
       $soc = $dataareaid;
       $logo = '';
       $dataareaid = '';
-
+      $yr = $_GET["yr"];
       $query = "SELECT * FROM dataarea WHERE dataareaid = '$soc'";
         $result = $conn->query($query);
 
@@ -46,7 +46,7 @@ class MYPDF extends TCPDF {
         $this->SetFont('helvetica', 'B', 13);
         $this->SetTextColor(0,0,0);
         // Title
-        $this->Cell(50, 15, $_GET["comp"], 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(20, 15, $_GET["comp"], 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
 
         $this->SetFont('helvetica', 'B', 12);
@@ -111,7 +111,7 @@ class MYPDF extends TCPDF {
         $this->Cell(2, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
 
-        $this->Cell(2, 1, 'Name', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(30, 1, 'Name', 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
 
         // $this->Cell(10, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
@@ -127,37 +127,37 @@ class MYPDF extends TCPDF {
 
         // $this->Cell(6, 5, 'Second Half', 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
-        $this->Cell(31, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(20, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
         $this->Cell(5, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
-        $this->Cell(5, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(10, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
-        $this->Cell(10, 5, 'EE Share', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(8, 5, 'EE Share', 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
         $this->Cell(6, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
         $this->Cell(6, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(4, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+
+        $this->Cell(10, 5, 'ER Share', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+
+
+        $this->Cell(5, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(6, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(3, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+
+        $this->Cell(10, 5, 'EE/ER SSS', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+
+
+        $this->Cell(8, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(8, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
         $this->Cell(7, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
-        $this->Cell(6, 5, 'ER Share', 0, false, 'C', 0, '', 0, false, 'M', 'M');
-
-
-        $this->Cell(5, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
-        $this->Cell(6, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
-        $this->Cell(7, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
-
-        $this->Cell(6, 5, 'EE/ER SSS', 0, false, 'C', 0, '', 0, false, 'M', 'M');
-
-
-        $this->Cell(8, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
-        $this->Cell(8, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
-        $this->Cell(8, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
-
-        $this->Cell(8, 5, 'EC', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(5, 5, 'EC', 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
         $this->Cell(4, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
         $this->Cell(4, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
         $this->Cell(5, 5, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
-        $this->Cell(6, 5, 'EE/ER/EC', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(9, 5, 'EE/ER/EC', 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
 
 
@@ -239,7 +239,7 @@ $query = "CALL ssscontributionreportweb('$dataareaid',$monthcal, $yr, $wkType);"
                             <tr>
                                 
                                 <td  width="4%"  style="text-align:left">'.$row["num"].'</td>
-                                <td  width="9%"  style="text-align:left">'.$row["workerid"].'</td>
+                                <td  width="15%"  style="text-align:left">'.$row["workerid"].'</td>
                                 <td  width="16%"  style="text-align:left">'.$row["name"].'</td>
                                 <td  width="10%"  style="text-align:right">'.$row["SSSEEC"].'</td>
                                 <td  width="10%"  style="text-align:right">'.$row["SSSEEM"].'</td>
@@ -268,7 +268,7 @@ $query = "CALL ssscontributionreportweb('$dataareaid',$monthcal, $yr, $wkType);"
                         <th style="text-align:right" >'.$rowtotal["Tel"].'</th>
                 </tr></table>';*/
 mysqli_close($con);
-include("dbconn.php");
+include("../dbconn.php");
 $qryTotal = "SELECT 
               #format(sum(firsthalf),2) as 'T1st',
                #format(sum(secondhalf),2) as 'T2nd',

@@ -8,6 +8,7 @@ $paynum = $_SESSION['paynum'];
 
 if(isset($_SESSION['paylinenum'])) {
 	$line = $_SESSION['paylinenum'];
+	$_SESSION['linefocus'] = $line;
 	$output='';
 		//$output .= '<tbody>';
 		$query = "SELECT accountcode,
@@ -18,7 +19,7 @@ if(isset($_SESSION['paylinenum'])) {
 					when accounttype = 2 then 'Condition'
 					else 'Total'
 					end as accounttype,
-					format(value,6) value
+					format(value,2) value
 					FROM payrolldetailsaccounts
 					where payrollid = '$paynum'
 					and reflinenum = '$line'
@@ -44,7 +45,7 @@ if(isset($_SESSION['paylinenum'])) {
 			</tr>';
 		}
 		//$output .= '</tbody>';
-		echo $output;
+		//echo $output;
 		unset($_SESSION['paylinenum']);
 		//header('location: process.php');
 
@@ -54,7 +55,7 @@ else
 	if($_POST["action"]=="getline"){
 		if($_POST["actmode"]=="userform"){
 			$id=$_POST["PayId"];
-
+			$_SESSION['linefocus'] = $id;
 			$output='';
 			//$output .= '<tbody>';
 			$query = "SELECT accountcode,
@@ -65,7 +66,7 @@ else
 						when accounttype = 2 then 'Condition'
 						else 'Total'
 						end as accounttype,
-						format(value,6) value
+						format(value,2) value
 						FROM payrolldetailsaccounts
 						where payrollid = '$paynum'
 						and reflinenum = '$id'
@@ -92,6 +93,7 @@ else
 			}
 			//$output .= '</tbody>';
 			echo $output;
+			//$_SESSION['linefocus'] = $id;
 			//header('location: process.php');
 		}
 	}
@@ -172,7 +174,7 @@ else
 					//document.getElementById("myUpdateBtn").style.disabled = disabled;
 					flaglocation = false;
 					//alert(flaglocation);
-					var foc = document.getElementById("hide").value;
+					var foc = document.getElementById("hidefocus").value;
 
 		            $("#myUpdateBtn").prop("disabled", false);
 		            var pos = $("#"+foc+"").attr("tabindex");

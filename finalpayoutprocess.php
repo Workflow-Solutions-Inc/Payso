@@ -78,13 +78,13 @@ else if($_GET["action"]=="searchdata"){
 			$output .= '
 			<tr id="'.$row["finalpayoutid"].'" class="'.$rowclass.'" tabindex="'.$rowcnt2.'" >
 				<td style="width:20px;" class="text-center"><span class="fa fa-angle-right"></span></td>
-				<td style="width:14%;">'.$row["finalpayoutid"].'</td>
-				<td style="width:14%;">'.$row["workerid"].'</td>
-				<td style="width:14%;">'.$row["name"].'</td>
+				<td style="width:20%;">'.$row["finalpayoutid"].'</td>
+				<td style="width:20%;">'.$row["workerid"].'</td>
+				<td style="width:20%;">'.$row["name"].'</td>
 				
-				<td style="width:14%;">'.$row["paytype"].'</td>
-				<td style="width:14%;">'.$row["statustxt"].'</td>
-				<td style="width:14%;">'.$row["amount"].'</td>
+				<td style="width:20%;">'.$row["paytype"].'</td>
+				<td style="width:20%;">'.$row["statustxt"].'</td>
+				<td style="width:20%;">'.$row["amount"].'</td>
 				<td style="display:none;width:1%;">'.$row['status'].'</td>
 			</tr>';
 			$firstresult2 = $row["finalpayoutid"];

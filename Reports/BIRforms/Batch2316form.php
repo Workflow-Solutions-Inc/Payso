@@ -13,7 +13,8 @@ $pdf = new FPDI('P','mm','Legal');
 $pdf->SetAutoPageBreak(false);
 
 $selectedYear = $_GET['selectedyear'];
-$query = "call SP_All2316Form('DC','".$selectedYear."','".$selectedYear."-01-01','".$selectedYear."-01-31')";
+$com = $_GET['com'];
+$query = "call SP_All2316Form('".$com."','".$selectedYear."','".$selectedYear."-01-01','".$selectedYear."-12-31')";
 //$query = "call get2316Form('DWPC','DWPC000010','2018','2018-01-01','2018-01-31')";
 
 //$query = "CALL payslipRPT('WFSIPY0000005', 'WFSI', 'WFSIWR000002')";
@@ -46,7 +47,16 @@ $tinelineno11 =  '';
         $yr_3 = $arr_Year[2];
         $yr_4 = $arr_Year[3];
 
-        $tinnum = str_replace("-","",$row["tinnum"]);
+        //$tinnum = str_replace("-","",$row["tinnum"]);
+        if($row["tinnum"] == '')
+        {
+           
+            $tinnum = str_replace("-","",'000-000-000-000');
+        }
+        else
+        {
+            $tinnum = str_replace("-","",$row["tinnum"]);
+        }
         $tinnumCompressedwithSpaces = implode(" ", str_split($tinnum, 1));
         $arr_Tinnum = explode(" ", $tinnumCompressedwithSpaces);
         if(!empty($arr_Tinnum))

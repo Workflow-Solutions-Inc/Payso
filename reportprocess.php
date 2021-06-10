@@ -91,6 +91,37 @@ if(isset($_GET["gencontribRPT"])) {
 		//echo "QTR";
 	}	
 }
+if(isset($_GET["gencontribDB"])) {
+	 
+	$selectedYr = $_GET["inputyear"];
+	$wokerType = 2;
+	$monthcal = $_GET["monthcal"];
+	$rptType = $_GET["rptType"];
+
+	
+	/*$query = "select name as 'socname' from dataarea where dataareaid = '$dataareaid'";
+    $result = $conn->query($query);
+        while ($row = $result->fetch_assoc())
+        	{
+        		$compname = $row["socname"];
+        	}*/
+	//echo $rptType;
+	/*if ($rptType == "SSSRPT")
+	{
+		header('location: Reports/ssscontribreport.php?monthcal='.$monthcal.'&yr='.$selectedYr.'&usr='.$userlogin.'&comp='.$compname.'&wkType='.$wokerType.'');
+		//echo "CO";
+	}
+	if ($rptType == "PHRPT")
+	{
+		header('location: Reports/phcontribreport.php?monthcal='.$monthcal.'&yr='.$selectedYr.'&usr='.$userlogin.'&comp='.$compname.'&wkType='.$wokerType.'');
+		//echo "MO";
+	}*/
+	if ($rptType == "PGRPT")
+	{
+		header('location: Reports/hdmfdigibanker.php?monthcal='.$monthcal.'&yr='.$selectedYr.'&usr='.$userlogin.'&comp='.$compname.'&wkType='.$wokerType.'');
+		//echo "QTR";
+	}	
+}
 //-----------------Accounts Detailed Report Process
 if(isset($_GET["accdtlreportrun"])) {
 	 
@@ -154,7 +185,7 @@ if(isset($_GET["atmreportrunexcel"])) {
 	 
 	$paydate = $_GET["payrolldate"];
 	echo $paydate;
-	//header('location: reports/atmreport.php?paydate='.$paydate.'&usrname='.$usrname.'&comp='.$compname.'&reporttype=EXCEL&usr='.$userlogin.'');
+	header('location: reports/atmreportdigibanker.php?paydate='.$paydate.'&usrname='.$usrname.'&comp='.$compname.'&reporttype=EXCEL&usr='.$userlogin.'');
 	
 }
 

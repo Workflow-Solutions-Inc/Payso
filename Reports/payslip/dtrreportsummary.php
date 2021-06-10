@@ -184,7 +184,7 @@ $output="";
 $query = "SELECT w.name,dtrh.payrollperiod,dtrh.workerid,
             format(daysworked,2) as daysworked,format(hoursworked,2) as hoursworked,format(overtimehours,2) as overtimehours,format(nightdifhours,2) as nightdifhours,
             format(leaves,2) as leaves,format(absent,2) as absent,format(late,2) as late,format(undertime,2) as undertime,format(specialholiday,2) as specialholiday,
-            format(specialholidayot,2) as specialholidayot,format(specialholidaynd,2) as specialholidaynd ,format(sunday,2) as  sunday,format(sundayot,2) as sundayot,
+            format(specialholidayot,2) as specialholidayot,format(specialholidaynd,2) as specialholidaynd ,format(ifnull(sunday,'0.00'),2) as  sunday,format(sundayot,2) as sundayot,
             format(sundaynd,2) as sundaynd,format(ifnull(holiday,'0.00'),2) as holiday,format(holidayot,2) as holidayot,format(holidaynd,2) as holidaynd,format(ifnull(break,'0.00'),2) as 'brk'
 
 
@@ -193,8 +193,9 @@ $query = "SELECT w.name,dtrh.payrollperiod,dtrh.workerid,
             left join worker w on
             w.workerid = dtrh.workerid and w.dataareaid = dtrh.dataareaid
             where dtrh.payrollperiod = '$payrollperiod' and dtrh.dataareaid = '$dataareaid'
-                            
-            group by dtrh.workerid;";
+            and w.inactive = '0'       
+            #group by dtrh.workerid;
+            ";
 
         $result = $conn->query($query);
        // $row = $result->fetch_assoc();

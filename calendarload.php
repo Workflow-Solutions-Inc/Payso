@@ -29,9 +29,9 @@ $CalHead = $_POST['headerid'];
 			<tr  class="<?php echo $rowclass; ?>" tabindex="<?php echo $rowcnt2; ?>">
 				<!--<td style="width:10px;"><input type='checkbox' name="chkbox" value="" id="myCheck"></td>-->
 				<td style="width:20px;" class="text-center" ><span class="fa fa-angle-right"></span></td>
-				<td style="width:32%;"><?php echo $row['Date'];?></td>
-				<td style="width:32%;"><?php echo $row['DayType'];?></td>
-				<td style="width:32%;"><?php echo $row['Weekday'];?></td>
+				<td style="width:35%;"><?php echo $row['Date'];?></td>
+				<td style="width:35%;"><?php echo $row['DayType'];?></td>
+				<td style="width:35%;"><?php echo $row['Weekday'];?></td>
 				<td style="display:none;width:1%;"><?php echo $row['branchcode'];?></td>
 			</tr>
 			

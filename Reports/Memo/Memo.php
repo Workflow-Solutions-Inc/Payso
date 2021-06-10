@@ -113,8 +113,8 @@ $query = "SELECT * from memoheader where memoid = '$memoid';";
   const TEMPIMGLOC = 'tempimg.png';
   const TEMPIMGLOC2 = 'tempimg.jpg';
   $dataURI = $row4["dataarealogo"];
- // $address = $row4["dataareaaddress"];
-  $address = 'Unit 502 F&L Building, Commonwealth Ave., Brgy. Holy Spirit, Q.C.';
+  $address = $row4["address"];
+  //$address = 'Unit 502 F&L Building, Commonwealth Ave., Brgy. Holy Spirit, Q.C.';
   $name = $row4["name"];
 
   $dataPieces = explode(',',$dataURI);
@@ -151,16 +151,18 @@ $query = "SELECT * from memoheader where memoid = '$memoid';";
 
   $pdf->SetFont('Times','',24);
   $pdf->SetTextColor(0, 0, 0);
-  $pdf->SetXY(95, 32);
+  $pdf->SetXY(25, 32);
 
-   $pdf->Write(0, $name );
+   //$pdf->Write(0, $name );
+   $pdf->Cell(0,1,''."$name".'',0,0, 'C');
 
 
 
   $pdf->SetFont('Times','',10);
   $pdf->SetTextColor(0, 0, 0);
-  $pdf->SetXY(75, 40);
-  $pdf->Write(0,  $address);
+  $pdf->SetXY(23, 40);
+  //$pdf->Write(0,  $address);
+  $pdf->Cell(0,1,''."$address".'',0,0, 'C');
 
   
 
@@ -169,8 +171,8 @@ $query = "SELECT * from memoheader where memoid = '$memoid';";
   $pdf->SetXY(50, 73);
 $row2 = $result2->fetch_assoc();
 
-   //$pdf->Write(0, $row2["receiver"].'.    ' );
-$pdf->Write(0, "All");
+ $pdf->Write(0, $row2["receiver"].'.    ' );
+//$pdf->Write(0, "All");
 
 
 
@@ -193,6 +195,12 @@ $pdf->Write(0, "All");
   $pdf->SetXY(50,101);
   $date = date("Y/m/d");
   $pdf->Write(0,  date('F d, Y', strtotime($date)));
+
+  $pdf->SetFont('Times','B',10);
+  $pdf->SetTextColor(0, 0, 0);
+  $pdf->SetXY(50,116);
+  $date = date("Y/m/d");
+  $pdf->Write(0,  $sub);
 /*
   $pdf->SetFont('Times','B',9);
   $pdf->SetTextColor(0, 0, 0);

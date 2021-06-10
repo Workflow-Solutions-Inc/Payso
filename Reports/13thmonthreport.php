@@ -67,7 +67,7 @@ class MYPDF extends TCPDF {
         $this->SetFont('helvetica', 'B', 10); 
         $this->SetTextColor(0,0,0);
         // Title
-        $this->Cell(28, 15, $dataareaid, 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(15, 15, $dataareaid, 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
 
         $this->SetFont('helvetica', 'B', 12);
@@ -126,7 +126,7 @@ $pdf = new MYPDF('P', PDF_UNIT, 'letter', true, 'UTF-8', false);
 
 // set document information
 
-$pdf->SetTitle('Overall Leave Payout Report)');
+$pdf->SetTitle('13th Month Payput Report');
 
 
 // set default header data
@@ -179,15 +179,16 @@ $query = "SELECT w.workerid,w.name as name, format(l.rate,2)  as rate,
                                                     format(sum(IF(l.accountcode = 'BPAY', payoutamount, NULL)),2) AS bpay,
                                                     format(sum(IF(l.accountcode = 'TMTH', payoutamount, NULL)),2) AS thmonth,
                                                     d.dataarealogo as dataarealogo,
-                                                     w.position as position
+                                                     pos.name as position
 
                                                     from thmonthpayoutdetails l
                                                     left join worker w on l.workerid = w.workerid and l.dataareaid = w.dataareaid 
+                                                    left join position pos on pos.positionid = w.position and pos.dataareaid = l.dataareaid
                                                     left join dataarea d on l.dataareaid = d.dataareaid
 
                                                     
                                                     
-                                                where l.thmonthpayoutid = '$id' and l.dataareaid = 'dc'
+                                                where l.thmonthpayoutid = '$id' and l.dataareaid = '$di'
 
                                                 group by w.name";
         $result = $conn->query($query);

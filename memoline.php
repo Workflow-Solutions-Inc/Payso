@@ -44,11 +44,11 @@ if($_POST["action"]=="getline"){
 			$output .= '
 			<tr class="'.$rowclass.'">
 				<td style="width:20px;" class="text-center"><span class="fa fa-angle-right"></span></td>
-				<td style="width:19%;">'.$row["workerid"].'</td>
-				<td style="width:19%;">'.$row["Name"].'</td>
-				<td style="width:19%;">'.$row["position"].'</td>
-				<td style="width:19%;">'.$row["department"].'</td>
-				<td style="width:19%;">'.$row["status"].'</td>
+				<td style="width:25%;">'.$row["workerid"].'</td>
+				<td style="width:25%;">'.$row["Name"].'</td>
+				<td style="width:25%;">'.$row["position"].'</td>
+				<td style="width:25%;">'.$row["department"].'</td>
+				<td style="width:25%;">'.$row["status"].'</td>
 				</tr>';
 		}
 		//$output .= '</tbody>';

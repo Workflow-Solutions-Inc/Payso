@@ -37,7 +37,8 @@ $query = "SELECT w.name,dtrh.payrollperiod,dtrh.workerid,date as Date,weekday as
 							w.workerid = dtrd.workerid and w.dataareaid = dtrd.dataareaid
 							where dtrd.payrollperiod = '$payrollperiod' and dtrd.dataareaid = '$dataareaid'
                             and dtrd.weekday is not null
-                            group by workerid;";
+                            #group by workerid;
+                            ";
 
      $result = $conn->query($query);
        // $row = $result->fetch_assoc();
@@ -216,6 +217,6 @@ $query = "SELECT w.name,dtrh.payrollperiod,dtrh.workerid,date as Date,weekday as
 
 }
 
-$pdf->Output('I','Payslip.pdf');
+$pdf->Output('I','Daily Time Record Report.pdf');
 
 ?>

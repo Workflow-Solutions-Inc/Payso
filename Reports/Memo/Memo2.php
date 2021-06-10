@@ -88,7 +88,7 @@ left join worker wk on mw.workerid = wk.workerid and mw.dataareaid = wk.dataarea
 
 
 
-   $query4 = "SELECT * from dataarea where dataareaid = 'DC';";
+   $query4 = "SELECT * from dataarea where dataareaid = 'WFSI';";
      $result4 = $conn->query($query4);
         $row4 = $result4->fetch_assoc();
 
