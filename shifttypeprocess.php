@@ -13,6 +13,11 @@ if(isset($_GET["save"])){
 		 $endtime=$_GET["endtime"];
 		 $breakout=$_GET["breakout"];
 		 $breakin=$_GET["breakin"];
+
+		 // code added by jonald 2021-06-21
+		 $morninghours=$_GET["morninghours"];
+		 $afternoonhours=$_GET["afternoonhours"];
+		 // code added by jonald 2021-06-21
 		 
 		 
 		 
@@ -20,9 +25,9 @@ if(isset($_GET["save"])){
 		if($shifttype != ''){
 
 
-		 $sql = "INSERT Into shifttype (shifttype,starttime,endtime,breakout,breakin,dataareaid) values ('$shifttype',TIME_FORMAT('$starttime', '%H:%i:%s'),TIME_FORMAT('$endtime', '%H:%i:%s')
+		 $sql = "INSERT Into shifttype (shifttype,starttime,endtime,breakout,breakin,dataareaid,morninghours, afternoonhours) values ('$shifttype',TIME_FORMAT('$starttime', '%H:%i:%s'),TIME_FORMAT('$endtime', '%H:%i:%s')
 		 						,case when '$breakout' = '' then null else TIME_FORMAT('$breakout', '%H:%i:%s') end
-		 						,case when '$breakin' = '' then null else TIME_FORMAT('$breakin', '%H:%i:%s') end,'$dataareaid')";
+		 						,case when '$breakin' = '' then null else TIME_FORMAT('$breakin', '%H:%i:%s') end,'$dataareaid',$morninghours, $afternoonhours)";
 
 			if(mysqli_query($conn,$sql))
 			{
@@ -47,12 +52,18 @@ else if(isset($_GET["update"])){
 		 $stypeold = $_GET["shifttypeold"];
 		 $starttime = $_GET["starttime"];
 		 $endtime = $_GET["endtime"];
+		 // code added by jonald 2021-06-21
+		 $morninghours=$_GET["morninghours"];
+		 $afternoonhours=$_GET["afternoonhours"];
+		 // code added by jonald 2021-06-21
 		 
 		 if($stype != ''){
 		 $sql = "UPDATE shifttype SET
 					shifttype = '$stype',
 					starttime = TIME_FORMAT('$starttime', '%H:%i:%s'),
-					endtime = TIME_FORMAT('$endtime', '%H:%i:%s')
+					endtime = TIME_FORMAT('$endtime', '%H:%i:%s'),
+					morninghours = '$morninghours',
+					afternoonhours = '$afternoonhours'
 					
 					WHERE shifttype = '$stypeold'
 					and dataareaid = '$dataareaid'";
