@@ -96,6 +96,8 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 										<td style="width:25%;">End Time</td>
 										<td style="width:25%;">Break Out</td>
 										<td style="width:25%;">Break In</td>
+										<td style="width:25%;">Morning Hours</td>
+										<td style="width:25%;">Afternoon Hours</td>
 										<td style="width:17px;" class="text-center"><span class="fas fa-arrows-alt-v"></span></td>
 									</tr>
 									<tr class="rowsearch">
@@ -168,6 +170,19 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 										<?php } ?>
 										</datalist>
 									  </td>
+									  <td><input list="SearchBreakin" class="search" disabled>
+										<?php
+											$query = "SELECT distinct breakin FROM shifttype";
+											$result = $conn->query($query);		
+									  	?>
+									  <datalist id="SearchBreakin">
+										<?php 
+											while ($row = $result->fetch_assoc()) {
+										?>
+											<option value="<?php echo $row["breakin"];?>"></option>
+										<?php } ?>
+										</datalist>
+									  </td>
 									  <td><span></span></td>
 									</tr>	
 									
@@ -177,7 +192,7 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 									<?php
 									$query = "SELECT shifttype as 'Shift Type',TIME_FORMAT(starttime,'%h:%i %p') as 'Start Time',TIME_FORMAT(endtime,'%h:%i %p') as 'End Time'
 									,starttime as stime,endtime as etime,TIME_FORMAT(breakout,'%h:%i %p') as 'Break Out',TIME_FORMAT(breakin,'%h:%i %p') as 'Break In',
-                                    breakout as bout,breakin as bin
+                                    breakout as bout,breakin as bin, format(morninghours,2) as morninghours, format(afternoonhours,2) as afternoonhours
 									from shifttype
 										where dataareaid = '$dataareaid' order by recid asc";
 									$result = $conn->query($query);
@@ -201,6 +216,8 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 											<td style="display:none;width:1%;"><?php echo $row['etime'];?></td>
 											<td style="display:none;width:1%;"><?php echo $row['bout'];?></td>
 											<td style="display:none;width:1%;"><?php echo $row['bin'];?></td>
+											<td style="width:25%;"><?php echo $row['morninghours'];?></td>
+											<td style="width:25%;"><?php echo $row['afternoonhours'];?></td>
 										</tr>
 									<?php }?>
 								</tbody>
@@ -250,6 +267,14 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 
 							<label>Break In:</label>
 							<input type="time" value="13:00" placeholder="bin" name ="breakin" id="add-breakin" class="modal-textarea" >	
+
+							<!-- Code Added by Jonald Arjon Cruz 2021-06-21 -->
+							<label>Fixed Hours:</label>
+							<input type="number" value="4" placeholder="bin" name ="morninghours" id="add-morninghours" class="modal-textarea" >
+							<label>Fixed Hours:</label>
+							<input type="number" value="4" placeholder="bin" name ="afternoonhours" id="add-afternoonhours" class="modal-textarea" >
+							<!-- Code Added by Jonald Arjon Cruz 2021-06-21 -->
+
 						</div>
 
 					</div>
@@ -275,6 +300,10 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 	  	var so='';
 	  	var gl_stimer= '';
 	  	var gl_etimer= '';
+	  	var gl_bkout= '';
+	  	var gl_bkin= '';
+	  	var gl_morning= '';
+	  	var gl_afternoon= '';
 		$(document).ready(function(){
 		$('#datatbl tbody tr').click(function(){
 			$('table tbody tr').css("color","black");
@@ -286,13 +315,19 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 			var etimer = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(7)").text();
 			var bkout = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(8)").text();
 			var bkin = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(9)").text();
-			//locname = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(2)").text();
+			var morninghrs = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(10)").text();
+			var afternoonhrs = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(11)").text();
+			locname = $("#datatbl tr:eq("+ ($(this).index()+2) +") td:eq(2)").text();
 			so = usernum.toString();
 			gl_stimer = stimer;
 			gl_etimer = etimer.toString();
+			gl_bkout= bkout;
+		  	gl_bkin= bkin;
+		  	gl_morning= morninghrs;
+		  	gl_afternoon= afternoonhrs;
 			document.getElementById("hide").value = so;
 			//alert(document.getElementById("hide").value);
-			//alert(so);	
+			//alert(morninghrs);	
 						  
 				});
 			});
@@ -315,14 +350,17 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 		}
 		UpdateBtn.onclick = function() {
 			if(so != '') {
+
 			    modal.style.display = "block";
 			    $("#add-branch").prop('readonly', true);
 				document.getElementById("add-shifttype").value = so;
 				document.getElementById("add-shifttypeold").value = so;
 				document.getElementById("add-starttime").value = gl_stimer;
 				document.getElementById("add-endtime").value = gl_etimer.toString();
-				document.getElementById("add-breakout").value = bkout.toString();
-				document.getElementById("add-breakin").value = bkin.toString();
+				document.getElementById("add-breakout").value = gl_bkout.toString();
+				document.getElementById("add-breakin").value = gl_bkin.toString();
+				document.getElementById("add-morninghours").value = gl_morning;
+				document.getElementById("add-afternoonhours").value = gl_afternoon;
 			    document.getElementById("addbt").style.visibility = "hidden";
 			    document.getElementById("upbt").style.visibility = "visible";
 			}
@@ -424,13 +462,14 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 			var shifttype = $('#add-shifttype').val();
 			var starttime = $('#add-starttime').val();
 			var endtime = $('#add-endtime').val();
+			var fixedhours = $('#add-fixedhours').val();
 			var action = "save";
 			var actionmode = "userform";
 			$.ajax({	
 					type: 'GET',
 					url: 'shifttypeprocess.php',
 					//data:'action=save&actmode=userform&userno='+UId.value+'&pass='+UPass.value+'&lname='+NM.value+'&darea='+DT.value,
-					data:{action:action, shifttype:shifttype, starttime:starttime, endtime:endtime},
+					data:{action:action, shifttype:shifttype, starttime:starttime, endtime:endtime, fixedhours:fixedhours},
 					beforeSend:function(){
 							
 					$("#datatbl").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
