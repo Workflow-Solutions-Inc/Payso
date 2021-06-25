@@ -130,6 +130,15 @@ else if($_GET["action"]=="Import"){
 			{
 				echo "error".$sqlgenerate."<br>".$conn->error;
 			}
+		$sqlcomputeot = "CALL `compute_ot_manual`('$id');";
+			if(mysqli_query($conn,$sqlcomputeot))
+			{
+				echo $sqlcomputeot."<br>".$conn->error;
+			}
+			else
+			{
+				echo "error".$sqlcomputeot."<br>".$conn->error;
+			}
 	}
 	else if($_GET["actionmode"]=="ALL")
 	{
@@ -178,6 +187,15 @@ else if($_GET["action"]=="Import"){
 			else
 			{
 				echo "error".$sqlgenerate."<br>".$conn->error;
+			}
+		$sqlcomputeot = "CALL `compute_ot_manual`('$id');";
+			if(mysqli_query($conn,$sqlcomputeot))
+			{
+				echo $sqlcomputeot."<br>".$conn->error;
+			}
+			else
+			{
+				echo "error".$sqlcomputeot."<br>".$conn->error;
 			}
 	}
 	 
