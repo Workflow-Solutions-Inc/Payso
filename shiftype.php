@@ -271,7 +271,7 @@ $dataareaid = $_SESSION["defaultdataareaid"];
 							<!-- Code Added by Jonald Arjon Cruz 2021-06-21 -->
 							<label>Morning Fixed Hours:</label>
 							<input type="number" value="4" placeholder="bin" name ="morninghours" id="add-morninghours" class="modal-textarea" >
-							<label>Morning Fixed Hours:</label>
+							<label>Afternoon Fixed Hours:</label>
 							<input type="number" value="4" placeholder="bin" name ="afternoonhours" id="add-afternoonhours" class="modal-textarea" >
 							<!-- Code Added by Jonald Arjon Cruz 2021-06-21 -->
 
