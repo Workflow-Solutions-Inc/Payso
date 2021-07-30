@@ -1,7 +1,7 @@
 <?php
 // Include the main TCPDF library (search for installation path).
 include(__DIR__ . '/tcpdf_min/tcpdf.php');
-include('dbconn2.php');
+include('../dbconn.php');
 
 
 // Extend the TCPDF class to create custom Header and Footer

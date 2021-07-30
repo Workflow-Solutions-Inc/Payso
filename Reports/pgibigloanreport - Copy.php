@@ -2,7 +2,7 @@
 session_start();
 // Include the main TCPDF library (search for installation path).
 require_once('tcpdf_min\tcpdf.php');
-require_once('dbconn.php');
+require_once('../dbconn.php');
 $dataareaid = $_SESSION["defaultdataareaid"];
 $userlogin = $_GET["usr"];
 $soc = $dataareaid;
