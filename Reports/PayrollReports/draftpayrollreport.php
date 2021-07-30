@@ -23,7 +23,6 @@ $query_ph = " select concat('Payroll Cover: ' ,date_format(fromdate,'%m/%d/%Y'),
                             left join branch br on 
                             ph.branchcode = br.branchcode and
                             ph.dataareaid = br.dataareaid
-
                             left join dataarea da on
                             ph.dataareaid = da.dataareaid
                             where ph.payrollid = '".$payrollid_."' and ph.dataareaid = '".$dataarea."' ";
@@ -34,6 +33,7 @@ $query_ph = " select concat('Payroll Cover: ' ,date_format(fromdate,'%m/%d/%Y'),
         $ph_date = $row_ph['ph_date']; 
         $brn_ = $row_ph['Branch'];
         $comp = $row_ph['Company'];
+        //$comp = "Demo";
         // Logo
          $this->SetY(5);
       
@@ -75,8 +75,8 @@ $query_ph = " select concat('Payroll Cover: ' ,date_format(fromdate,'%m/%d/%Y'),
 
         $this->SetFont('helvetica', '', 8);
         $this->SetTextColor(0,0,0);
-        $currentDateTime = date('Y-m-d H:i:s');	
-		$this->Cell(100, 15, 'Printed Date/Time: '.$currentDateTime, 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $currentDateTime = date('Y-m-d H:i:s'); 
+        $this->Cell(100, 15, 'Printed Date/Time: '.$currentDateTime, 0, false, 'C', 0, '', 0, false, 'M', 'M');
 
 
 
@@ -142,7 +142,8 @@ $finaloutput= '';
 
 
 
-$startoutput = ' <table table width="100%"  cellpadding="1" border="0">
+$startoutput = '
+                        <table table width="100%"  cellpadding="1" border="0">
         
                         <tr>    
                             <td rowspan="2"  width="2%"  style="vertical-align:bottom;text-align:center;">IC</td>
@@ -165,7 +166,6 @@ $startoutput = ' <table table width="100%"  cellpadding="1" border="0">
                             <td  width="5%"  style="text-align:left" bgcolor="#d5dadb">Meal Allowance</td>
                             <td  width="5%"  style="text-align:left" bgcolor="#d5dadb">Incentive</td>
                             <td  width="5%"  style="text-align:left" bgcolor="#d5dadb">Gross Pay</td>
-
                         </tr> 
                         <tr>
                         
@@ -186,7 +186,6 @@ $startoutput = ' <table table width="100%"  cellpadding="1" border="0">
                             <td  width="5%"  style="text-align:left">W/Tax</td>
                             <td  width="5%"  style="text-align:left">Total Deductions</td>
                             <td  width="5%"  style="text-align:left">Net Pay</td>
-
                         </tr> ';
 
 $output="";
@@ -232,55 +231,55 @@ $query = " CALL SP_payrollreportWebApp('".$payrollid_."','".$dataarea."')";
         $result = $conn->query($query);
        // $row = $result->fetch_assoc();
 
-						while ($row = $result->fetch_assoc())
-						{
-        					$name = $row["name"];
-        					$tTax +=  $row['WTAX'];
-							$tRdays +=  $row['RDAYS'];
-							$tBpay += $row['BPAY'];
-							$tOT+= $row['OT'];
-							$tOTA += $row['OTA'];
-							$tND += $row['ND'];
-							$tNDA += $row['NDA'];
-							$tSPCL +=  $row['SHOL'];
-							$tSPCLA += $row['SHOLA'];
-							$tSun += $row['SUN'];
-							$tSuna += $row['SUNA'];
-							$tLhol +=  $row['LHOL'];
-							$tLhola += $row['LHOLA'];
-							$tTallow +=  $row['TALLOW'];
-							$tMallow += $row['MALLOW'];
-							$tInc +=  $row['INC'];
-							$tGpay += $row['GPAY'];
+                        while ($row = $result->fetch_assoc())
+                        {
+                            $name = $row["name"];
+                            $tTax +=  $row['WTAX'];
+                            $tRdays +=  $row['RDAYS'];
+                            $tBpay += $row['BPAY'];
+                            $tOT+= $row['OT'];
+                            $tOTA += $row['OTA'];
+                            $tND += $row['ND'];
+                            $tNDA += $row['NDA'];
+                            $tSPCL +=  $row['SHOL'];
+                            $tSPCLA += $row['SHOLA'];
+                            $tSun += $row['SUN'];
+                            $tSuna += $row['SUNA'];
+                            $tLhol +=  $row['LHOL'];
+                            $tLhola += $row['LHOLA'];
+                            $tTallow +=  $row['TALLOW'];
+                            $tMallow += $row['MALLOW'];
+                            $tInc +=  $row['INC'];
+                            $tGpay += $row['GPAY'];
 
-							$tLate += $row['LTE'];
-							$tLateA += $row['LTEA'];
-							$tSSS += $row['SSS'];
-							$tPHIC+= $row['PH'];
-							$tHMDF += $row['PIBIG'];
-							$tSSSL += $row['SSSL'];
-							$tHDMFL += $row['PIBIGL'];
-							$tCCHRG += $row['CCHRG'];
-							$tCBOND += $row['CBOND'];
-							$tCADV += $row['CADV'];
-							$tELOAN += $row['ELOAN'];
-							$tOP += $row['OPAY'];
-							$tUF += $row['UFM'];
-							$tCN += $row['CTN'];
-							$tAP += $row['APT'];
-							$tDED += $row['TDED'];
-							$tNPAY += $row['NPAY'];
+                            $tLate += $row['LTE'];
+                            $tLateA += $row['LTEA'];
+                            $tSSS += $row['SSS'];
+                            $tPHIC+= $row['PH'];
+                            $tHMDF += $row['PIBIG'];
+                            $tSSSL += $row['SSSL'];
+                            $tHDMFL += $row['PIBIGL'];
+                            $tCCHRG += $row['CCHRG'];
+                            $tCBOND += $row['CBOND'];
+                            $tCADV += $row['CADV'];
+                            $tELOAN += $row['ELOAN'];
+                            $tOP += $row['OPAY'];
+                            $tUF += $row['UFM'];
+                            $tCN += $row['CTN'];
+                            $tAP += $row['APT'];
+                            $tDED += $row['TDED'];
+                            $tNPAY += $row['NPAY'];
 
 
 
-							$output.='<table width="100%"  cellpadding="1" border="1">
+                            $output.='<table width="100%"  cellpadding="1" border="1">
                       
                         
                    
                          
                       
-                      	<tr>
-                                <td rowspan="2"  width="2%" style="vertical-align:bottom;text-align:center;">'.$row["ic"].'</td>
+                        <tr>
+                           <td rowspan="2"  width="2%" style="vertical-align:bottom;text-align:center;">'.$row["ic"].'</td>
                             <td rowspan="2"  width="10%"   style="vertical-align:middle;text-align:middle;" >'.$row["name"].'</td>
                            
                             <td  width="5%"  style="text-align:right" bgcolor="#d5dadb">'.number_format($row['RDAYS'],2).'</td>
@@ -320,17 +319,16 @@ $query = " CALL SP_payrollreportWebApp('".$payrollid_."','".$dataarea."')";
                             <td  width="5%"  style="text-align:right">'.number_format($row['TDED'],2).'</td>
                             <td  width="5%"  style="text-align:right;color: red;"><b>'.number_format($row['NPAY'],2).'</b></td>
                           
-                          
                         </tr>
                         </table>';
                   
-     					}
+                        }
  $output.='<table width="100%"  cellpadding="1" border="1">
                       
                         
                    
                          
-                       
+                      
                         <tr>
                         
                             <td rowspan="2" colspan = "2"  width="12%"   style="vertical-align:middle;text-align:middle;" >Totals :</td>
@@ -372,34 +370,23 @@ $query = " CALL SP_payrollreportWebApp('".$payrollid_."','".$dataarea."')";
                             <td  width="5%"  style="text-align:right;color: red;"><b>'.number_format($tNPAY,2).'</b></td>
                           
                         </tr>
-                        </table></table>
-                        <table table width="100%">
-                        	<tr>
-
-                        		<br> 
-                        			<p>&nbsp;</p>
-                        		</br>
-                        		<br>
-                        			<p>&nbsp;</p>
-                        		</br>
-                        	</tr>
-
-                        	<tr>
-                        		<td width="50%">
-                        		
-                        			<p>Prepared By:</p>
-                        			<p>________________________</p>
-                        		
-                        		</td>
-
-                        		<td width="50%">
-                        		
-                        			<p>Approved By:</p>
-                        			<p>________________________</p>
-                        		
-                        		</td>
-                        	</tr>
+                         
                         </table>
+                        <tr>
+                                <td width="50%">
+                                
+                                    <p>Prepared By:</p>
+                                    <p>________________________</p>
+                                
+                                </td>
+                                <td width="50%">
+                                
+                                    <p>Approved By:</p>
+                                    <p>________________________</p>
+                                
+                                </td>
+                            </tr>
+                            </table>
                         ';
 
 $finaloutput =  $startoutput.$output;    

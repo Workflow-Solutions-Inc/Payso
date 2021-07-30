@@ -23,7 +23,6 @@ $query_ph = " select concat('Payroll Cover: ' ,date_format(fromdate,'%m/%d/%Y'),
                             left join branch br on 
                             ph.branchcode = br.branchcode and
                             ph.dataareaid = br.dataareaid
-
                             left join dataarea da on
                             ph.dataareaid = da.dataareaid
                             where ph.payrollid = '".$payrollid_."' and ph.dataareaid = '".$dataarea."' ";
@@ -167,7 +166,6 @@ $startoutput = '
                             <td  width="5%"  style="text-align:left" bgcolor="#d5dadb">Meal Allowance</td>
                             <td  width="5%"  style="text-align:left" bgcolor="#d5dadb">Incentive</td>
                             <td  width="5%"  style="text-align:left" bgcolor="#d5dadb">Gross Pay</td>
-
                         </tr> 
                         <tr>
                         
@@ -188,7 +186,6 @@ $startoutput = '
                             <td  width="5%"  style="text-align:left">W/Tax</td>
                             <td  width="5%"  style="text-align:left">Total Deductions</td>
                             <td  width="5%"  style="text-align:left">Net Pay</td>
-
                         </tr> ';
 
 $output="";
@@ -373,26 +370,15 @@ $query = " CALL SP_payrollreportWebApp('".$payrollid_."','".$dataarea."')";
                             <td  width="5%"  style="text-align:right;color: red;"><b>'.number_format($tNPAY,2).'</b></td>
                           
                         </tr>
-                        </table></table>
-                        <table table width="100%">
-                            <tr>
-
-                                <br> 
-                                    <p>&nbsp;</p>
-                                </br>
-                                <br>
-                                    <p>&nbsp;</p>
-                                </br>
-                            </tr>
-
-                            <tr>
+                         
+                        </table>
+                        <tr>
                                 <td width="50%">
                                 
                                     <p>Prepared By:</p>
                                     <p>________________________</p>
                                 
                                 </td>
-
                                 <td width="50%">
                                 
                                     <p>Approved By:</p>
@@ -400,7 +386,7 @@ $query = " CALL SP_payrollreportWebApp('".$payrollid_."','".$dataarea."')";
                                 
                                 </td>
                             </tr>
-                        </table>
+                            </table>
                         ';
 
 $finaloutput =  $startoutput.$output;    
