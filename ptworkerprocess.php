@@ -85,7 +85,7 @@ else if($_GET["action"]=="save"){
 	 if($id != ""){
 	 $query = "SELECT ct.contractid,
 						ct.workerid,
-						ct.rate
+						ct.rate,
 						ct.ecola as ecola,
 						ct.transpo transpo,
 						ct.meal as meal,
