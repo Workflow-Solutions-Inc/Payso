@@ -781,17 +781,17 @@ function RecomputeHeader($payID,$dtID,$conPAR,$usrlog)
 		
 }
 
-if(isset($_GET["save"])) {
+if(isset($_GET["save"])) 
+{
+	$uno=$_GET["userno"];
+	$upass=$_GET["pass"];
+	$ul=$_GET["lname"];
+	$dtarea=$_GET["darea"];
 	 
-	 $uno=$_GET["userno"];
-	 $upass=$_GET["pass"];
-	 $ul=$_GET["lname"];
-	 $dtarea=$_GET["darea"];
-	 
-	 if($uno != ""){
-	 $sql = "INSERT INTO userfile (userid,name,defaultdataareaid,password,createdby,createddatetime)
-			values 
-			('$uno', '$ul', '$dtarea', aes_encrypt('$upass','password'), '$userlogin', now())";
+	if($uno != "")
+	{
+		$sql = "INSERT INTO userfile (userid,name,defaultdataareaid,password,createdby,createddatetime)
+				values ('$uno', '$ul', '$dtarea', aes_encrypt('$upass','password'), '$userlogin', now())";
 		if(mysqli_query($conn,$sql))
 		{
 			echo "New Rec Created";
@@ -801,10 +801,9 @@ if(isset($_GET["save"])) {
 			echo "error".$sql."<br>".$conn->error;
 		}
 
-	 }
+	}
 	 
-header('location: dtrform.php');
-	
+	header('location: dtrform.php');
 }
 else if(isset($_GET["updatews"])) {
 	 $workerid = $_GET["add-workerid"];

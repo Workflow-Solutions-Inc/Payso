@@ -366,7 +366,8 @@ else
 
 		//-----search-----//
 		$( ".search" ).on( "keydown", function(event) {
-		  if(event.which == 13){
+		  if(event.which == 13)
+		  {
 			var search = document.getElementsByClassName('search');
 			var PayPer;
 			var PayId;
@@ -376,7 +377,8 @@ else
 			var action = "searchdata";
 			var actionmode = "userform";
 			var data=[];
-			 for(i=0;i<search.length;i++){
+			 for(i=0;i<search.length;i++)
+			 {
 				 data[i]=search[i].value;
 				 //search[i].value = "";
 			 }
@@ -432,16 +434,18 @@ else
 						url: 'dtrperiodprocess.php',
 						//data:'action=save&actmode=userform&userno='+UId.value+'&pass='+UPass.value+'&lname='+NM.value+'&darea='+DT.value,
 						data:{action:action, SelectedVal:so},
-						beforeSend:function(){
+						beforeSend:function()
+						{
 								
-						$("#datatbl").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+							$("#datatbl").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
 							
 						},
-						success: function(data){
-						//window.location.href='payrolltransactiondetail.php';
-						//$('#datatbl').html(data);
-						//location.reload();
-						window.location.href='dtrform.php';					
+						success: function(data)
+						{
+							//window.location.href='payrolltransactiondetail.php';
+							//$('#datatbl').html(data);
+							//location.reload();
+							window.location.href='dtrform.php';					
 						}
 				});
 			}
@@ -451,8 +455,10 @@ else
 				myId = cont.toLowerCase().split(",");
 				var n = myId.includes(so.toLowerCase());
 				//alert(n);
-				if(n == true){
-					if(confirm("Are you sure you want to overwrite existing record?")) {
+				if(n == true)
+				{
+					if(confirm("Are you sure you want to overwrite existing record?")) 
+					{
 						//alert("Payroll already Exist!");
 						var action = "Import";
 						var actionmode = "ALL";
@@ -462,16 +468,18 @@ else
 								url: 'dtrperiodprocess.php',
 								//data:'action=save&actmode=userform&userno='+UId.value+'&pass='+UPass.value+'&lname='+NM.value+'&darea='+DT.value,
 								data:{action:action, actionmode:actionmode, SelectedVal:so, locPayFromDate:locPayFromDate, locPayEndDate:locPayEndDate},
-								beforeSend:function(){
+								beforeSend:function()
+								{
 										
-								$("#datatbl").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
+									$("#datatbl").html('<center><img src="img/loading.gif" width="300" height="300"></center>');
 									
 								},
-								success: function(data){
-								//window.location.href='payrolltransactiondetail.php';
-								//$('#datatbl').html(data);
-								//location.reload();
-								window.location.href='dtrform.php';					
+								success: function(data)
+								{
+									//window.location.href='payrolltransactiondetail.php';
+									//$('#datatbl').html(data);
+									//location.reload();
+									window.location.href='dtrform.php';					
 								}
 						});
 					}

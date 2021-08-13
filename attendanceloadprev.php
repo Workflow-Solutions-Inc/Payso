@@ -13,7 +13,7 @@ $prevdate = $_POST['prevdate'];
 
 	<?php
 
-	$query = "call get_attendance('$dataareaid', '$prevdate', '$attbranch', '$attdept');"
+	$query = "call get_attendance('$dataareaid', '$prevdate', '$attbranch', '$attdept');";
 
 	$result = $conn->query($query);
 		$rowclass = "rowA";

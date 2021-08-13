@@ -1476,7 +1476,8 @@ $firstresult = '';
 				type: 'GET',
 				url: 'dtrformprocess.php',
 				data:{action:action, PayId:so},
-				success: function(data) {
+				success: function(data) 
+					{
 				    window.location.href='dtrperiodform.php';
 				    //$('#result').html(data);
 			    }
