@@ -59,7 +59,7 @@ $prevdate = $_POST['prevdate'];
 						$query .= " and bra.branchcode = '$attbranch' and pos.positionid = '$attpos' ";
 					}
 		$query .=
-					"group by wk.name  
+					"group by wk.name, pos.name, dm.name, bra.name
 					order by MIN(case when mt.type = 0 then TIME_FORMAT(mt.Time,'%h:%i %p') else null end),wk.name asc";
 		//echo $query;		
 		$result = $conn->query($query);
